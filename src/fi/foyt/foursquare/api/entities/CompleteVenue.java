@@ -13,10 +13,6 @@ package fi.foyt.foursquare.api.entities;
 
 public class CompleteVenue extends CompactVenue {
 
-  public Stats getStats() {
-    return stats;
-  }
-  
   public String getDescription() {
     return description;
   }
@@ -53,7 +49,6 @@ public class CompleteVenue extends CompactVenue {
     return photos;
   }
 
-  private Stats stats;
   private String description;
   private CompactUser mayor;
   private TipGroup tips;

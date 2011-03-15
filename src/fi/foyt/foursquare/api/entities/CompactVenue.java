@@ -47,6 +47,10 @@ public class CompactVenue extends FoursquareEntity {
     return hereNow;
   }
   
+  public Stats getStats() {
+    return stats;
+  }
+
   private String id;
   private String name;
   private Boolean verified;
@@ -55,5 +59,6 @@ public class CompactVenue extends FoursquareEntity {
   private Category[] categories;
   private CompleteSpecial[] specials;
   private HereNow hereNow;
+  private Stats stats;
   
 }
