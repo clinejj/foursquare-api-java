@@ -82,7 +82,7 @@ public class FoursquareApi {
   public CompleteVenue venue(String id) throws FoursquareApiException {
     try {
       JSONObject response = doRequest(Method.GET, "venues/" + id, isAuthenticated());
-      return (CompleteVenue) JSONFieldParser.parseEntity(CompactVenue.class, response.getJSONObject("venue"));
+      return (CompleteVenue) JSONFieldParser.parseEntity(CompleteVenue.class, response.getJSONObject("venue"));
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     } 

@@ -11,11 +11,11 @@
 
 package fi.foyt.foursquare.api.entities;
 
-public class HereNow extends Count {
+public class Tips extends Count {
   
-  public CheckinGroup[] getGroups() {
+  public TipGroup[] getGroups() {
     return groups;
   }
   
-  private CheckinGroup[] groups;
+  private TipGroup[] groups;
 }

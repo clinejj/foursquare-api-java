@@ -17,11 +17,11 @@ public class CompleteVenue extends CompactVenue {
     return description;
   }
   
-  public CompactUser getMayor() {
+  public Mayor getMayor() {
     return mayor;
   }
   
-  public TipGroup getTips() {
+  public Tips getTips() {
     return tips;
   }
   
@@ -45,17 +45,22 @@ public class CompleteVenue extends CompactVenue {
     return specialsNearby;
   }
   
-  public PhotoGroup getPhotos() {
+  public Photos getPhotos() {
     return photos;
+  }
+  
+  public String getTimeZone() {
+    return timeZone;
   }
 
   private String description;
-  private CompactUser mayor;
-  private TipGroup tips;
+  private Mayor mayor;
+  private Tips tips;
   private CompleteTodos todos;
   private String[] tags;
   private Count beenHere;
   private String shortUrl;
   private CompleteSpecial[] specialsNearby;
-  private PhotoGroup photos;
+  private Photos photos;
+  private String timeZone;
 }
