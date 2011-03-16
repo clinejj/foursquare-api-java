@@ -43,11 +43,26 @@ public class CompactTip extends FoursquareEntity {
     return venue;
   }
   
+  public String getUrl() {
+    return url;
+  }
+  
+  public UserGroup getTodo() {
+    return todo;
+  }
+  
+  public UserGroup getDone() {
+    return done;
+  }
+  
   private String id;
   private String text;
   private Long createdAt;
   private String status;
   private Photo photo;
+  private String url;
   private CompactUser user;
   private CompactVenue venue;
+  private UserGroup todo;
+  private UserGroup done;
 }
