@@ -11,7 +11,9 @@
 
 package fi.foyt.foursquare.api.entities;
 
-public class Comment {
+import fi.foyt.foursquare.api.FoursquareEntity;
+
+public class Comment extends FoursquareEntity {
 
   public String getId() {
     return id;

@@ -11,7 +11,9 @@
 
 package fi.foyt.foursquare.api.entities;
 
-public class Todo {
+import fi.foyt.foursquare.api.FoursquareEntity;
+
+public class Todo extends FoursquareEntity {
 
   public Long getCreatedAt() {
     return createdAt;

@@ -11,7 +11,9 @@
 
 package fi.foyt.foursquare.api.entities;
 
-public class Source {
+import fi.foyt.foursquare.api.FoursquareEntity;
+
+public class Source extends FoursquareEntity {
 
   public String getName() {
     return name;

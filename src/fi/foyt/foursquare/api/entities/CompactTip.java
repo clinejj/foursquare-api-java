@@ -11,7 +11,9 @@
 
 package fi.foyt.foursquare.api.entities;
 
-public class CompactTip {
+import fi.foyt.foursquare.api.FoursquareEntity;
+
+public class CompactTip extends FoursquareEntity {
 
   public String getId() {
     return id;
