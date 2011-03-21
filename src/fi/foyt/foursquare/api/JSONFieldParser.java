@@ -21,14 +21,14 @@ import org.json.JSONObject;
 
 public class JSONFieldParser {
   
-  public static FoursquareEntity[] parseEntities(Class<?> clazz, JSONArray jsonArray) throws FoursquareApiException {
+  public static FoursquareEntity[] parseEntities(Class<?> clazz, JSONArray jsonArray, boolean skipNonExistingFields) throws FoursquareApiException {
     FoursquareEntity[] result = (FoursquareEntity[]) Array.newInstance(clazz, jsonArray.length());
     
     for (int i = 0, l = jsonArray.length(); i < l; i++) {
       JSONObject jsonObject;
       try {
         jsonObject = jsonArray.getJSONObject(i);
-        result[i] = parseEntity(clazz, jsonObject);
+        result[i] = parseEntity(clazz, jsonObject, skipNonExistingFields);
       } catch (JSONException e) {
         throw new FoursquareApiException(e);
       }
@@ -37,7 +37,7 @@ public class JSONFieldParser {
     return result;
   }
   
-  public static FoursquareEntity parseEntity(Class<?> clazz, JSONObject jsonObject) throws FoursquareApiException {
+  public static FoursquareEntity parseEntity(Class<?> clazz, JSONObject jsonObject, boolean skipNonExistingFields) throws FoursquareApiException {
     FoursquareEntity entity = createNewField(clazz);
     
     String[] objectFieldNames = JSONObject.getNames(jsonObject);
@@ -47,14 +47,15 @@ public class JSONFieldParser {
         if (fieldClass == null) {
           Method setterMethod = getSetterMethod(entity.getClass(), objectFieldName);
           if (setterMethod == null) {
-            throw new FoursquareApiException("Could not find field " + objectFieldName + " from " + entity.getClass().getName() + " class");
+            if (!skipNonExistingFields)
+              throw new FoursquareApiException("Could not find field " + objectFieldName + " from " + entity.getClass().getName() + " class");
           } else {
             Class<?>[] parameters = setterMethod.getParameterTypes();
             if (parameters.length == 1) {
               fieldClass = parameters[0];
               
               try {
-                setterMethod.invoke(jsonObject, parseValue(fieldClass, jsonObject, objectFieldName));
+                setterMethod.invoke(jsonObject, parseValue(fieldClass, jsonObject, objectFieldName, skipNonExistingFields));
               } catch (JSONException e) {
                 throw new FoursquareApiException(e);
               } catch (IllegalArgumentException e) {
@@ -70,7 +71,7 @@ public class JSONFieldParser {
           }
         } else {
           try {
-            setEntityFieldValue(entity, objectFieldName, parseValue(fieldClass, jsonObject, objectFieldName));
+            setEntityFieldValue(entity, objectFieldName, parseValue(fieldClass, jsonObject, objectFieldName, skipNonExistingFields));
           } catch (JSONException e) {
             throw new FoursquareApiException(e);
           }
@@ -81,7 +82,7 @@ public class JSONFieldParser {
     return entity;
   }
   
-  private static Object parseValue(Class<?> clazz, JSONObject jsonObject, String objectFieldName) throws JSONException, FoursquareApiException {
+  private static Object parseValue(Class<?> clazz, JSONObject jsonObject, String objectFieldName, boolean skipNonExistingFields) throws JSONException, FoursquareApiException {
     if (clazz.isArray()) {
       JSONArray jsonArray = jsonObject.getJSONArray(objectFieldName);
       Class<?> arrayClass = clazz.getComponentType();
@@ -99,7 +100,7 @@ public class JSONFieldParser {
         } else if (arrayClass.equals(Boolean.class)) {
           arrayValue[i] = jsonArray.getBoolean(i);  
         } else if (instanceOf(arrayClass, FoursquareEntity.class)) {
-          arrayValue[i] = parseEntity(arrayClass, jsonArray.getJSONObject(i));
+          arrayValue[i] = parseEntity(arrayClass, jsonArray.getJSONObject(i), skipNonExistingFields);
         } else {
           throw new FoursquareApiException("Unknown array type: " + arrayClass);
         }
@@ -117,7 +118,7 @@ public class JSONFieldParser {
     } else if (clazz.equals(Boolean.class)) {
       return jsonObject.getBoolean(objectFieldName);
     } else if (instanceOf(clazz, FoursquareEntity.class)) {
-      return parseEntity(clazz, jsonObject.getJSONObject(objectFieldName)); 
+      return parseEntity(clazz, jsonObject.getJSONObject(objectFieldName), skipNonExistingFields); 
     } else {
       throw new FoursquareApiException("Unknown type: " + clazz);
     }

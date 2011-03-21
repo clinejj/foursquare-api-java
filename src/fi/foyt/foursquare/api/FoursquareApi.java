@@ -48,12 +48,16 @@ public class FoursquareApi {
     return oAuthToken;
   }
   
+  public void setSkipNonExistingFields(boolean skipNonExistingFields) {
+    this.skipNonExistingFields = skipNonExistingFields;
+  }
+  
   /* Users */
   
   public CompleteUser user(String id) throws FoursquareApiException {
     try {
       JSONObject response = doRequest(Method.GET, "users/" + id, true);
-      return (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getJSONObject("user"));
+      return (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getJSONObject("user"), this.skipNonExistingFields);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     } 
@@ -62,7 +66,7 @@ public class FoursquareApi {
   public CompactUser[] usersSearch(String phone, String email, String twitter, String twitterSource, String fbid, String name) throws FoursquareApiException {
     try {
       JSONObject response = doRequest(Method.GET, "users/search", true, "phone", phone, "email", email, "twitter", twitter, "twitterSource", twitterSource, "fbid", fbid, "name", name);
-      return (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getJSONArray("users"));
+      return (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getJSONArray("users"), this.skipNonExistingFields);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
@@ -71,7 +75,7 @@ public class FoursquareApi {
   public CompactUser[] usersRequests() throws FoursquareApiException {
     try {
       JSONObject response = doRequest(Method.GET, "users/requests", true);
-      return (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getJSONArray("users"));
+      return (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getJSONArray("users"), this.skipNonExistingFields);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
@@ -82,7 +86,7 @@ public class FoursquareApi {
   public CompleteVenue venue(String id) throws FoursquareApiException {
     try {
       JSONObject response = doRequest(Method.GET, "venues/" + id, isAuthenticated());
-      return (CompleteVenue) JSONFieldParser.parseEntity(CompleteVenue.class, response.getJSONObject("venue"));
+      return (CompleteVenue) JSONFieldParser.parseEntity(CompleteVenue.class, response.getJSONObject("venue"), this.skipNonExistingFields);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     } 
@@ -91,7 +95,7 @@ public class FoursquareApi {
   public CompleteVenue venuesAdd(String name, String address, String crossStreet, String city, String state, String zip, String phone, String ll, String primaryCategoryId) throws FoursquareApiException {
     try {
       JSONObject response = doRequest(Method.POST, "venues/add", true, "name", name, "address", address, "crossStreet", crossStreet, "city", city, "state", state, "zip", zip, "phone", phone, "ll", ll, "primaryCategoryId", primaryCategoryId);
-      return (CompleteVenue) JSONFieldParser.parseEntity(CompactVenue.class, response.getJSONObject("venue"));
+      return (CompleteVenue) JSONFieldParser.parseEntity(CompactVenue.class, response.getJSONObject("venue"), this.skipNonExistingFields);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     } 
@@ -100,7 +104,7 @@ public class FoursquareApi {
   public Category[] venuesCategories() throws FoursquareApiException {
     try {
       JSONObject response = doRequest(Method.GET, "venues/categories", isAuthenticated());
-      return (Category[]) JSONFieldParser.parseEntities(Category.class, response.getJSONArray("categories"));
+      return (Category[]) JSONFieldParser.parseEntities(Category.class, response.getJSONArray("categories"), this.skipNonExistingFields);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
@@ -109,7 +113,7 @@ public class FoursquareApi {
   public VenueGroup[] venuesSearch(String ll, Double llAcc, Double alt, Double altAcc, String query, Integer limit, String intent) throws FoursquareApiException {
     try {
       JSONObject response = doRequest(Method.GET, "venues/search", isAuthenticated(), "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "query", query, "limit", limit, "intent", intent);
-      return (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getJSONArray("groups"));
+      return (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getJSONArray("groups"), this.skipNonExistingFields);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
@@ -118,7 +122,7 @@ public class FoursquareApi {
   public CompactVenue[] venuesTrending(String ll, Integer limit, Integer radius) throws FoursquareApiException {
     try {
       JSONObject response = doRequest(Method.GET, "venues/trending", isAuthenticated(), "ll", ll, "limit", limit, "radius", radius);
-      return (CompactVenue[]) JSONFieldParser.parseEntities(CompactVenue.class, response.getJSONArray("venues"));
+      return (CompactVenue[]) JSONFieldParser.parseEntities(CompactVenue.class, response.getJSONArray("venues"), this.skipNonExistingFields);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
@@ -131,7 +135,7 @@ public class FoursquareApi {
   public Checkin checkinsAdd(String venueId, String venue, String shout, String broadcast, String ll, Double llAcc, Double alt, Double altAcc) throws FoursquareApiException {
     try {
        JSONObject response = doRequest(Method.POST, "checkins/add", true, "venueId", venueId, "venue", venue, "shout", shout, "broadcast", broadcast, "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc);
-      return (Checkin) JSONFieldParser.parseEntity(Checkin.class, response.getJSONObject("checkin"));
+      return (Checkin) JSONFieldParser.parseEntity(Checkin.class, response.getJSONObject("checkin"), this.skipNonExistingFields);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     } 
@@ -205,6 +209,7 @@ public class FoursquareApi {
     return oAuthToken != null && !"".equals(oAuthToken);
   }
   
+  private boolean skipNonExistingFields = true;
   private String clientId;
   private String clientSecret;
   private String oAuthToken;
