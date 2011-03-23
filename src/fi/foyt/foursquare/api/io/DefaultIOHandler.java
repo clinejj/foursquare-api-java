@@ -28,29 +28,33 @@ public class DefaultIOHandler extends IOHandler {
     try {
       URL aUrl = new URL(url);
       HttpURLConnection connection = (HttpURLConnection) aUrl.openConnection();
-      connection.setDoInput(true);
-      connection.setDoOutput(true);
-      connection.setRequestMethod(method.name());
-      connection.connect();
+      try {
+        connection.setDoInput(true);
+        connection.setDoOutput(true);
+        connection.setRequestMethod(method.name());
+        connection.connect();
 
-      StringWriter responseWriter = new StringWriter();
+        StringWriter responseWriter = new StringWriter();
 
-      InputStream inputStream = connection.getInputStream();
-      char[] buf = new char[1024];
-      int l = 0;
+        InputStream inputStream = connection.getInputStream();
+        char[] buf = new char[1024];
+        int l = 0;
 
-      InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-      while ((l = inputStreamReader.read(buf)) > 0) {
-        responseWriter.write(buf, 0, l);
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        while ((l = inputStreamReader.read(buf)) > 0) {
+          responseWriter.write(buf, 0, l);
+        }
+
+        responseWriter.flush();
+        responseWriter.close();
+
+        int responseCode = connection.getResponseCode();
+        String responseContent = responseWriter.getBuffer().toString();
+
+        return new Response(responseContent, responseCode, connection.getResponseMessage());
+      } finally {
+        connection.disconnect();
       }
-
-      responseWriter.flush();
-      responseWriter.close();
-
-      int responseCode = connection.getResponseCode();
-      String responseContent = responseWriter.getBuffer().toString();
-
-      return new Response(responseContent, responseCode, connection.getResponseMessage());
 
     } catch (MalformedURLException e) {
       throw new FoursquareApiException(e);
