@@ -13,6 +13,8 @@ package fi.foyt.foursquare.api.entities;
 
 public class CheckinGroup extends Group<Checkin> {
 
+  private static final long serialVersionUID = -6971992363107984905L;
+
   public Checkin[] getItems() {
     return items;
   }

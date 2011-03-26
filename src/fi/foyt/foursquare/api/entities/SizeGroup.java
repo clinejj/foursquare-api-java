@@ -13,6 +13,8 @@ package fi.foyt.foursquare.api.entities;
 
 public class SizeGroup extends Group<Size> {
 
+  private static final long serialVersionUID = 8028153409437582383L;
+
   public Size[] getItems() {
     return items;
   }

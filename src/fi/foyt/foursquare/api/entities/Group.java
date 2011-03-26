@@ -13,6 +13,8 @@ package fi.foyt.foursquare.api.entities;
 
 public abstract class Group<T> extends Count {
 
+  private static final long serialVersionUID = -3156890964170514232L;
+
   public String getType() {
     return type;
   }

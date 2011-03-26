@@ -13,6 +13,8 @@ package fi.foyt.foursquare.api.entities;
 
 public class Tips extends Count {
   
+  private static final long serialVersionUID = 6598277929123957554L;
+
   public TipGroup[] getGroups() {
     return groups;
   }

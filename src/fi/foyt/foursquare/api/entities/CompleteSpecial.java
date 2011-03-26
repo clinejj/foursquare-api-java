@@ -13,7 +13,9 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
-public class CompleteSpecial extends FoursquareEntity {
+public class CompleteSpecial implements FoursquareEntity {
+  
+  private static final long serialVersionUID = 3919231353933056022L;
   
   public String getId() {
     return id;

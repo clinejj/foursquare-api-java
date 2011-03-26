@@ -13,7 +13,9 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
-public class Checkin extends FoursquareEntity {
+public class Checkin implements FoursquareEntity {
+
+  private static final long serialVersionUID = 4805612286360679516L;
 
   public String getId() {
     return id;

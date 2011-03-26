@@ -99,7 +99,7 @@ public class JSONFieldParser {
           arrayValue[i] = jsonArray.getDouble(i);  
         } else if (arrayClass.equals(Boolean.class)) {
           arrayValue[i] = jsonArray.getBoolean(i);  
-        } else if (instanceOf(arrayClass, FoursquareEntity.class)) {
+        } else if (isFoursquareEntity(arrayClass)) {
           arrayValue[i] = parseEntity(arrayClass, jsonArray.getJSONObject(i), skipNonExistingFields);
         } else {
           throw new FoursquareApiException("Unknown array type: " + arrayClass);
@@ -117,20 +117,22 @@ public class JSONFieldParser {
       return jsonObject.getDouble(objectFieldName);
     } else if (clazz.equals(Boolean.class)) {
       return jsonObject.getBoolean(objectFieldName);
-    } else if (instanceOf(clazz, FoursquareEntity.class)) {
+    } else if (isFoursquareEntity(clazz)) {
       return parseEntity(clazz, jsonObject.getJSONObject(objectFieldName), skipNonExistingFields); 
     } else {
       throw new FoursquareApiException("Unknown type: " + clazz);
     }
   }
   
-  private static boolean instanceOf(Class<?> class1, Class<?> class2) {
-    if (class1.equals(class2))
-      return true;
+  private static boolean isFoursquareEntity(Class<?> clazz) {
+    for (Class<?> intrf : clazz.getInterfaces()) {
+      if (intrf.equals(FoursquareEntity.class))
+        return true;
+    }
     
-    Class<?> superClass = class1.getSuperclass();
+    Class<?> superClass = clazz.getSuperclass();
     if (!superClass.equals(Object.class)) {
-      return instanceOf(superClass, class2);
+      return isFoursquareEntity(superClass);
     }
     
     return false;

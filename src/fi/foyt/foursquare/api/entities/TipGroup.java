@@ -13,6 +13,8 @@ package fi.foyt.foursquare.api.entities;
 
 public class TipGroup extends Group<CompactTip> {
 
+  private static final long serialVersionUID = -9176732625588094423L;
+
   public CompactTip[] getItems() {
     return items;
   }

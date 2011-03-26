@@ -13,6 +13,8 @@ package fi.foyt.foursquare.api.entities;
 
 public class VenueGroup extends Group<CompactVenue> {
 
+  private static final long serialVersionUID = -996401659508844800L;
+
   public CompactVenue[] getItems() {
     return items;
   }

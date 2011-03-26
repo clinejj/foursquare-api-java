@@ -13,7 +13,9 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
-public class CompactVenue extends FoursquareEntity {
+public class CompactVenue implements FoursquareEntity {
+  
+  private static final long serialVersionUID = -7714811839778109046L;
   
   public String getId() {
     return id;

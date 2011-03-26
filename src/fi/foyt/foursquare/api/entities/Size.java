@@ -13,7 +13,9 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
-public class Size extends FoursquareEntity {
+public class Size implements FoursquareEntity {
+
+  private static final long serialVersionUID = 4506057169243630084L;
 
   public Integer getHeight() {
     return height;

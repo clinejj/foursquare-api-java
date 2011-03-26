@@ -13,6 +13,8 @@ package fi.foyt.foursquare.api.entities;
 
 public class CompleteUser extends CompactUser {
 
+  private static final long serialVersionUID = 8689854240168137995L;
+
   public String getType() {
     return type;
   }

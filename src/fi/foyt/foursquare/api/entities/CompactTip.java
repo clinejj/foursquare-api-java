@@ -13,8 +13,10 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
-public class CompactTip extends FoursquareEntity {
+public class CompactTip implements FoursquareEntity {
 
+  private static final long serialVersionUID = 5912726139848171570L;
+  
   public String getId() {
     return id;
   }

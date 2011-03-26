@@ -13,7 +13,9 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
-public class Photo extends FoursquareEntity {
+public class Photo implements FoursquareEntity {
+
+  private static final long serialVersionUID = -6641038454071667700L;
 
   public String getId() {
     return id;

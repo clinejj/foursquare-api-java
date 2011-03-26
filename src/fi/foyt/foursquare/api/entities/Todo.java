@@ -13,7 +13,9 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
-public class Todo extends FoursquareEntity {
+public class Todo implements FoursquareEntity {
+
+  private static final long serialVersionUID = 8713217262629234118L;
 
   public Long getCreatedAt() {
     return createdAt;

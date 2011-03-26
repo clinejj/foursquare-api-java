@@ -13,7 +13,9 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
-public class Category extends FoursquareEntity {
+public class Category implements FoursquareEntity {
+  
+  private static final long serialVersionUID = -4573082152802069375L;
   
   public String getId() {
     return id;

@@ -11,6 +11,8 @@
 
 package fi.foyt.foursquare.api;
 
-public class FoursquareEntity {
+import java.io.Serializable;
+
+public interface FoursquareEntity extends Serializable {
 
 }

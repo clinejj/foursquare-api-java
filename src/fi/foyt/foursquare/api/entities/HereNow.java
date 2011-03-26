@@ -13,6 +13,8 @@ package fi.foyt.foursquare.api.entities;
 
 public class HereNow extends Count {
   
+  private static final long serialVersionUID = -39143307292834176L;
+
   public CheckinGroup[] getGroups() {
     return groups;
   }

@@ -13,7 +13,9 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
-public class Source extends FoursquareEntity {
+public class Source implements FoursquareEntity {
+
+  private static final long serialVersionUID = -1503607114357562300L;
 
   public String getName() {
     return name;

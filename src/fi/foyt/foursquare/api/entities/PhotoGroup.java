@@ -13,6 +13,8 @@ package fi.foyt.foursquare.api.entities;
 
 public class PhotoGroup extends Group<Photo> {
 
+  private static final long serialVersionUID = -7698755278771196812L;
+
   public Photo[] getItems() {
     return items;
   }
