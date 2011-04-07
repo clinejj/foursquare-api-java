@@ -19,12 +19,10 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import fi.foyt.foursquare.api.FoursquareApiException;
-
 public class DefaultIOHandler extends IOHandler {
 
   @Override
-  public Response fetchData(String url, Method method) throws FoursquareApiException {
+  public Response fetchData(String url, Method method) throws IOException {
     try {
       URL aUrl = new URL(url);
       HttpURLConnection connection = (HttpURLConnection) aUrl.openConnection();
@@ -57,9 +55,7 @@ public class DefaultIOHandler extends IOHandler {
       }
 
     } catch (MalformedURLException e) {
-      throw new FoursquareApiException(e);
-    } catch (IOException e) {
-      throw new FoursquareApiException(e);
-    }
+      throw new IOException(e);
+    } 
   }
 }

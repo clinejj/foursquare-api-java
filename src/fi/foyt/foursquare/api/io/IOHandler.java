@@ -11,10 +11,10 @@
 
 package fi.foyt.foursquare.api.io;
 
-import fi.foyt.foursquare.api.FoursquareApiException;
+import java.io.IOException;
 
 public abstract class IOHandler {
 
-  public abstract Response fetchData(String url, Method method) throws FoursquareApiException;
+  public abstract Response fetchData(String url, Method method) throws IOException;
   
 }
