@@ -1,6 +1,6 @@
 /*
  * FoursquareAPI - Foursquare API for Java
- * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
+ * Copyright (C) 2008 - 2011 Antti Lepp√§ / Foyt
  * http://www.foyt.fi
  * 
  * License: 
