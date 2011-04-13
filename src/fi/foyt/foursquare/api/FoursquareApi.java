@@ -193,13 +193,23 @@ public class FoursquareApi {
   }
 
   public String getAuthenticationUrl() {
-    return new StringBuilder("https://foursquare.com/oauth2/authenticate?client_id=").append(this.clientId).append("&response_type=code")
-        .append("&redirect_uri=").append(this.redirectUrl).toString();
+    return new StringBuilder("https://foursquare.com/oauth2/authenticate?client_id=")
+      .append(this.clientId)
+      .append("&response_type=code")
+      .append("&redirect_uri=")
+      .append(this.redirectUrl).toString();
   }
 
   public void authenticateCode(String code) throws FoursquareApiException {
-    StringBuilder urlBuilder = new StringBuilder("https://foursquare.com/oauth2/access_token?client_id=").append(this.clientId).append("&client_secret=")
-        .append(this.clientSecret).append("&grant_type=authorization_code").append("&redirect_uri=").append(this.redirectUrl).append("&code=").append(code);
+    StringBuilder urlBuilder = new StringBuilder("https://foursquare.com/oauth2/access_token?client_id=")
+      .append(this.clientId)
+      .append("&client_secret=")
+      .append(this.clientSecret)
+      .append("&grant_type=authorization_code")
+      .append("&redirect_uri=")
+      .append(this.redirectUrl)
+      .append("&code=")
+      .append(code);
 
     try {
       JSONObject response = doJsonRequest(Method.GET, urlBuilder.toString());
