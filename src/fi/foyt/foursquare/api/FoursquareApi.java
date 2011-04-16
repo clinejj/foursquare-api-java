@@ -30,16 +30,25 @@ public class FoursquareApi {
   }
 
   public FoursquareApi(String clientId, String clientSecret, String redirectUrl, IOHandler ioHandler) {
+    this(clientId, clientSecret, redirectUrl, null, ioHandler);
+  }
+
+  public FoursquareApi(String clientId, String clientSecret, String redirectUrl, String oAuthToken, IOHandler ioHandler) {
     this.clientId = clientId;
     this.clientSecret = clientSecret;
     this.redirectUrl = redirectUrl;
+    this.oAuthToken = oAuthToken;
     this.ioHandler = ioHandler;
   }
 
   private String getOAuthToken() {
     return oAuthToken;
   }
-
+  
+  public void setoAuthToken(String oAuthToken) {
+    this.oAuthToken = oAuthToken;
+  }
+  
   public void setSkipNonExistingFields(boolean skipNonExistingFields) {
     this.skipNonExistingFields = skipNonExistingFields;
   }
