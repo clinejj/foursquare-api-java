@@ -3,7 +3,7 @@
   <groupId>fi.foyt</groupId>
   <artifactId>foursquare-api-gae</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
   <name>Foursquare API Google App Engine support</name>
 
   <dependencies>
