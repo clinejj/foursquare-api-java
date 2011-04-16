@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fi.foyt</groupId>
+  <artifactId>foursquare-api-gae</artifactId>
+  <packaging>jar</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Foursquare API Google App Engine support</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>fi.foyt</groupId>
+      <artifactId>foursquare-api</artifactId>
+      <version>0.1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.appengine</groupId>
+      <artifactId>appengine-api-1.0-sdk</artifactId>
+      <version>1.4.3</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <sourceDirectory>${basedir}/src</sourceDirectory>
+    <resources>
+      <resource>
+        <filtering>false</filtering>
+        <directory>${basedir}/src</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+        <excludes>
+          <exclude>**/*.java</exclude>
+          <exclude>**/package.html</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <issueManagement>
+    <url>https://code.google.com/p/foursquare-api-java/issues/</url>
+    <system>Google Code</system>
+  </issueManagement>
+  <scm>
+    <url>http://foursquare-api-java.googlecode.com/svn/</url>
+  </scm>
+  <organization>
+    <name>Foyt</name>
+    <url>www.foyt.fi</url>
+  </organization>
+  <url>http://foursquare-api-java.googlecode.com/</url>
+  <description>Google App Engine IO Handler for Foursquare API</description>
+</project>
