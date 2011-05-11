@@ -263,7 +263,7 @@ public class FoursquareApi {
     }
 
     try {
-      return doJsonRequest(method, urlBuilder.toString());
+      return doJsonRequest(method, urlBuilder.toString()).getJSONObject("response");
     } catch (IOException e) {
       throw new FoursquareApiException(e);
     }
@@ -273,7 +273,7 @@ public class FoursquareApi {
     Response response = ioHandler.fetchData(url, method);
     if ((response.getResponseCode() >= 200) && (response.getResponseCode() <= 299)) {
       JSONObject responseObject = new JSONObject(response.getResponseContent());
-      return responseObject.getJSONObject("response");
+      return responseObject;
     } else {
       throw new IOException("Request canceled with error code " + response.getResponseCode() + " / " + response.getMessage());
     }
