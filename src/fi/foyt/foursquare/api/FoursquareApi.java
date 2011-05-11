@@ -41,7 +41,7 @@ public class FoursquareApi {
     this.ioHandler = ioHandler;
   }
 
-  private String getOAuthToken() {
+  public String getOAuthToken() {
     return oAuthToken;
   }
   
