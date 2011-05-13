@@ -15,6 +15,7 @@ import fi.foyt.foursquare.api.io.DefaultIOHandler;
 import fi.foyt.foursquare.api.io.IOHandler;
 import fi.foyt.foursquare.api.io.Method;
 import fi.foyt.foursquare.api.io.Response;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -140,7 +141,11 @@ public class FoursquareApi {
     try {
       JSONObject response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "query",
           query, "limit", limit, "intent", intent);
-      return (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getJSONArray("groups"), this.skipNonExistingFields);
+      
+      if (response.has("groups"))
+        return (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getJSONArray("groups"), this.skipNonExistingFields);
+      else
+        return new VenueGroup[0];
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
