@@ -29,8 +29,8 @@ public class GAEIOHandler extends IOHandler {
         httpMethod = HTTPMethod.POST;
         break;
       }
-
-      HTTPRequest httpRequest = new HTTPRequest(aUrl, httpMethod, doNotValidateCertificate());
+      
+      HTTPRequest httpRequest = new HTTPRequest(aUrl, httpMethod, doNotValidateCertificate().setDeadline(10d));
       URLFetchService service = URLFetchServiceFactory.getURLFetchService();
       HTTPResponse response = service.fetch(httpRequest);
       
