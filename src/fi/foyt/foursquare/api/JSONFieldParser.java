@@ -15,6 +15,8 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Iterator;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,7 +42,7 @@ public class JSONFieldParser {
   public static FoursquareEntity parseEntity(Class<?> clazz, JSONObject jsonObject, boolean skipNonExistingFields) throws FoursquareApiException {
     FoursquareEntity entity = createNewField(clazz);
     
-    String[] objectFieldNames = JSONObject.getNames(jsonObject);
+    String[] objectFieldNames = getFieldNames(jsonObject);
     if (objectFieldNames != null) {
       for (String objectFieldName : objectFieldNames) {
         Class<?> fieldClass = getFieldClass(entity.getClass(), objectFieldName);
@@ -203,5 +205,22 @@ public class JSONFieldParser {
     } catch (IllegalAccessException e) {
       return null;
     }
+  }
+  
+  private static String[] getFieldNames(JSONObject jsonObject) {
+    int length = jsonObject.length();
+    if (length == 0)
+      return null;
+    
+    Iterator<?> iterator = jsonObject.keys();
+    String[] names = new String[length];
+    int i = 0;
+
+    while (iterator.hasNext()) {
+      names[i] = (String) iterator.next();
+      i += 1;
+    }
+    
+    return names;
   }
 }
