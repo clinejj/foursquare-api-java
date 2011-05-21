@@ -31,14 +31,13 @@ public class DefaultIOHandler extends IOHandler {
         connection.setDoOutput(true);
         connection.setRequestMethod(method.name());
         connection.connect();
-
         StringWriter responseWriter = new StringWriter();
 
         InputStream inputStream = connection.getInputStream();
         char[] buf = new char[1024];
         int l = 0;
 
-        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
         while ((l = inputStreamReader.read(buf)) > 0) {
           responseWriter.write(buf, 0, l);
         }
@@ -48,7 +47,7 @@ public class DefaultIOHandler extends IOHandler {
 
         int responseCode = connection.getResponseCode();
         String responseContent = responseWriter.getBuffer().toString();
-
+        
         return new Response(responseContent, responseCode, connection.getResponseMessage());
       } finally {
         connection.disconnect();
