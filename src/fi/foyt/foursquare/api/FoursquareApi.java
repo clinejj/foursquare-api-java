@@ -20,6 +20,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 /**
  * Entry point for FoursquareAPI
@@ -244,16 +246,20 @@ public class FoursquareApi {
 
     if (params.length > 0) {
       int paramIndex = 0;
-      while (paramIndex < params.length) {
-        Object value = params[paramIndex + 1];
-        if (value != null) {
-          urlBuilder.append(params[paramIndex]);
-          urlBuilder.append('=');
-          urlBuilder.append(value);
-          urlBuilder.append('&');
+      try {
+        while (paramIndex < params.length) {
+          Object value = params[paramIndex + 1];
+          if (value != null) {
+            urlBuilder.append(params[paramIndex]);
+            urlBuilder.append('=');
+            urlBuilder.append(URLEncoder.encode(value.toString(),"UTF-8"));
+            urlBuilder.append('&');
+          }
+  
+          paramIndex += 2;
         }
-
-        paramIndex += 2;
+      } catch (UnsupportedEncodingException e) {
+        throw new FoursquareApiException(e);
       }
     }
 
