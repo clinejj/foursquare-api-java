@@ -71,7 +71,7 @@ public class FoursquareApi {
     try {
       JSONObject response = doApiRequest(Method.GET, "users/search", true, "phone", phone, "email", email, "twitter", twitter, "twitterSource", twitterSource,
           "fbid", fbid, "name", name);
-      return (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getJSONArray("users"), this.skipNonExistingFields);
+      return (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getJSONArray("results"), this.skipNonExistingFields);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
