@@ -3,7 +3,7 @@
   <groupId>fi.foyt</groupId>
   <artifactId>foursquare-api</artifactId>
   <packaging>jar</packaging>
-  <version>0.1.6</version>
+  <version>0.1.7-SNAPSHOT</version>
   <name>Foursquare API</name>
 
   <dependencies>
@@ -14,6 +14,13 @@
     </dependency>
   </dependencies>
   
+  <distributionManagement>
+    <repository>
+      <id>foursquareapijava</id>
+      <url>svn:https://foursquare-api-java.googlecode.com/svn/repository</url>
+    </repository>
+  </distributionManagement>
+
   <build>
     <sourceDirectory>${basedir}/src</sourceDirectory>
     <resources>
@@ -33,14 +40,34 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
         <configuration>
           <source>1.5</source>
           <target>1.5</target>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.6</version>
+        <dependencies>
+          <dependency>
+            <groupId>com.google.code.maven-svn-wagon</groupId>
+            <artifactId>maven-svn-wagon</artifactId>
+            <version>1.4</version>
+          </dependency>
+        </dependencies>
+      </plugin>
     </plugins>
+    <extensions>
+      <extension>
+        <groupId>com.google.code.maven-svn-wagon</groupId>
+        <artifactId>maven-svn-wagon</artifactId>
+        <version>1.4</version>
+      </extension>
+    </extensions>
   </build>
-
+ 
   <issueManagement>
     <url>https://code.google.com/p/foursquare-api-java/issues/</url>
     <system>Google Code</system>
