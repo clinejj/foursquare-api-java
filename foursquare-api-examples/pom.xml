@@ -5,12 +5,20 @@
   <packaging>jar</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>Foursquare API Examples</name>
+  
+  <repositories>
+    <repository>
+      <id>foursquareapijava</id>
+      <name>Foursquare V2 API for Java Repository</name>
+      <url>http://foursquare-api-java.googlecode.com/svn/repository</url>
+    </repository>
+  </repositories>
 
   <dependencies>
     <dependency>
       <groupId>fi.foyt</groupId>
       <artifactId>foursquare-api</artifactId>
-      <version>0.1.4</version>
+      <version>0.1.6</version>
     </dependency>
   </dependencies>
   
