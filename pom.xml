@@ -3,7 +3,7 @@
   <groupId>fi.foyt</groupId>
   <artifactId>foursquare-api</artifactId>
   <packaging>jar</packaging>
-  <version>0.1.6-SNAPSHOT</version>
+  <version>0.1.6</version>
   <name>Foursquare API</name>
 
   <dependencies>
