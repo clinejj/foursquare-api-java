@@ -176,31 +176,31 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-
-  // TODO: checkins/recent
-  // TODO: checkins/addcomment
-  // TODO: checkins/deletecomment
+  
+  // TODO: checkins/recent (https://code.google.com/p/foursquare-api-java/issues/detail?id=13)
+  // TODO: checkins/addcomment (https://code.google.com/p/foursquare-api-java/issues/detail?id=14)
+  // TODO: checkins/deletecomment (https://code.google.com/p/foursquare-api-java/issues/detail?id=15)
 
   /* Tips */
 
-  // TODO: tips/ID
-  // TODO: tips/add
-  // TODO: tips/search
+  // TODO: tips/ID (https://code.google.com/p/foursquare-api-java/issues/detail?id=16)  
+  // TODO: tips/add (https://code.google.com/p/foursquare-api-java/issues/detail?id=17)                   
+  // TODO: tips/search (https://code.google.com/p/foursquare-api-java/issues/detail?id=18)
 
   /* Photos */
 
-  // TODO: photos/ID
-  // TODO: photos/add
+  // TODO: photos/ID (https://code.google.com/p/foursquare-api-java/issues/detail?id=19)
+  // TODO: photos/add (https://code.google.com/p/foursquare-api-java/issues/detail?id=20) 
 
   /* Settings */
 
-  // TODO: settings/all
-  // TODO: settings/set
+  // TODO: settings/all (https://code.google.com/p/foursquare-api-java/issues/detail?id=21)           
+  // TODO: settings/set (https://code.google.com/p/foursquare-api-java/issues/detail?id=22)
 
   /* Specials */
 
-  // TODO: specials/ID
-  // TODO: specials/search
+  // TODO: specials/ID (https://code.google.com/p/foursquare-api-java/issues/detail?id=23)   
+  // TODO: specials/search (https://code.google.com/p/foursquare-api-java/issues/detail?id=24)
 
   /* Authentication */
 
