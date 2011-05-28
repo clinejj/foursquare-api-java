@@ -199,9 +199,24 @@ public class FoursquareApi {
 
   /* Specials */
 
-  // TODO: specials/ID (https://code.google.com/p/foursquare-api-java/issues/detail?id=23)   
-  // TODO: specials/search (https://code.google.com/p/foursquare-api-java/issues/detail?id=24)
+  public CompleteSpecial special(String id, String venueId) throws FoursquareApiException {
+    try {
+      JSONObject response = doApiRequest(Method.GET, "specials/" + id, isAuthenticated(), "venueId", venueId);
+      return (CompleteSpecial) JSONFieldParser.parseEntity(CompleteSpecial.class, response.getJSONObject("special"), this.skipNonExistingFields);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
 
+  public SpecialGroup specialsSearch(String ll, Double llAcc, Double alt, Double altAcc, Integer limit) throws FoursquareApiException {
+    try {
+      JSONObject response = doApiRequest(Method.GET, "specials/search", true, "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "limit", limit);
+      return (SpecialGroup) JSONFieldParser.parseEntity(SpecialGroup.class, response.getJSONObject("specials"), this.skipNonExistingFields);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
   /* Authentication */
 
   private boolean isAuthenticated() {
