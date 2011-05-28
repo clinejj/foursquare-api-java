@@ -193,8 +193,25 @@ public class FoursquareApi {
   // TODO: photos/add (https://code.google.com/p/foursquare-api-java/issues/detail?id=20) 
 
   /* Settings */
+  
+  public Setting settingSet(String settingId, Boolean value) throws FoursquareApiException {
+    try {
+      JSONObject response = doApiRequest(Method.POST, "settings/" + settingId + "/set", true, "value", value ? 1 : 0);
+      return (Setting) JSONFieldParser.parseEntity(Setting.class, response.getJSONObject("settings"), this.skipNonExistingFields);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
 
-  // TODO: settings/all (https://code.google.com/p/foursquare-api-java/issues/detail?id=21)           
+  public Setting settingsAll() throws FoursquareApiException {
+    try {
+      JSONObject response = doApiRequest(Method.GET, "settings/all", true);
+      return (Setting) JSONFieldParser.parseEntity(Setting.class, response.getJSONObject("settings"), this.skipNonExistingFields);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+             
   // TODO: settings/set (https://code.google.com/p/foursquare-api-java/issues/detail?id=22)
 
   /* Specials */
