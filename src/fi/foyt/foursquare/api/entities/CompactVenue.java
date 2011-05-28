@@ -52,6 +52,10 @@ public class CompactVenue implements FoursquareEntity {
   public Stats getStats() {
     return stats;
   }
+  
+  public String getUrl() {
+    return url;
+  }
 
   private String id;
   private String name;
@@ -62,5 +66,5 @@ public class CompactVenue implements FoursquareEntity {
   private CompleteSpecial[] specials;
   private HereNow hereNow;
   private Stats stats;
-  
+  private String url;
 }
