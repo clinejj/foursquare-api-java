@@ -28,6 +28,10 @@ public class CompleteSpecial implements FoursquareEntity {
   public String getMessage() {
     return message;
   }
+  
+  public String getFinePrint() {
+    return finePrint;
+  }
 
   public String getDescription() {
     return description;
@@ -36,15 +40,41 @@ public class CompleteSpecial implements FoursquareEntity {
   public Boolean getUnlocked() {
     return unlocked;
   }
-
+  
+  public String getIcon() {
+    return icon;
+  }
+  
+  public String getTitle() {
+    return title;
+  }
+  
+  public String getState() {
+    return state;
+  }
+  
+  public String getProvider() {
+    return provider;
+  }
+  
+  public String getRedemption() {
+    return redemption;
+  }
+  
   public CompactVenue getVenue() {
     return venue;
   }
-
+  
   private String id;
   private String type;
   private String message;
+  private String finePrint;
   private String description;
   private Boolean unlocked;
+  private String icon;
+  private String title;
+  private String state;
+  private String provider;
+  private String redemption;
   private CompactVenue venue;
 }
