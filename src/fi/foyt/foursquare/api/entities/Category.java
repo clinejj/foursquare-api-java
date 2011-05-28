@@ -24,6 +24,10 @@ public class Category implements FoursquareEntity {
   public String getName() {
     return name;
   }
+  
+  public String getPluralName() {
+    return pluralName;
+  }
 
   public String getIcon() {
     return icon;
@@ -43,6 +47,7 @@ public class Category implements FoursquareEntity {
 
   private String id;
   private String name;
+  private String pluralName;
   private String icon;
   private String[] parents;
   private Boolean primary;
