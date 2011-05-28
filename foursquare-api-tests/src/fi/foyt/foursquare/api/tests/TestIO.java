@@ -81,5 +81,7 @@ public class TestIO extends IOHandler {
   static {
     setResponse("specials/4da37ddb15ad530c110a9d52?venueId=4cb38bf20cdc721ea943234f", "specials/id_1.json");
     setResponse("specials/search?ll=40.7%2C-73.9", "specials/search_1.json");
+    setResponse("settings/all", "settings/all_1.json");
+    setResponse("settings/receivePings/set?value=0", "settings/set_1.json");
   }
 }
