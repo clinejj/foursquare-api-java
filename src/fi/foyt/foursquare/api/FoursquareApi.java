@@ -56,8 +56,22 @@ public class FoursquareApi {
     this.skipNonExistingFields = skipNonExistingFields;
   }
 
-  /* Users */
-
+  /* Users */ 
+  
+  //TODO: users/leaderboard (https://code.google.com/p/foursquare-api-java/issues/detail?id=26)
+  
+  //TODO: users/badges (https://code.google.com/p/foursquare-api-java/issues/detail?id=27)
+  //TODO: users/checkins (https://code.google.com/p/foursquare-api-java/issues/detail?id=28)
+  //TODO: users/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=29)
+  //TODO: users/todos (https://code.google.com/p/foursquare-api-java/issues/detail?id=30)
+  //TODO: users/venuehistory (https://code.google.com/p/foursquare-api-java/issues/detail?id=21)
+  
+  //TODO: users/request (https://code.google.com/p/foursquare-api-java/issues/detail?id=32)
+  //TODO: users/unfriend (https://code.google.com/p/foursquare-api-java/issues/detail?id=33)
+  //TODO: users/approve (https://code.google.com/p/foursquare-api-java/issues/detail?id=34)
+  //TODO: users/deny (https://code.google.com/p/foursquare-api-java/issues/detail?id=35)
+  //TODO: users/setpings (https://code.google.com/p/foursquare-api-java/issues/detail?id=36)
+  
   public CompleteUser user(String id) throws FoursquareApiException {
     try {
       JSONObject response = doApiRequest(Method.GET, "users/" + id, true);
@@ -109,6 +123,15 @@ public class FoursquareApi {
 
   /* Venues */
 
+  //TODO: venues/explore (https://code.google.com/p/foursquare-api-java/issues/detail?id=37)    
+  //TODO: venues/herenow (https://code.google.com/p/foursquare-api-java/issues/detail?id=38)
+  //TODO: venues/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=39)
+  //TODO: venues/photos (https://code.google.com/p/foursquare-api-java/issues/detail?id=40)
+  //TODO: venues/links (https://code.google.com/p/foursquare-api-java/issues/detail?id=41)
+  //TODO: venues/marktodo (https://code.google.com/p/foursquare-api-java/issues/detail?id=42)
+  //TODO: venues/flag (https://code.google.com/p/foursquare-api-java/issues/detail?id=43)
+  //TODO: venues/proposeedit (https://code.google.com/p/foursquare-api-java/issues/detail?id=44)
+  
   public CompleteVenue venue(String id) throws FoursquareApiException {
     try {
       JSONObject response = doApiRequest(Method.GET, "venues/" + id, isAuthenticated());
@@ -164,7 +187,7 @@ public class FoursquareApi {
 
   /* Checkins */
 
-  // TODO: checkin/ID
+  // TODO: checkins/ID (https://code.google.com/p/foursquare-api-java/issues/detail?id=45)
 
   public Checkin checkinsAdd(String venueId, String venue, String shout, String broadcast, String ll, Double llAcc, Double alt, Double altAcc)
       throws FoursquareApiException {
@@ -186,6 +209,9 @@ public class FoursquareApi {
   // TODO: tips/ID (https://code.google.com/p/foursquare-api-java/issues/detail?id=16)  
   // TODO: tips/add (https://code.google.com/p/foursquare-api-java/issues/detail?id=17)                   
   // TODO: tips/search (https://code.google.com/p/foursquare-api-java/issues/detail?id=18)
+  // TODO: tips/marktodo (https://code.google.com/p/foursquare-api-java/issues/detail?id=25)
+  // TODO: tips/markdone (https://code.google.com/p/foursquare-api-java/issues/detail?id=46)
+  // TODO: tips/unmark (https://code.google.com/p/foursquare-api-java/issues/detail?id=47)
 
   /* Photos */
 
