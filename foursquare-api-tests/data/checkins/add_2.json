@@ -1,0 +1,1 @@
+{"meta":{"code":200},"notifications":[{"type":"message","item":{"message":"OK! We've got you @ Test."}}],"response":{"checkin":{"id":"4de470c0ae60e7f3ac1f0fa7","createdAt":1306816704,"type":"venueless","timeZone":"Europe/Istanbul","location":{"name":"Test","lat":40.0,"lng":40.0}}}}
