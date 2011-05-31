@@ -15,7 +15,9 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -57,7 +59,8 @@ public class JSONFieldParser {
               fieldClass = parameters[0];
               
               try {
-                setterMethod.invoke(jsonObject, parseValue(fieldClass, jsonObject, objectFieldName, skipNonExistingFields));
+                setterMethod.setAccessible(true);
+                setterMethod.invoke(entity, parseValue(fieldClass, jsonObject, objectFieldName, skipNonExistingFields));
               } catch (JSONException e) {
                 throw new FoursquareApiException(e);
               } catch (IllegalArgumentException e) {
@@ -156,28 +159,35 @@ public class JSONFieldParser {
     }
   } 
   
-  private static Method getMethod(Class<?> entityClass, String methodName) {
-    try {
-      Method method = entityClass.getDeclaredMethod(methodName);
-      method.setAccessible(true);
-      return method;
-    } catch (SecurityException e) {
-      return null;
-    } catch (NoSuchMethodException e) {
-      Class<?> superClass = entityClass.getSuperclass();
-      if (superClass.equals(Object.class))
-        return null;
-      else
-        return getMethod(superClass, methodName);
-    }
+  private static List<Method> getMethods(Class<?> entityClass) {
+    List<Method> result;
+    
+    Class<?> superClass;
+    do {
+      result = Arrays.asList(entityClass.getDeclaredMethods());
+      superClass = entityClass.getSuperclass();
+      if (!superClass.equals(Object.class)) 
+        result.addAll(getMethods(superClass));
+    } while (!superClass.equals(Object.class));
+    
+    return result;
   }
   
   private static Method getSetterMethod(Class<?> entityClass, String fieldName) {
-    StringBuilder result = new StringBuilder();
-    result.append("set");
-    result.append(Character.toUpperCase(fieldName.charAt(0)));
-    result.append(fieldName.substring(1));
-    return getMethod(entityClass, result.toString());
+    StringBuilder methodNameBuilder = new StringBuilder();
+    methodNameBuilder.append("set");
+    methodNameBuilder.append(Character.toUpperCase(fieldName.charAt(0)));
+    methodNameBuilder.append(fieldName.substring(1));
+    
+    String methodName = methodNameBuilder.toString();
+    
+    List<Method> methods = getMethods(entityClass);
+    for (Method method : methods) {
+      if (method.getName().equals(methodName))
+        return method;
+    }
+    
+    return null;
   }
   
   private static Class<?> getFieldClass(Class<?> entityClass, String fieldName) {
