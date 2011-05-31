@@ -42,17 +42,17 @@ public class Users {
     assertEquals(new Long(35), user.getScores().getMax());
     assertEquals(new Long(50), user.getScores().getGoal());
     assertEquals(new Long(3), user.getScores().getCheckinsCount());
-    
+
     FriendGroups friends = user.getFriends();
-    
+
     assertEquals(new Long(2), friends.getCount());
     FriendGroup friendsGroup = friends.getGroups()[0];
-    
+
     assertEquals(new Long(2), friendsGroup.getCount());
     assertEquals("others", friendsGroup.getType());
     assertEquals("other friends", friendsGroup.getName());
   }
-  
+
   @Test
   public final void testUserBrand() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
@@ -77,7 +77,7 @@ public class Users {
     assertEquals(new Long(0), user.getScores().getMax());
     assertEquals(new Long(50), user.getScores().getGoal());
     assertEquals(new Long(0), user.getScores().getCheckinsCount());
-    
+
     FriendGroups friends = user.getFriends();
     FriendGroup mutualFriendGroup = friends.getGroups()[0];
     FriendGroup otherFriendGroup = friends.getGroups()[1];
@@ -85,7 +85,7 @@ public class Users {
     assertEquals(new Long(93702), otherFriendGroup.getCount());
     assertEquals("others", otherFriendGroup.getType());
     assertEquals("other friends", otherFriendGroup.getName());
-    
+
     assertEquals(new Long(0), mutualFriendGroup.getCount());
     assertEquals("friends", mutualFriendGroup.getType());
     assertEquals("mutual friends", mutualFriendGroup.getName());
@@ -115,14 +115,14 @@ public class Users {
     assertEquals("male", users[0].getGender());
     assertEquals("New York, NY", users[0].getHomeCity());
   }
-  
+
   @Test
   public final void testUsersFriends() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
     UserGroup users = foursquareApi.usersFriends("self");
     assertEquals(new Long(2), users.getCount());
     CompactUser user1 = users.getItems()[0];
-    
+
     assertEquals("7613255", user1.getId());
     assertEquals("Foyt", user1.getFirstName());
     assertEquals("Development", user1.getLastName());
@@ -130,15 +130,43 @@ public class Users {
     assertEquals("none", user1.getGender());
     assertEquals("Mikkeli, Suomi", user1.getHomeCity());
     assertEquals("friend", user1.getRelationship());
-    
+
     CompactUser user2 = users.getItems()[1];
-    
+
     assertEquals("1504602", user2.getId());
     assertEquals("Mashable", user2.getFirstName());
     assertEquals("https://playfoursquare.s3.amazonaws.com/userpix_thumbs/1ARKWZ4Q1IIIFS5D.png", user2.getPhoto());
     assertEquals("none", user2.getGender());
     assertEquals("New York City, NY", user2.getHomeCity());
     assertEquals("followingThem", user2.getRelationship());
+  }
+
+  @Test
+  public final void testUsersRequest() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    CompleteUser user = foursquareApi.usersRequest("7613255");
+    assertEquals("7613255", user.getId());
+  }
+
+  @Test
+  public final void testUsersApprove() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    CompleteUser user = foursquareApi.usersApprove("10078668");
+    assertEquals("10078668", user.getId());
+  }
+
+  @Test
+  public final void testUsersDeny() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    CompleteUser user = foursquareApi.usersDeny("10078668");
+    assertEquals("10078668", user.getId());
+  }
+
+  @Test
+  public final void testUsersUnfriend() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    CompleteUser user = foursquareApi.usersUnfriend("7613255");
+    assertEquals("7613255", user.getId());
   }
 
 }

@@ -91,6 +91,10 @@ public class TestIO extends IOHandler {
     setResponse("checkins/recent", "checkins/recent_1.json");
     setResponse("users/self", "users/id_1.json");
     setResponse("users/1504602", "users/id_2.json");
+    setResponse("users/7613255/request", "users/request_1.json");
+    setResponse("users/7613255/unfriend", "users/unfriend_1.json");
+    setResponse("users/10078668/approve", "users/approve_1.json");
+    setResponse("users/10078668/deny", "users/deny_1.json");
     setResponse("users/self/checkins", "users/checkins_1.json");
     setResponse("users/self/friends", "users/friends_1.json");
     setResponse("users/search?twitter=naveen", "users/search_1.json");
