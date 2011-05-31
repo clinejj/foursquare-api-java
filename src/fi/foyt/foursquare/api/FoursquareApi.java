@@ -75,10 +75,42 @@ public class FoursquareApi {
   //TODO: users/todos (https://code.google.com/p/foursquare-api-java/issues/detail?id=30)
   //TODO: users/venuehistory (https://code.google.com/p/foursquare-api-java/issues/detail?id=21)
   
-  //TODO: users/request (https://code.google.com/p/foursquare-api-java/issues/detail?id=32)
-  //TODO: users/unfriend (https://code.google.com/p/foursquare-api-java/issues/detail?id=33)
-  //TODO: users/approve (https://code.google.com/p/foursquare-api-java/issues/detail?id=34)
-  //TODO: users/deny (https://code.google.com/p/foursquare-api-java/issues/detail?id=35)
+  public CompleteUser usersRequest(String id) throws FoursquareApiException {
+    try {
+      JSONObject response = doApiRequest(Method.POST, "users/" + id + "/request", true);
+      return (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getJSONObject("user"), this.skipNonExistingFields);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+
+  public CompleteUser usersUnfriend(String id) throws FoursquareApiException {
+    try {
+      JSONObject response = doApiRequest(Method.POST, "users/" + id + "/unfriend", true);
+      return (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getJSONObject("user"), this.skipNonExistingFields);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
+  public CompleteUser usersApprove(String id) throws FoursquareApiException {
+    try {
+      JSONObject response = doApiRequest(Method.POST, "users/" + id + "/approve", true);
+      return (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getJSONObject("user"), this.skipNonExistingFields);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
+  public CompleteUser usersDeny(String id) throws FoursquareApiException {
+    try {
+      JSONObject response = doApiRequest(Method.POST, "users/" + id + "/deny", true);
+      return (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getJSONObject("user"), this.skipNonExistingFields);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
   //TODO: users/setpings (https://code.google.com/p/foursquare-api-java/issues/detail?id=36)
   
   public CompleteUser user(String id) throws FoursquareApiException {
