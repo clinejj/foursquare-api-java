@@ -112,19 +112,18 @@ public class FoursquareApi {
   /**
    * Returns an array of a user's friends.
    * 
-   * @param id
-   *          User id (can be 'self' in case of the current user, assumed 'self' if null)
+   * @param id User id (can be 'self' in case of the current user, assumed 'self' if null)
    * @return List of friends
    * @throws FoursquareApiException
    */
-  public CompactUser[] usersFriends(String id) throws FoursquareApiException {
+  public UserGroup usersFriends(String id) throws FoursquareApiException {
     try {
       if (id == null) {
         id = "self";
       }
 
       JSONObject response = doApiRequest(Method.GET, "users/" + id + "/friends", true);
-      return (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getJSONArray("friends"), this.skipNonExistingFields);
+      return (UserGroup) JSONFieldParser.parseEntity(UserGroup.class, response.getJSONObject("friends"), this.skipNonExistingFields);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
