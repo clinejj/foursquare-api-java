@@ -40,6 +40,10 @@ public class Location implements FoursquareEntity {
   public String getCountry() {
     return country;
   }
+  
+  public String getName() {
+    return name;
+  }
 
   public Double getLat() {
     return lat;
@@ -59,6 +63,7 @@ public class Location implements FoursquareEntity {
   private String state;
   private String postalCode;
   private String country;
+  private String name;
   private Double lat;
   private Double lng;
   private Double distance;
