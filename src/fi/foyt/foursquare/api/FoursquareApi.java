@@ -61,7 +61,16 @@ public class FoursquareApi {
   //TODO: users/leaderboard (https://code.google.com/p/foursquare-api-java/issues/detail?id=26)
   
   //TODO: users/badges (https://code.google.com/p/foursquare-api-java/issues/detail?id=27)
-  //TODO: users/checkins (https://code.google.com/p/foursquare-api-java/issues/detail?id=28)
+  
+  public CheckinGroup usersCheckins(String userId, Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws FoursquareApiException {
+    try {
+      JSONObject response = doApiRequest(Method.GET, "users/" + userId + "/checkins", true, "limit", limit, "offset", offset, "afterTimestamp", afterTimestamp, "beforeTimestamp", beforeTimestamp);
+      return (CheckinGroup) JSONFieldParser.parseEntity(CheckinGroup.class, response.getJSONObject("checkins"), this.skipNonExistingFields);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+
   //TODO: users/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=29)
   //TODO: users/todos (https://code.google.com/p/foursquare-api-java/issues/detail?id=30)
   //TODO: users/venuehistory (https://code.google.com/p/foursquare-api-java/issues/detail?id=21)
@@ -187,8 +196,15 @@ public class FoursquareApi {
 
   /* Checkins */
 
-  // TODO: checkins/ID (https://code.google.com/p/foursquare-api-java/issues/detail?id=45)
-
+  public Checkin checkin(String checkinId, String signature) throws FoursquareApiException {
+    try {
+      JSONObject response = doApiRequest(Method.GET, "checkins/" + checkinId, true, "signature", signature);
+      return (Checkin) JSONFieldParser.parseEntity(Checkin.class, response.getJSONObject("checkin"), this.skipNonExistingFields);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
   public Checkin checkinsAdd(String venueId, String venue, String shout, String broadcast, String ll, Double llAcc, Double alt, Double altAcc)
       throws FoursquareApiException {
     try {
@@ -200,7 +216,16 @@ public class FoursquareApi {
     }
   }
   
-  // TODO: checkins/recent (https://code.google.com/p/foursquare-api-java/issues/detail?id=13)
+  public Checkin[] checkinsRecent(String ll, Integer limit, Long afterTimestamp)
+      throws FoursquareApiException {
+    try {
+      JSONObject response = doApiRequest(Method.GET, "checkins/recent", true, "ll", ll, "limit", limit, "afterTimestamp", afterTimestamp);
+      return (Checkin[]) JSONFieldParser.parseEntities(Checkin.class, response.getJSONArray("recent"), this.skipNonExistingFields);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
   // TODO: checkins/addcomment (https://code.google.com/p/foursquare-api-java/issues/detail?id=14)
   // TODO: checkins/deletecomment (https://code.google.com/p/foursquare-api-java/issues/detail?id=15)
 
