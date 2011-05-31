@@ -66,7 +66,7 @@ public class TestIO extends IOHandler {
       
       return new Response(responseWriter.getBuffer().toString(), 200, "");
     } else {
-      return new Response("", 404, "Not found");
+      return new Response("", 404, url + " - Not found");
     }
   }
   
@@ -89,5 +89,10 @@ public class TestIO extends IOHandler {
     setResponse("checkins/add?venueId=4c6bbfafa48420a1b09a0a0b&broadcast=private&ll=61.68777583849969%2C27.273173332214355", "checkins/add_1.json");
     setResponse("checkins/add?venue=Test&broadcast=public&ll=40%2C40", "checkins/add_2.json");
     setResponse("checkins/recent", "checkins/recent_1.json");
+    setResponse("users/self", "users/id_1.json");
+    setResponse("users/1504602", "users/id_2.json");
+    setResponse("users/self/checkins", "users/checkins_1.json");
+    setResponse("users/self/friends", "users/friends_1.json");
+    setResponse("users/search?twitter=naveen", "users/search_1.json");
   }
 }
