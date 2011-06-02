@@ -88,6 +88,7 @@ public class TestIO extends IOHandler {
     setResponse("checkins/4de4762d52b1d38d299e6000", "checkins/id_3.json");
     setResponse("checkins/add?venueId=4c6bbfafa48420a1b09a0a0b&broadcast=private&ll=61.68777583849969%2C27.273173332214355", "checkins/add_1.json");
     setResponse("checkins/add?venue=Test&broadcast=public&ll=40%2C40", "checkins/add_2.json");
+    setResponse("checkins/add?venueId=408c5100f964a520c6f21ee3&broadcast=public", "checkins/add_3.json");
     setResponse("checkins/recent", "checkins/recent_1.json");
     setResponse("users/self", "users/id_1.json");
     setResponse("users/1504602", "users/id_2.json");
