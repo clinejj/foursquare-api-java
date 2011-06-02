@@ -57,6 +57,14 @@ public class CompactVenue implements FoursquareEntity {
     return url;
   }
 
+  public Tips getTips() {
+    return tips;
+  }
+
+  public Todos getTodos() {
+    return todos;
+  }
+
   private String id;
   private String name;
   private Boolean verified;
@@ -67,4 +75,6 @@ public class CompactVenue implements FoursquareEntity {
   private HereNow hereNow;
   private Stats stats;
   private String url;
+  private Tips tips;
+  private Todos todos;
 }

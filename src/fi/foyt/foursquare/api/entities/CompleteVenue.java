@@ -23,14 +23,6 @@ public class CompleteVenue extends CompactVenue {
     return mayor;
   }
   
-  public Tips getTips() {
-    return tips;
-  }
-  
-  public CompleteTodos getTodos() {
-    return todos;
-  }
-  
   public String[] getTags() {
     return tags;
   }
@@ -57,8 +49,6 @@ public class CompleteVenue extends CompactVenue {
 
   private String description;
   private Mayor mayor;
-  private Tips tips;
-  private CompleteTodos todos;
   private String[] tags;
   private Count beenHere;
   private String shortUrl;
