@@ -2,6 +2,7 @@ package fi.foyt.foursquare;
 
 import fi.foyt.foursquare.api.FoursquareApi;
 import fi.foyt.foursquare.api.FoursquareApiException;
+import fi.foyt.foursquare.api.Result;
 import fi.foyt.foursquare.api.entities.VenueGroup;
 
 public class BasicExample {
@@ -20,10 +21,9 @@ public class BasicExample {
     FoursquareApi foursquareApi = new FoursquareApi("Client ID", "Client Secret", "Callback URL");
     
     // After client has been initialized we can make queries.
-    VenueGroup[] venueGroups = foursquareApi.venuesSearch(ll, null, null, null, null, null, null);
-    
+    Result<VenueGroup[]> result = foursquareApi.venuesSearch(ll, null, null, null, null, null, null);
     // Finally we do something with the data
-    for (VenueGroup venueGroup : venueGroups) {
+    for (VenueGroup venueGroup : result.getResult()) {
       // TODO: Do something we the data
       System.out.println(venueGroup.getName());
     }
