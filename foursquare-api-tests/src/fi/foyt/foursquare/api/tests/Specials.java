@@ -15,7 +15,7 @@ public class Specials {
   @Test
   public final void testSpecial() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAnonymousFoursquareApi();
-    CompleteSpecial completeSpecial = foursquareApi.special("4da37ddb15ad530c110a9d52", "4cb38bf20cdc721ea943234f");
+    CompleteSpecial completeSpecial = foursquareApi.special("4da37ddb15ad530c110a9d52", "4cb38bf20cdc721ea943234f").getResult();
   
     assertEquals("4da37ddb15ad530c110a9d52", completeSpecial.getId());
     assertEquals("count", completeSpecial.getType());
@@ -32,7 +32,7 @@ public class Specials {
   @Test
   public final void testSpecialsSearch() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
-    SpecialGroup specialGroup = foursquareApi.specialsSearch("40.7,-73.9", null, null, null, null);
+    SpecialGroup specialGroup = foursquareApi.specialsSearch("40.7,-73.9", null, null, null, null).getResult();
     
     assertEquals(specialGroup.getCount(), new Long(28));
     assertEquals(specialGroup.getItems().length, 28);

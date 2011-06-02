@@ -1,11 +1,13 @@
 package fi.foyt.foursquare.api.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
 import fi.foyt.foursquare.api.FoursquareApi;
 import fi.foyt.foursquare.api.FoursquareApiException;
+import fi.foyt.foursquare.api.Result;
 import fi.foyt.foursquare.api.entities.Checkin;
 import fi.foyt.foursquare.api.entities.CheckinGroup;
 import fi.foyt.foursquare.api.entities.Comment;
@@ -16,7 +18,7 @@ public class Checkins {
   @Test
   public final void testCheckin() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
-    Checkin checkin = foursquareApi.checkin("4d627f6814963704dc28ff94", "LPtzP4edmpbaspdKhI9-892UoFM");
+    Checkin checkin = foursquareApi.checkin("4d627f6814963704dc28ff94", "LPtzP4edmpbaspdKhI9-892UoFM").getResult();
 
     assertEquals("4d627f6814963704dc28ff94", checkin.getId());
     assertEquals(new Long(1298300776), checkin.getCreatedAt());
@@ -32,7 +34,8 @@ public class Checkins {
   @Test
   public final void testCheckinVenueless() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
-    Checkin checkin = foursquareApi.checkinsAdd(null, "Test", null, "public", "40,40", null, null, null);
+    Result<Checkin> result = foursquareApi.checkinsAdd(null, "Test", null, "public", "40,40", null, null, null);
+    Checkin checkin = result.getResult();
     
     assertEquals("4de470c0ae60e7f3ac1f0fa7", checkin.getId());
     assertEquals(new Long(1306816704), checkin.getCreatedAt());
@@ -46,7 +49,7 @@ public class Checkins {
   @Test
   public final void testCheckinComments() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
-    Checkin checkin = foursquareApi.checkin("4d7b44d7f260a0932e5024ba", null);
+    Checkin checkin = foursquareApi.checkin("4d7b44d7f260a0932e5024ba", null).getResult();
 
     assertEquals("4d7b44d7f260a0932e5024ba", checkin.getId());
     CommentGroup comments = checkin.getComments();
@@ -61,7 +64,7 @@ public class Checkins {
   @Test
   public final void testCheckinOverlaps() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
-    Checkin checkin = foursquareApi.checkin("4de4762d52b1d38d299e6000", null);
+    Checkin checkin = foursquareApi.checkin("4de4762d52b1d38d299e6000", null).getResult();
 
     assertEquals("4de4762d52b1d38d299e6000", checkin.getId());
     CheckinGroup checkinGroup = checkin.getOverlaps();
@@ -77,8 +80,9 @@ public class Checkins {
   @Test
   public final void testCheckinsAdd() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
-    Checkin checkin = foursquareApi.checkinsAdd("4c6bbfafa48420a1b09a0a0b", null, null, "private", "61.68777583849969,27.273173332214355", null, null, null);
-
+    Result<Checkin> result = foursquareApi.checkinsAdd("4c6bbfafa48420a1b09a0a0b", null, null, "private", "61.68777583849969,27.273173332214355", null, null, null);
+    Checkin checkin = result.getResult();
+    
     assertEquals("4de3212d2271bfb844acdf5d", checkin.getId());
     assertEquals(new Long(1306730797), checkin.getCreatedAt());
     assertEquals("checkin", checkin.getType());
@@ -90,7 +94,7 @@ public class Checkins {
   @Test
   public final void testCheckinsRecent() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
-    Checkin[] checkins = foursquareApi.checkinsRecent(null, null, null);
+    Checkin[] checkins = foursquareApi.checkinsRecent(null, null, null).getResult();
     assertEquals(1, checkins.length);
     Checkin checkin = checkins[0];
     assertEquals("4d7b7746f260a093ae7827ba", checkin.getId());
