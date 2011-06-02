@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import fi.foyt.foursquare.api.FoursquareApi;
 import fi.foyt.foursquare.api.FoursquareApiException;
+import fi.foyt.foursquare.api.Result;
 import fi.foyt.foursquare.api.entities.Checkin;
 import fi.foyt.foursquare.api.entities.CheckinGroup;
 import fi.foyt.foursquare.api.entities.CompactUser;
@@ -102,6 +103,15 @@ public class Users {
     assertEquals(true, checkin.isPrivate());
     assertEquals("Europe/Helsinki", checkin.getTimeZone());
     assertEquals("4c6bbfafa48420a1b09a0a0b", checkin.getVenue().getId());
+    
+    checkins = foursquareApi.usersCheckins(null, null, null, null, null).getResult();
+    assertEquals(new Long(6), checkins.getCount());
+    checkin = checkins.getItems()[0];
+    assertEquals("4de3212d2271bfb844acdf5d", checkin.getId());
+    assertEquals(new Long(1306730797), checkin.getCreatedAt());
+    assertEquals(true, checkin.isPrivate());
+    assertEquals("Europe/Helsinki", checkin.getTimeZone());
+    assertEquals("4c6bbfafa48420a1b09a0a0b", checkin.getVenue().getId());
   }
 
   @Test
@@ -139,6 +149,27 @@ public class Users {
     assertEquals("none", user2.getGender());
     assertEquals("New York City, NY", user2.getHomeCity());
     assertEquals("followingThem", user2.getRelationship());
+    
+    users = foursquareApi.usersFriends(null).getResult();
+    assertEquals(new Long(2), users.getCount());
+    user1 = users.getItems()[0];
+
+    assertEquals("7613255", user1.getId());
+    assertEquals("Foyt", user1.getFirstName());
+    assertEquals("Development", user1.getLastName());
+    assertEquals("https://foursquare.com/img/blank_boy.png", user1.getPhoto());
+    assertEquals("none", user1.getGender());
+    assertEquals("Mikkeli, Suomi", user1.getHomeCity());
+    assertEquals("friend", user1.getRelationship());
+
+    user2 = users.getItems()[1];
+
+    assertEquals("1504602", user2.getId());
+    assertEquals("Mashable", user2.getFirstName());
+    assertEquals("https://playfoursquare.s3.amazonaws.com/userpix_thumbs/1ARKWZ4Q1IIIFS5D.png", user2.getPhoto());
+    assertEquals("none", user2.getGender());
+    assertEquals("New York City, NY", user2.getHomeCity());
+    assertEquals("followingThem", user2.getRelationship());
   }
 
   @Test
@@ -168,5 +199,17 @@ public class Users {
     CompleteUser user = foursquareApi.usersUnfriend("7613255").getResult();
     assertEquals("7613255", user.getId());
   }
-
+  @Test
+  public final void testUsersRequests() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    Result<CompactUser[]> result = foursquareApi.usersRequests();
+    
+    assertEquals("7613255", result.getResult()[0].getId());
+    assertEquals("Foyt", result.getResult()[0].getFirstName());
+    assertEquals("Development", result.getResult()[0].getLastName());
+    assertEquals("https://foursquare.com/img/blank_boy.png", result.getResult()[0].getPhoto());
+    assertEquals("none", result.getResult()[0].getGender());
+    assertEquals("Mikkeli, Suomi", result.getResult()[0].getHomeCity());
+    assertEquals("pendingMe", result.getResult()[0].getRelationship());   
+  }
 }

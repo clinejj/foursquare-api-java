@@ -20,7 +20,7 @@ public class TestIO extends IOHandler {
     StringBuilder searchUrlParametersBuilder = new StringBuilder(); 
     
     int queryStart = url.indexOf("?");
-    String searchUrl = url.substring(URL_PREFIX.length(), queryStart);
+    String searchUrl = url.substring(0, queryStart);
     String query = url.substring(queryStart + 1);
     Iterator<String> parameters = Arrays.asList(query.split("&")).iterator();
     
@@ -76,28 +76,29 @@ public class TestIO extends IOHandler {
   } 
   
   private static Map<String, String> response = new HashMap<String, String>();
-  private final static String URL_PREFIX = "https://api.foursquare.com/v2/";
   
   static {
-    setResponse("specials/4da37ddb15ad530c110a9d52?venueId=4cb38bf20cdc721ea943234f", "specials/id_1.json");
-    setResponse("specials/search?ll=40.7%2C-73.9", "specials/search_1.json");
-    setResponse("settings/all", "settings/all_1.json");
-    setResponse("settings/receivePings/set?value=0", "settings/set_1.json");
-    setResponse("checkins/4d627f6814963704dc28ff94?signature=LPtzP4edmpbaspdKhI9-892UoFM", "checkins/id_1.json");
-    setResponse("checkins/4d7b44d7f260a0932e5024ba", "checkins/id_2.json");
-    setResponse("checkins/4de4762d52b1d38d299e6000", "checkins/id_3.json");
-    setResponse("checkins/add?venueId=4c6bbfafa48420a1b09a0a0b&broadcast=private&ll=61.68777583849969%2C27.273173332214355", "checkins/add_1.json");
-    setResponse("checkins/add?venue=Test&broadcast=public&ll=40%2C40", "checkins/add_2.json");
-    setResponse("checkins/add?venueId=408c5100f964a520c6f21ee3&broadcast=public", "checkins/add_3.json");
-    setResponse("checkins/recent", "checkins/recent_1.json");
-    setResponse("users/self", "users/id_1.json");
-    setResponse("users/1504602", "users/id_2.json");
-    setResponse("users/7613255/request", "users/request_1.json");
-    setResponse("users/7613255/unfriend", "users/unfriend_1.json");
-    setResponse("users/10078668/approve", "users/approve_1.json");
-    setResponse("users/10078668/deny", "users/deny_1.json");
-    setResponse("users/self/checkins", "users/checkins_1.json");
-    setResponse("users/self/friends", "users/friends_1.json");
-    setResponse("users/search?twitter=naveen", "users/search_1.json");
+    setResponse("https://foursquare.com/oauth2/access_token?grant_type=authorization_code&redirect_uri=FAKE_REDIRECT_URL&code=FAKE_CODE", "auth/token_1.json");
+    setResponse("https://api.foursquare.com/v2/specials/4da37ddb15ad530c110a9d52?venueId=4cb38bf20cdc721ea943234f", "specials/id_1.json");
+    setResponse("https://api.foursquare.com/v2/specials/search?ll=40.7%2C-73.9", "specials/search_1.json");
+    setResponse("https://api.foursquare.com/v2/settings/all", "settings/all_1.json");
+    setResponse("https://api.foursquare.com/v2/settings/receivePings/set?value=0", "settings/set_1.json");
+    setResponse("https://api.foursquare.com/v2/checkins/4d627f6814963704dc28ff94?signature=LPtzP4edmpbaspdKhI9-892UoFM", "checkins/id_1.json");
+    setResponse("https://api.foursquare.com/v2/checkins/4d7b44d7f260a0932e5024ba", "checkins/id_2.json");
+    setResponse("https://api.foursquare.com/v2/checkins/4de4762d52b1d38d299e6000", "checkins/id_3.json");
+    setResponse("https://api.foursquare.com/v2/checkins/add?venueId=4c6bbfafa48420a1b09a0a0b&broadcast=private&ll=61.68777583849969%2C27.273173332214355", "checkins/add_1.json");
+    setResponse("https://api.foursquare.com/v2/checkins/add?venue=Test&broadcast=public&ll=40%2C40", "checkins/add_2.json");
+    setResponse("https://api.foursquare.com/v2/checkins/add?venueId=408c5100f964a520c6f21ee3&broadcast=public", "checkins/add_3.json");
+    setResponse("https://api.foursquare.com/v2/checkins/recent", "checkins/recent_1.json");
+    setResponse("https://api.foursquare.com/v2/users/self", "users/id_1.json");
+    setResponse("https://api.foursquare.com/v2/users/1504602", "users/id_2.json");
+    setResponse("https://api.foursquare.com/v2/users/7613255/request", "users/request_1.json");
+    setResponse("https://api.foursquare.com/v2/users/7613255/unfriend", "users/unfriend_1.json");
+    setResponse("https://api.foursquare.com/v2/users/10078668/approve", "users/approve_1.json");
+    setResponse("https://api.foursquare.com/v2/users/10078668/deny", "users/deny_1.json");
+    setResponse("https://api.foursquare.com/v2/users/self/checkins", "users/checkins_1.json");
+    setResponse("https://api.foursquare.com/v2/users/self/friends", "users/friends_1.json");
+    setResponse("https://api.foursquare.com/v2/users/search?twitter=naveen", "users/search_1.json");
+    setResponse("https://api.foursquare.com/v2/users/requests", "users/requests_1.json");
   }
 }
