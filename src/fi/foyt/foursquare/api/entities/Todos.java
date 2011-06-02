@@ -11,7 +11,7 @@
 
 package fi.foyt.foursquare.api.entities;
 
-public class CompleteTodos extends Count {
+public class Todos extends Count {
 
   private static final long serialVersionUID = 2932642396308535360L;
 
