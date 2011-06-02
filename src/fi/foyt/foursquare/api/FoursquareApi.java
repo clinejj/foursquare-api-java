@@ -76,10 +76,13 @@ public class FoursquareApi {
   
   //TODO: users/badges (https://code.google.com/p/foursquare-api-java/issues/detail?id=27)
   
-  public CheckinGroup usersCheckins(String userId, Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws FoursquareApiException {
+  public Result<CheckinGroup> usersCheckins(String userId, Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/checkins", true, "limit", limit, "offset", offset, "afterTimestamp", afterTimestamp, "beforeTimestamp", beforeTimestamp);
-      return (CheckinGroup) JSONFieldParser.parseEntity(CheckinGroup.class, response.getResponse().getJSONObject("checkins"), this.skipNonExistingFields);
+
+      CheckinGroup result = (CheckinGroup) JSONFieldParser.parseEntity(CheckinGroup.class, response.getResponse().getJSONObject("checkins"), this.skipNonExistingFields);
+      
+      return new Result<CheckinGroup>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
@@ -89,37 +92,48 @@ public class FoursquareApi {
   //TODO: users/todos (https://code.google.com/p/foursquare-api-java/issues/detail?id=30)
   //TODO: users/venuehistory (https://code.google.com/p/foursquare-api-java/issues/detail?id=21)
   
-  public CompleteUser usersRequest(String id) throws FoursquareApiException {
+  public Result<CompleteUser> usersRequest(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "users/" + id + "/request", true);
-      return (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
+      
+      CompleteUser result = (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
+      
+      return new Result<CompleteUser>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
 
-  public CompleteUser usersUnfriend(String id) throws FoursquareApiException {
+  public Result<CompleteUser> usersUnfriend(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "users/" + id + "/unfriend", true);
-      return (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
+
+      CompleteUser result = (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
+      
+      return new Result<CompleteUser>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
   
-  public CompleteUser usersApprove(String id) throws FoursquareApiException {
+  public Result<CompleteUser> usersApprove(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "users/" + id + "/approve", true);
-      return (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
+
+      CompleteUser result = (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
+      
+      return new Result<CompleteUser>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
   
-  public CompleteUser usersDeny(String id) throws FoursquareApiException {
+  public Result<CompleteUser> usersDeny(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "users/" + id + "/deny", true);
-      return (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
+      CompleteUser result = (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
+      
+      return new Result<CompleteUser>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
@@ -127,28 +141,34 @@ public class FoursquareApi {
   
   //TODO: users/setpings (https://code.google.com/p/foursquare-api-java/issues/detail?id=36)
   
-  public CompleteUser user(String id) throws FoursquareApiException {
+  public Result<CompleteUser> user(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + id, true);
-      return (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
+      CompleteUser result = (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
+      
+      return new Result<CompleteUser>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
 
-  public CompactUser[] usersSearch(String phone, String email, String twitter, String twitterSource, String fbid, String name) throws FoursquareApiException {
+  public Result<CompactUser[]> usersSearch(String phone, String email, String twitter, String twitterSource, String fbid, String name) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "users/search", true, "phone", phone, "email", email, "twitter", twitter, "twitterSource", twitterSource, "fbid", fbid, "name", name);
-      return (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getResponse().getJSONArray("results"), this.skipNonExistingFields);
+      CompactUser[] result = (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getResponse().getJSONArray("results"), this.skipNonExistingFields);
+      
+      return new Result<CompactUser[]>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
 
-  public CompactUser[] usersRequests() throws FoursquareApiException {
+  public Result<CompactUser[]> usersRequests() throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "users/requests", true);
-      return (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getResponse().getJSONArray("users"), this.skipNonExistingFields);
+      CompactUser[] result = (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getResponse().getJSONArray("users"), this.skipNonExistingFields);
+
+      return new Result<CompactUser[]>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
@@ -161,14 +181,16 @@ public class FoursquareApi {
    * @return List of friends
    * @throws FoursquareApiException
    */
-  public UserGroup usersFriends(String id) throws FoursquareApiException {
+  public Result<UserGroup> usersFriends(String id) throws FoursquareApiException {
     try {
       if (id == null) {
         id = "self";
       }
 
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + id + "/friends", true);
-      return (UserGroup) JSONFieldParser.parseEntity(UserGroup.class, response.getResponse().getJSONObject("friends"), this.skipNonExistingFields);
+      UserGroup result = (UserGroup) JSONFieldParser.parseEntity(UserGroup.class, response.getResponse().getJSONObject("friends"), this.skipNonExistingFields);
+
+      return new Result<UserGroup>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
@@ -185,51 +207,61 @@ public class FoursquareApi {
   //TODO: venues/flag (https://code.google.com/p/foursquare-api-java/issues/detail?id=43)
   //TODO: venues/proposeedit (https://code.google.com/p/foursquare-api-java/issues/detail?id=44)
   
-  public CompleteVenue venue(String id) throws FoursquareApiException {
+  public Result<CompleteVenue> venue(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + id, isAuthenticated());
-      return (CompleteVenue) JSONFieldParser.parseEntity(CompleteVenue.class, response.getResponse().getJSONObject("venue"), this.skipNonExistingFields);
+      CompleteVenue result = (CompleteVenue) JSONFieldParser.parseEntity(CompleteVenue.class, response.getResponse().getJSONObject("venue"), this.skipNonExistingFields);
+
+      return new Result<CompleteVenue>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
 
-  public CompleteVenue venuesAdd(String name, String address, String crossStreet, String city, String state, String zip, String phone, String ll,
+  public Result<CompleteVenue> venuesAdd(String name, String address, String crossStreet, String city, String state, String zip, String phone, String ll,
       String primaryCategoryId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "venues/add", true, "name", name, "address", address, "crossStreet", crossStreet, "city", city, "state", state, "zip", zip, "phone", phone, "ll", ll, "primaryCategoryId", primaryCategoryId);
-      return (CompleteVenue) JSONFieldParser.parseEntity(CompactVenue.class, response.getResponse().getJSONObject("venue"), this.skipNonExistingFields);
+      CompleteVenue result = (CompleteVenue) JSONFieldParser.parseEntity(CompactVenue.class, response.getResponse().getJSONObject("venue"), this.skipNonExistingFields);
+
+      return new Result<CompleteVenue>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
 
-  public Category[] venuesCategories() throws FoursquareApiException {
+  public Result<Category[]> venuesCategories() throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/categories", isAuthenticated());
-      return (Category[]) JSONFieldParser.parseEntities(Category.class, response.getResponse().getJSONArray("categories"), this.skipNonExistingFields);
+      Category[] result = (Category[]) JSONFieldParser.parseEntities(Category.class, response.getResponse().getJSONArray("categories"), this.skipNonExistingFields);
+
+      return new Result<Category[]>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
 
-  public VenueGroup[] venuesSearch(String ll, Double llAcc, Double alt, Double altAcc, String query, Integer limit, String intent) throws FoursquareApiException {
+  public Result<VenueGroup[]> venuesSearch(String ll, Double llAcc, Double alt, Double altAcc, String query, Integer limit, String intent) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "query", query, "limit", limit, "intent", intent);
-      
+      VenueGroup[] result;
       if (response.getResponse().has("groups"))
-        return (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getResponse().getJSONArray("groups"), this.skipNonExistingFields);
+        result = (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getResponse().getJSONArray("groups"), this.skipNonExistingFields);
       else
-        return new VenueGroup[0];
+        result = new VenueGroup[0];
+
+      return new Result<VenueGroup[]>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
 
-  public CompactVenue[] venuesTrending(String ll, Integer limit, Integer radius) throws FoursquareApiException {
+  public Result<CompactVenue[]> venuesTrending(String ll, Integer limit, Integer radius) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/trending", isAuthenticated(), "ll", ll, "limit", limit, "radius", radius);
-      return (CompactVenue[]) JSONFieldParser.parseEntities(CompactVenue.class, response.getResponse().getJSONArray("venues"), this.skipNonExistingFields);
+      CompactVenue[] result = (CompactVenue[]) JSONFieldParser.parseEntities(CompactVenue.class, response.getResponse().getJSONArray("venues"), this.skipNonExistingFields);
+
+      return new Result<CompactVenue[]>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
@@ -237,10 +269,12 @@ public class FoursquareApi {
 
   /* Checkins */
 
-  public Checkin checkin(String checkinId, String signature) throws FoursquareApiException {
+  public Result<Checkin> checkin(String checkinId, String signature) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "checkins/" + checkinId, true, "signature", signature);
-      return (Checkin) JSONFieldParser.parseEntity(Checkin.class, response.getResponse().getJSONObject("checkin"), this.skipNonExistingFields);
+      Checkin result = (Checkin) JSONFieldParser.parseEntity(Checkin.class, response.getResponse().getJSONObject("checkin"), this.skipNonExistingFields);
+
+      return new Result<Checkin>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
@@ -251,22 +285,22 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "checkins/add", true, "venueId", venueId, "venue", venue, "shout", shout, "broadcast", broadcast, "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc);
       
-      ResultMeta meta = null;
       Checkin result = (Checkin) JSONFieldParser.parseEntity(Checkin.class, response.getResponse().getJSONObject("checkin"), this.skipNonExistingFields);
       List<Notification<?>> notifications = NotificationsParser.parseNotifications(response.getNotifications(), skipNonExistingFields);
       
-      return new Result<Checkin>(meta, result, notifications);
-      
+      return new Result<Checkin>(response.getMeta(), result, notifications);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
   
-  public Checkin[] checkinsRecent(String ll, Integer limit, Long afterTimestamp)
+  public Result<Checkin[]> checkinsRecent(String ll, Integer limit, Long afterTimestamp)
       throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "checkins/recent", true, "ll", ll, "limit", limit, "afterTimestamp", afterTimestamp);
-      return (Checkin[]) JSONFieldParser.parseEntities(Checkin.class, response.getResponse().getJSONArray("recent"), this.skipNonExistingFields);
+      Checkin[] result = (Checkin[]) JSONFieldParser.parseEntities(Checkin.class, response.getResponse().getJSONArray("recent"), this.skipNonExistingFields);
+
+      return new Result<Checkin[]>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
@@ -291,19 +325,23 @@ public class FoursquareApi {
 
   /* Settings */
   
-  public Setting settingSet(String settingId, Boolean value) throws FoursquareApiException {
+  public Result<Setting> settingSet(String settingId, Boolean value) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "settings/" + settingId + "/set", true, "value", value ? 1 : 0);
-      return (Setting) JSONFieldParser.parseEntity(Setting.class, response.getResponse().getJSONObject("settings"), this.skipNonExistingFields);
+      Setting result = (Setting) JSONFieldParser.parseEntity(Setting.class, response.getResponse().getJSONObject("settings"), this.skipNonExistingFields);
+
+      return new Result<Setting>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
 
-  public Setting settingsAll() throws FoursquareApiException {
+  public Result<Setting> settingsAll() throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "settings/all", true);
-      return (Setting) JSONFieldParser.parseEntity(Setting.class, response.getResponse().getJSONObject("settings"), this.skipNonExistingFields);
+      Setting result = (Setting) JSONFieldParser.parseEntity(Setting.class, response.getResponse().getJSONObject("settings"), this.skipNonExistingFields);
+
+      return new Result<Setting>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
@@ -313,19 +351,23 @@ public class FoursquareApi {
 
   /* Specials */
 
-  public CompleteSpecial special(String id, String venueId) throws FoursquareApiException {
+  public Result<CompleteSpecial> special(String id, String venueId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "specials/" + id, isAuthenticated(), "venueId", venueId);
-      return (CompleteSpecial) JSONFieldParser.parseEntity(CompleteSpecial.class, response.getResponse().getJSONObject("special"), this.skipNonExistingFields);
+      CompleteSpecial result = (CompleteSpecial) JSONFieldParser.parseEntity(CompleteSpecial.class, response.getResponse().getJSONObject("special"), this.skipNonExistingFields);
+
+      return new Result<CompleteSpecial>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
 
-  public SpecialGroup specialsSearch(String ll, Double llAcc, Double alt, Double altAcc, Integer limit) throws FoursquareApiException {
+  public Result<SpecialGroup> specialsSearch(String ll, Double llAcc, Double alt, Double altAcc, Integer limit) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "specials/search", true, "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "limit", limit);
-      return (SpecialGroup) JSONFieldParser.parseEntity(SpecialGroup.class, response.getResponse().getJSONObject("specials"), this.skipNonExistingFields);
+      SpecialGroup result = (SpecialGroup) JSONFieldParser.parseEntity(SpecialGroup.class, response.getResponse().getJSONObject("specials"), this.skipNonExistingFields);
+
+      return new Result<SpecialGroup>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
