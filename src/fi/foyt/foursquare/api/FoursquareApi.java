@@ -78,6 +78,9 @@ public class FoursquareApi {
   
   public Result<CheckinGroup> usersCheckins(String userId, Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws FoursquareApiException {
     try {
+      if (userId == null)
+        userId = "self";
+      
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/checkins", true, "limit", limit, "offset", offset, "afterTimestamp", afterTimestamp, "beforeTimestamp", beforeTimestamp);
 
       CheckinGroup result = (CheckinGroup) JSONFieldParser.parseEntity(CheckinGroup.class, response.getResponse().getJSONObject("checkins"), this.skipNonExistingFields);
@@ -166,7 +169,7 @@ public class FoursquareApi {
   public Result<CompactUser[]> usersRequests() throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "users/requests", true);
-      CompactUser[] result = (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getResponse().getJSONArray("users"), this.skipNonExistingFields);
+      CompactUser[] result = (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getResponse().getJSONArray("requests"), this.skipNonExistingFields);
 
       return new Result<CompactUser[]>(response.getMeta(), result);
     } catch (JSONException e) {
@@ -346,8 +349,6 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-             
-  // TODO: settings/set (https://code.google.com/p/foursquare-api-java/issues/detail?id=22)
 
   /* Specials */
 
