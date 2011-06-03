@@ -35,8 +35,9 @@ public class TestIO extends IOHandler {
       }
 
       boolean clientParam = "client_id".equals(p[0]) || "client_secret".equals(p[0]);
+      boolean versionParam = "v".equals(p[0]);
       
-      if (!clientParam && !authToken) {
+      if (!clientParam && !authToken && !versionParam) {
         if (searchUrlParametersBuilder.length() > 0)
           searchUrlParametersBuilder.append('&');
         searchUrlParametersBuilder.append(p[0] + "=" + p[1]);
@@ -100,5 +101,9 @@ public class TestIO extends IOHandler {
     setResponse("https://api.foursquare.com/v2/users/self/friends", "users/friends_1.json");
     setResponse("https://api.foursquare.com/v2/users/search?twitter=naveen", "users/search_1.json");
     setResponse("https://api.foursquare.com/v2/users/requests", "users/requests_1.json");
+    setResponse("https://api.foursquare.com/v2/venues/5104", "venues/id_1.json");
+    setResponse("https://api.foursquare.com/v2/venues/categories", "venues/categories_1.json");
+    setResponse("https://api.foursquare.com/v2/venues/search?ll=40.7%2C-74", "venues/search_1.json");
+    setResponse("https://api.foursquare.com/v2/venues/trending?ll=40.7%2C-74", "venues/trending_1.json");
   }
 }
