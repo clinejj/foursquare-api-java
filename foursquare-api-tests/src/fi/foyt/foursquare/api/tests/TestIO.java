@@ -116,6 +116,6 @@ public class TestIO extends IOHandler {
     setResponse("https://api.foursquare.com/v2/venues/categories", "venues/categories_1.json");
     setResponse("https://api.foursquare.com/v2/venues/search?ll=40.7%2C-74", "venues/search_1.json");
     setResponse("https://api.foursquare.com/v2/venues/trending?ll=40.7%2C-74", "venues/trending_1.json");
-    setResponse("https://api.foursquare.com/v2/venues/add?name=Apuv%C3%A4lineyksikk%C3%B6+%2F+Moision+toimipiste&address=Moisiontie+11+b&city=Mikkeli&state=Etel%C3%A4-Savo&zip=50520&phone=0443516511&ll=27.272585%2C61.677701&primaryCategoryId=4bf58dd8d48988d104941735", "venues/add_1.json");
+    setResponse("https://api.foursquare.com/v2/venues/add?name=Apuv%C3%A4lineyksikk%C3%B6+%2F+Moision+toimipiste&address=Moisiontie+11+b&city=Mikkeli&state=Etel%C3%A4-Savo&zip=50520&phone=0443516511&ll=61.677701%2C27.272585&primaryCategoryId=4bf58dd8d48988d104941735", "venues/add_1.json");
   }
 }
