@@ -41,6 +41,8 @@ import fi.foyt.foursquare.api.io.Response;
  * Entry point for FoursquareAPI
  */
 public class FoursquareApi {
+  
+  private static final String DEFAULT_VERSION = "20110525";
 
   public FoursquareApi(String clientId, String clientSecret, String redirectUrl) {
     this(clientId, clientSecret, redirectUrl, new DefaultIOHandler());
@@ -68,6 +70,10 @@ public class FoursquareApi {
   
   public void setSkipNonExistingFields(boolean skipNonExistingFields) {
     this.skipNonExistingFields = skipNonExistingFields;
+  }
+  
+  public void setVersion(String version) {
+    this.version = version;
   }
 
   /* Users */ 
@@ -444,6 +450,8 @@ public class FoursquareApi {
       urlBuilder.append("&client_secret=");
       urlBuilder.append(clientSecret);
     }
+    
+    urlBuilder.append("&v=" + version);
 
     try {
       return new ApiRequestResponse(doJsonRequest(method, urlBuilder.toString()));
@@ -468,6 +476,7 @@ public class FoursquareApi {
   private String redirectUrl;
   private String oAuthToken;
   private IOHandler ioHandler;
+  private String version = DEFAULT_VERSION;
   private static final String apiUrl = "https://api.foursquare.com/v2/";
 
   private class ApiRequestResponse {
