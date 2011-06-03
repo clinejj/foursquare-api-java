@@ -75,6 +75,14 @@ public class FoursquareApi {
   public void setVersion(String version) {
     this.version = version;
   }
+  
+  public void setUseCallback(boolean useCallback) {
+    this.useCallback = useCallback;
+  }
+  
+  public boolean getUseCallback() {
+    return useCallback;
+  }
 
   /* Users */ 
   
@@ -231,7 +239,7 @@ public class FoursquareApi {
       String primaryCategoryId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "venues/add", true, "name", name, "address", address, "crossStreet", crossStreet, "city", city, "state", state, "zip", zip, "phone", phone, "ll", ll, "primaryCategoryId", primaryCategoryId);
-      CompleteVenue result = (CompleteVenue) JSONFieldParser.parseEntity(CompactVenue.class, response.getResponse().getJSONObject("venue"), this.skipNonExistingFields);
+      CompleteVenue result = (CompleteVenue) JSONFieldParser.parseEntity(CompleteVenue.class, response.getResponse().getJSONObject("venue"), this.skipNonExistingFields);
 
       return new Result<CompleteVenue>(response.getMeta(), result);
     } catch (JSONException e) {
@@ -417,6 +425,10 @@ public class FoursquareApi {
 
   /* io */
 
+  public IOHandler getIOHandler() {
+    return ioHandler;
+  }
+  
   private ApiRequestResponse doApiRequest(Method method, String path, boolean auth, Object... params) throws JSONException, FoursquareApiException {
     StringBuilder urlBuilder = new StringBuilder(apiUrl);
     urlBuilder.append(path);
@@ -453,8 +465,16 @@ public class FoursquareApi {
     
     urlBuilder.append("&v=" + version);
 
+    if (useCallback) {
+      urlBuilder.append("&callback=c");
+    }
+    
     try {
-      return new ApiRequestResponse(doJsonRequest(method, urlBuilder.toString()));
+      if (useCallback) {
+        return new ApiRequestResponse(doJsonRequestCallback(method, urlBuilder.toString()));
+      } else {
+        return new ApiRequestResponse(doJsonRequest(method, urlBuilder.toString()));
+      }
     } catch (IOException e) {
       throw new FoursquareApiException(e);
     }
@@ -470,6 +490,19 @@ public class FoursquareApi {
     }
   }
 
+  private JSONObject doJsonRequestCallback(Method method, String url) throws JSONException, IOException {
+    Response response = ioHandler.fetchData(url, method);
+    if ((response.getResponseCode() >= 200) && (response.getResponseCode() <= 299)) {
+      String callbackPrefix = "c(";
+      String callbackPostfix = ");";
+      String responseContent = response.getResponseContent();
+      JSONObject responseObject = new JSONObject(responseContent.substring(callbackPrefix.length(), responseContent.length() - callbackPostfix.length()));
+      return responseObject;
+    } else {
+      throw new IOException("Request canceled with error code " + response.getResponseCode() + " / " + response.getMessage());
+    }
+  }
+  
   private boolean skipNonExistingFields = true;
   private String clientId;
   private String clientSecret;
@@ -477,6 +510,7 @@ public class FoursquareApi {
   private String oAuthToken;
   private IOHandler ioHandler;
   private String version = DEFAULT_VERSION;
+  private boolean useCallback = true;
   private static final String apiUrl = "https://api.foursquare.com/v2/";
 
   private class ApiRequestResponse {
