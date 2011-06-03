@@ -19,6 +19,8 @@ public class TestIO extends IOHandler {
   public Response fetchData(String url, Method method) throws IOException {
     StringBuilder searchUrlParametersBuilder = new StringBuilder(); 
     
+    boolean callback = false;
+    
     int queryStart = url.indexOf("?");
     String searchUrl = url.substring(0, queryStart);
     String query = url.substring(queryStart + 1);
@@ -35,13 +37,17 @@ public class TestIO extends IOHandler {
       }
 
       boolean clientParam = "client_id".equals(p[0]) || "client_secret".equals(p[0]);
-      boolean versionParam = "v".equals(p[0]);
+      boolean versionParam = "v".equals(p[0]);      
+      boolean callbackParam = "callback".equals(p[0]);
       
-      if (!clientParam && !authToken && !versionParam) {
+      if (!clientParam && !authToken && !versionParam && !callbackParam) {
         if (searchUrlParametersBuilder.length() > 0)
           searchUrlParametersBuilder.append('&');
         searchUrlParametersBuilder.append(p[0] + "=" + p[1]);
       } 
+      
+      if (callbackParam)
+        callback = true;
     }
     
     String searchUrlParameters = searchUrlParametersBuilder.toString();
@@ -52,6 +58,9 @@ public class TestIO extends IOHandler {
     String path = response.get(searchUrl);
     if (path != null) {
       StringWriter responseWriter = new StringWriter();
+      
+      if (callback)
+        responseWriter.append("c(");
       
       char[] buf = new char[1024];
       int l = 0;
@@ -65,13 +74,15 @@ public class TestIO extends IOHandler {
       responseWriter.flush();
       responseWriter.close();      
       
+      if (callback)
+        responseWriter.append(");");
+      
       return new Response(responseWriter.getBuffer().toString(), 200, "");
     } else {
       return new Response("", 404, url + " - Not found");
     }
   }
-  
-  
+
   private static void setResponse(String url, String responsePath) {
     response.put(url, responsePath);
   } 
@@ -105,5 +116,6 @@ public class TestIO extends IOHandler {
     setResponse("https://api.foursquare.com/v2/venues/categories", "venues/categories_1.json");
     setResponse("https://api.foursquare.com/v2/venues/search?ll=40.7%2C-74", "venues/search_1.json");
     setResponse("https://api.foursquare.com/v2/venues/trending?ll=40.7%2C-74", "venues/trending_1.json");
+    setResponse("https://api.foursquare.com/v2/venues/add?name=Apuv%C3%A4lineyksikk%C3%B6+%2F+Moision+toimipiste&address=Moisiontie+11+b&city=Mikkeli&state=Etel%C3%A4-Savo&zip=50520&phone=0443516511&ll=27.272585%2C61.677701&primaryCategoryId=4bf58dd8d48988d104941735", "venues/add_1.json");
   }
 }

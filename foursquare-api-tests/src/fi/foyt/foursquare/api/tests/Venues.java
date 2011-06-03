@@ -37,8 +37,30 @@ public class Venues {
   }
 
   @Test
-  public final void testVenuesAdd() {
-//    fail("Not yet implemented"); // TODO
+  public final void testVenuesAdd() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    
+    String name = "Apuvälineyksikkö / Moision toimipiste";
+    String address = "Moisiontie 11 b";
+    String city = "Mikkeli";
+    String state = "Etelä-Savo";
+    String zip = "50520";
+    String phone = "0443516511";
+    String primaryCategoryId = "4bf58dd8d48988d104941735";
+    Double lat = 61.677701;
+    Double lng = 27.272585;
+    String ll = lat + "," + lng;
+    
+    Result<CompleteVenue> completeVenue = foursquareApi.venuesAdd(name, address, null, city, state, zip, phone, ll, primaryCategoryId);
+    
+    assertEquals(name, completeVenue.getResult().getName());
+    assertEquals(address, completeVenue.getResult().getLocation().getAddress());
+    assertEquals(city, completeVenue.getResult().getLocation().getCity());
+    assertEquals(state, completeVenue.getResult().getLocation().getState());
+    assertEquals(zip, completeVenue.getResult().getLocation().getPostalCode());
+    assertEquals(phone, completeVenue.getResult().getContact().getPhone());
+    assertEquals(lat, completeVenue.getResult().getLocation().getLat());
+    assertEquals(lng, completeVenue.getResult().getLocation().getLng());
   }
 
   @Test
