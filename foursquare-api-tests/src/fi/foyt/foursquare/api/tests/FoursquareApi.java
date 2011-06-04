@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import fi.foyt.foursquare.api.FoursquareApiException;
 import fi.foyt.foursquare.api.Result;
+import fi.foyt.foursquare.api.entities.CompleteUser;
 import fi.foyt.foursquare.api.entities.CompleteVenue;
 
 public class FoursquareApi {
@@ -74,5 +75,26 @@ public class FoursquareApi {
     String venueIdCallback = result.getResult().getId();
     
     assertEquals(venueIdCallback, venueIdNoCallback);
+  }
+  
+  @Test
+  public final void testIOError() throws FoursquareApiException {
+    fi.foyt.foursquare.api.FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    foursquareApi.setUseCallback(false);
+    Result<CompleteUser> result = foursquareApi.user("nonexisting");
+    assertEquals(new Integer(404), result.getMeta().getCode());
+    assertEquals("Not Found", result.getMeta().getErrorDetail());
+    assertNull(result.getResult());
+  }
+  
+  @Test
+  public final void testIOErrorCallback() throws FoursquareApiException {
+    fi.foyt.foursquare.api.FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    foursquareApi.setUseCallback(true);
+    Result<CompleteUser> result = foursquareApi.user("gibberish");
+    assertEquals(new Integer(400), result.getMeta().getCode());
+    assertEquals("param_error", result.getMeta().getErrorType());
+    assertEquals("Must provide a valid user ID or 'self.'", result.getMeta().getErrorDetail());
+    assertNull(result.getResult());
   }
 }

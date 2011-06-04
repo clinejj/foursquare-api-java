@@ -2,7 +2,6 @@ package fi.foyt.foursquare.api.tests;
 
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -16,70 +15,83 @@ import fi.foyt.foursquare.api.io.Response;
 public class TestIO extends IOHandler {
 
   @Override
-  public Response fetchData(String url, Method method) throws IOException {
-    StringBuilder searchUrlParametersBuilder = new StringBuilder(); 
-    
-    boolean callback = false;
-    
-    int queryStart = url.indexOf("?");
-    String searchUrl = url.substring(0, queryStart);
-    String query = url.substring(queryStart + 1);
-    Iterator<String> parameters = Arrays.asList(query.split("&")).iterator();
-    
-    while (parameters.hasNext()) {
-      String[] p = parameters.next().split("=");
+  public Response fetchData(String url, Method method) {
+    try {
+      StringBuilder searchUrlParametersBuilder = new StringBuilder(); 
       
-      boolean authToken = "oauth_token".equals(p[0]);
+      boolean callback = false;
       
-      if (authToken) {
-        if ("null".equals(p[1]))
-          return new Response("", 401, "Unauthorized");
+      int queryStart = url.indexOf("?");
+      String searchUrl = url.substring(0, queryStart);
+      String query = url.substring(queryStart + 1);
+      Iterator<String> parameters = Arrays.asList(query.split("&")).iterator();
+      
+      while (parameters.hasNext()) {
+        String[] p = parameters.next().split("=");
+        
+        boolean authToken = "oauth_token".equals(p[0]);
+        
+        if (authToken) {
+          if ("null".equals(p[1]))
+            return new Response("", 401, "Unauthorized");
+        }
+  
+        boolean clientParam = "client_id".equals(p[0]) || "client_secret".equals(p[0]);
+        boolean versionParam = "v".equals(p[0]);      
+        boolean callbackParam = "callback".equals(p[0]);
+        
+        if (!clientParam && !authToken && !versionParam && !callbackParam) {
+          if (searchUrlParametersBuilder.length() > 0)
+            searchUrlParametersBuilder.append('&');
+          searchUrlParametersBuilder.append(p[0] + "=" + p[1]);
+        } 
+        
+        if (callbackParam)
+          callback = true;
       }
-
-      boolean clientParam = "client_id".equals(p[0]) || "client_secret".equals(p[0]);
-      boolean versionParam = "v".equals(p[0]);      
-      boolean callbackParam = "callback".equals(p[0]);
       
-      if (!clientParam && !authToken && !versionParam && !callbackParam) {
-        if (searchUrlParametersBuilder.length() > 0)
-          searchUrlParametersBuilder.append('&');
-        searchUrlParametersBuilder.append(p[0] + "=" + p[1]);
-      } 
-      
-      if (callbackParam)
-        callback = true;
-    }
-    
-    String searchUrlParameters = searchUrlParametersBuilder.toString();
-    if (searchUrlParameters.length() > 0) {
-      searchUrl += '?' + searchUrlParameters;
-    }
-    
-    String path = response.get(searchUrl);
-    if (path != null) {
-      StringWriter responseWriter = new StringWriter();
-      
-      if (callback)
-        responseWriter.append("c(");
-      
-      char[] buf = new char[1024];
-      int l = 0;
-      
-      File file = new File("data/" + path);
-      FileReader fileReader = new FileReader(file);
-      while ((l = fileReader.read(buf)) > 0) {
-        responseWriter.write(buf, 0, l);
+      String searchUrlParameters = searchUrlParametersBuilder.toString();
+      if (searchUrlParameters.length() > 0) {
+        searchUrl += '?' + searchUrlParameters;
       }
-
-      responseWriter.flush();
-      responseWriter.close();      
       
-      if (callback)
-        responseWriter.append(");");
-      
-      return new Response(responseWriter.getBuffer().toString(), 200, "");
-    } else {
-      return new Response("", 404, url + " - Not found");
+      String path = response.get(searchUrl);
+      if (path != null) {
+        StringWriter responseWriter = new StringWriter();
+        
+        if (callback)
+          responseWriter.append("c(");
+        
+        char[] buf = new char[1024];
+        int l = 0;
+        
+        File file = new File("data/" + path);
+        FileReader fileReader = new FileReader(file);
+        while ((l = fileReader.read(buf)) > 0) {
+          responseWriter.write(buf, 0, l);
+        }
+  
+        responseWriter.flush();
+        responseWriter.close();      
+        
+        if (callback)
+          responseWriter.append(");");
+        
+        return new Response(responseWriter.getBuffer().toString(), 200, "");
+      } else {
+        if (callback) {
+          return new Response(
+              "meta: { " +
+              "  code: 404, " +
+              "  errorType: \"endpoint_error\", " +
+              "  errorDetail: \"The requested path does not exist.\" " +
+              "}", 200, "");
+        } else {
+          return new Response("", 404, "Not Found");
+        }
+      }
+    } catch (Exception e) {
+      return new Response("", 500, e.getMessage());
     }
   }
 
@@ -104,6 +116,7 @@ public class TestIO extends IOHandler {
     setResponse("https://api.foursquare.com/v2/checkins/recent", "checkins/recent_1.json");
     setResponse("https://api.foursquare.com/v2/users/self", "users/id_1.json");
     setResponse("https://api.foursquare.com/v2/users/1504602", "users/id_2.json");
+    setResponse("https://api.foursquare.com/v2/users/gibberish", "users/id_3.json");
     setResponse("https://api.foursquare.com/v2/users/7613255/request", "users/request_1.json");
     setResponse("https://api.foursquare.com/v2/users/7613255/unfriend", "users/unfriend_1.json");
     setResponse("https://api.foursquare.com/v2/users/10078668/approve", "users/approve_1.json");
