@@ -246,15 +246,6 @@ public class FoursquareApi {
   }
 
   /* Venues */
-
-  //TODO: venues/explore (https://code.google.com/p/foursquare-api-java/issues/detail?id=37)    
-  //TODO: venues/herenow (https://code.google.com/p/foursquare-api-java/issues/detail?id=38)
-  //TODO: venues/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=39)
-  //TODO: venues/photos (https://code.google.com/p/foursquare-api-java/issues/detail?id=40)
-  //TODO: venues/links (https://code.google.com/p/foursquare-api-java/issues/detail?id=41)
-  //TODO: venues/marktodo (https://code.google.com/p/foursquare-api-java/issues/detail?id=42)
-  //TODO: venues/flag (https://code.google.com/p/foursquare-api-java/issues/detail?id=43)
-  //TODO: venues/proposeedit (https://code.google.com/p/foursquare-api-java/issues/detail?id=44)
   
   public Result<CompleteVenue> venue(String id) throws FoursquareApiException {
     try {
@@ -266,6 +257,23 @@ public class FoursquareApi {
       }
 
       return new Result<CompleteVenue>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+
+  //TODO: venues/explore (https://code.google.com/p/foursquare-api-java/issues/detail?id=37)    
+  //TODO: venues/herenow (https://code.google.com/p/foursquare-api-java/issues/detail?id=38)
+  //TODO: venues/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=39)
+  //TODO: venues/photos (https://code.google.com/p/foursquare-api-java/issues/detail?id=40)
+  //TODO: venues/links (https://code.google.com/p/foursquare-api-java/issues/detail?id=41)
+  //TODO: venues/marktodo (https://code.google.com/p/foursquare-api-java/issues/detail?id=42)
+  //TODO: venues/flag (https://code.google.com/p/foursquare-api-java/issues/detail?id=43)
+  
+  public Result<Object> venuesProposeEdit(String id, String name, String address, String crossStreet, String city, String state, String zip, String phone, String ll, String primaryCategoryId) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.POST, "venues/" + id + "/proposeedit", true, "name", name, "address", address, "crossStreet", crossStreet, "city", city, "state", state, "zip", zip, "phone", phone, "ll", ll, "primaryCategoryId", primaryCategoryId);
+      return new Result<Object>(response.getMeta(), null);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
