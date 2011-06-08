@@ -555,20 +555,24 @@ public class FoursquareApi {
     
     if (useCallback) {
       Response response = ioHandler.fetchData(urlBuilder.toString(), method);
-      String responseContent = response.getResponseContent();
-      String callbackPrefix = "c(";
-      String callbackPostfix = ");";
-      JSONObject responseObject = new JSONObject(responseContent.substring(callbackPrefix.length(), responseContent.length() - callbackPostfix.length()));
-
-      JSONObject metaObject = responseObject.getJSONObject("meta");
-      int code = metaObject.getInt("code");
-      String errorType = metaObject.optString("errorType");
-      String errorDetail = metaObject.optString("errorDetail");
-
-      JSONObject responseJson = responseObject.getJSONObject("response");
-      JSONArray notificationsJson = responseObject.optJSONArray("notifications");
-      
-      return new ApiRequestResponse(new ResultMeta(code, errorType, errorDetail), responseJson, notificationsJson);
+      if (response.getResponseCode() == 200) {
+        String responseContent = response.getResponseContent();
+        String callbackPrefix = "c(";
+        String callbackPostfix = ");";
+        JSONObject responseObject = new JSONObject(responseContent.substring(callbackPrefix.length(), responseContent.length() - callbackPostfix.length()));
+  
+        JSONObject metaObject = responseObject.getJSONObject("meta");
+        int code = metaObject.getInt("code");
+        String errorType = metaObject.optString("errorType");
+        String errorDetail = metaObject.optString("errorDetail");
+  
+        JSONObject responseJson = responseObject.getJSONObject("response");
+        JSONArray notificationsJson = responseObject.optJSONArray("notifications");
+        
+        return new ApiRequestResponse(new ResultMeta(code, errorType, errorDetail), responseJson, notificationsJson);
+      } else {
+        return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", response.getMessage()), null, null);
+      }
     } else {
       JSONObject responseJson = null;
       JSONArray notificationsJson = null;
