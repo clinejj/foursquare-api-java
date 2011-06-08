@@ -22,10 +22,19 @@ public class BasicExample {
     
     // After client has been initialized we can make queries.
     Result<VenueGroup[]> result = foursquareApi.venuesSearch(ll, null, null, null, null, null, null);
-    // Finally we do something with the data
-    for (VenueGroup venueGroup : result.getResult()) {
-      // TODO: Do something we the data
-      System.out.println(venueGroup.getName());
+    
+    if (result.getMeta().getCode() == 200) {
+      // if query was ok we can finally we do something with the data
+      for (VenueGroup venueGroup : result.getResult()) {
+        // TODO: Do something we the data
+        System.out.println(venueGroup.getName());
+      }
+    } else {
+      // TODO: Proper error handling
+      System.out.println("Error occured: ");
+      System.out.println("  code: " + result.getMeta().getCode());
+      System.out.println("  type: " + result.getMeta().getErrorType());
+      System.out.println("  detail: " + result.getMeta().getErrorDetail()); 
     }
   }
 }
