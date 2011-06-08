@@ -134,5 +134,12 @@ public class Venues {
     assertEquals(new Long(0), result.getResult()[0].getTodos().getCount());
     assertEquals(new Long(12), result.getResult()[0].getHereNow().getCount());
   }
-
+  
+  @Test
+  public final void testVenuesProposeEdit() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    Result<Object> result = foursquareApi.venuesProposeEdit("4de88f43d22d09215a1f73e1", "Apuvälineyksikkö / Moision toimipiste", "Moisiontie 11 b", null, "Mikkeli", "Etelä-Savo", "50520", "0443516511", "61.677701,27.272585", "4bf58dd8d48988d104941735");
+  
+    assertEquals(new Integer(200), result.getMeta().getCode());
+  }
 }
