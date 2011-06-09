@@ -29,6 +29,7 @@ import fi.foyt.foursquare.api.entities.CompleteTip;
 import fi.foyt.foursquare.api.entities.CompleteUser;
 import fi.foyt.foursquare.api.entities.CompleteVenue;
 import fi.foyt.foursquare.api.entities.KeywordGroup;
+import fi.foyt.foursquare.api.entities.LeaderboardItemGroup;
 import fi.foyt.foursquare.api.entities.LinkGroup;
 import fi.foyt.foursquare.api.entities.Photo;
 import fi.foyt.foursquare.api.entities.RecommendationGroup;
@@ -126,7 +127,21 @@ public class FoursquareApi {
 
   /* Users */
 
-  // TODO: users/leaderboard (https://code.google.com/p/foursquare-api-java/issues/detail?id=26)
+  public Result<LeaderboardItemGroup> usersLeaderboard(Integer neighbors) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "users/leaderboard", true, "neighbors", neighbors);
+      LeaderboardItemGroup result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (LeaderboardItemGroup) JSONFieldParser.parseEntity(LeaderboardItemGroup.class, response.getResponse().getJSONObject("leaderboard"), this.skipNonExistingFields);
+      }
+
+      return new Result<LeaderboardItemGroup>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
   // TODO: users/badges (https://code.google.com/p/foursquare-api-java/issues/detail?id=27)
 
   public Result<CheckinGroup> usersCheckins(String userId, Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws FoursquareApiException {
