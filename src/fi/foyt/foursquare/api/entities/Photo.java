@@ -41,6 +41,10 @@ public class Photo implements FoursquareEntity {
     return user;
   }
   
+  public CompactVenue getVenue() {
+    return venue;
+  }
+  
   public CompactTip getTip() {
     return tip;
   }
@@ -55,6 +59,7 @@ public class Photo implements FoursquareEntity {
   private SizeGroup sizes;
   private Source source;
   private CompactUser user;
+  private CompactVenue venue;
   private CompactTip tip;
   private Checkin checkin;
 }
