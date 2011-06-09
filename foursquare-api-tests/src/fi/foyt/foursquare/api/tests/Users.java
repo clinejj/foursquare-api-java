@@ -11,6 +11,7 @@ import fi.foyt.foursquare.api.entities.Checkin;
 import fi.foyt.foursquare.api.entities.CheckinGroup;
 import fi.foyt.foursquare.api.entities.CompactUser;
 import fi.foyt.foursquare.api.entities.CompleteUser;
+import fi.foyt.foursquare.api.entities.LeaderboardItemGroup;
 import fi.foyt.foursquare.api.entities.UserGroup;
 import fi.foyt.foursquare.api.entities.UserGroups;
 
@@ -198,6 +199,7 @@ public class Users {
     CompleteUser user = foursquareApi.usersUnfriend("7613255").getResult();
     assertEquals("7613255", user.getId());
   }
+  
   @Test
   public final void testUsersRequests() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
@@ -211,4 +213,19 @@ public class Users {
     assertEquals("Mikkeli, Suomi", result.getResult()[0].getHomeCity());
     assertEquals("pendingMe", result.getResult()[0].getRelationship());   
   }
+  
+  @Test
+  public final void testUsersLeaderboard() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<LeaderboardItemGroup> result = foursquareApi.usersLeaderboard(null);
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals(new Long(1), result.getResult().getCount());
+    assertEquals("10078668", result.getResult().getItems()[0].getUser().getId());
+    assertEquals(new Long(0), result.getResult().getItems()[0].getScores().getRecent());
+    assertEquals(new Long(11), result.getResult().getItems()[0].getScores().getMax());
+    assertEquals(new Long(50), result.getResult().getItems()[0].getScores().getGoal());
+    assertEquals(new Long(0), result.getResult().getItems()[0].getScores().getCheckinsCount());
+    assertEquals(new Integer(1), result.getResult().getItems()[0].getRank());
+  }
+  
 }
