@@ -51,9 +51,7 @@ public class DefaultIOHandler extends IOHandler {
   
           int responseCode = connection.getResponseCode();
           String responseContent = responseWriter.getBuffer().toString();
-          
-          System.out.println(responseContent);
-          
+
           return new Response(responseContent, responseCode, connection.getResponseMessage());
         } else {
 
