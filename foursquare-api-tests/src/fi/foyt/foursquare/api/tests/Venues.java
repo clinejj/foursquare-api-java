@@ -8,6 +8,7 @@ import fi.foyt.foursquare.api.FoursquareApi;
 import fi.foyt.foursquare.api.FoursquareApiException;
 import fi.foyt.foursquare.api.Result;
 import fi.foyt.foursquare.api.entities.Category;
+import fi.foyt.foursquare.api.entities.CheckinGroup;
 import fi.foyt.foursquare.api.entities.CompactVenue;
 import fi.foyt.foursquare.api.entities.CompleteVenue;
 import fi.foyt.foursquare.api.entities.Recommended;
@@ -170,4 +171,19 @@ public class Venues {
     assertEquals(new Integer(200), result.getMeta().getCode());
     assertEquals("There aren't a lot of results near you. Try expanding the search area by tapping the settings button on the top left of the screen.", result.getResult().getWarning().getText());
   }
+  
+  @Test
+  public final void testVenuesHereNow() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAnonymousFoursquareApi();
+    Result<CheckinGroup> result = foursquareApi.venuesHereNow("5104", null, null, null);
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals(new Long(1), result.getResult().getCount());
+    assertEquals("4df0c05b1f6ea135c65c307f", result.getResult().getItems()[0].getId());
+    assertEquals(new Long(1307623515), result.getResult().getItems()[0].getCreatedAt());
+    assertEquals("checkin", result.getResult().getItems()[0].getType());
+    assertEquals("America/New_York", result.getResult().getItems()[0].getTimeZone());
+    assertEquals("2863506", result.getResult().getItems()[0].getUser().getId());
+  }
+
+  
 }
