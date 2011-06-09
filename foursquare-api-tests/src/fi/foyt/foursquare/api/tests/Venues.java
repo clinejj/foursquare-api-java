@@ -11,6 +11,7 @@ import fi.foyt.foursquare.api.entities.Category;
 import fi.foyt.foursquare.api.entities.CheckinGroup;
 import fi.foyt.foursquare.api.entities.CompactVenue;
 import fi.foyt.foursquare.api.entities.CompleteVenue;
+import fi.foyt.foursquare.api.entities.LinkGroup;
 import fi.foyt.foursquare.api.entities.Recommended;
 import fi.foyt.foursquare.api.entities.VenueGroup;
 
@@ -183,6 +184,17 @@ public class Venues {
     assertEquals("checkin", result.getResult().getItems()[0].getType());
     assertEquals("America/New_York", result.getResult().getItems()[0].getTimeZone());
     assertEquals("2863506", result.getResult().getItems()[0].getUser().getId());
+  }
+  
+  @Test
+  public final void testVenuesLinks() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAnonymousFoursquareApi();
+    Result<LinkGroup> result = foursquareApi.venuesLinks("3fd66200f964a52074e31ee3");
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals(new Long(5), result.getResult().getCount());
+    assertEquals("nyt", result.getResult().getItems()[0].getProvider().getId());
+    assertEquals("1002207971611", result.getResult().getItems()[0].getLinkedId());
+    assertEquals("http://www.nytimes.com/restaurants/1002207971611/db-bistro-moderne/details.html", result.getResult().getItems()[0].getUrl());
   }
 
   
