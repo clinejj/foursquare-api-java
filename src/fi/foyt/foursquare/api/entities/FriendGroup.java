@@ -10,19 +10,8 @@
  */
 package fi.foyt.foursquare.api.entities;
 
-public class FriendGroup extends Group<CompactUser> {
+@Deprecated
+public class FriendGroup extends UserGroup {
 
-  private static final long serialVersionUID = -8661984374396068690L;
-
-  public String getType() {
-    return type;
-  }
-  
-  @Override
-  public CompactUser[] getItems() {
-    return items;
-  }
-  
-  private String type;
-  private CompactUser[] items;
+  private static final long serialVersionUID = -7463911168093067996L;
 }

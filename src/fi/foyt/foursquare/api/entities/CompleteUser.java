@@ -47,7 +47,7 @@ public class CompleteUser extends CompactUser {
     return todos;
   }
 
-  public FriendGroups getFriends() {
+  public UserGroups getFriends() {
     return friends;
   }
 
@@ -75,7 +75,7 @@ public class CompleteUser extends CompactUser {
   private VenueGroup mayorships;
   private Count tips;
   private Count todos;
-  private FriendGroups friends;
+  private UserGroups friends;
   private Count followers;
   private Count following;
   private Count requests;

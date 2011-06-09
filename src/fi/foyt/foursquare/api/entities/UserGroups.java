@@ -10,8 +10,13 @@
  */
 package fi.foyt.foursquare.api.entities;
 
-@Deprecated
-public class FriendGroups extends UserGroups {
+public class UserGroups extends Count {
 
-  private static final long serialVersionUID = 7402009697359680959L;
+  private static final long serialVersionUID = -7444569523527922004L;
+
+  public UserGroup[] getGroups() {
+    return groups;
+  }
+  
+  private UserGroup[] groups;
 }
