@@ -8,10 +8,18 @@
  * Licensed under GNU Lesser General Public License Version 3 or later (the "LGPL")
  * http://www.gnu.org/licenses/lgpl.html
  */
+
 package fi.foyt.foursquare.api.entities;
 
-@Deprecated
-public class FriendGroups extends UserGroups {
+import fi.foyt.foursquare.api.FoursquareEntity;
 
-  private static final long serialVersionUID = 7402009697359680959L;
+public class Warning implements FoursquareEntity {
+  
+  private static final long serialVersionUID = 7167332454422034014L;
+
+  public String getText() {
+    return text;
+  }
+  
+  private String text;
 }
