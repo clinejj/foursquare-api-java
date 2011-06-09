@@ -319,7 +319,21 @@ public class FoursquareApi {
     }
   }
   
-  // TODO: venues/herenow (https://code.google.com/p/foursquare-api-java/issues/detail?id=38)
+  public Result<CheckinGroup> venuesHereNow(String id, Integer limit, Integer offset, Long afterTimestamp) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + id + "/herenow", isAuthenticated(), "limit", limit, "offset", offset, "afterTimestamp", afterTimestamp);
+      CheckinGroup result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (CheckinGroup) JSONFieldParser.parseEntity(CheckinGroup.class, response.getResponse().getJSONObject("hereNow"), this.skipNonExistingFields);
+      }
+
+      return new Result<CheckinGroup>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
   // TODO: venues/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=39)
   // TODO: venues/photos (https://code.google.com/p/foursquare-api-java/issues/detail?id=40)
   // TODO: venues/links (https://code.google.com/p/foursquare-api-java/issues/detail?id=41)
