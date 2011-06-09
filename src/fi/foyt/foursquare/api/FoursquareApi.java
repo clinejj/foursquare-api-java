@@ -28,6 +28,7 @@ import fi.foyt.foursquare.api.entities.CompleteSpecial;
 import fi.foyt.foursquare.api.entities.CompleteTip;
 import fi.foyt.foursquare.api.entities.CompleteUser;
 import fi.foyt.foursquare.api.entities.CompleteVenue;
+import fi.foyt.foursquare.api.entities.Photo;
 import fi.foyt.foursquare.api.entities.Setting;
 import fi.foyt.foursquare.api.entities.SpecialGroup;
 import fi.foyt.foursquare.api.entities.UserGroup;
@@ -453,8 +454,22 @@ public class FoursquareApi {
   // TODO: tips/unmark (https://code.google.com/p/foursquare-api-java/issues/detail?id=47)
 
   /* Photos */
+  
+  public Result<Photo> photo(String id) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "photos/" + id, true);
+      Photo result = null;
 
-  // TODO: photos/ID (https://code.google.com/p/foursquare-api-java/issues/detail?id=19)
+      if (response.getMeta().getCode() == 200) {
+        result = (Photo) JSONFieldParser.parseEntity(Photo.class, response.getResponse().getJSONObject("photo"), this.skipNonExistingFields);
+      }
+
+      return new Result<Photo>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+
   // TODO: photos/add (https://code.google.com/p/foursquare-api-java/issues/detail?id=20)
 
   /* Settings */
