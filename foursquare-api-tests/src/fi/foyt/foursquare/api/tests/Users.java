@@ -11,9 +11,8 @@ import fi.foyt.foursquare.api.entities.Checkin;
 import fi.foyt.foursquare.api.entities.CheckinGroup;
 import fi.foyt.foursquare.api.entities.CompactUser;
 import fi.foyt.foursquare.api.entities.CompleteUser;
-import fi.foyt.foursquare.api.entities.FriendGroup;
-import fi.foyt.foursquare.api.entities.FriendGroups;
 import fi.foyt.foursquare.api.entities.UserGroup;
+import fi.foyt.foursquare.api.entities.UserGroups;
 
 public class Users {
 
@@ -44,10 +43,10 @@ public class Users {
     assertEquals(new Long(50), user.getScores().getGoal());
     assertEquals(new Long(3), user.getScores().getCheckinsCount());
 
-    FriendGroups friends = user.getFriends();
+    UserGroups friends = user.getFriends();
 
     assertEquals(new Long(2), friends.getCount());
-    FriendGroup friendsGroup = friends.getGroups()[0];
+    UserGroup friendsGroup = friends.getGroups()[0];
 
     assertEquals(new Long(2), friendsGroup.getCount());
     assertEquals("others", friendsGroup.getType());
@@ -79,9 +78,9 @@ public class Users {
     assertEquals(new Long(50), user.getScores().getGoal());
     assertEquals(new Long(0), user.getScores().getCheckinsCount());
 
-    FriendGroups friends = user.getFriends();
-    FriendGroup mutualFriendGroup = friends.getGroups()[0];
-    FriendGroup otherFriendGroup = friends.getGroups()[1];
+    UserGroups friends = user.getFriends();
+    UserGroup mutualFriendGroup = friends.getGroups()[0];
+    UserGroup otherFriendGroup = friends.getGroups()[1];
 
     assertEquals(new Long(93702), otherFriendGroup.getCount());
     assertEquals("others", otherFriendGroup.getType());
