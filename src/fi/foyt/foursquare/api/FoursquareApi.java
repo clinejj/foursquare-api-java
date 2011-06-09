@@ -25,6 +25,7 @@ import fi.foyt.foursquare.api.entities.CheckinGroup;
 import fi.foyt.foursquare.api.entities.CompactUser;
 import fi.foyt.foursquare.api.entities.CompactVenue;
 import fi.foyt.foursquare.api.entities.CompleteSpecial;
+import fi.foyt.foursquare.api.entities.CompleteTip;
 import fi.foyt.foursquare.api.entities.CompleteUser;
 import fi.foyt.foursquare.api.entities.CompleteVenue;
 import fi.foyt.foursquare.api.entities.Setting;
@@ -41,7 +42,7 @@ import fi.foyt.foursquare.api.io.Response;
  * Entry point for FoursquareAPI
  */
 public class FoursquareApi {
-  
+
   private static final String DEFAULT_VERSION = "20110525";
 
   public FoursquareApi(String clientId, String clientSecret, String redirectUrl) {
@@ -60,44 +61,76 @@ public class FoursquareApi {
     this.ioHandler = ioHandler;
   }
 
+  /**
+   * Returns OAuthToken
+   * 
+   * @return OAuthToken
+   */
   public String getOAuthToken() {
     return oAuthToken;
   }
-  
+
+  /**
+   * Sets OAuthToken
+   * 
+   * @param oAuthToken
+   *          OAuthToken
+   */
   public void setoAuthToken(String oAuthToken) {
     this.oAuthToken = oAuthToken;
   }
-  
+
+  /**
+   * Sets debugging flag what ever parser should disregard non-existing fields
+   * 
+   * @param skipNonExistingFields
+   *          debugging flag what ever parser should disregard non-existing fields
+   */
   public void setSkipNonExistingFields(boolean skipNonExistingFields) {
     this.skipNonExistingFields = skipNonExistingFields;
   }
-  
+
+  /**
+   * Sets Foursquare API version
+   * 
+   * @param version
+   *          Foursquare API version
+   */
   public void setVersion(String version) {
     this.version = version;
   }
-  
+
+  /**
+   * Change JSON request mode to callback or normal
+   * 
+   * @param useCallback
+   */
   public void setUseCallback(boolean useCallback) {
     this.useCallback = useCallback;
   }
-  
+
+  /**
+   * Returns if JSON request mode is callback
+   * 
+   * @return if JSON request mode is callback
+   */
   public boolean getUseCallback() {
     return useCallback;
   }
 
-  /* Users */ 
-  
-  //TODO: users/leaderboard (https://code.google.com/p/foursquare-api-java/issues/detail?id=26)
-  
-  //TODO: users/badges (https://code.google.com/p/foursquare-api-java/issues/detail?id=27)
-  
+  /* Users */
+
+  // TODO: users/leaderboard (https://code.google.com/p/foursquare-api-java/issues/detail?id=26)
+  // TODO: users/badges (https://code.google.com/p/foursquare-api-java/issues/detail?id=27)
+
   public Result<CheckinGroup> usersCheckins(String userId, Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws FoursquareApiException {
     try {
       if (userId == null)
         userId = "self";
-      
+
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/checkins", true, "limit", limit, "offset", offset, "afterTimestamp", afterTimestamp, "beforeTimestamp", beforeTimestamp);
       CheckinGroup result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (CheckinGroup) JSONFieldParser.parseEntity(CheckinGroup.class, response.getResponse().getJSONObject("checkins"), this.skipNonExistingFields);
       }
@@ -108,19 +141,19 @@ public class FoursquareApi {
     }
   }
 
-  //TODO: users/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=29)
-  //TODO: users/todos (https://code.google.com/p/foursquare-api-java/issues/detail?id=30)
-  //TODO: users/venuehistory (https://code.google.com/p/foursquare-api-java/issues/detail?id=21)
-  
+  // TODO: users/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=29)
+  // TODO: users/todos (https://code.google.com/p/foursquare-api-java/issues/detail?id=30)
+  // TODO: users/venuehistory (https://code.google.com/p/foursquare-api-java/issues/detail?id=21)
+
   public Result<CompleteUser> usersRequest(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "users/" + id + "/request", true);
       CompleteUser result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
       }
-      
+
       return new Result<CompleteUser>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
@@ -131,58 +164,58 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "users/" + id + "/unfriend", true);
       CompleteUser result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
       }
-      
+
       return new Result<CompleteUser>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   public Result<CompleteUser> usersApprove(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "users/" + id + "/approve", true);
       CompleteUser result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
       }
-      
+
       return new Result<CompleteUser>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   public Result<CompleteUser> usersDeny(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "users/" + id + "/deny", true);
       CompleteUser result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
       }
-      
+
       return new Result<CompleteUser>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
-  
-  //TODO: users/setpings (https://code.google.com/p/foursquare-api-java/issues/detail?id=36)
-  
+
+  // TODO: users/setpings (https://code.google.com/p/foursquare-api-java/issues/detail?id=36)
+
   public Result<CompleteUser> user(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + id, true);
       CompleteUser result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
-      } 
-      
+      }
+
       return new Result<CompleteUser>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
@@ -193,11 +226,11 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "users/search", true, "phone", phone, "email", email, "twitter", twitter, "twitterSource", twitterSource, "fbid", fbid, "name", name);
       CompactUser[] result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getResponse().getJSONArray("results"), this.skipNonExistingFields);
       }
-      
+
       return new Result<CompactUser[]>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
@@ -208,7 +241,7 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "users/requests", true);
       CompactUser[] result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (CompactUser[]) JSONFieldParser.parseEntities(CompactUser.class, response.getResponse().getJSONArray("requests"), this.skipNonExistingFields);
       }
@@ -222,7 +255,8 @@ public class FoursquareApi {
   /**
    * Returns an array of a user's friends.
    * 
-   * @param id User id (can be 'self' in case of the current user, assumed 'self' if null)
+   * @param id
+   *          User id (can be 'self' in case of the current user, assumed 'self' if null)
    * @return List of friends
    * @throws FoursquareApiException
    */
@@ -234,7 +268,7 @@ public class FoursquareApi {
 
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + id + "/friends", true);
       UserGroup result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (UserGroup) JSONFieldParser.parseEntity(UserGroup.class, response.getResponse().getJSONObject("friends"), this.skipNonExistingFields);
       }
@@ -246,12 +280,12 @@ public class FoursquareApi {
   }
 
   /* Venues */
-  
+
   public Result<CompleteVenue> venue(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + id, isAuthenticated());
       CompleteVenue result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (CompleteVenue) JSONFieldParser.parseEntity(CompleteVenue.class, response.getResponse().getJSONObject("venue"), this.skipNonExistingFields);
       }
@@ -262,14 +296,14 @@ public class FoursquareApi {
     }
   }
 
-  //TODO: venues/explore (https://code.google.com/p/foursquare-api-java/issues/detail?id=37)    
-  //TODO: venues/herenow (https://code.google.com/p/foursquare-api-java/issues/detail?id=38)
-  //TODO: venues/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=39)
-  //TODO: venues/photos (https://code.google.com/p/foursquare-api-java/issues/detail?id=40)
-  //TODO: venues/links (https://code.google.com/p/foursquare-api-java/issues/detail?id=41)
-  //TODO: venues/marktodo (https://code.google.com/p/foursquare-api-java/issues/detail?id=42)
-  //TODO: venues/flag (https://code.google.com/p/foursquare-api-java/issues/detail?id=43)
-  
+  // TODO: venues/explore (https://code.google.com/p/foursquare-api-java/issues/detail?id=37)
+  // TODO: venues/herenow (https://code.google.com/p/foursquare-api-java/issues/detail?id=38)
+  // TODO: venues/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=39)
+  // TODO: venues/photos (https://code.google.com/p/foursquare-api-java/issues/detail?id=40)
+  // TODO: venues/links (https://code.google.com/p/foursquare-api-java/issues/detail?id=41)
+  // TODO: venues/marktodo (https://code.google.com/p/foursquare-api-java/issues/detail?id=42)
+  // TODO: venues/flag (https://code.google.com/p/foursquare-api-java/issues/detail?id=43)
+
   public Result<Object> venuesProposeEdit(String id, String name, String address, String crossStreet, String city, String state, String zip, String phone, String ll, String primaryCategoryId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "venues/" + id + "/proposeedit", true, "name", name, "address", address, "crossStreet", crossStreet, "city", city, "state", state, "zip", zip, "phone", phone, "ll", ll, "primaryCategoryId", primaryCategoryId);
@@ -279,12 +313,11 @@ public class FoursquareApi {
     }
   }
 
-  public Result<CompleteVenue> venuesAdd(String name, String address, String crossStreet, String city, String state, String zip, String phone, String ll,
-      String primaryCategoryId) throws FoursquareApiException {
+  public Result<CompleteVenue> venuesAdd(String name, String address, String crossStreet, String city, String state, String zip, String phone, String ll, String primaryCategoryId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "venues/add", true, "name", name, "address", address, "crossStreet", crossStreet, "city", city, "state", state, "zip", zip, "phone", phone, "ll", ll, "primaryCategoryId", primaryCategoryId);
       CompleteVenue result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (CompleteVenue) JSONFieldParser.parseEntity(CompleteVenue.class, response.getResponse().getJSONObject("venue"), this.skipNonExistingFields);
       }
@@ -299,11 +332,11 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/categories", isAuthenticated());
       Category[] result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (Category[]) JSONFieldParser.parseEntities(Category.class, response.getResponse().getJSONArray("categories"), this.skipNonExistingFields);
       }
-      
+
       return new Result<Category[]>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
@@ -314,14 +347,14 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "query", query, "limit", limit, "intent", intent);
       VenueGroup[] result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         if (response.getResponse().has("groups"))
           result = (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getResponse().getJSONArray("groups"), this.skipNonExistingFields);
         else
           result = new VenueGroup[0];
       }
-      
+
       return new Result<VenueGroup[]>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
@@ -332,7 +365,7 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/trending", isAuthenticated(), "ll", ll, "limit", limit, "radius", radius);
       CompactVenue[] result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (CompactVenue[]) JSONFieldParser.parseEntities(CompactVenue.class, response.getResponse().getJSONArray("venues"), this.skipNonExistingFields);
       }
@@ -349,7 +382,7 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "checkins/" + checkinId, true, "signature", signature);
       Checkin result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (Checkin) JSONFieldParser.parseEntity(Checkin.class, response.getResponse().getJSONObject("checkin"), this.skipNonExistingFields);
       }
@@ -359,31 +392,29 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
-  public Result<Checkin> checkinsAdd(String venueId, String venue, String shout, String broadcast, String ll, Double llAcc, Double alt, Double altAcc)
-      throws FoursquareApiException {
+
+  public Result<Checkin> checkinsAdd(String venueId, String venue, String shout, String broadcast, String ll, Double llAcc, Double alt, Double altAcc) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "checkins/add", true, "venueId", venueId, "venue", venue, "shout", shout, "broadcast", broadcast, "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc);
       Checkin result = null;
       List<Notification<?>> notifications = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (Checkin) JSONFieldParser.parseEntity(Checkin.class, response.getResponse().getJSONObject("checkin"), this.skipNonExistingFields);
         notifications = NotificationsParser.parseNotifications(response.getNotifications(), skipNonExistingFields);
       }
-      
+
       return new Result<Checkin>(response.getMeta(), result, notifications);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
   }
-  
-  public Result<Checkin[]> checkinsRecent(String ll, Integer limit, Long afterTimestamp)
-      throws FoursquareApiException {
+
+  public Result<Checkin[]> checkinsRecent(String ll, Integer limit, Long afterTimestamp) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "checkins/recent", true, "ll", ll, "limit", limit, "afterTimestamp", afterTimestamp);
       Checkin[] result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (Checkin[]) JSONFieldParser.parseEntities(Checkin.class, response.getResponse().getJSONArray("recent"), this.skipNonExistingFields);
       }
@@ -393,14 +424,29 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   // TODO: checkins/addcomment (https://code.google.com/p/foursquare-api-java/issues/detail?id=14)
   // TODO: checkins/deletecomment (https://code.google.com/p/foursquare-api-java/issues/detail?id=15)
 
   /* Tips */
 
-  // TODO: tips/ID (https://code.google.com/p/foursquare-api-java/issues/detail?id=16)  
-  // TODO: tips/add (https://code.google.com/p/foursquare-api-java/issues/detail?id=17)                   
+  public Result<CompleteTip> tip(String id) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "tips/" + id, false);
+      CompleteTip result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (CompleteTip) JSONFieldParser.parseEntity(CompleteTip.class, response.getResponse().getJSONObject("tip"), this.skipNonExistingFields);
+      }
+
+      return new Result<CompleteTip>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+
+  // TODO: tips/ID (https://code.google.com/p/foursquare-api-java/issues/detail?id=16)
+  // TODO: tips/add (https://code.google.com/p/foursquare-api-java/issues/detail?id=17)
   // TODO: tips/search (https://code.google.com/p/foursquare-api-java/issues/detail?id=18)
   // TODO: tips/marktodo (https://code.google.com/p/foursquare-api-java/issues/detail?id=25)
   // TODO: tips/markdone (https://code.google.com/p/foursquare-api-java/issues/detail?id=46)
@@ -409,15 +455,15 @@ public class FoursquareApi {
   /* Photos */
 
   // TODO: photos/ID (https://code.google.com/p/foursquare-api-java/issues/detail?id=19)
-  // TODO: photos/add (https://code.google.com/p/foursquare-api-java/issues/detail?id=20) 
+  // TODO: photos/add (https://code.google.com/p/foursquare-api-java/issues/detail?id=20)
 
   /* Settings */
-  
+
   public Result<Setting> settingSet(String settingId, Boolean value) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "settings/" + settingId + "/set", true, "value", value ? 1 : 0);
       Setting result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (Setting) JSONFieldParser.parseEntity(Setting.class, response.getResponse().getJSONObject("settings"), this.skipNonExistingFields);
       }
@@ -432,7 +478,7 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "settings/all", true);
       Setting result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (Setting) JSONFieldParser.parseEntity(Setting.class, response.getResponse().getJSONObject("settings"), this.skipNonExistingFields);
       }
@@ -449,7 +495,7 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "specials/" + id, isAuthenticated(), "venueId", venueId);
       CompleteSpecial result = null;
-     
+
       if (response.getMeta().getCode() == 200) {
         result = (CompleteSpecial) JSONFieldParser.parseEntity(CompleteSpecial.class, response.getResponse().getJSONObject("special"), this.skipNonExistingFields);
       }
@@ -464,7 +510,7 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "specials/search", true, "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "limit", limit);
       SpecialGroup result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (SpecialGroup) JSONFieldParser.parseEntity(SpecialGroup.class, response.getResponse().getJSONObject("specials"), this.skipNonExistingFields);
       }
@@ -474,7 +520,7 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   /* Authentication */
 
   private boolean isAuthenticated() {
@@ -482,23 +528,12 @@ public class FoursquareApi {
   }
 
   public String getAuthenticationUrl() {
-    return new StringBuilder("https://foursquare.com/oauth2/authenticate?client_id=")
-      .append(this.clientId)
-      .append("&response_type=code")
-      .append("&redirect_uri=")
-      .append(this.redirectUrl).toString();
+    return new StringBuilder("https://foursquare.com/oauth2/authenticate?client_id=").append(this.clientId).append("&response_type=code").append("&redirect_uri=").append(this.redirectUrl).toString();
   }
 
   public void authenticateCode(String code) throws FoursquareApiException {
-    StringBuilder urlBuilder = new StringBuilder("https://foursquare.com/oauth2/access_token?client_id=")
-      .append(this.clientId)
-      .append("&client_secret=")
-      .append(this.clientSecret)
-      .append("&grant_type=authorization_code")
-      .append("&redirect_uri=")
-      .append(this.redirectUrl)
-      .append("&code=")
-      .append(code);
+    StringBuilder urlBuilder = new StringBuilder("https://foursquare.com/oauth2/access_token?client_id=").append(this.clientId).append("&client_secret=").append(this.clientSecret).append("&grant_type=authorization_code").append("&redirect_uri=").append(this.redirectUrl).append("&code=")
+        .append(code);
 
     try {
       Response response = ioHandler.fetchData(urlBuilder.toString(), Method.GET);
@@ -520,7 +555,7 @@ public class FoursquareApi {
   public IOHandler getIOHandler() {
     return ioHandler;
   }
-  
+
   private ApiRequestResponse doApiRequest(Method method, String path, boolean auth, Object... params) throws JSONException, FoursquareApiException {
     StringBuilder urlBuilder = new StringBuilder(apiUrl);
     urlBuilder.append(path);
@@ -534,10 +569,10 @@ public class FoursquareApi {
           if (value != null) {
             urlBuilder.append(params[paramIndex]);
             urlBuilder.append('=');
-            urlBuilder.append(URLEncoder.encode(value.toString(),"UTF-8"));
+            urlBuilder.append(URLEncoder.encode(value.toString(), "UTF-8"));
             urlBuilder.append('&');
           }
-  
+
           paramIndex += 2;
         }
       } catch (UnsupportedEncodingException e) {
@@ -554,13 +589,13 @@ public class FoursquareApi {
       urlBuilder.append("&client_secret=");
       urlBuilder.append(clientSecret);
     }
-    
+
     urlBuilder.append("&v=" + version);
 
     if (useCallback) {
       urlBuilder.append("&callback=c");
     }
-    
+
     if (useCallback) {
       Response response = ioHandler.fetchData(urlBuilder.toString(), method);
       if (response.getResponseCode() == 200) {
@@ -568,15 +603,15 @@ public class FoursquareApi {
         String callbackPrefix = "c(";
         String callbackPostfix = ");";
         JSONObject responseObject = new JSONObject(responseContent.substring(callbackPrefix.length(), responseContent.length() - callbackPostfix.length()));
-  
+
         JSONObject metaObject = responseObject.getJSONObject("meta");
         int code = metaObject.getInt("code");
         String errorType = metaObject.optString("errorType");
         String errorDetail = metaObject.optString("errorDetail");
-  
+
         JSONObject responseJson = responseObject.getJSONObject("response");
         JSONArray notificationsJson = responseObject.optJSONArray("notifications");
-        
+
         return new ApiRequestResponse(new ResultMeta(code, errorType, errorDetail), responseJson, notificationsJson);
       } else {
         return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", response.getMessage()), null, null);
@@ -594,7 +629,7 @@ public class FoursquareApi {
       } else {
         errorDetail = response.getMessage();
       }
-      
+
       return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", errorDetail), responseJson, notificationsJson);
     }
   }
@@ -610,25 +645,25 @@ public class FoursquareApi {
   private static final String apiUrl = "https://api.foursquare.com/v2/";
 
   private class ApiRequestResponse {
-    
+
     public ApiRequestResponse(ResultMeta meta, JSONObject response, JSONArray notifications) throws JSONException {
       this.meta = meta;
       this.response = response;
       this.notifications = notifications;
     }
-    
+
     public JSONObject getResponse() {
       return response;
     }
-    
+
     public JSONArray getNotifications() {
       return notifications;
     }
-    
+
     public ResultMeta getMeta() {
       return meta;
     }
-    
+
     private JSONObject response;
     private JSONArray notifications;
     private ResultMeta meta;
