@@ -29,6 +29,7 @@ import fi.foyt.foursquare.api.entities.CompleteTip;
 import fi.foyt.foursquare.api.entities.CompleteUser;
 import fi.foyt.foursquare.api.entities.CompleteVenue;
 import fi.foyt.foursquare.api.entities.KeywordGroup;
+import fi.foyt.foursquare.api.entities.LinkGroup;
 import fi.foyt.foursquare.api.entities.Photo;
 import fi.foyt.foursquare.api.entities.RecommendationGroup;
 import fi.foyt.foursquare.api.entities.Recommended;
@@ -336,7 +337,22 @@ public class FoursquareApi {
   
   // TODO: venues/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=39)
   // TODO: venues/photos (https://code.google.com/p/foursquare-api-java/issues/detail?id=40)
-  // TODO: venues/links (https://code.google.com/p/foursquare-api-java/issues/detail?id=41)
+  
+  public Result<LinkGroup> venuesLinks(String id) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + id + "/links", isAuthenticated());
+      LinkGroup result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (LinkGroup) JSONFieldParser.parseEntity(LinkGroup.class, response.getResponse().getJSONObject("links"), this.skipNonExistingFields);
+      }
+
+      return new Result<LinkGroup>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
   // TODO: venues/marktodo (https://code.google.com/p/foursquare-api-java/issues/detail?id=42)
   // TODO: venues/flag (https://code.google.com/p/foursquare-api-java/issues/detail?id=43)
 
