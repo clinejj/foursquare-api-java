@@ -12,7 +12,7 @@ public class Settings {
 
   @Test
   public final void testSettingSet() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     
     Setting setting = foursquareApi.settingSet("receivePings", false).getResult();
     
@@ -29,7 +29,7 @@ public class Settings {
 
   @Test
   public final void testSettingsAll() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Setting setting = foursquareApi.settingsAll().getResult();
     
     assertEquals(true, setting.getReceivePings());

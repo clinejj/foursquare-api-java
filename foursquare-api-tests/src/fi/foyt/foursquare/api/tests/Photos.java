@@ -12,7 +12,7 @@ public class Photos {
 
   @Test
   public final void testPhoto() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Result<Photo> result = foursquareApi.photo("4d0fb8162d39a340637dc42b");
 
     assertEquals(new Integer(200), result.getMeta().getCode());

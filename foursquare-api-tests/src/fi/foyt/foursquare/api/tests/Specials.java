@@ -31,7 +31,7 @@ public class Specials {
 
   @Test
   public final void testSpecialsSearch() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     SpecialGroup specialGroup = foursquareApi.specialsSearch("40.7,-73.9", null, null, null, null).getResult();
     
     assertEquals(specialGroup.getCount(), new Long(28));

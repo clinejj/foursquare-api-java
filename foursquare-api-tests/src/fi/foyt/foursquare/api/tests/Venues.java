@@ -41,7 +41,7 @@ public class Venues {
 
   @Test
   public final void testVenuesAdd() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     
     String name = "Apuvälineyksikkö / Moision toimipiste";
     String address = "Moisiontie 11 b";
@@ -140,7 +140,7 @@ public class Venues {
   
   @Test
   public final void testVenuesProposeEdit() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Result<Object> result = foursquareApi.venuesProposeEdit("4de88f43d22d09215a1f73e1", "Apuvälineyksikkö / Moision toimipiste", "Moisiontie 11 b", null, "Mikkeli", "Etelä-Savo", "50520", "0443516511", "61.677701,27.272585", "4bf58dd8d48988d104941735");
   
     assertEquals(new Integer(200), result.getMeta().getCode());
@@ -195,6 +195,13 @@ public class Venues {
     assertEquals("nyt", result.getResult().getItems()[0].getProvider().getId());
     assertEquals("1002207971611", result.getResult().getItems()[0].getLinkedId());
     assertEquals("http://www.nytimes.com/restaurants/1002207971611/db-bistro-moderne/details.html", result.getResult().getItems()[0].getUrl());
+  }
+  
+  @Test
+  public final void testVenuesFlag() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<Object> result = foursquareApi.venuesFlag("4beb18a36295c9b669478708", "closed");
+    assertEquals(new Integer(200), result.getMeta().getCode());
   }
 
   

@@ -10,7 +10,7 @@ public class TestUtils {
     return foursquareApi;
   }
   
-  public static FoursquareApi getAuthorizedFoursquareApi() {
+  public static FoursquareApi getAuthenticatedFoursquareApi() {
     FoursquareApi foursquareApi = new FoursquareApi(CLIENT_ID, CLIENT_SECRET, REDIRECT_URL, OAUTH, new TestIO());
     foursquareApi.setSkipNonExistingFields(false);
     return foursquareApi;

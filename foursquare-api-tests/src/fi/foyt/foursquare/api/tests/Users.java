@@ -18,7 +18,7 @@ public class Users {
 
   @Test
   public final void testUser() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     CompleteUser user = foursquareApi.user("self").getResult();
     assertEquals("7613255", user.getId());
     assertEquals("Foyt", user.getFirstName());
@@ -55,7 +55,7 @@ public class Users {
 
   @Test
   public final void testUserBrand() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     CompleteUser user = foursquareApi.user("1504602").getResult();
     assertEquals("1504602", user.getId());
     assertEquals("Mashable", user.getFirstName());
@@ -93,7 +93,7 @@ public class Users {
 
   @Test
   public final void testUsersCheckins() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     CheckinGroup checkins = foursquareApi.usersCheckins("self", null, null, null, null).getResult();
     assertEquals(new Long(6), checkins.getCount());
     Checkin checkin = checkins.getItems()[0];
@@ -115,7 +115,7 @@ public class Users {
 
   @Test
   public final void testUsersSearch() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     CompactUser[] users = foursquareApi.usersSearch(null, null, "naveen", null, null, null).getResult();
     assertEquals(1, users.length);
     assertEquals("33", users[0].getId());
@@ -127,7 +127,7 @@ public class Users {
 
   @Test
   public final void testUsersFriends() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     UserGroup users = foursquareApi.usersFriends("self").getResult();
     assertEquals(new Long(2), users.getCount());
     CompactUser user1 = users.getItems()[0];
@@ -173,34 +173,34 @@ public class Users {
 
   @Test
   public final void testUsersRequest() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     CompleteUser user = foursquareApi.usersRequest("7613255").getResult();
     assertEquals("7613255", user.getId());
   }
 
   @Test
   public final void testUsersApprove() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     CompleteUser user = foursquareApi.usersApprove("10078668").getResult();
     assertEquals("10078668", user.getId());
   }
 
   @Test
   public final void testUsersDeny() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     CompleteUser user = foursquareApi.usersDeny("10078668").getResult();
     assertEquals("10078668", user.getId());
   }
 
   @Test
   public final void testUsersUnfriend() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     CompleteUser user = foursquareApi.usersUnfriend("7613255").getResult();
     assertEquals("7613255", user.getId());
   }
   @Test
   public final void testUsersRequests() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Result<CompactUser[]> result = foursquareApi.usersRequests();
     
     assertEquals("7613255", result.getResult()[0].getId());

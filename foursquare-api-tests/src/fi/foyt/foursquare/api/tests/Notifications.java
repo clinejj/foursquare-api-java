@@ -40,7 +40,7 @@ public class Notifications {
   @SuppressWarnings("unchecked")
   @Test
   public final void testNotifications() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Result<Checkin> result = foursquareApi.checkinsAdd("408c5100f964a520c6f21ee3", null, null, "public", null, null, null, null);
 
     Checkin checkin = result.getResult();
@@ -106,7 +106,7 @@ public class Notifications {
 
   @Test
   public final void testTipAlert() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Result<Checkin> result = foursquareApi.checkinsAdd("4c6bbfafa48420a1b09a0a0b", null, null, "private", "61.68777583849969,27.273173332214355", null, null, null);
     Checkin checkin = result.getResult();
 

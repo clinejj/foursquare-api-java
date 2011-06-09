@@ -79,7 +79,7 @@ public class FoursquareApi {
   
   @Test
   public final void testIOError() throws FoursquareApiException {
-    fi.foyt.foursquare.api.FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    fi.foyt.foursquare.api.FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     foursquareApi.setUseCallback(false);
     Result<CompleteUser> result = foursquareApi.user("nonexisting");
     assertEquals(new Integer(404), result.getMeta().getCode());
@@ -89,7 +89,7 @@ public class FoursquareApi {
   
   @Test
   public final void testIOErrorCallback() throws FoursquareApiException {
-    fi.foyt.foursquare.api.FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    fi.foyt.foursquare.api.FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     foursquareApi.setUseCallback(true);
     Result<CompleteUser> result = foursquareApi.user("gibberish");
     assertEquals(new Integer(400), result.getMeta().getCode());

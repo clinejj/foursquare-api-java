@@ -17,7 +17,7 @@ public class Checkins {
 
   @Test
   public final void testCheckin() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Checkin checkin = foursquareApi.checkin("4d627f6814963704dc28ff94", "LPtzP4edmpbaspdKhI9-892UoFM").getResult();
 
     assertEquals("4d627f6814963704dc28ff94", checkin.getId());
@@ -33,7 +33,7 @@ public class Checkins {
   
   @Test
   public final void testCheckinVenueless() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Result<Checkin> result = foursquareApi.checkinsAdd(null, "Test", null, "public", "40,40", null, null, null);
     Checkin checkin = result.getResult();
     
@@ -48,7 +48,7 @@ public class Checkins {
   
   @Test
   public final void testCheckinComments() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Checkin checkin = foursquareApi.checkin("4d7b44d7f260a0932e5024ba", null).getResult();
 
     assertEquals("4d7b44d7f260a0932e5024ba", checkin.getId());
@@ -63,7 +63,7 @@ public class Checkins {
   
   @Test
   public final void testCheckinOverlaps() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Checkin checkin = foursquareApi.checkin("4de4762d52b1d38d299e6000", null).getResult();
 
     assertEquals("4de4762d52b1d38d299e6000", checkin.getId());
@@ -79,7 +79,7 @@ public class Checkins {
     
   @Test
   public final void testCheckinsAdd() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Result<Checkin> result = foursquareApi.checkinsAdd("4c6bbfafa48420a1b09a0a0b", null, null, "private", "61.68777583849969,27.273173332214355", null, null, null);
     Checkin checkin = result.getResult();
     
@@ -93,7 +93,7 @@ public class Checkins {
 
   @Test
   public final void testCheckinsRecent() throws FoursquareApiException {
-    FoursquareApi foursquareApi = TestUtils.getAuthorizedFoursquareApi();
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Checkin[] checkins = foursquareApi.checkinsRecent(null, null, null).getResult();
     assertEquals(1, checkins.length);
     Checkin checkin = checkins[0];
