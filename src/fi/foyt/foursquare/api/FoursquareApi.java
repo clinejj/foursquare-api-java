@@ -28,11 +28,15 @@ import fi.foyt.foursquare.api.entities.CompleteSpecial;
 import fi.foyt.foursquare.api.entities.CompleteTip;
 import fi.foyt.foursquare.api.entities.CompleteUser;
 import fi.foyt.foursquare.api.entities.CompleteVenue;
+import fi.foyt.foursquare.api.entities.KeywordGroup;
 import fi.foyt.foursquare.api.entities.Photo;
+import fi.foyt.foursquare.api.entities.RecommendationGroup;
+import fi.foyt.foursquare.api.entities.Recommended;
 import fi.foyt.foursquare.api.entities.Setting;
 import fi.foyt.foursquare.api.entities.SpecialGroup;
 import fi.foyt.foursquare.api.entities.UserGroup;
 import fi.foyt.foursquare.api.entities.VenueGroup;
+import fi.foyt.foursquare.api.entities.Warning;
 import fi.foyt.foursquare.api.entities.notifications.Notification;
 import fi.foyt.foursquare.api.io.DefaultIOHandler;
 import fi.foyt.foursquare.api.io.IOHandler;
@@ -296,8 +300,25 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
+  
+  public Result<Recommended> venuesExplore(String ll, Double llAcc, Double alt, Double altAcc, Integer radius, String section, String query, Integer limit, String basis) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "venues/explore", isAuthenticated(), "ll", ll, "llAcc",llAcc, "alt", alt, "altAcc", altAcc, "radius", radius, "section", section, "query", query, "limit", limit, "basis", basis);
+      Recommended result = null;
 
-  // TODO: venues/explore (https://code.google.com/p/foursquare-api-java/issues/detail?id=37)
+      if (response.getMeta().getCode() == 200) {
+        KeywordGroup keywords = (KeywordGroup) JSONFieldParser.parseEntity(KeywordGroup.class, response.getResponse().getJSONObject("keywords"), this.skipNonExistingFields);
+        RecommendationGroup[] groups = (RecommendationGroup[]) JSONFieldParser.parseEntities(RecommendationGroup.class, response.getResponse().getJSONArray("groups"), this.skipNonExistingFields);
+        Warning warning = response.getResponse().has("warning") ? (Warning) JSONFieldParser.parseEntity(Warning.class, response.getResponse().getJSONObject("warning"), this.skipNonExistingFields) : null;
+        result = new Recommended(keywords, groups, warning);
+      }
+
+      return new Result<Recommended>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
   // TODO: venues/herenow (https://code.google.com/p/foursquare-api-java/issues/detail?id=38)
   // TODO: venues/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=39)
   // TODO: venues/photos (https://code.google.com/p/foursquare-api-java/issues/detail?id=40)
