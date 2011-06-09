@@ -354,7 +354,15 @@ public class FoursquareApi {
   }
   
   // TODO: venues/marktodo (https://code.google.com/p/foursquare-api-java/issues/detail?id=42)
-  // TODO: venues/flag (https://code.google.com/p/foursquare-api-java/issues/detail?id=43)
+  
+  public Result<Object> venuesFlag(String id, String problem) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.POST, "venues/" + id + "/flag", true, "problem", problem);
+      return new Result<Object>(response.getMeta(), null);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
 
   public Result<Object> venuesProposeEdit(String id, String name, String address, String crossStreet, String city, String state, String zip, String phone, String ll, String primaryCategoryId) throws FoursquareApiException {
     try {
