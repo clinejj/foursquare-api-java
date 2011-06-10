@@ -44,6 +44,7 @@ import fi.foyt.foursquare.api.entities.Todo;
 import fi.foyt.foursquare.api.entities.TodoGroup;
 import fi.foyt.foursquare.api.entities.UserGroup;
 import fi.foyt.foursquare.api.entities.VenueGroup;
+import fi.foyt.foursquare.api.entities.VenueHistoryGroup;
 import fi.foyt.foursquare.api.entities.Warning;
 import fi.foyt.foursquare.api.entities.notifications.Notification;
 import fi.foyt.foursquare.api.io.DefaultIOHandler;
@@ -224,7 +225,23 @@ public class FoursquareApi {
     }
   }
   
-  // TODO: users/venuehistory (https://code.google.com/p/foursquare-api-java/issues/detail?id=21)
+  public Result<VenueHistoryGroup> usersVenueHistory(String userId, Long beforeTimestamp, Long afterTimestamp) throws FoursquareApiException {
+    try {
+      if (userId == null)
+        userId = "self";
+
+      ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/venuehistory", true, "beforeTimestamp", beforeTimestamp, "afterTimestamp", afterTimestamp);
+      VenueHistoryGroup result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (VenueHistoryGroup) JSONFieldParser.parseEntity(VenueHistoryGroup.class, response.getResponse().getJSONObject("venues"), this.skipNonExistingFields);
+      }
+
+      return new Result<VenueHistoryGroup>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
 
   public Result<CompleteUser> usersRequest(String id) throws FoursquareApiException {
     try {
