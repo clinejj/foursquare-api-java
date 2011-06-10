@@ -25,11 +25,11 @@ public class Todo implements FoursquareEntity {
     return id;
   }
   
-  public String getTip() {
+  public CompleteTip getTip() {
     return tip;
   }
   
   private String id;
   private Long createdAt;
-  private String tip;
+  private CompleteTip tip;
 }
