@@ -127,6 +127,7 @@ public class TestIO extends IOHandler {
     setResponse("https://api.foursquare.com/v2/users/requests", "users/requests_1.json");
     setResponse("https://api.foursquare.com/v2/users/leaderboard", "users/leaderboard_1.json");
     setResponse("https://api.foursquare.com/v2/users/self/badges", "users/badges_1.json");
+    setResponse("https://api.foursquare.com/v2/users/self/tips?sort=recent", "users/tips_1.json");
     setResponse("https://api.foursquare.com/v2/venues/5104", "venues/id_1.json");
     setResponse("https://api.foursquare.com/v2/venues/categories", "venues/categories_1.json");
     setResponse("https://api.foursquare.com/v2/venues/search?ll=40.7%2C-74", "venues/search_1.json");

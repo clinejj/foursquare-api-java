@@ -13,6 +13,7 @@ import fi.foyt.foursquare.api.entities.CheckinGroup;
 import fi.foyt.foursquare.api.entities.CompactUser;
 import fi.foyt.foursquare.api.entities.CompleteUser;
 import fi.foyt.foursquare.api.entities.LeaderboardItemGroup;
+import fi.foyt.foursquare.api.entities.TipGroup;
 import fi.foyt.foursquare.api.entities.UserGroup;
 import fi.foyt.foursquare.api.entities.UserGroups;
 
@@ -251,5 +252,20 @@ public class Users {
     assertEquals("/default_off.png", result.getResult().getBadges()[0].getImage().getName());
     assertEquals(0, result.getResult().getBadges()[0].getUnlocks().length);
   }
-
+  
+  @Test
+  public final void testUsersTips() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<TipGroup> result = foursquareApi.usersTips(null, "recent", null, null, null);
+    
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals("4df1ec5045dd4e269339e96f", result.getResult().getItems()[0].getId());
+    assertEquals(new Long(1307700304), result.getResult().getItems()[0].getCreatedAt());
+    assertEquals("Wonderful festival called Beautiful Days here at 19, 20 & 21 of August 2011", result.getResult().getItems()[0].getText());
+    assertEquals("http://www.beautifuldays.org", result.getResult().getItems()[0].getUrl());
+    assertEquals("done", result.getResult().getItems()[0].getStatus());
+    assertEquals(new Long(0), result.getResult().getItems()[0].getTodo().getCount());
+    assertEquals(new Long(1), result.getResult().getItems()[0].getDone().getCount());
+    assertEquals("4bb73a402ea19521b1a6ac2f", result.getResult().getItems()[0].getVenue().getId());
+  }
 }
