@@ -14,6 +14,7 @@ import fi.foyt.foursquare.api.entities.CompactUser;
 import fi.foyt.foursquare.api.entities.CompleteUser;
 import fi.foyt.foursquare.api.entities.LeaderboardItemGroup;
 import fi.foyt.foursquare.api.entities.TipGroup;
+import fi.foyt.foursquare.api.entities.TodoGroup;
 import fi.foyt.foursquare.api.entities.UserGroup;
 import fi.foyt.foursquare.api.entities.UserGroups;
 
@@ -268,4 +269,16 @@ public class Users {
     assertEquals(new Long(1), result.getResult().getItems()[0].getDone().getCount());
     assertEquals("4bb73a402ea19521b1a6ac2f", result.getResult().getItems()[0].getVenue().getId());
   }
+  
+  @Test
+  public final void testUsersTodos() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<TodoGroup> result = foursquareApi.usersTodos(null, "recent", null);
+    
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals("4df203b045dd4e26933a50ed", result.getResult().getItems()[0].getId());
+    assertEquals(new Long(1307706288), result.getResult().getItems()[0].getCreatedAt());
+    assertEquals("4bb8f41970c603bb64bf96b4", result.getResult().getItems()[0].getTip().getId());
+  }
+  
 }
