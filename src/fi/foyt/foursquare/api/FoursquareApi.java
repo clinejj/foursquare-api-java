@@ -544,7 +544,22 @@ public class FoursquareApi {
   }
 
   // TODO: tips/ID (https://code.google.com/p/foursquare-api-java/issues/detail?id=16)
-  // TODO: tips/add (https://code.google.com/p/foursquare-api-java/issues/detail?id=17)
+  
+  public Result<CompleteTip> tipsAdd(String venueId, String text, String url) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.POST, "tips/add", true, "venueId", venueId, "text", text, "url", url);
+      CompleteTip result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (CompleteTip) JSONFieldParser.parseEntity(CompleteTip.class, response.getResponse().getJSONObject("tip"), this.skipNonExistingFields);
+      }
+
+      return new Result<CompleteTip>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+
   // TODO: tips/search (https://code.google.com/p/foursquare-api-java/issues/detail?id=18)
   // TODO: tips/marktodo (https://code.google.com/p/foursquare-api-java/issues/detail?id=25)
   // TODO: tips/markdone (https://code.google.com/p/foursquare-api-java/issues/detail?id=46)
