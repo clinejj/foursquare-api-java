@@ -134,6 +134,21 @@ public class FoursquareApi {
 
   /* Users */
 
+  public Result<CompleteUser> user(String id) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "users/" + id, true);
+      CompleteUser result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (CompleteUser) JSONFieldParser.parseEntity(CompleteUser.class, response.getResponse().getJSONObject("user"), this.skipNonExistingFields);
+      }
+
+      return new Result<CompleteUser>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+
   public Result<LeaderboardItemGroup> usersLeaderboard(Integer neighbors) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "users/leaderboard", true, "neighbors", neighbors);
@@ -302,12 +317,10 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-
-  // TODO: users/setpings (https://code.google.com/p/foursquare-api-java/issues/detail?id=36)
-
-  public Result<CompleteUser> user(String id) throws FoursquareApiException {
+  
+  public Result<CompleteUser> usersSetPings(String userId, String value) throws FoursquareApiException {
     try {
-      ApiRequestResponse response = doApiRequest(Method.GET, "users/" + id, true);
+      ApiRequestResponse response = doApiRequest(Method.POST, "users/" + userId + "/setpings", true, "value", value);
       CompleteUser result = null;
 
       if (response.getMeta().getCode() == 200) {
