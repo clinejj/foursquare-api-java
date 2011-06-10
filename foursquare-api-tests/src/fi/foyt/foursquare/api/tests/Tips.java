@@ -7,6 +7,7 @@ import fi.foyt.foursquare.api.FoursquareApi;
 import fi.foyt.foursquare.api.FoursquareApiException;
 import fi.foyt.foursquare.api.Result;
 import fi.foyt.foursquare.api.entities.CompleteTip;
+import fi.foyt.foursquare.api.entities.Todo;
 
 public class Tips {
 
@@ -44,5 +45,14 @@ public class Tips {
     assertEquals("7613255", result.getResult().getUser().getId());
   }
   
-
+  @Test
+  public final void testTipsMarkTodo() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<Todo> result = foursquareApi.tipsMarkTodo("4bb8f41970c603bb64bf96b4");
+    
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals("4df203b045dd4e26933a50ed", result.getResult().getId());
+    assertEquals(new Long(1307706288), result.getResult().getCreatedAt());
+    assertEquals("4bb8f41970c603bb64bf96b4", result.getResult().getTip().getId());
+  }
 }
