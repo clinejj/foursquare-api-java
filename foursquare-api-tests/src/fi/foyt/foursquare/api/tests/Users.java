@@ -292,4 +292,14 @@ public class Users {
     assertEquals(new Integer(1), result.getResult().getItems()[0].getBeenHere());
   }
   
+  @Test
+  public final void testUsersSetPings() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<CompleteUser> result = foursquareApi.usersSetPings("10078668", "true");
+    
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals("10078668", result.getResult().getId());
+  }
+  
+  
 }
