@@ -17,6 +17,7 @@ import fi.foyt.foursquare.api.entities.TipGroup;
 import fi.foyt.foursquare.api.entities.TodoGroup;
 import fi.foyt.foursquare.api.entities.UserGroup;
 import fi.foyt.foursquare.api.entities.UserGroups;
+import fi.foyt.foursquare.api.entities.VenueHistoryGroup;
 
 public class Users {
 
@@ -279,6 +280,16 @@ public class Users {
     assertEquals("4df203b045dd4e26933a50ed", result.getResult().getItems()[0].getId());
     assertEquals(new Long(1307706288), result.getResult().getItems()[0].getCreatedAt());
     assertEquals("4bb8f41970c603bb64bf96b4", result.getResult().getItems()[0].getTip().getId());
+  }
+  
+  @Test
+  public final void testUsersVenueHistory() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<VenueHistoryGroup> result = foursquareApi.usersVenueHistory(null, null, null);
+    
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals("4c6bbfafa48420a1b09a0a0b", result.getResult().getItems()[0].getVenue().getId());
+    assertEquals(new Integer(1), result.getResult().getItems()[0].getBeenHere());
   }
   
 }
