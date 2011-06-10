@@ -40,6 +40,7 @@ import fi.foyt.foursquare.api.entities.Recommended;
 import fi.foyt.foursquare.api.entities.Setting;
 import fi.foyt.foursquare.api.entities.SpecialGroup;
 import fi.foyt.foursquare.api.entities.TipGroup;
+import fi.foyt.foursquare.api.entities.Todo;
 import fi.foyt.foursquare.api.entities.UserGroup;
 import fi.foyt.foursquare.api.entities.VenueGroup;
 import fi.foyt.foursquare.api.entities.Warning;
@@ -579,7 +580,22 @@ public class FoursquareApi {
   }
 
   // TODO: tips/search (https://code.google.com/p/foursquare-api-java/issues/detail?id=18)
-  // TODO: tips/marktodo (https://code.google.com/p/foursquare-api-java/issues/detail?id=25)
+  
+  public Result<Todo> tipsMarkTodo(String tipId) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.POST, "tips/" + tipId + "/marktodo", true);
+      Todo result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (Todo) JSONFieldParser.parseEntity(Todo.class, response.getResponse().getJSONObject("todo"), this.skipNonExistingFields);
+      }
+
+      return new Result<Todo>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }  
+
   // TODO: tips/markdone (https://code.google.com/p/foursquare-api-java/issues/detail?id=46)
   // TODO: tips/unmark (https://code.google.com/p/foursquare-api-java/issues/detail?id=47)
 
