@@ -41,6 +41,24 @@ public class JSONFieldParser {
     return result;
   }
   
+  public static FoursquareEntity[] parseEntitiesHash(Class<?> clazz, JSONObject jsonHashList, boolean skipNonExistingFields) throws FoursquareApiException {
+    String[] keys = getFieldNames(jsonHashList);
+    
+    FoursquareEntity[] result = (FoursquareEntity[]) Array.newInstance(clazz, keys.length);
+    int i = 0;
+    for (String key : keys) {
+      JSONObject jsonObject;
+      try {
+        jsonObject = jsonHashList.getJSONObject(key);
+        result[i++] = parseEntity(clazz, jsonObject, skipNonExistingFields);
+      } catch (JSONException e) {
+        throw new FoursquareApiException(e);
+      }
+    }
+    
+    return result;
+  }
+  
   public static FoursquareEntity parseEntity(Class<?> clazz, JSONObject jsonObject, boolean skipNonExistingFields) throws FoursquareApiException {
     FoursquareEntity entity = createNewField(clazz);
     
