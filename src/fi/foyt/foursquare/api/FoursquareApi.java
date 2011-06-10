@@ -39,6 +39,7 @@ import fi.foyt.foursquare.api.entities.RecommendationGroup;
 import fi.foyt.foursquare.api.entities.Recommended;
 import fi.foyt.foursquare.api.entities.Setting;
 import fi.foyt.foursquare.api.entities.SpecialGroup;
+import fi.foyt.foursquare.api.entities.TipGroup;
 import fi.foyt.foursquare.api.entities.UserGroup;
 import fi.foyt.foursquare.api.entities.VenueGroup;
 import fi.foyt.foursquare.api.entities.Warning;
@@ -185,7 +186,24 @@ public class FoursquareApi {
     }
   }
 
-  // TODO: users/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=29)
+  public Result<TipGroup> usersTips(String userId, String sort, String ll, Integer limit, Integer offset) throws FoursquareApiException {
+    try {
+      if (userId == null)
+        userId = "self";
+
+      ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/tips", true, "sort", sort, "ll", ll, "limit", limit, "offset", offset);
+      TipGroup result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (TipGroup) JSONFieldParser.parseEntity(TipGroup.class, response.getResponse().getJSONObject("tips"), this.skipNonExistingFields);
+      }
+
+      return new Result<TipGroup>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
   // TODO: users/todos (https://code.google.com/p/foursquare-api-java/issues/detail?id=30)
   // TODO: users/venuehistory (https://code.google.com/p/foursquare-api-java/issues/detail?id=21)
 
