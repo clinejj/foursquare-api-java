@@ -61,7 +61,7 @@ public class CompactVenue implements FoursquareEntity {
     return tips;
   }
 
-  public Todos getTodos() {
+  public TodoGroup getTodos() {
     return todos;
   }
 
@@ -76,5 +76,5 @@ public class CompactVenue implements FoursquareEntity {
   private Stats stats;
   private String url;
   private Tips tips;
-  private Todos todos;
+  private TodoGroup todos;
 }

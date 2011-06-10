@@ -11,10 +11,11 @@
 
 package fi.foyt.foursquare.api.entities;
 
-public class Todos extends Count {
+public class TodoGroup extends Group<Todo> {
 
-  private static final long serialVersionUID = 2932642396308535360L;
+  private static final long serialVersionUID = -8645153668638867533L;
 
+  @Override
   public Todo[] getItems() {
     return items;
   }
