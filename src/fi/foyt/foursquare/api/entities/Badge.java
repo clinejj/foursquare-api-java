@@ -29,6 +29,10 @@ public class Badge implements FoursquareEntity {
     return name;
   }
   
+  public String getHint() {
+    return hint;
+  }
+  
   public String getDescription() {
     return description;
   }
@@ -37,14 +41,15 @@ public class Badge implements FoursquareEntity {
     return image;
   }
   
-  public Checkin[] getUnlocks() {
+  public BadgeUnlock[] getUnlocks() {
     return unlocks;
   }
-
+  
   private String id;
   private String badgeId;
   private String name;
+  private String hint;
   private String description;
   private BadgeImage image;
-  private Checkin[] unlocks;
+  private BadgeUnlock[] unlocks;
 }

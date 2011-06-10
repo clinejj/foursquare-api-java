@@ -33,9 +33,14 @@ public class Checkin implements FoursquareEntity {
     return user;
   }
   
+  public Boolean getIsMayor() {
+    return isMayor;
+  }
+  
   public String getTimeZone() {
     return timeZone;
   }
+  
   public CompactVenue getVenue() {
     return venue;
   }
@@ -77,6 +82,7 @@ public class Checkin implements FoursquareEntity {
   private String type;
   private Boolean isPrivate;
   private CompactUser user;
+  private Boolean isMayor;
   private String timeZone;
   private CompleteVenue venue;
   private Location location;
