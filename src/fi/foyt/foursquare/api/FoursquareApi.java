@@ -41,6 +41,7 @@ import fi.foyt.foursquare.api.entities.Setting;
 import fi.foyt.foursquare.api.entities.SpecialGroup;
 import fi.foyt.foursquare.api.entities.TipGroup;
 import fi.foyt.foursquare.api.entities.Todo;
+import fi.foyt.foursquare.api.entities.TodoGroup;
 import fi.foyt.foursquare.api.entities.UserGroup;
 import fi.foyt.foursquare.api.entities.VenueGroup;
 import fi.foyt.foursquare.api.entities.Warning;
@@ -205,7 +206,24 @@ public class FoursquareApi {
     }
   }
   
-  // TODO: users/todos (https://code.google.com/p/foursquare-api-java/issues/detail?id=30)
+  public Result<TodoGroup> usersTodos(String userId, String sort, String ll) throws FoursquareApiException {
+    try {
+      if (userId == null)
+        userId = "self";
+
+      ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/todos", true, "sort", sort, "ll", ll);
+      TodoGroup result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (TodoGroup) JSONFieldParser.parseEntity(TodoGroup.class, response.getResponse().getJSONObject("todos"), this.skipNonExistingFields);
+      }
+
+      return new Result<TodoGroup>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
   // TODO: users/venuehistory (https://code.google.com/p/foursquare-api-java/issues/detail?id=21)
 
   public Result<CompleteUser> usersRequest(String id) throws FoursquareApiException {
