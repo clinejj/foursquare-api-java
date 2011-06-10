@@ -139,6 +139,7 @@ public class TestIO extends IOHandler {
     setResponse("https://api.foursquare.com/v2/venues/3fd66200f964a52074e31ee3/links", "venues/links_1.json");
     setResponse("https://api.foursquare.com/v2/venues/4beb18a36295c9b669478708/flag?problem=closed", "venues/flag_1.json");
     setResponse("https://api.foursquare.com/v2/tips/4b5e662a70c603bba7d790b4", "tips/id_1.json");
+    setResponse("https://api.foursquare.com/v2/tips/add?venueId=4bb73a402ea19521b1a6ac2f&text=Wonderful+festival+called+Beautiful+Days+here+at+19%2C+20+%26+21+of+August+2011&url=http%3A%2F%2Fwww.beautifuldays.org", "tips/add_1.json");
     setResponse("https://api.foursquare.com/v2/photos/4d0fb8162d39a340637dc42b", "photos/id_1.json");
   }
 }

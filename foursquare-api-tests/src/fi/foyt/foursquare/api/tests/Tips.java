@@ -25,5 +25,24 @@ public class Tips {
     assertEquals(new Long(7), result.getResult().getDone().getCount());
     assertEquals("318537", result.getResult().getDone().getGroups()[1].getItems()[0].getId());
   }
+  
+  @Test
+  public final void testTipsAdd() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    
+    String text = "Wonderful festival called Beautiful Days here at 19, 20 & 21 of August 2011";
+    String url = "http://www.beautifuldays.org";
+    
+    Result<CompleteTip> result = foursquareApi.tipsAdd("4bb73a402ea19521b1a6ac2f", text, url);
+
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals(new Long(1307700304), result.getResult().getCreatedAt());
+    assertEquals(text, result.getResult().getText());
+    assertEquals(url, result.getResult().getUrl());
+    assertEquals(new Long(0), result.getResult().getTodo().getCount());
+    assertEquals(new Long(1), result.getResult().getDone().getCount());
+    assertEquals("7613255", result.getResult().getUser().getId());
+  }
+  
 
 }
