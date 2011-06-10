@@ -19,6 +19,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import fi.foyt.foursquare.api.entities.Badge;
+import fi.foyt.foursquare.api.entities.BadgeSets;
+import fi.foyt.foursquare.api.entities.Badges;
 import fi.foyt.foursquare.api.entities.Category;
 import fi.foyt.foursquare.api.entities.Checkin;
 import fi.foyt.foursquare.api.entities.CheckinGroup;
@@ -141,9 +144,29 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
-  // TODO: users/badges (https://code.google.com/p/foursquare-api-java/issues/detail?id=27)
 
+  public Result<Badges> usersBadges(String userId) throws FoursquareApiException {
+    try {
+      if (userId == null)
+        userId = "self";
+      
+      ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/badges", true);
+      Badges result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        BadgeSets sets = (BadgeSets) JSONFieldParser.parseEntity(BadgeSets.class, response.getResponse().getJSONObject("sets"), this.skipNonExistingFields);
+        Badge[] badges = (Badge[]) JSONFieldParser.parseEntitiesHash(Badge.class, response.getResponse().getJSONObject("badges"), this.skipNonExistingFields);
+        String defaultSetType = response.getResponse().getString("defaultSetType");
+        
+        result = new Badges(sets, badges, defaultSetType);
+      }
+
+      return new Result<Badges>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
   public Result<CheckinGroup> usersCheckins(String userId, Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws FoursquareApiException {
     try {
       if (userId == null)
