@@ -7,6 +7,7 @@ import org.junit.Test;
 import fi.foyt.foursquare.api.FoursquareApi;
 import fi.foyt.foursquare.api.FoursquareApiException;
 import fi.foyt.foursquare.api.Result;
+import fi.foyt.foursquare.api.entities.Badges;
 import fi.foyt.foursquare.api.entities.Checkin;
 import fi.foyt.foursquare.api.entities.CheckinGroup;
 import fi.foyt.foursquare.api.entities.CompactUser;
@@ -228,4 +229,27 @@ public class Users {
     assertEquals(new Integer(1), result.getResult().getItems()[0].getRank());
   }
   
+  @Test
+  public final void testUsersBadges() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<Badges> result = foursquareApi.usersBadges("self");
+    
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals("all", result.getResult().getSets().getGroups()[0].getType());
+    assertEquals("all badges", result.getResult().getSets().getGroups()[0].getName());
+    assertEquals("https://foursquare.com/img/badge/", result.getResult().getSets().getGroups()[0].getImage().getPrefix());
+    assertArrayEquals(new Integer[] {24, 32, 48, 64}, result.getResult().getSets().getGroups()[0].getImage().getSizes());
+    assertEquals("/allbadges.png", result.getResult().getSets().getGroups()[0].getImage().getName());
+    assertArrayEquals(new String[] {"4de4762d52b1d38d299e6008"}, result.getResult().getSets().getGroups()[0].getItems());
+    assertEquals(0, result.getResult().getSets().getGroups()[0].getGroups().length);
+    assertEquals("4c4f08667a0803bbde202ab7", result.getResult().getBadges()[0].getId());
+    assertEquals("4c4f08667a0803bbde202ab7", result.getResult().getBadges()[0].getBadgeId());
+    assertEquals("Jobs", result.getResult().getBadges()[0].getName());
+    assertEquals("Here's the silver lining to breaking your iPhone 3 times. ", result.getResult().getBadges()[0].getHint()); 
+    assertEquals("https://playfoursquare.s3.amazonaws.com/badge/", result.getResult().getBadges()[0].getImage().getPrefix());
+    assertArrayEquals(new Integer[] {57, 114, 200, 300, 400}, result.getResult().getBadges()[0].getImage().getSizes());
+    assertEquals("/default_off.png", result.getResult().getBadges()[0].getImage().getName());
+    assertEquals(0, result.getResult().getBadges()[0].getUnlocks().length);
+  }
+
 }
