@@ -15,9 +15,9 @@ public class TipGroup extends Group<CompactTip> {
 
   private static final long serialVersionUID = -9176732625588094423L;
 
-  public CompactTip[] getItems() {
+  public CompleteTip[] getItems() {
     return items;
   }
   
-  private CompactTip[] items;
+  private CompleteTip[] items;
 }

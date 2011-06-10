@@ -12,7 +12,7 @@
 package fi.foyt.foursquare.api.entities.notifications;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
-import fi.foyt.foursquare.api.entities.CompactTip;
+import fi.foyt.foursquare.api.entities.CompleteTip;
 
 public class TipNotification implements FoursquareEntity {
 
@@ -22,10 +22,10 @@ public class TipNotification implements FoursquareEntity {
     return name;
   }
   
-  public CompactTip getTip() {
+  public CompleteTip getTip() {
     return tip;
   }
 
   private String name;
-  private CompactTip tip;
+  private CompleteTip tip;
 }

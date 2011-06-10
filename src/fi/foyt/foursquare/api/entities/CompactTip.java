@@ -49,14 +49,6 @@ public class CompactTip implements FoursquareEntity {
     return url;
   }
   
-  public UserGroups getTodo() {
-    return todo;
-  }
-  
-  public UserGroups getDone() {
-    return done;
-  }
-  
   private String id;
   private String text;
   private Long createdAt;
@@ -65,6 +57,4 @@ public class CompactTip implements FoursquareEntity {
   private String url;
   private CompactUser user;
   private CompactVenue venue;
-  private UserGroups todo;
-  private UserGroups done;
 }

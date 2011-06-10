@@ -12,7 +12,17 @@
 package fi.foyt.foursquare.api.entities;
 
 public class CompleteTip extends CompactTip {
-
-  private static final long serialVersionUID = -3715780085240928313L;
-
+  
+  private static final long serialVersionUID = 5606985476553828335L;
+  
+  public UserGroups getTodo() {
+    return todo;
+  }
+  
+  public UserGroups getDone() {
+    return done;
+  }
+  
+  private UserGroups todo;
+  private UserGroups done;
 }

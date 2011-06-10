@@ -12,15 +12,15 @@
 package fi.foyt.foursquare.api.entities.notifications;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
-import fi.foyt.foursquare.api.entities.CompactTip;
+import fi.foyt.foursquare.api.entities.CompleteTip;
 
 public class TipAlertNotification implements FoursquareEntity {
 
   private static final long serialVersionUID = -2491430362788377600L;
 
-  public CompactTip getTip() {
+  public CompleteTip getTip() {
     return tip;
   }
 
-  private CompactTip tip;
+  private CompleteTip tip;
 }

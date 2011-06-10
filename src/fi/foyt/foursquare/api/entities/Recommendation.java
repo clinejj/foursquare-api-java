@@ -14,11 +14,11 @@ public class Recommendation implements FoursquareEntity {
     return venue;
   }
   
-  public CompactTip[] getTips() {
+  public CompleteTip[] getTips() {
     return tips;
   }
   
   private ReasonGroup reasons;
   private CompactVenue venue;
-  private CompactTip[] tips;
+  private CompleteTip[] tips;
 }
