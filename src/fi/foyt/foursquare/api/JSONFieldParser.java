@@ -15,6 +15,7 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -178,15 +179,10 @@ public class JSONFieldParser {
   } 
   
   private static List<Method> getMethods(Class<?> entityClass) {
-    List<Method> result;
-    
-    Class<?> superClass;
-    do {
-      result = Arrays.asList(entityClass.getDeclaredMethods());
-      superClass = entityClass.getSuperclass();
-      if (!superClass.equals(Object.class)) 
-        result.addAll(getMethods(superClass));
-    } while (!superClass.equals(Object.class));
+    List<Method> result = new ArrayList<Method>(Arrays.asList(entityClass.getDeclaredMethods()));
+    if (!entityClass.getSuperclass().equals(Object.class)) {
+      result.addAll(getMethods(entityClass.getSuperclass()));
+    }    
     
     return result;
   }
