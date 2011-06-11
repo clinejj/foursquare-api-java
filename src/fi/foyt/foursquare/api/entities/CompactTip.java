@@ -37,6 +37,10 @@ public class CompactTip implements FoursquareEntity {
     return photo;
   }
   
+  public String getPhotoURL() {
+    return photourl;
+  }
+  
   public CompactUser getUser() {
     return user;
   }
@@ -54,6 +58,7 @@ public class CompactTip implements FoursquareEntity {
   private Long createdAt;
   private String status;
   private Photo photo;
+  private String photourl;
   private String url;
   private CompactUser user;
   private CompactVenue venue;
