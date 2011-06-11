@@ -99,4 +99,16 @@ public class Checkins {
     Checkin checkin = checkins[0];
     assertEquals("4d7b7746f260a093ae7827ba", checkin.getId());
   }
+
+  @Test
+  public final void testCheckinsAddComment() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<Comment> result = foursquareApi.checkinsAddComment("4de470c0ae60e7f3ac1f0fa7", "That's very testy!");
+    
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals("4df3393b14954f21cf2d7543", result.getResult().getId());
+    assertEquals(new Long(1307785531), result.getResult().getCreatedAt());
+    assertEquals("10078668", result.getResult().getUser().getId());
+    assertEquals("That's very testy!", result.getResult().getText());
+  }
 }
