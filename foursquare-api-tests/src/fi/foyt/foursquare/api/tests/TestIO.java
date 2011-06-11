@@ -10,6 +10,7 @@ import java.util.Map;
 
 import fi.foyt.foursquare.api.io.IOHandler;
 import fi.foyt.foursquare.api.io.Method;
+import fi.foyt.foursquare.api.io.MultipartParameter;
 import fi.foyt.foursquare.api.io.Response;
 
 public class TestIO extends IOHandler {
@@ -94,6 +95,11 @@ public class TestIO extends IOHandler {
       return new Response("", 500, e.getMessage());
     }
   }
+  
+  @Override
+  public Response fetchDataMultipartMime(String url, MultipartParameter... params) {
+    return fetchData(url, Method.POST);
+  }
 
   private static void setResponse(String url, String responsePath) {
     response.put(url, responsePath);
@@ -149,5 +155,6 @@ public class TestIO extends IOHandler {
     setResponse("https://api.foursquare.com/v2/tips/4bb8f41970c603bb64bf96b4/marktodo", "tips/marktodo_1.json");
     setResponse("https://api.foursquare.com/v2/tips/search?ll=40.7%2C-74", "tips/search_1.json");
     setResponse("https://api.foursquare.com/v2/photos/4d0fb8162d39a340637dc42b", "photos/id_1.json");
+    setResponse("https://api.foursquare.com/v2/photos/add?checkinId=4de470c0ae60e7f3ac1f0fa7", "photos/add_1.json");
   }
 }
