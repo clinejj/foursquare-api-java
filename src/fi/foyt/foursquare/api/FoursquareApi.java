@@ -536,8 +536,15 @@ public class FoursquareApi {
     }
   }
 
-  /* Venues */
-
+  /**
+   * Gives details about a venue, including location, mayorship, tags, tips, specials, and category. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/venues/venues.html" target="_blank">https://developer.foursquare.com/docs/venues/venues.html</a>
+   * 
+   * @param venueId id of venue to retrieve
+   * @return CompleteVenue entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<CompleteVenue> venue(String venueId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + venueId, isAuthenticated());
@@ -553,6 +560,23 @@ public class FoursquareApi {
     }
   }
   
+  /**
+   * Returns a list of recommended venues near the specified location. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/venues/explore.html" target="_blank">https://developer.foursquare.com/docs/venues/explore.html</a>
+   * 
+   * @param ll latitude and longitude of the location in question, so response can include distance.
+   * @param llAcc accuracy of latitude and longitude, in meters. 
+   * @param alt altitude of the user's location, in meters.
+   * @param altAcc accuracy of the user's altitude, in meters.
+   * @param radius radius to search within, in meters.
+   * @param section one of food, drinks, coffee, shops, or arts. Choosing one of these limits results to venues with categories matching these terms.
+   * @param query a search term to be applied against tips, category, tips, etc. at a venue.
+   * @param limit number of results to return, up to 50.
+   * @param basis if present and set to friends or me, limits results to only places where friends have visited or user has visited, respectively.
+   * @return Recommended entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<Recommended> venuesExplore(String ll, Double llAcc, Double alt, Double altAcc, Integer radius, String section, String query, Integer limit, String basis) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/explore", isAuthenticated(), "ll", ll, "llAcc",llAcc, "alt", alt, "altAcc", altAcc, "radius", radius, "section", section, "query", query, "limit", limit, "basis", basis);
@@ -571,9 +595,21 @@ public class FoursquareApi {
     }
   }
   
-  public Result<CheckinGroup> venuesHereNow(String id, Integer limit, Integer offset, Long afterTimestamp) throws FoursquareApiException {
+  /**
+   * Provides a count of how many people are at a given venue. If the request is user authenticated, also returns a list of the users there, friends-first. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/venues/herenow.html" target="_blank">https://developer.foursquare.com/docs/venues/herenow.html</a>
+   * 
+   * @param venueId id of venue to retrieve
+   * @param limit number of results to return, up to 500.
+   * @param offset used to page through results. 
+   * @param afterTimestamp retrieve the first results to follow these seconds since epoch
+   * @return CheckinGroup entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
+  public Result<CheckinGroup> venuesHereNow(String venueId, Integer limit, Integer offset, Long afterTimestamp) throws FoursquareApiException {
     try {
-      ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + id + "/herenow", isAuthenticated(), "limit", limit, "offset", offset, "afterTimestamp", afterTimestamp);
+      ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + venueId + "/herenow", isAuthenticated(), "limit", limit, "offset", offset, "afterTimestamp", afterTimestamp);
       CheckinGroup result = null;
 
       if (response.getMeta().getCode() == 200) {
