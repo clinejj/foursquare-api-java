@@ -13,6 +13,7 @@ package fi.foyt.foursquare.api;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -51,6 +52,7 @@ import fi.foyt.foursquare.api.entities.notifications.Notification;
 import fi.foyt.foursquare.api.io.DefaultIOHandler;
 import fi.foyt.foursquare.api.io.IOHandler;
 import fi.foyt.foursquare.api.io.Method;
+import fi.foyt.foursquare.api.io.MultipartParameter;
 import fi.foyt.foursquare.api.io.Response;
 
 /**
@@ -885,8 +887,21 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
+  
+  public Result<Photo> photosAdd(String checkinId, String tipId, String venueId, String broadcast, String ll, Double llAcc, Double alt, Double altAcc, byte[] data) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiMultipartMimeRequest("photos/add", true, "checkinId", checkinId, "tipId", tipId, "venueId", venueId, "broadcast", broadcast, "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, new MultipartParameter("photo", "image/jpeg", data));
+      Photo result = null;
 
-  // TODO: photos/add (https://code.google.com/p/foursquare-api-java/issues/detail?id=20)
+      if (response.getMeta().getCode() == 200) {
+        result = (Photo) JSONFieldParser.parseEntity(Photo.class, response.getResponse().getJSONObject("photo"), this.skipNonExistingFields);
+      }
+
+      return new Result<Photo>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
 
   /* Settings */
 
@@ -986,8 +1001,40 @@ public class FoursquareApi {
   public IOHandler getIOHandler() {
     return ioHandler;
   }
+  
+  private ApiRequestResponse doApiMultipartMimeRequest(String path, boolean auth, Object... params) throws JSONException, FoursquareApiException {
+    List<Object> parameters = new ArrayList<Object>();
+    List<MultipartParameter> multipartParameters = new ArrayList<MultipartParameter>();
+    
+    for (Object param : params) {
+      if (param instanceof MultipartParameter)
+        multipartParameters.add((MultipartParameter) param);
+      else 
+        parameters.add(param);
+    }
+    
+    String url = getApiRequestUrl(path, auth, parameters.toArray());
+    Response response = ioHandler.fetchDataMultipartMime(url, multipartParameters.toArray(new MultipartParameter[0]));
+
+    if (useCallback) {
+      return handleCallbackApiResponse(response);
+    } else {
+      return handleApiResponse(response);
+    }
+  }
 
   private ApiRequestResponse doApiRequest(Method method, String path, boolean auth, Object... params) throws JSONException, FoursquareApiException {
+    String url = getApiRequestUrl(path, auth, params);
+    Response response = ioHandler.fetchData(url, method);
+
+    if (useCallback) {
+      return handleCallbackApiResponse(response);
+    } else {
+      return handleApiResponse(response);
+    }
+  }
+  
+  private String getApiRequestUrl(String path, boolean auth, Object... params) throws FoursquareApiException {
     StringBuilder urlBuilder = new StringBuilder(apiUrl);
     urlBuilder.append(path);
     urlBuilder.append('?');
@@ -1026,42 +1073,44 @@ public class FoursquareApi {
     if (useCallback) {
       urlBuilder.append("&callback=c");
     }
+    
+    return urlBuilder.toString();
+  }
 
-    if (useCallback) {
-      Response response = ioHandler.fetchData(urlBuilder.toString(), method);
-      if (response.getResponseCode() == 200) {
-        String responseContent = response.getResponseContent();
-        String callbackPrefix = "c(";
-        String callbackPostfix = ");";
-        JSONObject responseObject = new JSONObject(responseContent.substring(callbackPrefix.length(), responseContent.length() - callbackPostfix.length()));
+  private ApiRequestResponse handleApiResponse(Response response) throws JSONException {
+    JSONObject responseJson = null;
+    JSONArray notificationsJson = null;
+    String errorDetail = null;
 
-        JSONObject metaObject = responseObject.getJSONObject("meta");
-        int code = metaObject.getInt("code");
-        String errorType = metaObject.optString("errorType");
-        String errorDetail = metaObject.optString("errorDetail");
-
-        JSONObject responseJson = responseObject.getJSONObject("response");
-        JSONArray notificationsJson = responseObject.optJSONArray("notifications");
-
-        return new ApiRequestResponse(new ResultMeta(code, errorType, errorDetail), responseJson, notificationsJson);
-      } else {
-        return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", response.getMessage()), null, null);
-      }
+    if (response.getResponseCode() == 200) {
+      JSONObject responseObject = new JSONObject(response.getResponseContent());
+      responseJson = responseObject.getJSONObject("response");
+      notificationsJson = responseObject.optJSONArray("notifications");
     } else {
-      JSONObject responseJson = null;
-      JSONArray notificationsJson = null;
-      String errorDetail = null;
+      errorDetail = response.getMessage();
+    }
 
-      Response response = ioHandler.fetchData(urlBuilder.toString(), method);
-      if (response.getResponseCode() == 200) {
-        JSONObject responseObject = new JSONObject(response.getResponseContent());
-        responseJson = responseObject.getJSONObject("response");
-        notificationsJson = responseObject.optJSONArray("notifications");
-      } else {
-        errorDetail = response.getMessage();
-      }
+    return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", errorDetail), responseJson, notificationsJson);
+  }
 
-      return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", errorDetail), responseJson, notificationsJson);
+  private ApiRequestResponse handleCallbackApiResponse(Response response) throws JSONException {
+    if (response.getResponseCode() == 200) {
+      String responseContent = response.getResponseContent();
+      String callbackPrefix = "c(";
+      String callbackPostfix = ");";
+      JSONObject responseObject = new JSONObject(responseContent.substring(callbackPrefix.length(), responseContent.length() - callbackPostfix.length()));
+
+      JSONObject metaObject = responseObject.getJSONObject("meta");
+      int code = metaObject.getInt("code");
+      String errorType = metaObject.optString("errorType");
+      String errorDetail = metaObject.optString("errorDetail");
+
+      JSONObject responseJson = responseObject.getJSONObject("response");
+      JSONArray notificationsJson = responseObject.optJSONArray("notifications");
+
+      return new ApiRequestResponse(new ResultMeta(code, errorType, errorDetail), responseJson, notificationsJson);
+    } else {
+      return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", response.getMessage()), null, null);
     }
   }
 
