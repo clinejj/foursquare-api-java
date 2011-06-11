@@ -14,5 +14,5 @@ package fi.foyt.foursquare.api.io;
 public abstract class IOHandler {
 
   public abstract Response fetchData(String url, Method method);
-  
+  public abstract Response fetchDataMultipartMime(String url, MultipartParameter... params);
 }
