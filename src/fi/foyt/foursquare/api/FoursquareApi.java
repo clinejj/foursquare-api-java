@@ -25,6 +25,7 @@ import fi.foyt.foursquare.api.entities.Badges;
 import fi.foyt.foursquare.api.entities.Category;
 import fi.foyt.foursquare.api.entities.Checkin;
 import fi.foyt.foursquare.api.entities.CheckinGroup;
+import fi.foyt.foursquare.api.entities.Comment;
 import fi.foyt.foursquare.api.entities.CompactUser;
 import fi.foyt.foursquare.api.entities.CompactVenue;
 import fi.foyt.foursquare.api.entities.CompleteSpecial;
@@ -735,7 +736,21 @@ public class FoursquareApi {
     }
   }
 
-  // TODO: checkins/addcomment (https://code.google.com/p/foursquare-api-java/issues/detail?id=14)
+  public Result<Comment> checkinsAddComment(String checkinId, String text) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.POST, "checkins/" + checkinId + "/addcomment", true, "text", text);
+      Comment result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (Comment) JSONFieldParser.parseEntity(Comment.class, response.getResponse().getJSONObject("comment"), this.skipNonExistingFields);
+      }
+
+      return new Result<Comment>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
+  
   // TODO: checkins/deletecomment (https://code.google.com/p/foursquare-api-java/issues/detail?id=15)
 
   /* Tips */
