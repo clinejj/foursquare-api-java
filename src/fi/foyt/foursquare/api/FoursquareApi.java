@@ -624,7 +624,33 @@ public class FoursquareApi {
     }
   }
   
-  // TODO: venues/tips (https://code.google.com/p/foursquare-api-java/issues/detail?id=39)
+  /**
+   * Returns tips for a venue. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/venues/tips.html" target="_blank">https://developer.foursquare.com/docs/venues/tips.html</a>
+   * 
+   * @param venueId id of venue 
+   * @param sort one of recent or popular
+   * @param limit number of results to return, up to 500.
+   * @param offset used to page through results.
+   * @return TipGroup entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
+  public Result<TipGroup> venuesTips(String venueId, String sort, Integer limit, Integer offset) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + venueId + "/tips", isAuthenticated(), "sort", sort, "limit", limit, "offset", offset);
+      TipGroup result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (TipGroup) JSONFieldParser.parseEntity(TipGroup.class, response.getResponse().getJSONObject("tips"), this.skipNonExistingFields);
+      }
+
+      return new Result<TipGroup>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  } 
+
   // TODO: venues/photos (https://code.google.com/p/foursquare-api-java/issues/detail?id=40)
   
   public Result<LinkGroup> venuesLinks(String id) throws FoursquareApiException {
