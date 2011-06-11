@@ -111,4 +111,15 @@ public class Checkins {
     assertEquals("10078668", result.getResult().getUser().getId());
     assertEquals("That's very testy!", result.getResult().getText());
   }
+
+  @Test
+  public final void testCheckinsDeleteComment() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<Checkin> result = foursquareApi.checkinsDeleteComment("4de470c0ae60e7f3ac1f0fa7", "4df3393b14954f21cf2d7543");
+    
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals("4de470c0ae60e7f3ac1f0fa7", result.getResult().getId());
+    assertEquals(new Long(0), result.getResult().getComments().getCount());
+    
+  }
 }
