@@ -132,11 +132,21 @@ public class FoursquareApi {
     return useCallback;
   }
 
-  /* Users */
-
-  public Result<CompleteUser> user(String id) throws FoursquareApiException {
+  /**
+   * Returns profile information for a given user, including selected badges and mayorships. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/users/users.html" target="_blank">https://developer.foursquare.com/docs/users/users.html</a>
+   * 
+   * @param userId User id (can be 'self' in case of the current user, assumed 'self' if null)
+   * @return CompleteUser entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
+  public Result<CompleteUser> user(String userId) throws FoursquareApiException {
     try {
-      ApiRequestResponse response = doApiRequest(Method.GET, "users/" + id, true);
+      if (userId == null)
+        userId = "self";
+      
+      ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId, true);
       CompleteUser result = null;
 
       if (response.getMeta().getCode() == 200) {
@@ -149,6 +159,15 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Returns the user's leaderboard. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/users/leaderboard.html" target="_blank">https://developer.foursquare.com/docs/users/leaderboard.html</a>
+   * 
+   * @param neighbors number of friends' scores to return that are adjacent to user's score
+   * @return LeaderboardItemGroup entity wrapped in Result object 
+   * @throws FoursquareApiException
+   */
   public Result<LeaderboardItemGroup> usersLeaderboard(Integer neighbors) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "users/leaderboard", true, "neighbors", neighbors);
@@ -164,6 +183,15 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Returns badges for a given user. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/users/badges.html" target="_blank">https://developer.foursquare.com/docs/users/badges.html</a>
+   * 
+   * @param userId User id (can be 'self' in case of the current user, assumed 'self' if null)
+   * @return Badges entity wrapped in Result object 
+   * @throws FoursquareApiException
+   */
   public Result<Badges> usersBadges(String userId) throws FoursquareApiException {
     try {
       if (userId == null)
@@ -186,6 +214,19 @@ public class FoursquareApi {
     }
   }
   
+  /**
+   * Returns a history of checkins for the authenticated user. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/users/checkins.html" target="_blank">https://developer.foursquare.com/docs/users/checkins.html</a>
+   * 
+   * @param userId User id (For now, only 'self' is supported, 'self' assumed if null)
+   * @param limit number of results to return
+   * @param offset used to page through results. 
+   * @param afterTimestamp retrieve the first results to follow these seconds since epoch.
+   * @param beforeTimestamp retrieve the first results prior to these seconds since epoch.
+   * @return CheckinGroup entity wrapped in Result object 
+   * @throws FoursquareApiException
+   */
   public Result<CheckinGroup> usersCheckins(String userId, Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws FoursquareApiException {
     try {
       if (userId == null)
@@ -204,6 +245,19 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Returns tips from a user. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/users/tips.html" target="_blank">https://developer.foursquare.com/docs/users/tips.html</a>
+   * 
+   * @param userId User id (can be 'self' in case of the current user, assumed 'self' if null)
+   * @param sort one of recent, nearby, or popular. Nearby requires ll to be provided.
+   * @param ll latitude and longitude of the user's location.
+   * @param limit number of results to return, up to 500.
+   * @param offset used to page through results.
+   * @return TipGroup entity wrapped in Result object 
+   * @throws FoursquareApiException
+   */
   public Result<TipGroup> usersTips(String userId, String sort, String ll, Integer limit, Integer offset) throws FoursquareApiException {
     try {
       if (userId == null)
@@ -222,6 +276,17 @@ public class FoursquareApi {
     }
   }
   
+  /**
+   * Returns todos from a user. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/users/todos.html" target="_blank">https://developer.foursquare.com/docs/users/todos.html</a>
+   * 
+   * @param userId User id (can be 'self' in case of the current user, assumed 'self' if null)
+   * @param sort one of recent or popular. Nearby requires ll to be provided.
+   * @param ll latitude and longitude of the user's location
+   * @return TodoGroup entity wrapped in Result object 
+   * @throws FoursquareApiException
+   */
   public Result<TodoGroup> usersTodos(String userId, String sort, String ll) throws FoursquareApiException {
     try {
       if (userId == null)
@@ -240,6 +305,17 @@ public class FoursquareApi {
     }
   }
   
+  /**
+   * Returns a list of all venues visited by the specified user, along with how many visits and when they were last there. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/users/venuehistory.html" target="_blank">https://developer.foursquare.com/docs/users/venuehistory.html</a>
+   *   
+   * @param userId User id (For now, only 'self' is supported, 'self' assumed if null)
+   * @param beforeTimestamp seconds since epoch.
+   * @param afterTimestamp seconds after epoch.
+   * @return VenueHistoryGroup entity wrapped in Result object 
+   * @throws FoursquareApiException
+   */
   public Result<VenueHistoryGroup> usersVenueHistory(String userId, Long beforeTimestamp, Long afterTimestamp) throws FoursquareApiException {
     try {
       if (userId == null)
@@ -258,6 +334,15 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Sends a friend request to another user. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/users/request.html" target="_blank">https://developer.foursquare.com/docs/users/request.html</a>
+   * 
+   * @param id user id to which a request will be sent.
+   * @return CompleteUser entity wrapped in Result object 
+   * @throws FoursquareApiException
+   */
   public Result<CompleteUser> usersRequest(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "users/" + id + "/request", true);
@@ -273,9 +358,18 @@ public class FoursquareApi {
     }
   }
 
-  public Result<CompleteUser> usersUnfriend(String id) throws FoursquareApiException {
+  /**
+   * Cancels any relationship between the acting user and the specified user. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/users/unfriend.html" target="_blank">https://developer.foursquare.com/docs/users/unfriend.html</a>
+   * 
+   * @param userId user id of the user to be unfriended.
+   * @return CompleteUser entity wrapped in Result object 
+   * @throws FoursquareApiException
+   */
+  public Result<CompleteUser> usersUnfriend(String userId) throws FoursquareApiException {
     try {
-      ApiRequestResponse response = doApiRequest(Method.POST, "users/" + id + "/unfriend", true);
+      ApiRequestResponse response = doApiRequest(Method.POST, "users/" + userId + "/unfriend", true);
       CompleteUser result = null;
 
       if (response.getMeta().getCode() == 200) {
@@ -288,9 +382,18 @@ public class FoursquareApi {
     }
   }
 
-  public Result<CompleteUser> usersApprove(String id) throws FoursquareApiException {
+  /**
+   * Approves a pending friend request from another user. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/users/approve.html" target="_blank">https://developer.foursquare.com/docs/users/approve.html</a>
+   * 
+   * @param userId the user id of a pending friend.
+   * @return CompleteUser entity wrapped in Result object 
+   * @throws FoursquareApiException
+   */
+  public Result<CompleteUser> usersApprove(String userId) throws FoursquareApiException {
     try {
-      ApiRequestResponse response = doApiRequest(Method.POST, "users/" + id + "/approve", true);
+      ApiRequestResponse response = doApiRequest(Method.POST, "users/" + userId + "/approve", true);
       CompleteUser result = null;
 
       if (response.getMeta().getCode() == 200) {
@@ -303,9 +406,18 @@ public class FoursquareApi {
     }
   }
 
-  public Result<CompleteUser> usersDeny(String id) throws FoursquareApiException {
+  /**
+   * Denies a pending friend request 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/users/deny.html" target="_blank">https://developer.foursquare.com/docs/users/deny.html</a>
+   * 
+   * @param userId the user id of a pending friend.
+   * @return CompleteUser entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
+  public Result<CompleteUser> usersDeny(String userId) throws FoursquareApiException {
     try {
-      ApiRequestResponse response = doApiRequest(Method.POST, "users/" + id + "/deny", true);
+      ApiRequestResponse response = doApiRequest(Method.POST, "users/" + userId + "/deny", true);
       CompleteUser result = null;
 
       if (response.getMeta().getCode() == 200) {
@@ -318,6 +430,16 @@ public class FoursquareApi {
     }
   }
   
+  /**
+   * Changes whether the acting user will receive pings (phone notifications) when the specified user checks in.
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/users/setpings.html" target="_blank">https://developer.foursquare.com/docs/users/setpings.html</a>
+   * 
+   * @param userId the user id of a friend.
+   * @param value true or false.
+   * @return CompleteUser entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<CompleteUser> usersSetPings(String userId, String value) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "users/" + userId + "/setpings", true, "value", value);
@@ -333,6 +455,20 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Find users
+   *  
+   * @see <a href="https://developer.foursquare.com/docs/users/search.html" target="_blank">https://developer.foursquare.com/docs/users/search.html</a>
+   * 
+   * @param phone a comma-delimited list of phone numbers to look for. 
+   * @param email a comma-delimited list of email addresses to look for.
+   * @param twitter a comma-delimited list of Twitter handles to look for.
+   * @param twitterSource a single Twitter handle. Results will be friends of this user who use Foursquare.
+   * @param fbid a comma-delimited list of Facebook id's to look for.
+   * @param name a single string to search for in users' names.
+   * @return array of CompactUser entities wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<CompactUser[]> usersSearch(String phone, String email, String twitter, String twitterSource, String fbid, String name) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "users/search", true, "phone", phone, "email", email, "twitter", twitter, "twitterSource", twitterSource, "fbid", fbid, "name", name);
@@ -348,6 +484,14 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Returns a list of users with whom they have a pending friend requests.
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/users/requests.html" target="_blank">https://developer.foursquare.com/docs/users/requests.html</a>
+   * 
+   * @return array of CompactUser entities wrapped in a Result object
+   * @throws FoursquareApiException
+   */
   public Result<CompactUser[]> usersRequests() throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "users/requests", true);
@@ -364,20 +508,21 @@ public class FoursquareApi {
   }
 
   /**
-   * Returns an array of a user's friends.
+   * Returns user's friends. 
+   *
+   * @see <a href="https://developer.foursquare.com/docs/users/friends.html" target="_blank">https://developer.foursquare.com/docs/users/friends.html</a>
    * 
-   * @param id
-   *          User id (can be 'self' in case of the current user, assumed 'self' if null)
-   * @return List of friends
-   * @throws FoursquareApiException
+   * @param userId User id (can be 'self' in case of the current user, assumed 'self' if null)
+   * @return UserGroup entity wrapped in Result object
+   * @throws FoursquareApiException 
    */
-  public Result<UserGroup> usersFriends(String id) throws FoursquareApiException {
+  public Result<UserGroup> usersFriends(String userId) throws FoursquareApiException {
     try {
-      if (id == null) {
-        id = "self";
+      if (userId == null) {
+        userId = "self";
       }
 
-      ApiRequestResponse response = doApiRequest(Method.GET, "users/" + id + "/friends", true);
+      ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/friends", true);
       UserGroup result = null;
 
       if (response.getMeta().getCode() == 200) {
