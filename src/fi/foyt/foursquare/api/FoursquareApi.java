@@ -750,8 +750,21 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
-  // TODO: checkins/deletecomment (https://code.google.com/p/foursquare-api-java/issues/detail?id=15)
+
+  public Result<Checkin> checkinsDeleteComment(String checkinId, String commentId) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.POST, "checkins/" + checkinId + "/deletecomment", true, "commentId", commentId);
+      Checkin result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (Checkin) JSONFieldParser.parseEntity(Checkin.class, response.getResponse().getJSONObject("checkin"), this.skipNonExistingFields);
+      }
+
+      return new Result<Checkin>(response.getMeta(), result, null);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
 
   /* Tips */
 
