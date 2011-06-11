@@ -538,9 +538,9 @@ public class FoursquareApi {
 
   /* Venues */
 
-  public Result<CompleteVenue> venue(String id) throws FoursquareApiException {
+  public Result<CompleteVenue> venue(String venueId) throws FoursquareApiException {
     try {
-      ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + id, isAuthenticated());
+      ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + venueId, isAuthenticated());
       CompleteVenue result = null;
 
       if (response.getMeta().getCode() == 200) {
@@ -800,7 +800,20 @@ public class FoursquareApi {
     }
   }
 
-  // TODO: tips/search (https://code.google.com/p/foursquare-api-java/issues/detail?id=18)
+  public Result<CompleteTip[]> tipsSearch(String ll, Integer limit, Integer offset, String filter, String query) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "tips/search", isAuthenticated(), "ll", ll, "limit", limit, "offset", offset, "filter", filter, "query", query);
+      CompleteTip[] result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (CompleteTip[]) JSONFieldParser.parseEntities(CompleteTip.class, response.getResponse().getJSONArray("tips"), this.skipNonExistingFields);
+      }
+
+      return new Result<CompleteTip[]>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
   
   public Result<Todo> tipsMarkTodo(String tipId) throws FoursquareApiException {
     try {
