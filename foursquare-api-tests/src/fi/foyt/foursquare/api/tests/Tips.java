@@ -55,4 +55,16 @@ public class Tips {
     assertEquals(new Long(1307706288), result.getResult().getCreatedAt());
     assertEquals("4bb8f41970c603bb64bf96b4", result.getResult().getTip().getId());
   }
+  
+  @Test
+  public final void testTipsSearch() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<CompleteTip[]> result = foursquareApi.tipsSearch("40.7,-74", null, null, null, null);
+    
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals("4d136a80d1848cfa57b1c371", result.getResult()[0].getId());
+    assertEquals(new Long(1293118080), result.getResult()[0].getCreatedAt());
+    assertEquals("4a7198f9f964a5204ad91fe3", result.getResult()[0].getVenue().getId());
+    assertEquals("4773473", result.getResult()[0].getUser().getId());
+  }
 }
