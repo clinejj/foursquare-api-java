@@ -13,6 +13,7 @@ import fi.foyt.foursquare.api.entities.CompactVenue;
 import fi.foyt.foursquare.api.entities.CompleteVenue;
 import fi.foyt.foursquare.api.entities.LinkGroup;
 import fi.foyt.foursquare.api.entities.Recommended;
+import fi.foyt.foursquare.api.entities.TipGroup;
 import fi.foyt.foursquare.api.entities.VenueGroup;
 
 public class Venues {
@@ -43,10 +44,10 @@ public class Venues {
   public final void testVenuesAdd() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     
-    String name = "Apuvälineyksikkö / Moision toimipiste";
+    String name = "Apuv√§lineyksikk√∂ / Moision toimipiste";
     String address = "Moisiontie 11 b";
     String city = "Mikkeli";
-    String state = "Etelä-Savo";
+    String state = "Etel√§-Savo";
     String zip = "50520";
     String phone = "0443516511";
     String primaryCategoryId = "4bf58dd8d48988d104941735";
@@ -141,7 +142,7 @@ public class Venues {
   @Test
   public final void testVenuesProposeEdit() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
-    Result<Object> result = foursquareApi.venuesProposeEdit("4de88f43d22d09215a1f73e1", "Apuvälineyksikkö / Moision toimipiste", "Moisiontie 11 b", null, "Mikkeli", "Etelä-Savo", "50520", "0443516511", "61.677701,27.272585", "4bf58dd8d48988d104941735");
+    Result<Object> result = foursquareApi.venuesProposeEdit("4de88f43d22d09215a1f73e1", "Apuv√§lineyksikk√∂ / Moision toimipiste", "Moisiontie 11 b", null, "Mikkeli", "Etel√§-Savo", "50520", "0443516511", "61.677701,27.272585", "4bf58dd8d48988d104941735");
   
     assertEquals(new Integer(200), result.getMeta().getCode());
   }
@@ -204,5 +205,18 @@ public class Venues {
     assertEquals(new Integer(200), result.getMeta().getCode());
   }
 
-  
+  @Test
+  public final void testVenuesTips() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<TipGroup> result = foursquareApi.venuesTips("5104", "recent", null, null);
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    
+    assertEquals(new Long(103), result.getResult().getCount());
+    assertEquals("4def98fefa76c1ceac95dec0", result.getResult().getItems()[0].getId());
+    assertEquals(new Long(1307547902), result.getResult().getItems()[0].getCreatedAt());
+    assertEquals("blueberry pancakes + sugar cured bacon + scrambled eggs = a plate full of goodness", result.getResult().getItems()[0].getText());
+    assertEquals(new Long(0), result.getResult().getItems()[0].getTodo().getCount());
+    assertEquals(new Long(1), result.getResult().getItems()[0].getDone().getCount());
+    assertEquals("1537499", result.getResult().getItems()[0].getUser().getId());
+  }
 }
