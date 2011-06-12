@@ -17,8 +17,28 @@ import fi.foyt.foursquare.api.entities.notifications.ScoreNotification;
 import fi.foyt.foursquare.api.entities.notifications.TipAlertNotification;
 import fi.foyt.foursquare.api.entities.notifications.TipNotification;
 
+/**
+ * Class responsible of parsing notifications
+ * 
+ * @author Antti Leppä
+ */
 public class NotificationsParser {
-
+  
+  /**
+   * Utility class so no constructor needed.
+   */
+  private NotificationsParser() {
+    
+  }
+  
+  /**
+   * Static method that parses JSON array into list of notifications
+   * 
+   * @param notifications JSON Array
+   * @param skipNonExistingFields whether parser should ignore non-existing fields
+   * @return list of notifications 
+   * @throws FoursquareApiException when something unexpected happens
+   */
   public static List<Notification<?>> parseNotifications(JSONArray notifications, boolean skipNonExistingFields) throws FoursquareApiException {
     List<Notification<?>> result = new ArrayList<Notification<?>>();
     
@@ -61,6 +81,8 @@ public class NotificationsParser {
               ScoreNotification scoresNotification = (ScoreNotification) JSONFieldParser.parseEntity(ScoreNotification.class, item, skipNonExistingFields);
               result.add(new Notification<ScoreNotification>(notificationType, scoresNotification));
             break;
+            default:
+              throw new FoursquareApiException("Unknown notification type: " + type);
           }
         } else {
           if (!skipNonExistingFields) {

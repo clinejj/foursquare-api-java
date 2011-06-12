@@ -2,9 +2,9 @@
  * FoursquareAPI - Foursquare API for Java
  * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
  * http://www.foyt.fi
- * 
- * License: 
- * 
+ *
+ * License:
+ *
  * Licensed under GNU Lesser General Public License Version 3 or later (the "LGPL")
  * http://www.gnu.org/licenses/lgpl.html
  */
@@ -57,20 +57,46 @@ import fi.foyt.foursquare.api.io.MultipartParameter;
 import fi.foyt.foursquare.api.io.Response;
 
 /**
- * Entry point for FoursquareAPI
+ * Entry point for FoursquareAPI.
+ * 
+ * @see <a href="https://developer.foursquare.com/docs/index_docs.html" target="_blank">https://developer.foursquare.com/docs/index_docs.html</a>
  */
 public class FoursquareApi {
 
   private static final String DEFAULT_VERSION = "20110525";
 
+  /**
+   * Constructor.
+   *
+   * @param clientId Foursquare Client id
+   * @param clientSecret Foursquare Client secret
+   * @param redirectUrl Foursquare Redirect URL
+   */
   public FoursquareApi(String clientId, String clientSecret, String redirectUrl) {
     this(clientId, clientSecret, redirectUrl, new DefaultIOHandler());
   }
 
+  /**
+   * Constructor.
+   * 
+   * @param clientId Foursquare Client id
+   * @param clientSecret Foursquare Client secret
+   * @param redirectUrl Foursquare Redirect URL
+   * @param ioHandler IOHandler
+   */
   public FoursquareApi(String clientId, String clientSecret, String redirectUrl, IOHandler ioHandler) {
     this(clientId, clientSecret, redirectUrl, null, ioHandler);
   }
 
+  /**
+   * Constructor.
+   *
+   * @param clientId Foursquare Client id
+   * @param clientSecret Foursquare Client secret
+   * @param redirectUrl Foursquare Redirect URL
+   * @param oAuthToken Previously retrieved OAuthToken
+   * @param ioHandler IOHandler
+   */
   public FoursquareApi(String clientId, String clientSecret, String redirectUrl, String oAuthToken, IOHandler ioHandler) {
     this.clientId = clientId;
     this.clientSecret = clientSecret;
@@ -81,7 +107,7 @@ public class FoursquareApi {
 
   /**
    * Returns OAuthToken
-   * 
+   *
    * @return OAuthToken
    */
   public String getOAuthToken() {
@@ -90,7 +116,7 @@ public class FoursquareApi {
 
   /**
    * Sets OAuthToken
-   * 
+   *
    * @param oAuthToken
    *          OAuthToken
    */
@@ -100,7 +126,7 @@ public class FoursquareApi {
 
   /**
    * Sets debugging flag what ever parser should disregard non-existing fields
-   * 
+   *
    * @param skipNonExistingFields
    *          debugging flag what ever parser should disregard non-existing fields
    */
@@ -110,7 +136,7 @@ public class FoursquareApi {
 
   /**
    * Sets Foursquare API version
-   * 
+   *
    * @param version
    *          Foursquare API version
    */
@@ -120,8 +146,8 @@ public class FoursquareApi {
 
   /**
    * Change JSON request mode to callback or normal
-   * 
-   * @param useCallback
+   *
+   * @param useCallback set false to enable normal mode
    */
   public void setUseCallback(boolean useCallback) {
     this.useCallback = useCallback;
@@ -129,7 +155,7 @@ public class FoursquareApi {
 
   /**
    * Returns if JSON request mode is callback
-   * 
+   *
    * @return if JSON request mode is callback
    */
   public boolean getUseCallback() {
@@ -137,19 +163,20 @@ public class FoursquareApi {
   }
 
   /**
-   * Returns profile information for a given user, including selected badges and mayorships. 
-   * 
+   * Returns profile information for a given user, including selected badges and mayorships.
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/users.html" target="_blank">https://developer.foursquare.com/docs/users/users.html</a>
-   * 
+   *
    * @param userId User id (can be 'self' in case of the current user, assumed 'self' if null)
    * @return CompleteUser entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteUser> user(String userId) throws FoursquareApiException {
     try {
-      if (userId == null)
+      if (userId == null) {
         userId = "self";
-      
+      }
+
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId, true);
       CompleteUser result = null;
 
@@ -164,13 +191,13 @@ public class FoursquareApi {
   }
 
   /**
-   * Returns the user's leaderboard. 
+   * Returns the user's leaderboard.
    * 
    * @see <a href="https://developer.foursquare.com/docs/users/leaderboard.html" target="_blank">https://developer.foursquare.com/docs/users/leaderboard.html</a>
    * 
    * @param neighbors number of friends' scores to return that are adjacent to user's score
-   * @return LeaderboardItemGroup entity wrapped in Result object 
-   * @throws FoursquareApiException
+   * @return LeaderboardItemGroup entity wrapped in Result object
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<LeaderboardItemGroup> usersLeaderboard(Integer neighbors) throws FoursquareApiException {
     try {
@@ -188,18 +215,19 @@ public class FoursquareApi {
   }
 
   /**
-   * Returns badges for a given user. 
+   * Returns badges for a given user.
    * 
    * @see <a href="https://developer.foursquare.com/docs/users/badges.html" target="_blank">https://developer.foursquare.com/docs/users/badges.html</a>
    * 
    * @param userId User id (can be 'self' in case of the current user, assumed 'self' if null)
-   * @return Badges entity wrapped in Result object 
-   * @throws FoursquareApiException
+   * @return Badges entity wrapped in Result object
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Badges> usersBadges(String userId) throws FoursquareApiException {
     try {
-      if (userId == null)
+      if (userId == null) {
         userId = "self";
+      }
       
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/badges", true);
       Badges result = null;
@@ -229,12 +257,13 @@ public class FoursquareApi {
    * @param afterTimestamp retrieve the first results to follow these seconds since epoch.
    * @param beforeTimestamp retrieve the first results prior to these seconds since epoch.
    * @return CheckinGroup entity wrapped in Result object 
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CheckinGroup> usersCheckins(String userId, Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws FoursquareApiException {
     try {
-      if (userId == null)
+      if (userId == null) {
         userId = "self";
+      }
 
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/checkins", true, "limit", limit, "offset", offset, "afterTimestamp", afterTimestamp, "beforeTimestamp", beforeTimestamp);
       CheckinGroup result = null;
@@ -260,12 +289,13 @@ public class FoursquareApi {
    * @param limit number of results to return, up to 500.
    * @param offset used to page through results.
    * @return TipGroup entity wrapped in Result object 
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<TipGroup> usersTips(String userId, String sort, String ll, Integer limit, Integer offset) throws FoursquareApiException {
     try {
-      if (userId == null)
+      if (userId == null) {
         userId = "self";
+      }
 
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/tips", true, "sort", sort, "ll", ll, "limit", limit, "offset", offset);
       TipGroup result = null;
@@ -289,12 +319,13 @@ public class FoursquareApi {
    * @param sort one of recent or popular. Nearby requires ll to be provided.
    * @param ll latitude and longitude of the user's location
    * @return TodoGroup entity wrapped in Result object 
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<TodoGroup> usersTodos(String userId, String sort, String ll) throws FoursquareApiException {
     try {
-      if (userId == null)
+      if (userId == null) {
         userId = "self";
+      }
 
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/todos", true, "sort", sort, "ll", ll);
       TodoGroup result = null;
@@ -318,12 +349,13 @@ public class FoursquareApi {
    * @param beforeTimestamp seconds since epoch.
    * @param afterTimestamp seconds after epoch.
    * @return VenueHistoryGroup entity wrapped in Result object 
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<VenueHistoryGroup> usersVenueHistory(String userId, Long beforeTimestamp, Long afterTimestamp) throws FoursquareApiException {
     try {
-      if (userId == null)
+      if (userId == null) {
         userId = "self";
+      }
 
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/venuehistory", true, "beforeTimestamp", beforeTimestamp, "afterTimestamp", afterTimestamp);
       VenueHistoryGroup result = null;
@@ -345,7 +377,7 @@ public class FoursquareApi {
    * 
    * @param id user id to which a request will be sent.
    * @return CompleteUser entity wrapped in Result object 
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteUser> usersRequest(String id) throws FoursquareApiException {
     try {
@@ -369,7 +401,7 @@ public class FoursquareApi {
    * 
    * @param userId user id of the user to be unfriended.
    * @return CompleteUser entity wrapped in Result object 
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteUser> usersUnfriend(String userId) throws FoursquareApiException {
     try {
@@ -393,7 +425,7 @@ public class FoursquareApi {
    * 
    * @param userId the user id of a pending friend.
    * @return CompleteUser entity wrapped in Result object 
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteUser> usersApprove(String userId) throws FoursquareApiException {
     try {
@@ -417,7 +449,7 @@ public class FoursquareApi {
    * 
    * @param userId the user id of a pending friend.
    * @return CompleteUser entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteUser> usersDeny(String userId) throws FoursquareApiException {
     try {
@@ -442,7 +474,7 @@ public class FoursquareApi {
    * @param userId the user id of a friend.
    * @param value true or false.
    * @return CompleteUser entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteUser> usersSetPings(String userId, String value) throws FoursquareApiException {
     try {
@@ -471,7 +503,7 @@ public class FoursquareApi {
    * @param fbid a comma-delimited list of Facebook id's to look for.
    * @param name a single string to search for in users' names.
    * @return array of CompactUser entities wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompactUser[]> usersSearch(String phone, String email, String twitter, String twitterSource, String fbid, String name) throws FoursquareApiException {
     try {
@@ -494,7 +526,7 @@ public class FoursquareApi {
    * @see <a href="https://developer.foursquare.com/docs/users/requests.html" target="_blank">https://developer.foursquare.com/docs/users/requests.html</a>
    * 
    * @return array of CompactUser entities wrapped in a Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompactUser[]> usersRequests() throws FoursquareApiException {
     try {
@@ -518,7 +550,7 @@ public class FoursquareApi {
    * 
    * @param userId User id (can be 'self' in case of the current user, assumed 'self' if null)
    * @return UserGroup entity wrapped in Result object
-   * @throws FoursquareApiException 
+   * @throws FoursquareApiException when something unexpected happens 
    */
   public Result<UserGroup> usersFriends(String userId) throws FoursquareApiException {
     try {
@@ -546,7 +578,7 @@ public class FoursquareApi {
    * 
    * @param venueId id of venue to retrieve
    * @return CompleteVenue entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteVenue> venue(String venueId) throws FoursquareApiException {
     try {
@@ -578,11 +610,11 @@ public class FoursquareApi {
    * @param limit number of results to return, up to 50.
    * @param basis if present and set to friends or me, limits results to only places where friends have visited or user has visited, respectively.
    * @return Recommended entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Recommended> venuesExplore(String ll, Double llAcc, Double alt, Double altAcc, Integer radius, String section, String query, Integer limit, String basis) throws FoursquareApiException {
     try {
-      ApiRequestResponse response = doApiRequest(Method.GET, "venues/explore", isAuthenticated(), "ll", ll, "llAcc",llAcc, "alt", alt, "altAcc", altAcc, "radius", radius, "section", section, "query", query, "limit", limit, "basis", basis);
+      ApiRequestResponse response = doApiRequest(Method.GET, "venues/explore", isAuthenticated(), "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "radius", radius, "section", section, "query", query, "limit", limit, "basis", basis);
       Recommended result = null;
 
       if (response.getMeta().getCode() == 200) {
@@ -608,7 +640,7 @@ public class FoursquareApi {
    * @param offset used to page through results. 
    * @param afterTimestamp retrieve the first results to follow these seconds since epoch
    * @return CheckinGroup entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CheckinGroup> venuesHereNow(String venueId, Integer limit, Integer offset, Long afterTimestamp) throws FoursquareApiException {
     try {
@@ -635,7 +667,7 @@ public class FoursquareApi {
    * @param limit number of results to return, up to 500.
    * @param offset used to page through results.
    * @return TipGroup entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<TipGroup> venuesTips(String venueId, String sort, Integer limit, Integer offset) throws FoursquareApiException {
     try {
@@ -662,7 +694,7 @@ public class FoursquareApi {
    * @param limit number of results to return, up to 500.
    * @param offset used to page through results.
    * @return PhotoGroup entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<PhotoGroup> venuesPhotos(String venueId, String group, Integer limit, Integer offset) throws FoursquareApiException {
     try {
@@ -686,7 +718,7 @@ public class FoursquareApi {
    * 
    * @param id id of the venue
    * @return LinkGroup entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<LinkGroup> venuesLinks(String id) throws FoursquareApiException {
     try {
@@ -711,7 +743,7 @@ public class FoursquareApi {
    * @param venuesId the venue id
    * @param text The text of the tip.
    * @return Todo entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Todo> venuesMarkTodo(String venuesId, String text) throws FoursquareApiException {
     try {
@@ -736,7 +768,7 @@ public class FoursquareApi {
    * @param id the venue id for which an edit is being proposed.
    * @param problem one of mislocated, closed, duplicate.
    * @return Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Object> venuesFlag(String id, String problem) throws FoursquareApiException {
     try {
@@ -763,7 +795,7 @@ public class FoursquareApi {
    * @param ll latitude and longitude of the user's location, as accurate as is known.
    * @param primaryCategoryId the ID of the category to which you want to assign this venue.
    * @return Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Object> venuesProposeEdit(String id, String name, String address, String crossStreet, String city, String state, String zip, String phone, String ll, String primaryCategoryId) throws FoursquareApiException {
     try {
@@ -789,7 +821,7 @@ public class FoursquareApi {
    * @param ll latitude and longitude of the venue, as accurate as is known.
    * @param primaryCategoryId the ID of the category to which you want to assign this venue.
    * @return CompleteVenue entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteVenue> venuesAdd(String name, String address, String crossStreet, String city, String state, String zip, String phone, String ll, String primaryCategoryId) throws FoursquareApiException {
     try {
@@ -812,7 +844,7 @@ public class FoursquareApi {
    * @see <a href="https://developer.foursquare.com/docs/venues/categories.html" target="_blank">https://developer.foursquare.com/docs/venues/categories.html</a>
    * 
    * @return Array of Category entities wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Category[]> venuesCategories() throws FoursquareApiException {
     try {
@@ -846,7 +878,7 @@ public class FoursquareApi {
    * @param providerId identifier for a known third party
    * @param linkedId identifier used by third party specifed in providerId parameter
    * @return Array of VenueGroup entities wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<VenueGroup[]> venuesSearch(String ll, Double llAcc, Double alt, Double altAcc, String query, Integer limit, String intent, String categoryId, String url, String providerId, String linkedId) throws FoursquareApiException {
     try {
@@ -854,10 +886,11 @@ public class FoursquareApi {
       VenueGroup[] result = null;
 
       if (response.getMeta().getCode() == 200) {
-        if (response.getResponse().has("groups"))
+        if (response.getResponse().has("groups")) {
           result = (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getResponse().getJSONArray("groups"), this.skipNonExistingFields);
-        else
+        } else {
           result = new VenueGroup[0];
+        }
       }
 
       return new Result<VenueGroup[]>(response.getMeta(), result);
@@ -875,7 +908,7 @@ public class FoursquareApi {
    * @param limit number of results to return, up to 50.
    * @param radius radius in meters, up to approximately 2000 meters.
    * @return Array of CompactVenue entities wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompactVenue[]> venuesTrending(String ll, Integer limit, Integer radius) throws FoursquareApiException {
     try {
@@ -900,7 +933,7 @@ public class FoursquareApi {
    * @param checkinId the ID of the checkin to retrieve additional information for.
    * @param signature when checkins are sent to public feeds such as Twitter, Foursquare appends a signature (s=XXXXXX) allowing users to bypass the friends-only access check on checkins. The same value can be used here for programmatic access to otherwise inaccessible checkins. 
    * @return Checkin entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Checkin> checkin(String checkinId, String signature) throws FoursquareApiException {
     try {
@@ -931,7 +964,7 @@ public class FoursquareApi {
    * @param alt altitude of the user's location, in meters.
    * @param altAcc vertical accuracy of the user's location, in meters.
    * @return Checkin entity wrapped in Result object. Result also contains list of Notifications related to this checkin.
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Checkin> checkinsAdd(String venueId, String venue, String shout, String broadcast, String ll, Double llAcc, Double alt, Double altAcc) throws FoursquareApiException {
     try {
@@ -959,7 +992,7 @@ public class FoursquareApi {
    * @param limit number of results to return, up to 100.
    * @param afterTimestamp seconds after which to look for checkins
    * @return Array of Checkin entities wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Checkin[]> checkinsRecent(String ll, Integer limit, Long afterTimestamp) throws FoursquareApiException {
     try {
@@ -984,7 +1017,7 @@ public class FoursquareApi {
    * @param checkinId the ID of the checkin to add a comment to
    * @param text the text of the comment, up to 200 characters.
    * @return Comment entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Comment> checkinsAddComment(String checkinId, String text) throws FoursquareApiException {
     try {
@@ -1009,7 +1042,7 @@ public class FoursquareApi {
    * @param checkinId the ID of the checkin to remove a comment from.
    * @param commentId the id of the comment to remove.
    * @return Checkin entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Checkin> checkinsDeleteComment(String checkinId, String commentId) throws FoursquareApiException {
     try {
@@ -1033,7 +1066,7 @@ public class FoursquareApi {
    * 
    * @param id id of tip to retrieve
    * @return CompleteTip entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteTip> tip(String id) throws FoursquareApiException {
     try {
@@ -1059,7 +1092,7 @@ public class FoursquareApi {
    * @param text the text of the tip.
    * @param url a URL related to this tip.
    * @return CompleteTip entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteTip> tipsAdd(String venueId, String text, String url) throws FoursquareApiException {
     try {
@@ -1087,7 +1120,7 @@ public class FoursquareApi {
    * @param filter if set to friends, only show nearby tips from friends. 
    * @param query only find tips matching the given term, cannot be used in conjunction with friends filter.
    * @return Array of CompleteTip entities wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteTip[]> tipsSearch(String ll, Integer limit, Integer offset, String filter, String query) throws FoursquareApiException {
     try {
@@ -1111,7 +1144,7 @@ public class FoursquareApi {
    *
    * @param tipId the tip you want to mark to-do.
    * @return Todo entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Todo> tipsMarkTodo(String tipId) throws FoursquareApiException {
     try {
@@ -1135,7 +1168,7 @@ public class FoursquareApi {
    *
    * @param tipId the tip you want to mark done
    * @return CompleteTip entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteTip> tipsMarkDone(String tipId) throws FoursquareApiException {
     try {
@@ -1159,7 +1192,7 @@ public class FoursquareApi {
    * 
    * @param tipId the tip you want to unmark.
    * @return CompleteTip entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteTip> tipsUnmark(String tipId) throws FoursquareApiException {
     try {
@@ -1183,7 +1216,7 @@ public class FoursquareApi {
    * 
    * @param id the id of the photo to retrieve additional information for.
    * @return Photo entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Photo> photo(String id) throws FoursquareApiException {
     try {
@@ -1215,7 +1248,7 @@ public class FoursquareApi {
    * @param altAcc vertical accuracy of the user's location, in meters.
    * @param data data of the image. Image should be "image/jpeg"
    * @return Photo entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Photo> photosAdd(String checkinId, String tipId, String venueId, String broadcast, String ll, Double llAcc, Double alt, Double altAcc, byte[] data) throws FoursquareApiException {
     try {
@@ -1240,7 +1273,7 @@ public class FoursquareApi {
    * @param settingId one of sendToTwitter, sendMayorshipsToTwitter, sendBadgesToTwitter, sendToFacebook, sendMayorshipsToFacebook, sendBadgesToFacebook, receivePings, receiveCommentPings.
    * @param value true or false
    * @return Setting entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Setting> settingSet(String settingId, Boolean value) throws FoursquareApiException {
     try {
@@ -1263,7 +1296,7 @@ public class FoursquareApi {
    * @see <a href="https://developer.foursquare.com/docs/settings/all.html" target="_blank">https://developer.foursquare.com/docs/settings/all.html</a>
    * 
    * @return Setting entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<Setting> settingsAll() throws FoursquareApiException {
     try {
@@ -1288,7 +1321,7 @@ public class FoursquareApi {
    * @param id id of special to retrieve
    * @param venueId id of a venue the special is running at
    * @return CompleteSpecial entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteSpecial> special(String id, String venueId) throws FoursquareApiException {
     try {
@@ -1316,7 +1349,7 @@ public class FoursquareApi {
    * @param altAcc accuracy of the user's altitude, in meters.
    * @param limit number of results to return, up to 50
    * @return SpecialGroup entity wrapped in Result object
-   * @throws FoursquareApiException
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<SpecialGroup> specialsSearch(String ll, Double llAcc, Double alt, Double altAcc, Integer limit) throws FoursquareApiException {
     try {
@@ -1335,14 +1368,30 @@ public class FoursquareApi {
 
   /* Authentication */
 
+  /**
+   * Returns true or false whether oAuthToken has been sat or not
+   * 
+   * @return true or false whether oAuthToken has been sat or not
+   */
   private boolean isAuthenticated() {
     return oAuthToken != null && !"".equals(oAuthToken);
   }
 
+  /**
+   * Returns user authentication URL 
+   * 
+   * @return user authentication URL 
+   */
   public String getAuthenticationUrl() {
     return new StringBuilder("https://foursquare.com/oauth2/authenticate?client_id=").append(this.clientId).append("&response_type=code").append("&redirect_uri=").append(this.redirectUrl).toString();
   }
 
+  /**
+   * Exchanges code for oAuthToken
+   * 
+   * @param code code
+   * @throws FoursquareApiException when something unexpected happens
+   */
   public void authenticateCode(String code) throws FoursquareApiException {
     StringBuilder urlBuilder = new StringBuilder("https://foursquare.com/oauth2/access_token?client_id=").append(this.clientId).append("&client_secret=").append(this.clientSecret).append("&grant_type=authorization_code").append("&redirect_uri=").append(this.redirectUrl).append("&code=")
         .append(code);
@@ -1362,21 +1411,35 @@ public class FoursquareApi {
     }
   }
 
-  /* io */
-
+  /**
+   * Returns current IOHandler
+   * 
+   * @return current IOHandler
+   */
   public IOHandler getIOHandler() {
     return ioHandler;
   }
   
+  /**
+   * Multipart/mime API request
+   * 
+   * @param path API endpoint
+   * @param auth whether request should send oAuthToken or not
+   * @param params request parameters. URL parameters should be added in parameter name, parameter value pairs and multipart parameters should be added as instances of MultipartParameters
+   * @return response
+   * @throws JSONException when JSON parsing error occurs
+   * @throws FoursquareApiException when something unexpected happens
+   */
   private ApiRequestResponse doApiMultipartMimeRequest(String path, boolean auth, Object... params) throws JSONException, FoursquareApiException {
     List<Object> parameters = new ArrayList<Object>();
     List<MultipartParameter> multipartParameters = new ArrayList<MultipartParameter>();
     
     for (Object param : params) {
-      if (param instanceof MultipartParameter)
+      if (param instanceof MultipartParameter) {
         multipartParameters.add((MultipartParameter) param);
-      else 
+      } else {
         parameters.add(param);
+      }
     }
     
     String url = getApiRequestUrl(path, auth, parameters.toArray());
@@ -1389,6 +1452,17 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * API Request
+   * 
+   * @param method method used in request
+   * @param path API endpoint
+   * @param auth whether request should send oAuthToken or not
+   * @param params request parameters. Parameters should be added in parameter name, parameter value pairs
+   * @return response
+   * @throws JSONException when JSON parsing error occurs
+   * @throws FoursquareApiException when something unexpected happens
+   */
   private ApiRequestResponse doApiRequest(Method method, String path, boolean auth, Object... params) throws JSONException, FoursquareApiException {
     String url = getApiRequestUrl(path, auth, params);
     Response response = ioHandler.fetchData(url, method);
@@ -1400,6 +1474,15 @@ public class FoursquareApi {
     }
   }
   
+  /**
+   * Builds request URL
+   * 
+   * @param path API endpoint
+   * @param auth whether add oAuthToken parameter or not
+   * @param params request parameters. Parameters should be added in parameter name, parameter value pairs
+   * @return URL
+   * @throws FoursquareApiException when something unexpected happens
+   */
   private String getApiRequestUrl(String path, boolean auth, Object... params) throws FoursquareApiException {
     StringBuilder urlBuilder = new StringBuilder(apiUrl);
     urlBuilder.append(path);
@@ -1443,6 +1526,13 @@ public class FoursquareApi {
     return urlBuilder.toString();
   }
 
+  /**
+   * Handles normal API request response
+   * 
+   * @param response raw response
+   * @return ApiRequestResponse
+   * @throws JSONException when JSON parsing error occurs
+   */
   private ApiRequestResponse handleApiResponse(Response response) throws JSONException {
     JSONObject responseJson = null;
     JSONArray notificationsJson = null;
@@ -1459,6 +1549,13 @@ public class FoursquareApi {
     return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", errorDetail), responseJson, notificationsJson);
   }
 
+  /**
+   * Handles callback API request response
+   * 
+   * @param response raw response
+   * @return ApiRequestResponse
+   * @throws JSONException when JSON parsing error occurs
+   */
   private ApiRequestResponse handleCallbackApiResponse(Response response) throws JSONException {
     if (response.getResponseCode() == 200) {
       String responseContent = response.getResponseContent();
@@ -1490,22 +1587,50 @@ public class FoursquareApi {
   private boolean useCallback = true;
   private static final String apiUrl = "https://api.foursquare.com/v2/";
 
+  /**
+   * Class that holds API request response
+   * 
+   * @author Antti Leppä
+   */
   private class ApiRequestResponse {
 
+    /**
+     * Constructor
+     * 
+     * @param meta status information
+     * @param response response JSON Object
+     * @param notifications notifications JSON Object
+     * @throws JSONException when JSON parsing error occurs
+     */
     public ApiRequestResponse(ResultMeta meta, JSONObject response, JSONArray notifications) throws JSONException {
       this.meta = meta;
       this.response = response;
       this.notifications = notifications;
     }
 
+    /**
+     * Returns response JSON Object
+     * 
+     * @return response JSON Object
+     */
     public JSONObject getResponse() {
       return response;
     }
 
+    /**
+     * Returns notifications JSON Object
+     * 
+     * @return notifications JSON Object
+     */
     public JSONArray getNotifications() {
       return notifications;
     }
 
+    /**
+     * Returns status information
+     * 
+     * @return status information
+     */
     public ResultMeta getMeta() {
       return meta;
     }
