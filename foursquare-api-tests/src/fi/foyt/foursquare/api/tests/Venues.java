@@ -12,6 +12,7 @@ import fi.foyt.foursquare.api.entities.CheckinGroup;
 import fi.foyt.foursquare.api.entities.CompactVenue;
 import fi.foyt.foursquare.api.entities.CompleteVenue;
 import fi.foyt.foursquare.api.entities.LinkGroup;
+import fi.foyt.foursquare.api.entities.PhotoGroup;
 import fi.foyt.foursquare.api.entities.Recommended;
 import fi.foyt.foursquare.api.entities.TipGroup;
 import fi.foyt.foursquare.api.entities.Todo;
@@ -87,7 +88,7 @@ public class Venues {
   public final void testVenuesSearch() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAnonymousFoursquareApi();
   
-    Result<VenueGroup[]> result = foursquareApi.venuesSearch("40.7,-74", null, null, null, null, null, null);
+    Result<VenueGroup[]> result = foursquareApi.venuesSearch("40.7,-74", null, null, null, null, null, null, null, null, null, null);
     VenueGroup trendingGroup = result.getResult()[0];
     
     assertEquals("trending", trendingGroup.getType());
@@ -236,5 +237,24 @@ public class Venues {
     assertEquals(new Long(6), result.getResult().getTip().getTodo().getCount());
     assertEquals(new Long(3), result.getResult().getTip().getDone().getCount());
     assertEquals("4b81ea40f964a520e0c330e3", result.getResult().getTip().getVenue().getId());
+  }
+  
+  @Test
+  public final void testVenuesPhotos() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<PhotoGroup> result = foursquareApi.venuesPhotos("43695300f964a5208c291fe3", "venue", null, null);
+    
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals(new Long(28), result.getResult().getCount());
+    assertEquals("4ddf19dea12d19527932b4eb", result.getResult().getItems()[0].getId());
+    assertEquals(new Long(1306466782), result.getResult().getItems()[0].getCreatedAt());
+    assertEquals("https://playfoursquare.s3.amazonaws.com/pix/ELYWFCR5XDLEKDHDCVBCIZZJFJREEQQPOF4B0Z2MPQ433HSN.jpg", result.getResult().getItems()[0].getUrl());
+    assertEquals(new Long(4), result.getResult().getItems()[0].getSizes().getCount());
+    assertEquals(new Integer(720), result.getResult().getItems()[0].getSizes().getItems()[0].getHeight());
+    assertEquals(new Integer(537), result.getResult().getItems()[0].getSizes().getItems()[0].getWidth());
+    assertEquals("https://playfoursquare.s3.amazonaws.com/pix/ELYWFCR5XDLEKDHDCVBCIZZJFJREEQQPOF4B0Z2MPQ433HSN.jpg", result.getResult().getItems()[0].getSizes().getItems()[0].getUrl());
+    assertEquals("foursquare for iPhone", result.getResult().getItems()[0].getSource().getName());
+    assertEquals("https://foursquare.com/download/#/iphone", result.getResult().getItems()[0].getSource().getUrl());
+    assertEquals("2910458", result.getResult().getItems()[0].getUser().getId());
   }
 }
