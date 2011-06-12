@@ -20,6 +20,12 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Default implementation of the IOHandler
+ * 
+ * @author Antti Leppä
+ * 
+ */
 public class DefaultIOHandler extends IOHandler {
 
   @Override
@@ -115,6 +121,13 @@ public class DefaultIOHandler extends IOHandler {
     }
   }
 
+  /**
+   * Reads input stream and returns it's contents as String
+   * 
+   * @param inputStream input stream to be readed
+   * @return Stream's content
+   * @throws IOException 
+   */
   private String readStream(InputStream inputStream) throws IOException {
     StringWriter responseWriter = new StringWriter();
 
@@ -131,6 +144,12 @@ public class DefaultIOHandler extends IOHandler {
     return responseWriter.getBuffer().toString();
   }
 
+  /**
+   * Returns message for code
+   * 
+   * @param code code
+   * @return Message
+   */
   private String getMessageByCode(int code) {
     switch (code) {
       case 400:
@@ -145,9 +164,9 @@ public class DefaultIOHandler extends IOHandler {
         return "Method Not Allowed";
       case 500:
         return "Internal Server Error";
+      default:
+        return "Unknown";
     }
-
-    return "Unknown";
   }
 
   private static String BOUNDARY = "----------gc0p4Jq0M2Yt08jU534c0p";

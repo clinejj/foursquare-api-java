@@ -11,8 +11,29 @@
 
 package fi.foyt.foursquare.api.io;
 
+/**
+ * Abstract class representing IOHandler
+ * 
+ * @author Antti Leppä
+ *
+ */
 public abstract class IOHandler {
 
+  /**
+   * Method used in API queries
+   * 
+   * @param url URL of the query
+   * @param method method used
+   * @return Response
+   */
   public abstract Response fetchData(String url, Method method);
+  
+  /**
+   * Method used in multipart/mime API queries
+   * 
+   * @param url URL of the query
+   * @param params multipart parameters
+   * @return Response
+   */
   public abstract Response fetchDataMultipartMime(String url, MultipartParameter... params);
 }
