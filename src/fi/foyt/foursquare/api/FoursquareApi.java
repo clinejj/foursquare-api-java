@@ -1152,9 +1152,20 @@ public class FoursquareApi {
     }
   } 
   
-  // TODO: tips/unmark (https://code.google.com/p/foursquare-api-java/issues/detail?id=47)
+  public Result<CompleteTip> tipsUnmark(String tipId) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.POST, "tips/" + tipId + "/unmark", true);
+      CompleteTip result = null;
 
-  /* Photos */
+      if (response.getMeta().getCode() == 200) {
+        result = (CompleteTip) JSONFieldParser.parseEntity(CompleteTip.class, response.getResponse().getJSONObject("tip"), this.skipNonExistingFields);
+      }
+
+      return new Result<CompleteTip>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  } 
   
   public Result<Photo> photo(String id) throws FoursquareApiException {
     try {
