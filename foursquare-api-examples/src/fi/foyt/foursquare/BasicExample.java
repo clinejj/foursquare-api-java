@@ -21,7 +21,7 @@ public class BasicExample {
     FoursquareApi foursquareApi = new FoursquareApi("Client ID", "Client Secret", "Callback URL");
     
     // After client has been initialized we can make queries.
-    Result<VenueGroup[]> result = foursquareApi.venuesSearch(ll, null, null, null, null, null, null);
+    Result<VenueGroup[]> result = foursquareApi.venuesSearch(ll, null, null, null, null, null, null, null, null, null, null);
     
     if (result.getMeta().getCode() == 200) {
       // if query was ok we can finally we do something with the data
