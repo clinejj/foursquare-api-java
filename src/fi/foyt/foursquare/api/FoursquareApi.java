@@ -37,6 +37,7 @@ import fi.foyt.foursquare.api.entities.KeywordGroup;
 import fi.foyt.foursquare.api.entities.LeaderboardItemGroup;
 import fi.foyt.foursquare.api.entities.LinkGroup;
 import fi.foyt.foursquare.api.entities.Photo;
+import fi.foyt.foursquare.api.entities.PhotoGroup;
 import fi.foyt.foursquare.api.entities.RecommendationGroup;
 import fi.foyt.foursquare.api.entities.Recommended;
 import fi.foyt.foursquare.api.entities.Setting;
@@ -651,8 +652,42 @@ public class FoursquareApi {
     }
   } 
 
-  // TODO: venues/photos (https://code.google.com/p/foursquare-api-java/issues/detail?id=40)
+  /**
+   * Returns photos for a venue. 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/venues/photos.html" target="_blank">https://developer.foursquare.com/docs/venues/photos.html</a>
+   * 
+   * @param venueId the venue you want photos for.
+   * @param group pass checkin for photos added by friends on their recent checkins. Pass venue for public photos added to the venue by anyone. Use multi to fetch both.
+   * @param limit number of results to return, up to 500.
+   * @param offset used to page through results.
+   * @return PhotoGroup entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
+  public Result<PhotoGroup> venuesPhotos(String venueId, String group, Integer limit, Integer offset) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + venueId + "/photos", isAuthenticated(), "group", group, "limit", limit, "offset", offset);
+      PhotoGroup result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (PhotoGroup) JSONFieldParser.parseEntity(PhotoGroup.class, response.getResponse().getJSONObject("photos"), this.skipNonExistingFields);
+      }
+
+      return new Result<PhotoGroup>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  } 
   
+  /**
+   * Returns URLs or identifiers from third parties that have been applied to this venue
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/venues/links.html" target="_blank">https://developer.foursquare.com/docs/venues/links.html</a>
+   * 
+   * @param id id of the venue
+   * @return LinkGroup entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<LinkGroup> venuesLinks(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + id + "/links", isAuthenticated());
@@ -668,6 +703,16 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Allows you to mark a venue to-do, with optional text.
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/venues/marktodo.html" target="_blank">https://developer.foursquare.com/docs/venues/marktodo.html</a>
+   * 
+   * @param venuesId the venue id
+   * @param text The text of the tip.
+   * @return Todo entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<Todo> venuesMarkTodo(String venuesId, String text) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "venues/" + venuesId + "/marktodo", true, "text", text);
@@ -683,6 +728,16 @@ public class FoursquareApi {
     }
   }  
   
+  /**
+   * Allows users to indicate a venue is incorrect in some way. 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/venues/flag.html" target="_blank">https://developer.foursquare.com/docs/venues/flag.html</a>
+   * 
+   * @param id the venue id for which an edit is being proposed.
+   * @param problem one of mislocated, closed, duplicate.
+   * @return Result object
+   * @throws FoursquareApiException
+   */
   public Result<Object> venuesFlag(String id, String problem) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "venues/" + id + "/flag", true, "problem", problem);
@@ -692,6 +747,24 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Allows user to propose a change to a venue. 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/venues/proposeedit.html" target="_blank">https://developer.foursquare.com/docs/venues/proposeedit.html</a>
+   * 
+   * @param id the venue id for which an edit is being proposed.
+   * @param name the name of the venue.
+   * @param address the address of the venue.
+   * @param crossStreet the nearest intersecting street or streets.
+   * @param city the city name where this venue is. 
+   * @param state the nearest state or province to the venue.
+   * @param zip the nearest state or province to the venue.
+   * @param phone the phone number of the venue.
+   * @param ll latitude and longitude of the user's location, as accurate as is known.
+   * @param primaryCategoryId the ID of the category to which you want to assign this venue.
+   * @return Result object
+   * @throws FoursquareApiException
+   */
   public Result<Object> venuesProposeEdit(String id, String name, String address, String crossStreet, String city, String state, String zip, String phone, String ll, String primaryCategoryId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "venues/" + id + "/proposeedit", true, "name", name, "address", address, "crossStreet", crossStreet, "city", city, "state", state, "zip", zip, "phone", phone, "ll", ll, "primaryCategoryId", primaryCategoryId);
@@ -701,6 +774,23 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Allows user to add a new venue. 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/venues/add.html" target="_blank">https://developer.foursquare.com/docs/venues/add.html</a>
+   * 
+   * @param name the name of the venue
+   * @param address the address of the venue.
+   * @param crossStreet the nearest intersecting street or streets.
+   * @param city the city name where this venue is.
+   * @param state the nearest state or province to the venue.
+   * @param zip the zip or postal code for the venue.
+   * @param phone the phone number of the venue.
+   * @param ll latitude and longitude of the venue, as accurate as is known.
+   * @param primaryCategoryId the ID of the category to which you want to assign this venue.
+   * @return CompleteVenue entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<CompleteVenue> venuesAdd(String name, String address, String crossStreet, String city, String state, String zip, String phone, String ll, String primaryCategoryId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "venues/add", true, "name", name, "address", address, "crossStreet", crossStreet, "city", city, "state", state, "zip", zip, "phone", phone, "ll", ll, "primaryCategoryId", primaryCategoryId);
@@ -716,6 +806,14 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Returns a hierarchical list of categories applied to venues.
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/venues/categories.html" target="_blank">https://developer.foursquare.com/docs/venues/categories.html</a>
+   * 
+   * @return Array of Category entities wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<Category[]> venuesCategories() throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/categories", isAuthenticated());
@@ -731,9 +829,28 @@ public class FoursquareApi {
     }
   }
 
-  public Result<VenueGroup[]> venuesSearch(String ll, Double llAcc, Double alt, Double altAcc, String query, Integer limit, String intent) throws FoursquareApiException {
+  /**
+   * Returns a list of venues near the current location, optionally matching the search term. 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/venues/search.html" target="_blank">https://developer.foursquare.com/docs/venues/search.html</a>
+   * 
+   * @param ll latitude and longitude of the user's location. (Required for query searches)
+   * @param llAcc accuracy of latitude and longitude, in meters. (Does not currently affect search results.)
+   * @param alt altitude of the user's location, in meters. (Does not currently affect search results.)
+   * @param altAcc accuracy of the user's altitude, in meters. (Does not currently affect search results.)
+   * @param query a search term to be applied against titles.
+   * @param limit number of results to return, up to 50.
+   * @param intent one of checkin, match or specials
+   * @param categoryId a category to limit results to
+   * @param url a third-party URL
+   * @param providerId identifier for a known third party
+   * @param linkedId identifier used by third party specifed in providerId parameter
+   * @return Array of VenueGroup entities wrapped in Result object
+   * @throws FoursquareApiException
+   */
+  public Result<VenueGroup[]> venuesSearch(String ll, Double llAcc, Double alt, Double altAcc, String query, Integer limit, String intent, String categoryId, String url, String providerId, String linkedId) throws FoursquareApiException {
     try {
-      ApiRequestResponse response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "query", query, "limit", limit, "intent", intent);
+      ApiRequestResponse response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "query", query, "limit", limit, "intent", intent, "categoryId", categoryId, "url", url, "providerId", providerId, "linkedId", linkedId);
       VenueGroup[] result = null;
 
       if (response.getMeta().getCode() == 200) {
@@ -749,6 +866,17 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Returns a list of venues near the current location with the most people currently checked in. 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/venues/trending.html" target="_blank">https://developer.foursquare.com/docs/venues/trending.html</a>
+   * 
+   * @param ll latitude and longitude of the user's location.
+   * @param limit number of results to return, up to 50.
+   * @param radius radius in meters, up to approximately 2000 meters.
+   * @return Array of CompactVenue entities wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<CompactVenue[]> venuesTrending(String ll, Integer limit, Integer radius) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/trending", isAuthenticated(), "ll", ll, "limit", limit, "radius", radius);
@@ -764,8 +892,16 @@ public class FoursquareApi {
     }
   }
 
-  /* Checkins */
-
+  /**
+   * Get details of a checkin. 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/checkins/checkins.html" target="_blank">https://developer.foursquare.com/docs/checkins/checkins.html</a>
+   * 
+   * @param checkinId the ID of the checkin to retrieve additional information for.
+   * @param signature when checkins are sent to public feeds such as Twitter, Foursquare appends a signature (s=XXXXXX) allowing users to bypass the friends-only access check on checkins. The same value can be used here for programmatic access to otherwise inaccessible checkins. 
+   * @return Checkin entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<Checkin> checkin(String checkinId, String signature) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "checkins/" + checkinId, true, "signature", signature);
@@ -781,6 +917,22 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Allows you to check in to a place. 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/checkins/add.html" target="_blank">https://developer.foursquare.com/docs/checkins/add.html</a>
+   * 
+   * @param venueId the venue where the user is checking in. No venueid is needed if shouting or just providing a venue name. Find venue IDs by searching or from historical APIs.
+   * @param venue if are not shouting, but you don't have a venue ID or would rather prefer a 'venueless' checkin, pass the venue name as a string using this parameter
+   * @param shout a message about your check-in. The maximum length of this field is 140 characters.
+   * @param broadcast how much to broadcast this check-in, ranging from private (off-the-grid) to public,facebook,twitter. Can also be just public or public,facebook, for example. If no valid value is found, the default is public. Shouts cannot be private.
+   * @param ll latitude and longitude of the user's location.
+   * @param llAcc accuracy of the user's latitude and longitude, in meters.
+   * @param alt altitude of the user's location, in meters.
+   * @param altAcc vertical accuracy of the user's location, in meters.
+   * @return Checkin entity wrapped in Result object. Result also contains list of Notifications related to this checkin.
+   * @throws FoursquareApiException
+   */
   public Result<Checkin> checkinsAdd(String venueId, String venue, String shout, String broadcast, String ll, Double llAcc, Double alt, Double altAcc) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "checkins/add", true, "venueId", venueId, "venue", venue, "shout", shout, "broadcast", broadcast, "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc);
@@ -798,6 +950,17 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Returns a list of recent checkins from friends. 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/checkins/recent.html" target="_blank">https://developer.foursquare.com/docs/checkins/recent.html</a>
+   * 
+   * @param ll latitude and longitude of the user's location, so response can include distance.
+   * @param limit number of results to return, up to 100.
+   * @param afterTimestamp seconds after which to look for checkins
+   * @return Array of Checkin entities wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<Checkin[]> checkinsRecent(String ll, Integer limit, Long afterTimestamp) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "checkins/recent", true, "ll", ll, "limit", limit, "afterTimestamp", afterTimestamp);
@@ -813,6 +976,16 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Comment on a checkin-in 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/checkins/addcomment.html" target="_blank">https://developer.foursquare.com/docs/checkins/addcomment.html</a>
+   * 
+   * @param checkinId the ID of the checkin to add a comment to
+   * @param text the text of the comment, up to 200 characters.
+   * @return Comment entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<Comment> checkinsAddComment(String checkinId, String text) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "checkins/" + checkinId + "/addcomment", true, "text", text);
@@ -828,6 +1001,16 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Remove a comment from a checkin, if the acting user is the author or the owner of the checkin. 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/checkins/deletecomment.html" target="_blank">https://developer.foursquare.com/docs/checkins/deletecomment.html</a>
+   * 
+   * @param checkinId the ID of the checkin to remove a comment from.
+   * @param commentId the id of the comment to remove.
+   * @return Checkin entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<Checkin> checkinsDeleteComment(String checkinId, String commentId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "checkins/" + checkinId + "/deletecomment", true, "commentId", commentId);
@@ -843,8 +1026,15 @@ public class FoursquareApi {
     }
   }
 
-  /* Tips */
-
+  /**
+   * Gives details about a tip, including which users (especially friends) have marked the tip to-do or done.
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/tips/tips.html" target="_blank">https://developer.foursquare.com/docs/tips/tips.html</a>
+   * 
+   * @param id id of tip to retrieve
+   * @return CompleteTip entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<CompleteTip> tip(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "tips/" + id, false);
