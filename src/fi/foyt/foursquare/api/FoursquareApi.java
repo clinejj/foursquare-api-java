@@ -1050,8 +1050,17 @@ public class FoursquareApi {
     }
   }
 
-  // TODO: tips/ID (https://code.google.com/p/foursquare-api-java/issues/detail?id=16)
-  
+  /**
+   * Allows user to add a new tip at a venue.     
+   *        
+   * @see <a href="https://developer.foursquare.com/docs/tips/add.html" target="_blank">https://developer.foursquare.com/docs/tips/add.html</a>
+   *
+   * @param venueId the venue where you want to add this tip.
+   * @param text the text of the tip.
+   * @param url a URL related to this tip.
+   * @return CompleteTip entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<CompleteTip> tipsAdd(String venueId, String text, String url) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "tips/add", true, "venueId", venueId, "text", text, "url", url);
@@ -1067,6 +1076,19 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Returns a list of tips near the area specified. 
+   *         
+   * @see <a href="https://developer.foursquare.com/docs/tips/search.html" target="_blank">https://developer.foursquare.com/docs/tips/search.html</a>
+   *
+   * @param ll latitude and longitude of the user's location.
+   * @param limit number of results to return, up to 500. 
+   * @param offset used to page through results.
+   * @param filter if set to friends, only show nearby tips from friends. 
+   * @param query only find tips matching the given term, cannot be used in conjunction with friends filter.
+   * @return Array of CompleteTip entities wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<CompleteTip[]> tipsSearch(String ll, Integer limit, Integer offset, String filter, String query) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "tips/search", isAuthenticated(), "ll", ll, "limit", limit, "offset", offset, "filter", filter, "query", query);
@@ -1082,6 +1104,15 @@ public class FoursquareApi {
     }
   }
   
+  /**
+   * Allows you to mark a tip to-do. 
+   *         
+   * @see <a href="https://developer.foursquare.com/docs/tips/marktodo.html" target="_blank">https://developer.foursquare.com/docs/tips/marktodo.html</a>
+   *
+   * @param tipId the tip you want to mark to-do.
+   * @return Todo entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<Todo> tipsMarkTodo(String tipId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "tips/" + tipId + "/marktodo", true);
@@ -1097,7 +1128,15 @@ public class FoursquareApi {
     }
   }  
 
-  
+  /**
+   * Allows the acting user to mark a tip done. 
+   *         
+   * @see <a href="https://developer.foursquare.com/docs/tips/markdone.html" target="_blank">https://developer.foursquare.com/docs/tips/markdone.html</a>
+   *
+   * @param tipId the tip you want to mark done
+   * @return CompleteTip entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<CompleteTip> tipsMarkDone(String tipId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "tips/" + tipId + "/markdone", true);
