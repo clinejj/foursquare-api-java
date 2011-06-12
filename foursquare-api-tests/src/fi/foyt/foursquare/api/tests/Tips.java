@@ -83,4 +83,19 @@ public class Tips {
     assertEquals("4b81ea40f964a520e0c330e3", result.getResult().getVenue().getId());
   }
 
+  @Test
+  public final void testTipsUnmark() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<CompleteTip> result = foursquareApi.tipsUnmark("4d13a1edf898b1f73ac3e181");
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    
+    assertEquals("4d13a1edf898b1f73ac3e181", result.getResult().getId());
+    assertEquals(new Long(1293132269), result.getResult().getCreatedAt());
+    assertEquals("", result.getResult().getText());
+    assertEquals("done", result.getResult().getStatus());
+    assertEquals(new Long(7), result.getResult().getTodo().getCount());
+    assertEquals(new Long(3), result.getResult().getDone().getCount());
+    assertEquals("4b81ea40f964a520e0c330e3", result.getResult().getVenue().getId());
+  }
+
 }
