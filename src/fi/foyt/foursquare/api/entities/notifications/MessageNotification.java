@@ -13,10 +13,20 @@ package fi.foyt.foursquare.api.entities.notifications;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
+/**
+ * Entity representing "Message" notification
+ * 
+ * @author Antti Leppä
+ */
 public class MessageNotification implements FoursquareEntity {
 
   private static final long serialVersionUID = 1341444447020549517L;
 
+  /**
+   * Returns message
+   * 
+   * @return message
+   */
   public String getMessage() {
     return message;
   }

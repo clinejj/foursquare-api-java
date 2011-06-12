@@ -15,22 +15,47 @@ import fi.foyt.foursquare.api.FoursquareEntity;
 import fi.foyt.foursquare.api.entities.LeaderboardItem;
 import fi.foyt.foursquare.api.entities.LeaderboardScore;
 
+/**
+ * Entity representing "Leaderboard" notification
+ * 
+ * @author Antti Leppä
+ */
 public class LeaderboardNotification implements FoursquareEntity {
 
   private static final long serialVersionUID = 8919261709842197077L;
 
+  /**
+   * Returns array of LeaderboardItem entities
+   * 
+   * @return array of LeaderboardItem entities
+   */
   public LeaderboardItem[] getLeaderboard() {
     return leaderboard;
   }
   
+  /**
+   * Returns message
+   * 
+   * @return message
+   */
   public String getMessage() {
     return message;
   }
 
+  /**
+   * Returns array of LeaderboardScore entities
+   * 
+   * @return array of LeaderboardScore entities
+   */
   public LeaderboardScore[] getScores() {
     return scores;
   }
   
+  /**
+   * Returns total
+   * 
+   * @return total
+   */
   public Long getTotal() {
     return total;
   }
