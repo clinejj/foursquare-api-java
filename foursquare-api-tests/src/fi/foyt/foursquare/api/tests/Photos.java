@@ -29,6 +29,16 @@ public class Photos {
     assertEquals("439e8590f964a5200b2c1fe3", result.getResult().getVenue().getId());
     assertEquals("4d0fb80b6331a0932b685294", result.getResult().getTip().getId());
   }
+  
+  @Test
+  public final void testPhotoCheckin() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<Photo> result = foursquareApi.photo("4df3a350fd286d19d4beb926");
+
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals("4df3a350fd286d19d4beb926", result.getResult().getId());
+    assertEquals("4de470c0ae60e7f3ac1f0fa7", result.getResult().getCheckin().getId());
+  }
 
   @Test
   public final void testPhotosAdd() throws FoursquareApiException, IOException {

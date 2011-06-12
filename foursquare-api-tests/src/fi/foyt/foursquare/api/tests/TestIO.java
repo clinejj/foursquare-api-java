@@ -140,6 +140,7 @@ public class TestIO extends IOHandler {
     setResponse("https://api.foursquare.com/v2/users/self/venuehistory", "users/venuehistory_1.json");
     setResponse("https://api.foursquare.com/v2/users/10078668/setpings?value=true", "users/setpings_1.json");
     setResponse("https://api.foursquare.com/v2/venues/5104", "venues/id_1.json");
+    setResponse("https://api.foursquare.com/v2/venues/4cb38bf20cdc721ea943234f", "venues/id_2.json");
     setResponse("https://api.foursquare.com/v2/venues/categories", "venues/categories_1.json");
     setResponse("https://api.foursquare.com/v2/venues/search?ll=40.7%2C-74", "venues/search_1.json");
     setResponse("https://api.foursquare.com/v2/venues/trending?ll=40.7%2C-74", "venues/trending_1.json");
@@ -160,6 +161,7 @@ public class TestIO extends IOHandler {
     setResponse("https://api.foursquare.com/v2/tips/4d13a1edf898b1f73ac3e181/markdone", "tips/markdone_1.json");
     setResponse("https://api.foursquare.com/v2/tips/4d13a1edf898b1f73ac3e181/unmark", "tips/unmark_1.json");
     setResponse("https://api.foursquare.com/v2/photos/4d0fb8162d39a340637dc42b", "photos/id_1.json");
+    setResponse("https://api.foursquare.com/v2/photos/4df3a350fd286d19d4beb926", "photos/id_2.json");
     setResponse("https://api.foursquare.com/v2/photos/add?checkinId=4de470c0ae60e7f3ac1f0fa7", "photos/add_1.json");
   }
 }

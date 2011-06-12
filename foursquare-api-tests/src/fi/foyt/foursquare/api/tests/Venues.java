@@ -25,11 +25,13 @@ public class Venues {
     FoursquareApi foursquareApi = TestUtils.getAnonymousFoursquareApi();
     
     Result<CompleteVenue> result = foursquareApi.venue("5104");
-    
+
     assertEquals("40a55d80f964a52020f31ee3", result.getResult().getId());
     assertEquals("Clinton Street Baking Co", result.getResult().getName());
     assertEquals(new Double(40.721096), result.getResult().getLocation().getLat());
     assertEquals(new Double(-73.983937), result.getResult().getLocation().getLng());
+    assertEquals("USA", result.getResult().getLocation().getCountry());
+    assertEquals("btw. E Houston & Stanton St.", result.getResult().getLocation().getCrossStreet());
     assertEquals("4bf58dd8d48988d143941735", result.getResult().getCategories()[0].getId());
     assertEquals(false, result.getResult().getVerified());
     assertEquals(new Integer(3072), result.getResult().getStats().getCheckinsCount());
@@ -40,8 +42,37 @@ public class Venues {
     assertEquals(new Long(101), result.getResult().getTips().getCount());
     assertEquals(new Long(101), result.getResult().getTips().getGroups()[0].getCount());
     assertEquals("4c34ccbb6f1fef3bb7eeec3d", result.getResult().getTips().getGroups()[0].getItems()[0].getId());
+    assertEquals("Food", result.getResult().getCategories()[0].getParents()[0]);
+    assertTrue(result.getResult().getCategories()[0].getPrimary());
+    assertArrayEquals(new String[] {"bakery", "baking", "breakfast", "brunch", "fried chicken", "pancakes", "scones", "southern"}, result.getResult().getTags());
+    assertEquals("4c06d49a86ba62b5e25e88b3", result.getResult().getSpecialsNearby()[0].getId());
+    assertEquals("http://4sq.com/1UrXyu", result.getResult().getShortUrl());
+    assertEquals("America/New_York", result.getResult().getTimeZone());
+    assertEquals(new Long(0), result.getResult().getBeenHere().getCount());
+    assertEquals(new Long(15), result.getResult().getPhotos().getCount());
+    assertEquals(null, result.getResult().getDescription());
   }
 
+  @Test
+  public final void testVenueSpecials() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAnonymousFoursquareApi();
+    
+    Result<CompleteVenue> result = foursquareApi.venue("4cb38bf20cdc721ea943234f");
+
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals("4cb38bf20cdc721ea943234f", result.getResult().getId());
+    assertEquals("4da37ddb15ad530c110a9d52", result.getResult().getSpecials()[0].getId());
+    assertEquals("count", result.getResult().getSpecials()[0].getType());
+    assertEquals("Want 20% off? Check in at RadioShack for the first time & get 20% off your qualifying purchase. Ends 6/30/11. Exclusions apply. Ask associate for details.", result.getResult().getSpecials()[0].getMessage());
+    assertEquals("on your 1st check-in", result.getResult().getSpecials()[0].getDescription());
+    assertEquals(false, result.getResult().getSpecials()[0].getUnlocked());
+    assertEquals("newbie", result.getResult().getSpecials()[0].getIcon());
+    assertEquals("Newbie Special", result.getResult().getSpecials()[0].getTitle());
+    assertEquals("locked", result.getResult().getSpecials()[0].getState());
+    assertEquals("foursquare", result.getResult().getSpecials()[0].getProvider());
+    assertEquals("standard", result.getResult().getSpecials()[0].getRedemption());
+  }
+  
   @Test
   public final void testVenuesAdd() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
@@ -67,6 +98,12 @@ public class Venues {
     assertEquals(phone, completeVenue.getResult().getContact().getPhone());
     assertEquals(lat, completeVenue.getResult().getLocation().getLat());
     assertEquals(lng, completeVenue.getResult().getLocation().getLng());
+    assertEquals(new Double(0.0), completeVenue.getResult().getLocation().getDistance());
+    
+
+    assertEquals("checkin", completeVenue.getResult().getPhotos().getGroups()[0].getType());
+    assertEquals("friends' checkin photos", completeVenue.getResult().getPhotos().getGroups()[0].getName());
+    assertEquals(new Long(0), completeVenue.getResult().getPhotos().getGroups()[0].getCount());
   }
 
   @Test
@@ -82,6 +119,7 @@ public class Venues {
     assertEquals("Arcades", result.getResult()[0].getCategories()[0].getPluralName());
     assertEquals("https://foursquare.com/img/categories/arts_entertainment/arcade.png", result.getResult()[0].getCategories()[0].getIcon());
     assertEquals(0, result.getResult()[0].getCategories()[0].getCategories().length);
+    
   }
 
   @Test
@@ -220,6 +258,8 @@ public class Venues {
     assertEquals(new Long(0), result.getResult().getItems()[0].getTodo().getCount());
     assertEquals(new Long(1), result.getResult().getItems()[0].getDone().getCount());
     assertEquals("1537499", result.getResult().getItems()[0].getUser().getId());
+    assertEquals("https://playfoursquare.s3.amazonaws.com/pix/APSJTPELZ5LGL0AYHGKVQEECS5QSXGCQYULHAXBLR5ZTDNS2.jpg", result.getResult().getItems()[10].getPhotoURL());
+    assertEquals("https://playfoursquare.s3.amazonaws.com/pix/APSJTPELZ5LGL0AYHGKVQEECS5QSXGCQYULHAXBLR5ZTDNS2.jpg", result.getResult().getItems()[10].getPhoto().getUrl());
   }
   
   @Test

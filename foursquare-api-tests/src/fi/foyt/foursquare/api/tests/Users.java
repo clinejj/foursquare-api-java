@@ -56,6 +56,9 @@ public class Users {
     assertEquals(new Long(2), friendsGroup.getCount());
     assertEquals("others", friendsGroup.getType());
     assertEquals("other friends", friendsGroup.getName());
+    
+    user = foursquareApi.user(null).getResult();
+    assertEquals("7613255", user.getId());
   }
 
   @Test
@@ -253,6 +256,11 @@ public class Users {
     assertArrayEquals(new Integer[] {57, 114, 200, 300, 400}, result.getResult().getBadges()[0].getImage().getSizes());
     assertEquals("/default_off.png", result.getResult().getBadges()[0].getImage().getName());
     assertEquals(0, result.getResult().getBadges()[0].getUnlocks().length);
+    assertEquals("4sq", result.getResult().getDefaultSetType());
+    
+    assertEquals("4de4762d52b1d38d299e6000", result.getResult().getBadges()[26].getUnlocks()[0].getCheckins()[0].getId());
+    Result<Badges> result2 = foursquareApi.usersBadges(null);
+    assertEquals(result.getResult().getBadges()[0].getId(), result2.getResult().getBadges()[0].getId());
   }
   
   @Test

@@ -118,7 +118,7 @@ public class Notifications {
     assertEquals(tipAlertNotification.getType(), NotificationType.TipAlert);
     assertEquals("4bb8f41970c603bb64bf96b4", tipAlertNotification.getItem().getTip().getId());
     assertEquals(new Long(1270412313), tipAlertNotification.getItem().getTip().getCreatedAt());
-    assertEquals("Mitä KB:asä ei olisi hyvää, progea, hyvää kaljaa ja loistavaa seuraa", tipAlertNotification.getItem().getTip().getText());
+    assertEquals("Mit√§ KB:as√§ ei olisi hyv√§√§, progea, hyv√§√§ kaljaa ja loistavaa seuraa", tipAlertNotification.getItem().getTip().getText());
     assertEquals(new Long(2), tipAlertNotification.getItem().getTip().getTodo().getCount());
     assertEquals(new Long(6), tipAlertNotification.getItem().getTip().getDone().getCount());
     assertEquals("4bb634f2ef159c74e79475f7", tipAlertNotification.getItem().getTip().getVenue().getId());
