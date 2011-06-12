@@ -157,6 +157,7 @@ public class TestIO extends IOHandler {
     setResponse("https://api.foursquare.com/v2/tips/add?venueId=4bb73a402ea19521b1a6ac2f&text=Wonderful+festival+called+Beautiful+Days+here+at+19%2C+20+%26+21+of+August+2011&url=http%3A%2F%2Fwww.beautifuldays.org", "tips/add_1.json");
     setResponse("https://api.foursquare.com/v2/tips/4bb8f41970c603bb64bf96b4/marktodo", "tips/marktodo_1.json");
     setResponse("https://api.foursquare.com/v2/tips/search?ll=40.7%2C-74", "tips/search_1.json");
+    setResponse("https://api.foursquare.com/v2/tips/4d13a1edf898b1f73ac3e181/markdone", "tips/markdone_1.json");
     setResponse("https://api.foursquare.com/v2/photos/4d0fb8162d39a340637dc42b", "photos/id_1.json");
     setResponse("https://api.foursquare.com/v2/photos/add?checkinId=4de470c0ae60e7f3ac1f0fa7", "photos/add_1.json");
   }
