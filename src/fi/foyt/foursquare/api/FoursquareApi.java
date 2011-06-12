@@ -667,8 +667,21 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
-  // TODO: venues/marktodo (https://code.google.com/p/foursquare-api-java/issues/detail?id=42)
+
+  public Result<Todo> venuesMarkTodo(String venuesId, String text) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.POST, "venues/" + venuesId + "/marktodo", true, "text", text);
+      Todo result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (Todo) JSONFieldParser.parseEntity(Todo.class, response.getResponse().getJSONObject("todo"), this.skipNonExistingFields);
+      }
+
+      return new Result<Todo>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }  
   
   public Result<Object> venuesFlag(String id, String problem) throws FoursquareApiException {
     try {
