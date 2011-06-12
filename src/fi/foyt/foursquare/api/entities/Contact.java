@@ -13,22 +13,47 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
+/**
+ * Class representing Contact entity
+ * 
+ * @author Antti Leppä
+ */
 public class Contact implements FoursquareEntity {
   
   private static final long serialVersionUID = -7810041187718129997L;
   
+  /**
+   * Returns phone number
+   * 
+   * @return phone number
+   */
   public String getPhone() {
     return phone;
   }
   
+  /**
+   * Returns twitter id
+   * 
+   * @return twitter id
+   */
   public String getTwitter() {
     return twitter;
   }
   
+  /**
+   * Returns user's email
+   * 
+   * @return user's email
+   */
   public String getEmail() {
     return email;
   }
   
+  /**
+   * Returns user's facebook id
+   * 
+   * @return user's facebook id
+   */
   public String getFacebook() {
     return facebook;
   }

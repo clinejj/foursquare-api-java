@@ -13,22 +13,47 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
+/**
+ * Class representing Comment entity
+ * 
+ * @author Antti Leppä
+ */
 public class Comment implements FoursquareEntity {
 
   private static final long serialVersionUID = 6671734583007572548L;
 
+  /**
+   * Returns comment's id
+   * 
+   * @return comment's id
+   */
   public String getId() {
     return id;
   }
   
+  /**
+   * Returns when this comment was created (epoch)
+   * 
+   * @return when this comment was created
+   */
   public Long getCreatedAt() {
     return createdAt;
   }
   
+  /**
+   * Returns user that left the comment
+   * 
+   * @return user that left the comment
+   */
   public CompactUser getUser() {
     return user;
   }
   
+  /**
+   * Returns comment's text
+   * 
+   * @return comment's text
+   */
   public String getText() {
     return text;
   }

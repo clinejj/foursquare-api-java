@@ -11,10 +11,16 @@
 
 package fi.foyt.foursquare.api.entities;
 
+/**
+ * Group of Checkin entities
+ * 
+ * @author Antti Leppä
+ */
 public class CheckinGroup extends Group<Checkin> {
 
   private static final long serialVersionUID = -6971992363107984905L;
 
+  @Override
   public Checkin[] getItems() {
     return items;
   }

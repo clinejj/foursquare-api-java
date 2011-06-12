@@ -11,10 +11,20 @@
 
 package fi.foyt.foursquare.api.entities;
 
+/**
+ * Class representing Mayor entity
+ * 
+ * @author Antti Leppä
+ */
 public class Mayor extends Count {
 
   private static final long serialVersionUID = -6838261267509832567L;
 
+  /**
+   * Returns user
+   * 
+   * @return user
+   */
   public CompactUser getUser() {
     return user;
   }

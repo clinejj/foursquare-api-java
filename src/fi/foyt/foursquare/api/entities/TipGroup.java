@@ -11,10 +11,16 @@
 
 package fi.foyt.foursquare.api.entities;
 
+/**
+ * Group of CompactTips
+ * 
+ * @author Antti Leppä
+ */
 public class TipGroup extends Group<CompactTip> {
 
   private static final long serialVersionUID = -9176732625588094423L;
 
+  @Override
   public CompleteTip[] getItems() {
     return items;
   }

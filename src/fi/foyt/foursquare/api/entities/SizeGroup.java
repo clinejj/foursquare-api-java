@@ -11,10 +11,16 @@
 
 package fi.foyt.foursquare.api.entities;
 
+/**
+ * Group of Sizes
+ * 
+ * @author Antti Leppä
+ */
 public class SizeGroup extends Group<Size> {
 
   private static final long serialVersionUID = 8028153409437582383L;
 
+  @Override
   public Size[] getItems() {
     return items;
   }

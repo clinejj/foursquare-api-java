@@ -11,6 +11,11 @@
 
 package fi.foyt.foursquare.api.entities;
 
+/**
+ * Group of Comments
+ * 
+ * @author Antti Leppä
+ */
 public class CommentGroup extends Group<Comment> {
 
   private static final long serialVersionUID = 7117134064654710100L;

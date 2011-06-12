@@ -13,46 +13,101 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
+/**
+ * Class representing Location entity
+ * 
+ * @author Antti Leppä
+ */
 public class Location implements FoursquareEntity {
   
   private static final long serialVersionUID = -76729758415926344L;
   
+  /**
+   * Returns address
+   * 
+   * @return address
+   */
   public String getAddress() {
     return address;
   }
 
+  /**
+   * Returns cross street
+   * 
+   * @return cross street
+   */
   public String getCrossStreet() {
     return crossStreet;
   }
 
+  /**
+   * Returns city
+   * 
+   * @return city
+   */
   public String getCity() {
     return city;
   }
 
+  /**
+   * Returns state
+   *  
+   * @return state
+   */
   public String getState() {
     return state;
   }
 
+  /**
+   * Returns postal Code
+   * 
+   * @return postal Code
+   */
   public String getPostalCode() {
     return postalCode;
   }
 
+  /**
+   * Returns country
+   * 
+   * @return country
+   */
   public String getCountry() {
     return country;
   }
   
+  /**
+   * Returns name
+   * 
+   * @return name
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * Returns latitude
+   * 
+   * @return latitude
+   */
   public Double getLat() {
     return lat;
   }
 
+  /**
+   * Returns longitude
+   * 
+   * @return longitude
+   */
   public Double getLng() {
     return lng;
   }
 
+  /**
+   * Returns distance
+   * 
+   * @return distance
+   */
   public Double getDistance() {
     return distance;
   }

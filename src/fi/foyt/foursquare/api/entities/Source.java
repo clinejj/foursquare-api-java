@@ -13,14 +13,28 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
+/**
+ * Class representing Source entity
+ * 
+ * @author Antti Leppä
+ */
 public class Source implements FoursquareEntity {
 
   private static final long serialVersionUID = -1503607114357562300L;
 
+  /**
+   * Returns source's (application's) name
+   * 
+   * @return source's name
+   */
   public String getName() {
     return name;
   }
   
+  /**
+   * Returns source's (application's) url
+   * @return source's url
+   */
   public String getUrl() {
     return url;
   }

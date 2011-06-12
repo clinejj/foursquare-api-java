@@ -11,10 +11,20 @@
 
 package fi.foyt.foursquare.api.entities;
 
+/**
+ * Group of TipGroups
+ * 
+ * @author Antti Leppä
+ */
 public class Tips extends Count {
   
   private static final long serialVersionUID = 6598277929123957554L;
 
+  /**
+   * Returns tip groups
+   * 
+   * @return tip groups
+   */
   public TipGroup[] getGroups() {
     return groups;
   }

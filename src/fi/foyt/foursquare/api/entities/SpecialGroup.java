@@ -10,6 +10,11 @@
  */
 package fi.foyt.foursquare.api.entities;
 
+/**
+ * Group of Specials
+ * 
+ * @author Antti Leppä
+ */
 public class SpecialGroup extends Group<CompleteSpecial> {
 
   private static final long serialVersionUID = 7724731185025537356L;

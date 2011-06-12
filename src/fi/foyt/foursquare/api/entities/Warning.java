@@ -13,10 +13,20 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
+/**
+ * Class representing Warning entity
+ *
+ * @author Antti Leppä
+ */
 public class Warning implements FoursquareEntity {
   
   private static final long serialVersionUID = 7167332454422034014L;
 
+  /**
+   * Returns warning text
+   * 
+   * @return warning text
+   */
   public String getText() {
     return text;
   }

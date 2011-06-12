@@ -13,10 +13,20 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
+/**
+ * Base class for all "count" entities
+ * 
+ * @author Antti Leppä
+ */
 public class Count implements FoursquareEntity {
 
   private static final long serialVersionUID = -471761138324979612L;
 
+  /**
+   * Returns count
+   * 
+   * @return count
+   */
   public Long getCount() {
     return count;
   }

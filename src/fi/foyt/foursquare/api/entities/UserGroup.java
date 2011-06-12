@@ -11,19 +11,19 @@
 
 package fi.foyt.foursquare.api.entities;
 
+/**
+ * Group of Users
+ * 
+ * @author Antti Leppä
+ */
 public class UserGroup extends Group<CompactUser> {
 
   private static final long serialVersionUID = 3181702805520905399L;
-
-  public String getType() {
-    return type;
-  }
   
   @Override
   public CompactUser[] getItems() {
     return items;
   }
 
-  private String type;
   private CompactUser[] items;
 }

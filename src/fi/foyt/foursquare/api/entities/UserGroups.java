@@ -10,10 +10,20 @@
  */
 package fi.foyt.foursquare.api.entities;
 
+/**
+ * Group of UserGroups
+ * 
+ * @author Antti Leppä
+ */
 public class UserGroups extends Count {
 
   private static final long serialVersionUID = -7444569523527922004L;
 
+  /**
+   * Returns user groups
+   * 
+   * @return user groups
+   */
   public UserGroup[] getGroups() {
     return groups;
   }

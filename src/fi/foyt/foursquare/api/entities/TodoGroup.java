@@ -11,6 +11,11 @@
 
 package fi.foyt.foursquare.api.entities;
 
+/**
+ * Group of Todos
+ * 
+ * @author Antti Leppä
+ */
 public class TodoGroup extends Group<Todo> {
 
   private static final long serialVersionUID = -8645153668638867533L;

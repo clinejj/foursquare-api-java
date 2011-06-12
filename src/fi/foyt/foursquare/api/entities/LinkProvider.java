@@ -13,10 +13,20 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
+/**
+ * Class representing LinkProvider entity
+ * 
+ * @author Antti Leppä
+ */
 public class LinkProvider implements FoursquareEntity {
 
   private static final long serialVersionUID = -5806669698522916299L;
 
+  /**
+   * Returns id of this provider
+   * 
+   * @return id of this provider
+   */
   public String getId() {
     return id;
   }

@@ -11,10 +11,20 @@
 
 package fi.foyt.foursquare.api.entities;
 
+/**
+ * Group of PhotoGroups
+ * 
+ * @author Antti Leppä
+ */
 public class Photos extends Count {
   
   private static final long serialVersionUID = 1974338391344968466L;
 
+  /**
+   * Returns array of PhotoGroups
+   *  
+   * @return array of PhotoGroups
+   */
   public PhotoGroup[] getGroups() {
     return groups;
   }

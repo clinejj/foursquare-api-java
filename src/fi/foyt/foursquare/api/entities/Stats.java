@@ -13,14 +13,29 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
+/**
+ * Class representing Stats entity
+ * 
+ * @author Antti Leppä
+ */
 public class Stats implements FoursquareEntity {
 
   private static final long serialVersionUID = 1191621361079941540L;
 
+  /**
+   * Returns checkins count
+   * 
+   * @return checkins count
+   */
   public Integer getCheckinsCount() {
     return checkinsCount;
   }
   
+  /**
+   * Returns users count
+   * 
+   * @return users count
+   */
   public Integer getUsersCount() {
     return usersCount;
   }

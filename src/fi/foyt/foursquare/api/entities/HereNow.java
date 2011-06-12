@@ -11,10 +11,20 @@
 
 package fi.foyt.foursquare.api.entities;
 
+/**
+ * Class representing HereNow entity
+ * 
+ * @author Antti Leppä
+ */
 public class HereNow extends Count {
   
   private static final long serialVersionUID = -39143307292834176L;
 
+  /**
+   * Returns array of checkin groups
+   * 
+   * @return array of checkin groups
+   */
   public CheckinGroup[] getGroups() {
     return groups;
   }
