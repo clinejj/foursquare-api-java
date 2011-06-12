@@ -14,6 +14,7 @@ import fi.foyt.foursquare.api.entities.CompleteVenue;
 import fi.foyt.foursquare.api.entities.LinkGroup;
 import fi.foyt.foursquare.api.entities.Recommended;
 import fi.foyt.foursquare.api.entities.TipGroup;
+import fi.foyt.foursquare.api.entities.Todo;
 import fi.foyt.foursquare.api.entities.VenueGroup;
 
 public class Venues {
@@ -218,5 +219,22 @@ public class Venues {
     assertEquals(new Long(0), result.getResult().getItems()[0].getTodo().getCount());
     assertEquals(new Long(1), result.getResult().getItems()[0].getDone().getCount());
     assertEquals("1537499", result.getResult().getItems()[0].getUser().getId());
+  }
+  
+  @Test
+  public final void testVenuesMarkTodo() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<Todo> result = foursquareApi.venuesMarkTodo("4b81ea40f964a520e0c330e3", null);
+    
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    assertEquals("4df4488122718759f822fe44", result.getResult().getId());  
+    assertEquals(new Long(1307854977), result.getResult().getCreatedAt());
+    assertEquals("4d13a1edf898b1f73ac3e181", result.getResult().getTip().getId());
+    assertEquals(new Long(1293132269), result.getResult().getTip().getCreatedAt());
+    assertEquals("", result.getResult().getTip().getText());
+    assertEquals("todo", result.getResult().getTip().getStatus());
+    assertEquals(new Long(6), result.getResult().getTip().getTodo().getCount());
+    assertEquals(new Long(3), result.getResult().getTip().getDone().getCount());
+    assertEquals("4b81ea40f964a520e0c330e3", result.getResult().getTip().getVenue().getId());
   }
 }
