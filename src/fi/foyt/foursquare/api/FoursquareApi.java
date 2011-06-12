@@ -1152,6 +1152,15 @@ public class FoursquareApi {
     }
   } 
   
+  /**
+   * Allows user to remove a tip from your to-do list or done list. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/tips/unmark.html" target="_blank">https://developer.foursquare.com/docs/tips/unmark.html</a>
+   * 
+   * @param tipId the tip you want to unmark.
+   * @return CompleteTip entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<CompleteTip> tipsUnmark(String tipId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "tips/" + tipId + "/unmark", true);
@@ -1167,6 +1176,15 @@ public class FoursquareApi {
     }
   } 
   
+  /**
+   * Get details of a photo. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/photos/photos.html" target="_blank">https://developer.foursquare.com/docs/photos/photos.html</a>
+   * 
+   * @param id the id of the photo to retrieve additional information for.
+   * @return Photo entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<Photo> photo(String id) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "photos/" + id, true);
@@ -1182,6 +1200,23 @@ public class FoursquareApi {
     }
   }
   
+  /**
+   * Allows user to add a new photo to a checkin, tip, or a venue in general. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/photos/add.html" target="_blank">https://developer.foursquare.com/docs/photos/add.html</a>
+   *  
+   * @param checkinId the id of a checkin owned by the user
+   * @param tipId the id of a tip owned by the user
+   * @param venueId the id of a venue, provided only when adding a public photo of the venue 
+   * @param broadcast twitter, facebook or twitter,facebook if you want to send to both.
+   * @param ll latitude and longitude of the user's location.
+   * @param llAcc accuracy of the user's latitude and longitude, in meters.
+   * @param alt altitude of the user's location, in meters. 
+   * @param altAcc vertical accuracy of the user's location, in meters.
+   * @param data data of the image. Image should be "image/jpeg"
+   * @return Photo entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<Photo> photosAdd(String checkinId, String tipId, String venueId, String broadcast, String ll, Double llAcc, Double alt, Double altAcc, byte[] data) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiMultipartMimeRequest("photos/add", true, "checkinId", checkinId, "tipId", tipId, "venueId", venueId, "broadcast", broadcast, "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, new MultipartParameter("photo", "image/jpeg", data));
@@ -1197,8 +1232,16 @@ public class FoursquareApi {
     }
   }
 
-  /* Settings */
-
+  /**
+   * Change a setting for the given user. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/settings/set.html" target="_blank">https://developer.foursquare.com/docs/settings/set.html</a>
+   * 
+   * @param settingId one of sendToTwitter, sendMayorshipsToTwitter, sendBadgesToTwitter, sendToFacebook, sendMayorshipsToFacebook, sendBadgesToFacebook, receivePings, receiveCommentPings.
+   * @param value true or false
+   * @return Setting entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<Setting> settingSet(String settingId, Boolean value) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.POST, "settings/" + settingId + "/set", true, "value", value ? 1 : 0);
@@ -1214,6 +1257,14 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Returns the settings of the acting user. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/settings/all.html" target="_blank">https://developer.foursquare.com/docs/settings/all.html</a>
+   * 
+   * @return Setting entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<Setting> settingsAll() throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "settings/all", true);
@@ -1229,8 +1280,16 @@ public class FoursquareApi {
     }
   }
 
-  /* Specials */
-
+  /**
+   * Gives details about a special, including text and whether it is unlocked for the current user. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/specials/specials.html" target="_blank">https://developer.foursquare.com/docs/specials/specials.html</a>
+   * 
+   * @param id id of special to retrieve
+   * @param venueId id of a venue the special is running at
+   * @return CompleteSpecial entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<CompleteSpecial> special(String id, String venueId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "specials/" + id, isAuthenticated(), "venueId", venueId);
@@ -1246,6 +1305,19 @@ public class FoursquareApi {
     }
   }
 
+  /**
+   * Returns a list of specials near the current location. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/specials/search.html" target="_blank">https://developer.foursquare.com/docs/specials/search.html</a>
+   * 
+   * @param ll latitude and longitude to search near.
+   * @param llAcc accuracy of latitude and longitude, in meters. 
+   * @param alt altitude of the user's location, in meters.
+   * @param altAcc accuracy of the user's altitude, in meters.
+   * @param limit number of results to return, up to 50
+   * @return SpecialGroup entity wrapped in Result object
+   * @throws FoursquareApiException
+   */
   public Result<SpecialGroup> specialsSearch(String ll, Double llAcc, Double alt, Double altAcc, Integer limit) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "specials/search", true, "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "limit", limit);
