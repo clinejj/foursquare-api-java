@@ -1097,7 +1097,22 @@ public class FoursquareApi {
     }
   }  
 
-  // TODO: tips/markdone (https://code.google.com/p/foursquare-api-java/issues/detail?id=46)
+  
+  public Result<CompleteTip> tipsMarkDone(String tipId) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.POST, "tips/" + tipId + "/markdone", true);
+      CompleteTip result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (CompleteTip) JSONFieldParser.parseEntity(CompleteTip.class, response.getResponse().getJSONObject("tip"), this.skipNonExistingFields);
+      }
+
+      return new Result<CompleteTip>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  } 
+  
   // TODO: tips/unmark (https://code.google.com/p/foursquare-api-java/issues/detail?id=47)
 
   /* Photos */
