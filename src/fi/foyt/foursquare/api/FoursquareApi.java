@@ -48,6 +48,7 @@ import fi.foyt.foursquare.api.entities.TodoGroup;
 import fi.foyt.foursquare.api.entities.UserGroup;
 import fi.foyt.foursquare.api.entities.VenueGroup;
 import fi.foyt.foursquare.api.entities.VenueHistoryGroup;
+import fi.foyt.foursquare.api.entities.VenuesSearchResult;
 import fi.foyt.foursquare.api.entities.Warning;
 import fi.foyt.foursquare.api.entities.notifications.Notification;
 import fi.foyt.foursquare.api.io.DefaultIOHandler;
@@ -63,7 +64,7 @@ import fi.foyt.foursquare.api.io.Response;
  */
 public class FoursquareApi {
 
-  private static final String DEFAULT_VERSION = "20110525";
+  private static final String DEFAULT_VERSION = "20110615";
 
   /**
    * Constructor.
@@ -877,23 +878,30 @@ public class FoursquareApi {
    * @param url a third-party URL
    * @param providerId identifier for a known third party
    * @param linkedId identifier used by third party specifed in providerId parameter
-   * @return Array of VenueGroup entities wrapped in Result object
+   * @return VenuesSearchResult object wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
    */
-  public Result<VenueGroup[]> venuesSearch(String ll, Double llAcc, Double alt, Double altAcc, String query, Integer limit, String intent, String categoryId, String url, String providerId, String linkedId) throws FoursquareApiException {
+  public Result<VenuesSearchResult> venuesSearch(String ll, Double llAcc, Double alt, Double altAcc, String query, Integer limit, String intent, String categoryId, String url, String providerId, String linkedId) throws FoursquareApiException {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "query", query, "limit", limit, "intent", intent, "categoryId", categoryId, "url", url, "providerId", providerId, "linkedId", linkedId);
-      VenueGroup[] result = null;
+      VenuesSearchResult result = null;
 
       if (response.getMeta().getCode() == 200) {
+        CompactVenue[] venues = null;
+        VenueGroup[] groups = null;
+        
         if (response.getResponse().has("groups")) {
-          result = (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getResponse().getJSONArray("groups"), this.skipNonExistingFields);
-        } else {
-          result = new VenueGroup[0];
-        }
+          groups = (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getResponse().getJSONArray("groups"), this.skipNonExistingFields);
+        } 
+        
+        if (response.getResponse().has("venues")) {
+          venues = (CompactVenue[]) JSONFieldParser.parseEntities(CompactVenue.class, response.getResponse().getJSONArray("venues"), this.skipNonExistingFields);
+        }  
+        
+        result = new VenuesSearchResult(venues, groups);
       }
 
-      return new Result<VenueGroup[]>(response.getMeta(), result);
+      return new Result<VenuesSearchResult>(response.getMeta(), result);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
