@@ -17,6 +17,7 @@ import fi.foyt.foursquare.api.entities.Recommended;
 import fi.foyt.foursquare.api.entities.TipGroup;
 import fi.foyt.foursquare.api.entities.Todo;
 import fi.foyt.foursquare.api.entities.VenueGroup;
+import fi.foyt.foursquare.api.entities.VenuesSearchResult;
 
 public class Venues {
 
@@ -126,8 +127,10 @@ public class Venues {
   public final void testVenuesSearch() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAnonymousFoursquareApi();
   
-    Result<VenueGroup[]> result = foursquareApi.venuesSearch("40.7,-74", null, null, null, null, null, null, null, null, null, null);
-    VenueGroup trendingGroup = result.getResult()[0];
+    Result<VenuesSearchResult> result = foursquareApi.venuesSearch("40.7,-74", null, null, null, null, null, null, null, null, null, null);
+    assertEquals(new Integer(200), result.getMeta().getCode());
+
+    VenueGroup trendingGroup = result.getResult().getGroups()[0];
     
     assertEquals("trending", trendingGroup.getType());
     assertEquals("Trending Now", trendingGroup.getName());
@@ -144,7 +147,7 @@ public class Venues {
     assertEquals(new Long(0), trendingGroup.getItems()[0].getTodos().getCount());
     assertEquals(new Long(15), trendingGroup.getItems()[0].getHereNow().getCount());
     
-    VenueGroup nearbyGroup = result.getResult()[1];
+    VenueGroup nearbyGroup = result.getResult().getGroups()[1];
     assertEquals("nearby", nearbyGroup.getType());
     assertEquals("Nearby", nearbyGroup.getName());
     assertEquals("4b81ea40f964a520e0c330e3", nearbyGroup.getItems()[0].getId());
@@ -157,6 +160,28 @@ public class Venues {
     assertEquals(new Integer(2707), nearbyGroup.getItems()[0].getStats().getUsersCount());
     assertEquals(new Long(0), nearbyGroup.getItems()[0].getTodos().getCount());
     assertEquals(new Long(0), nearbyGroup.getItems()[0].getHereNow().getCount());
+  }
+  
+  @Test
+  public final void testVenuesSearch20110615() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAnonymousFoursquareApi();
+  
+    Result<VenuesSearchResult> result = foursquareApi.venuesSearch("40.7,-74.0", null, null, null, null, null, null, null, null, null, null);
+    assertEquals(new Integer(200), result.getMeta().getCode());
+    
+    assertNull(result.getResult().getGroups());
+    
+    CompactVenue venue = result.getResult().getVenues()[0];
+    
+    assertEquals("4b81ea40f964a520e0c330e3", venue.getId());
+    assertEquals("Brooklyn Bridge Park - Pier 1", venue.getName());
+    assertEquals(new Double(40.701984159668676), venue.getLocation().getLat());
+    assertEquals(new Double(-73.9969539642334), venue.getLocation().getLng());
+    assertEquals("4bf58dd8d48988d163941735", venue.getCategories()[0].getId());
+    assertEquals(false, venue.getVerified());
+    assertEquals(new Integer(4532), venue.getStats().getCheckinsCount());
+    assertEquals(new Integer(2997), venue.getStats().getUsersCount());
+    assertEquals(new Long(3), venue.getHereNow().getCount());
   }
 
   @Test

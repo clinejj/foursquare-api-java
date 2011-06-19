@@ -143,6 +143,7 @@ public class TestIO extends IOHandler {
     setResponse("https://api.foursquare.com/v2/venues/4cb38bf20cdc721ea943234f", "venues/id_2.json");
     setResponse("https://api.foursquare.com/v2/venues/categories", "venues/categories_1.json");
     setResponse("https://api.foursquare.com/v2/venues/search?ll=40.7%2C-74", "venues/search_1.json");
+    setResponse("https://api.foursquare.com/v2/venues/search?ll=40.7%2C-74.0", "venues/search_2.json");
     setResponse("https://api.foursquare.com/v2/venues/trending?ll=40.7%2C-74", "venues/trending_1.json");
     setResponse("https://api.foursquare.com/v2/venues/add?name=Apuv%C3%A4lineyksikk%C3%B6+%2F+Moision+toimipiste&address=Moisiontie+11+b&city=Mikkeli&state=Etel%C3%A4-Savo&zip=50520&phone=0443516511&ll=61.677701%2C27.272585&primaryCategoryId=4bf58dd8d48988d104941735", "venues/add_1.json");
     setResponse("https://api.foursquare.com/v2/venues/4de88f43d22d09215a1f73e1/proposeedit?name=Apuv%C3%A4lineyksikk%C3%B6+%2F+Moision+toimipiste&address=Moisiontie+11+b&city=Mikkeli&state=Etel%C3%A4-Savo&zip=50520&phone=0443516511&ll=61.677701%2C27.272585&primaryCategoryId=4bf58dd8d48988d104941735", "venues/proposeedit_1.json");
