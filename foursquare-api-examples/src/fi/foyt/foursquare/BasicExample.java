@@ -3,7 +3,7 @@ package fi.foyt.foursquare;
 import fi.foyt.foursquare.api.FoursquareApi;
 import fi.foyt.foursquare.api.FoursquareApiException;
 import fi.foyt.foursquare.api.Result;
-import fi.foyt.foursquare.api.entities.VenueGroup;
+import fi.foyt.foursquare.api.entities.CompactVenue;
 import fi.foyt.foursquare.api.entities.VenuesSearchResult;
 
 public class BasicExample {
@@ -26,9 +26,9 @@ public class BasicExample {
     
     if (result.getMeta().getCode() == 200) {
       // if query was ok we can finally we do something with the data
-      for (VenueGroup venueGroup : result.getResult().getGroups()) {
+      for (CompactVenue venue : result.getResult().getVenues()) {
         // TODO: Do something we the data
-        System.out.println(venueGroup.getName());
+        System.out.println(venue.getName());
       }
     } else {
       // TODO: Proper error handling
