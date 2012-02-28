@@ -806,6 +806,36 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
+  
+  /**
+   * Allows you to make changes to a venue (acting user must be a superuser or venue manager). Any blank parameter deletes an old value, any unspecified parameter does nothing. 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/venues/edit.html" target="_blank">https://developer.foursquare.com/docs/venues/edit.html</a>
+   * 
+   * @param id the venue id for which an edit is being proposed.
+   * @param name the name of the venue.
+   * @param address the address of the venue.
+   * @param crossStreet the nearest intersecting street or streets.
+   * @param city the city name where this venue is. 
+   * @param state the nearest state or province to the venue.
+   * @param zip the nearest state or province to the venue.
+   * @param phone the phone number of the venue.
+   * @param ll latitude and longitude of the user's location, as accurate as is known.
+   * @param primaryCategoryId the ID of the category to which you want to assign this venue.
+   * @param twitter The twitter handle of the venue.
+   * @param description A freeform description of the venue, up to 300 characters.
+   * @param url The url of the homepage of the venue.
+   * @return Result object
+   * @throws FoursquareApiException when something unexpected happens
+   */
+  public Result<Object> venuesEdit(String id, String name, String address, String crossStreet, String city, String state, String zip, String phone, String ll, String primaryCategoryId, String twitter, String description, String url) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.POST, "venues/" + id + "/edit", true, "name", name, "address", address, "crossStreet", crossStreet, "city", city, "state", state, "zip", zip, "phone", phone, "ll", ll, "primaryCategoryId", primaryCategoryId, "twitter", twitter, "description", description, "url", url);
+      return new Result<Object>(response.getMeta(), null);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
 
   /**
    * Allows user to add a new venue. 
