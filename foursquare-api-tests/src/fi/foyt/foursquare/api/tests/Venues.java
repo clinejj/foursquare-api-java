@@ -211,6 +211,14 @@ public class Venues {
   
     assertEquals(new Integer(200), result.getMeta().getCode());
   }
+  
+  @Test
+  public final void testVenuesEdit() throws FoursquareApiException {
+    FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
+    Result<Object> result = foursquareApi.venuesEdit("4de88f43d22d09215a1f73e1", "Apuvälineyksikkö / Moision toimipiste", "Moisiontie 11 b", null, "Mikkeli", "Etelä-Savo", "50520", "0443516511", "61.677701,27.272585", "4bf58dd8d48988d104941735", null, null, null);
+  
+    assertEquals(new Integer(200), result.getMeta().getCode());
+  }
 
   @Test
   public final void testVenuesExplore() throws FoursquareApiException {
