@@ -36,6 +36,7 @@ import fi.foyt.foursquare.api.entities.CompleteVenue;
 import fi.foyt.foursquare.api.entities.KeywordGroup;
 import fi.foyt.foursquare.api.entities.LeaderboardItemGroup;
 import fi.foyt.foursquare.api.entities.LinkGroup;
+import fi.foyt.foursquare.api.entities.MiniVenue;
 import fi.foyt.foursquare.api.entities.Photo;
 import fi.foyt.foursquare.api.entities.PhotoGroup;
 import fi.foyt.foursquare.api.entities.RecommendationGroup;
@@ -48,6 +49,7 @@ import fi.foyt.foursquare.api.entities.TodoGroup;
 import fi.foyt.foursquare.api.entities.UserGroup;
 import fi.foyt.foursquare.api.entities.VenueGroup;
 import fi.foyt.foursquare.api.entities.VenueHistoryGroup;
+import fi.foyt.foursquare.api.entities.VenuesAutocompleteResult;
 import fi.foyt.foursquare.api.entities.VenuesSearchResult;
 import fi.foyt.foursquare.api.entities.Warning;
 import fi.foyt.foursquare.api.entities.notifications.Notification;
@@ -937,6 +939,40 @@ public class FoursquareApi {
     }
   }
 
+ 
+  /**
+   * Venues Autocomplete
+   * https://developer.foursquare.com/docs/venues/suggestcompletion
+   * @param ll
+   * @param llAcc
+   * @param alt
+   * @param altAcc
+   * @param query
+   * @param limit
+   * @return Result<VenuesAutocompleteResult>  -- this is only minivenues as per the API!
+   * 
+   */
+  public Result<VenuesAutocompleteResult> venuesSuggestCompletion(String ll, Double llAcc, Double alt, Double altAcc, String query, int limit) throws FoursquareApiException {
+	  try {
+	      ApiRequestResponse response = doApiRequest(Method.GET, "venues/suggestcompletion", isAuthenticated(), "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "query", query, "limit", limit);
+	      VenuesAutocompleteResult result = null;
+
+	      if (response.getMeta().getCode() == 200) {
+	        MiniVenue[] venues = null;
+	        
+	        if (response.getResponse().has("minivenues")) {
+	          venues = (MiniVenue[]) JSONFieldParser.parseEntities(MiniVenue.class, response.getResponse().getJSONArray("minivenues"), this.skipNonExistingFields);
+	        }  
+	        
+	        result = new VenuesAutocompleteResult(venues);
+	      }
+
+	      return new Result<VenuesAutocompleteResult>(response.getMeta(), result);
+	    } catch (JSONException e) {
+	      throw new FoursquareApiException(e);
+	    }
+  }
+  
   /**
    * Returns a list of venues near the current location with the most people currently checked in. 
    *    
