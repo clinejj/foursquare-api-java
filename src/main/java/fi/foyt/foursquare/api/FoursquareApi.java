@@ -938,6 +938,48 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
+  
+  /**
+   * Returns a list of venues near the current location identified by place (i.e. Chicago, IL, optionally matching the search term. 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/venues/search.html" target="_blank">https://developer.foursquare.com/docs/venues/search.html</a>
+   * 
+   * @param near the name of a city or town which can be geocoded by foursquare
+   * @param query a search term to be applied against titles.
+   * @param limit number of results to return, up to 50.
+   * @param intent one of checkin, match or specials
+   * @param categoryId a category to limit results to
+   * @param url a third-party URL
+   * @param providerId identifier for a known third party
+   * @param linkedId identifier used by third party specifed in providerId parameter
+   * @return VenuesSearchResult object wrapped in Result object
+   * @throws FoursquareApiException when something unexpected happens
+   */
+  public Result<VenuesSearchResult> venuesSearch(String near, String query, Integer limit, String intent, String categoryId, String url, String providerId, String linkedId) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), "near", near, "query", query, "limit", limit, "intent", intent, "categoryId", categoryId, "url", url, "providerId", providerId, "linkedId", linkedId);
+      VenuesSearchResult result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        CompactVenue[] venues = null;
+        VenueGroup[] groups = null;
+        
+        if (response.getResponse().has("groups")) {
+          groups = (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getResponse().getJSONArray("groups"), this.skipNonExistingFields);
+        } 
+        
+        if (response.getResponse().has("venues")) {
+          venues = (CompactVenue[]) JSONFieldParser.parseEntities(CompactVenue.class, response.getResponse().getJSONArray("venues"), this.skipNonExistingFields);
+        }  
+        
+        result = new VenuesSearchResult(venues, groups);
+      }
+
+      return new Result<VenuesSearchResult>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new FoursquareApiException(e);
+    }
+  }
 
  
   /**
