@@ -16,6 +16,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+		<maven.compile.encoding>UTF-8</maven.compile.encoding>
 	</properties>
 
 	<dependencies>
@@ -60,11 +62,12 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.12</version>
 				<configuration>
-				 <includes>
-            <include>**/*.java</include>
-          </includes>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
 					<parallel>methods</parallel>
 					<threadCount>10</threadCount>
+					<argLine>-Xms256m -Xmx512m -XX:MaxPermSize=128m -ea -Dfile.encoding=UTF-8</argLine> 
 				</configuration>
 			</plugin>
 
