@@ -17,6 +17,10 @@ public class VenuesSearchResult implements FoursquareEntity {
 
   private static final long serialVersionUID = -4811474739114637413L;
   
+
+  private CompactVenue[] venues;
+  private VenueGroup[] groups;
+  private GeoCode geocode;
   /**
    * Constructor
    * 
@@ -27,6 +31,11 @@ public class VenuesSearchResult implements FoursquareEntity {
     this.venues = venues;
     this.groups = groups;
   }
+  
+  public VenuesSearchResult(CompactVenue[] venues, VenueGroup[] groups, GeoCode geocode) {
+	    this(venues,groups);
+	    this.geocode = geocode;
+	  }
   
   /**
    * Returns resulted venues
@@ -45,7 +54,13 @@ public class VenuesSearchResult implements FoursquareEntity {
   public VenueGroup[] getGroups() {
     return groups;
   }
+
+public GeoCode getGeocode() {
+	return geocode;
+}
+
+public void setGeocode(GeoCode geocode) {
+	this.geocode = geocode;
+}
   
-  private CompactVenue[] venues;
-  private VenueGroup[] groups;
 }

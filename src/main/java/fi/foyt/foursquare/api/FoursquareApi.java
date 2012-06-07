@@ -33,6 +33,7 @@ import fi.foyt.foursquare.api.entities.CompleteSpecial;
 import fi.foyt.foursquare.api.entities.CompleteTip;
 import fi.foyt.foursquare.api.entities.CompleteUser;
 import fi.foyt.foursquare.api.entities.CompleteVenue;
+import fi.foyt.foursquare.api.entities.GeoCode;
 import fi.foyt.foursquare.api.entities.KeywordGroup;
 import fi.foyt.foursquare.api.entities.LeaderboardItemGroup;
 import fi.foyt.foursquare.api.entities.LinkGroup;
@@ -959,11 +960,11 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), "near", near, "query", query, "limit", limit, "intent", intent, "categoryId", categoryId, "url", url, "providerId", providerId, "linkedId", linkedId);
       VenuesSearchResult result = null;
-
+     
       if (response.getMeta().getCode() == 200) {
         CompactVenue[] venues = null;
         VenueGroup[] groups = null;
-        
+        GeoCode geocode = null;
         if (response.getResponse().has("groups")) {
           groups = (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getResponse().getJSONArray("groups"), this.skipNonExistingFields);
         } 
@@ -972,7 +973,10 @@ public class FoursquareApi {
           venues = (CompactVenue[]) JSONFieldParser.parseEntities(CompactVenue.class, response.getResponse().getJSONArray("venues"), this.skipNonExistingFields);
         }  
         
-        result = new VenuesSearchResult(venues, groups);
+        if(response.getResponse().has("geocode")) {
+        	geocode = (GeoCode) JSONFieldParser.parseEntity(GeoCode.class, response.getResponse().getJSONObject("geocode"), this.skipNonExistingFields);
+        }
+        result = new VenuesSearchResult(venues, groups,geocode);
       }
 
       return new Result<VenuesSearchResult>(response.getMeta(), result);

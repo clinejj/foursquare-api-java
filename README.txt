@@ -1,5 +1,10 @@
 README
 
+June 6, 2012
+-------------
+Added support for venue search with "near" as a place (i.e. Chicago). Includes support for returning Geocode object.
+
+
 March 29, 2012
 --------------
 Rick Mangi - rick at broadcastr.com
