@@ -14,7 +14,9 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -940,27 +942,15 @@ public class FoursquareApi {
     }
   }
   
+  
   /**
-   * Returns a list of venues near the current location identified by place (i.e. Chicago, IL, optionally matching the search term. 
-   *    
-   * @see <a href="https://developer.foursquare.com/docs/venues/search.html" target="_blank">https://developer.foursquare.com/docs/venues/search.html</a>
-   * 
-   * @param near the name of a city or town which can be geocoded by foursquare
-   * @param query a search term to be applied against titles.
-   * @param limit number of results to return, up to 50.
-   * @param intent one of checkin, match or specials
-   * @param categoryId a category to limit results to
-   * @param url a third-party URL
-   * @param providerId identifier for a known third party
-   * @param linkedId identifier used by third party specifed in providerId parameter
-   * @return VenuesSearchResult object wrapped in Result object
-   * @throws FoursquareApiException when something unexpected happens
+   * handle parsing a venue search result and parsing the data
+   * @param response
+   * @return
    */
-  public Result<VenuesSearchResult> venuesSearch(String near, String query, Integer limit, String intent, String categoryId, String url, String providerId, String linkedId) throws FoursquareApiException {
-    try {
-      ApiRequestResponse response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), "near", near, "query", query, "limit", limit, "intent", intent, "categoryId", categoryId, "url", url, "providerId", providerId, "linkedId", linkedId);
-      VenuesSearchResult result = null;
-     
+  private Result<VenuesSearchResult> handleVenueSearchResult(ApiRequestResponse response) throws FoursquareApiException, JSONException {
+	  VenuesSearchResult result = null;
+	     
       if (response.getMeta().getCode() == 200) {
         CompactVenue[] venues = null;
         VenueGroup[] groups = null;
@@ -980,6 +970,70 @@ public class FoursquareApi {
       }
 
       return new Result<VenuesSearchResult>(response.getMeta(), result);
+  }
+  
+  /**
+   * Generic search which takes a map of parameters
+   * The map is converted into parameters for the search API call with key/value pairs matching 
+   * https://developer.foursquare.com/docs/venues/search
+   * 
+   * For example:
+   * 
+   * public Response foursquareSearchNamed(@QueryParam("place") String place, @QueryParam("term") String searchTerm) {
+   *		Map<String,String> searchParams = new HashMap<String,String>();
+   *		FoursquareApi foursquareApi = new FoursquareApi(<your client_id>, <your client_secret>, <your redirecturl>);
+   *		searchParams.put("near", place);
+	*		searchParams.put("query", searchTerm);
+	*		searchParams.put("limit","50");
+	*		try {
+	*			Result<VenuesSearchResult> result = foursquareApi.venuesSearch(searchParams);
+	*			if(result != null) {
+	*				return Response.ok(result.getResult()).build();
+	*			}
+	*		} catch (Exception e) {
+	*			e.printStackTrace();
+	*			log.warning("Problem with foursquare search");
+	*		}
+	*		return Response.noContent().build();
+	*	}
+   * 
+   */
+  public Result<VenuesSearchResult> venuesSearch(Map<String,String> params) throws FoursquareApiException {
+	  List<String> argsList = new ArrayList<String>();
+	  for(String s : params.keySet()) {
+		  argsList.add(s);
+		  argsList.add(params.get(s));
+	  }
+	  
+	  Object[] args = argsList.toArray();
+	  try {
+	      ApiRequestResponse response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), args);
+	      return handleVenueSearchResult(response);
+	    } catch (JSONException e) {
+	      throw new FoursquareApiException(e);
+	    }
+  }
+  
+  /**
+   * Returns a list of venues near the current location identified by place (i.e. Chicago, IL, optionally matching the search term. 
+   *    
+   * @see <a href="https://developer.foursquare.com/docs/venues/search.html" target="_blank">https://developer.foursquare.com/docs/venues/search.html</a>
+   * 
+   * @param near the name of a city or town which can be geocoded by foursquare
+   * @param query a search term to be applied against titles.
+   * @param limit number of results to return, up to 50.
+   * @param intent one of checkin, match or specials
+   * @param categoryId a category to limit results to
+   * @param url a third-party URL
+   * @param providerId identifier for a known third party
+   * @param linkedId identifier used by third party specifed in providerId parameter
+   * @return VenuesSearchResult object wrapped in Result object
+   * @throws FoursquareApiException when something unexpected happens
+   */
+  public Result<VenuesSearchResult> venuesSearch(String near, String query, Integer limit, String intent, String categoryId, String url, String providerId, String linkedId) throws FoursquareApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), "near", near, "query", query, "limit", limit, "intent", intent, "categoryId", categoryId, "url", url, "providerId", providerId, "linkedId", linkedId);
+      return handleVenueSearchResult(response);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
