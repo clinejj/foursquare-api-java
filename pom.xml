@@ -168,6 +168,7 @@
 	</issueManagement>
 	<scm>
 		<url>http://foursquare-api-java.googlecode.com/svn/</url>
+		<developerConnection>scm:svn:http://foursquare-api-java.googlecode.com/svn/trunk</developerConnection>
 	</scm>
 	<organization>
 		<name>Foyt</name>
