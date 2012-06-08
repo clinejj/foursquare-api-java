@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>fi.foyt</groupId>
 	<artifactId>foursquare-api</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>1.0.2</version>
 	<name>Foursquare API</name>
 	<licenses>
 		<license>
@@ -167,8 +166,8 @@
 		<system>Google Code</system>
 	</issueManagement>
 	<scm>
-		<url>http://foursquare-api-java.googlecode.com/svn/</url>
-		<developerConnection>scm:svn:https://foursquare-api-java.googlecode.com/svn/trunk</developerConnection>
+		<url>http://foursquare-api-java.googlecode.com/svn/tags/foursquare-api-1.0.2</url>
+		<developerConnection>scm:svn:https://foursquare-api-java.googlecode.com/svn/tags/foursquare-api-1.0.2</developerConnection>
 	</scm>
 	<organization>
 		<name>Foyt</name>
