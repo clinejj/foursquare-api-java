@@ -37,7 +37,9 @@ public class DefaultIOHandler extends IOHandler {
       HttpURLConnection connection = (HttpURLConnection) aUrl.openConnection();
       try {
         connection.setDoInput(true);
-        connection.setDoOutput(true);
+        if("POST".equals(method.name())) {
+            connection.setDoOutput(true);
+        }
         connection.setRequestMethod(method.name());
         connection.connect();
 
