@@ -776,9 +776,9 @@ public class FoursquareApi {
    * @return Result object
    * @throws FoursquareApiException when something unexpected happens
    */
-  public Result<Object> venuesFlag(String id, String problem) throws FoursquareApiException {
+  public Result<Object> venuesFlag(String id, String problem, String venueId) throws FoursquareApiException {
     try {
-      ApiRequestResponse response = doApiRequest(Method.POST, "venues/" + id + "/flag", true, "problem", problem);
+      ApiRequestResponse response = doApiRequest(Method.POST, "venues/" + id + "/flag", true, "problem", problem, "venueId", venueId);
       return new Result<Object>(response.getMeta(), null);
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
