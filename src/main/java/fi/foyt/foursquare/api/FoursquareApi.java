@@ -913,12 +913,14 @@ public class FoursquareApi {
    * @param url a third-party URL
    * @param providerId identifier for a known third party
    * @param linkedId identifier used by third party specifed in providerId parameter
+   * @param radius Limit results to venues within this many meters of the specified location. Maximum is 100 000 meters.
+   * @param near Required if ll is not provided. A string naming a place in the world. Will be geocodd. (required for query searches)
    * @return VenuesSearchResult object wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
    */
-  public Result<VenuesSearchResult> venuesSearch(String ll, Double llAcc, Double alt, Double altAcc, String query, Integer limit, String intent, String categoryId, String url, String providerId, String linkedId) throws FoursquareApiException {
+  public Result<VenuesSearchResult> venuesSearch(String ll, Double llAcc, Double alt, Double altAcc, String query, Integer limit, String intent, String categoryId, String url, String providerId, String linkedId, Integer radius, String near) throws FoursquareApiException {
     try {
-      ApiRequestResponse response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "query", query, "limit", limit, "intent", intent, "categoryId", categoryId, "url", url, "providerId", providerId, "linkedId", linkedId);
+      ApiRequestResponse response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), "ll", ll, "llAcc", llAcc, "alt", alt, "altAcc", altAcc, "query", query, "limit", limit, "intent", intent, "categoryId", categoryId, "url", url, "providerId", providerId, "linkedId", linkedId, "radius", radius, "near", near);
       VenuesSearchResult result = null;
 
       if (response.getMeta().getCode() == 200) {
