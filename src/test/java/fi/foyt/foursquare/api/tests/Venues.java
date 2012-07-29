@@ -274,7 +274,7 @@ public class Venues {
   @Test
   public final void testVenuesFlag() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
-    Result<Object> result = foursquareApi.venuesFlag("4beb18a36295c9b669478708", "closed");
+    Result<Object> result = foursquareApi.venuesFlag("4beb18a36295c9b669478708", "closed", null);
     assertEquals(new Integer(200), result.getMeta().getCode());
   }
 
