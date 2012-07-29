@@ -773,6 +773,7 @@ public class FoursquareApi {
    * 
    * @param id the venue id for which an edit is being proposed.
    * @param problem one of mislocated, closed, duplicate.
+   * @param venueId of a duplicate, only valid for problem = duplicate
    * @return Result object
    * @throws FoursquareApiException when something unexpected happens
    */
