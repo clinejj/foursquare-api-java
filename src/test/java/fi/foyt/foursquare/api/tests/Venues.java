@@ -127,7 +127,7 @@ public class Venues {
   public final void testVenuesSearch() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAnonymousFoursquareApi();
   
-    Result<VenuesSearchResult> result = foursquareApi.venuesSearch("40.7,-74", null, null, null, null, null, null, null, null, null, null);
+    Result<VenuesSearchResult> result = foursquareApi.venuesSearch("40.7,-74", null, null, null, null, null, null, null, null, null, null, null, null);
     assertEquals(new Integer(200), result.getMeta().getCode());
 
     VenueGroup trendingGroup = result.getResult().getGroups()[0];
@@ -166,7 +166,7 @@ public class Venues {
   public final void testVenuesSearch20110615() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAnonymousFoursquareApi();
   
-    Result<VenuesSearchResult> result = foursquareApi.venuesSearch("40.7,-74.0", null, null, null, null, null, null, null, null, null, null);
+    Result<VenuesSearchResult> result = foursquareApi.venuesSearch("40.7,-74.0", null, null, null, null, null, null, null, null, null, null, null, null);
     assertEquals(new Integer(200), result.getMeta().getCode());
     
     assertNull(result.getResult().getGroups());
