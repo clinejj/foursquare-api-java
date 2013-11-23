@@ -62,16 +62,16 @@ public class Venues {
 
     assertEquals(new Integer(200), result.getMeta().getCode());
     assertEquals("4cb38bf20cdc721ea943234f", result.getResult().getId());
-    assertEquals("4da37ddb15ad530c110a9d52", result.getResult().getSpecials()[0].getId());
-    assertEquals("count", result.getResult().getSpecials()[0].getType());
-    assertEquals("Want 20% off? Check in at RadioShack for the first time & get 20% off your qualifying purchase. Ends 6/30/11. Exclusions apply. Ask associate for details.", result.getResult().getSpecials()[0].getMessage());
-    assertEquals("on your 1st check-in", result.getResult().getSpecials()[0].getDescription());
-    assertEquals(false, result.getResult().getSpecials()[0].getUnlocked());
-    assertEquals("newbie", result.getResult().getSpecials()[0].getIcon());
-    assertEquals("Newbie Special", result.getResult().getSpecials()[0].getTitle());
-    assertEquals("locked", result.getResult().getSpecials()[0].getState());
-    assertEquals("foursquare", result.getResult().getSpecials()[0].getProvider());
-    assertEquals("standard", result.getResult().getSpecials()[0].getRedemption());
+    assertEquals("4da37ddb15ad530c110a9d52", result.getResult().getSpecials().getItems()[0].getId());
+    assertEquals("count", result.getResult().getSpecials().getItems()[0].getType());
+    assertEquals("Want 20% off? Check in at RadioShack for the first time & get 20% off your qualifying purchase. Ends 6/30/11. Exclusions apply. Ask associate for details.", result.getResult().getSpecials().getItems()[0].getMessage());
+    assertEquals("on your 1st check-in", result.getResult().getSpecials().getItems()[0].getDescription());
+    assertEquals(false, result.getResult().getSpecials().getItems()[0].getUnlocked());
+    assertEquals("newbie", result.getResult().getSpecials().getItems()[0].getIcon());
+    assertEquals("Newbie Special", result.getResult().getSpecials().getItems()[0].getTitle());
+    assertEquals("locked", result.getResult().getSpecials().getItems()[0].getState());
+    assertEquals("foursquare", result.getResult().getSpecials().getItems()[0].getProvider());
+    assertEquals("standard", result.getResult().getSpecials().getItems()[0].getRedemption());
   }
   
   @Test
