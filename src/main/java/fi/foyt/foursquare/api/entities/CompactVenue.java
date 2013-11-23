@@ -82,7 +82,7 @@ public class CompactVenue implements FoursquareEntity {
    * Returns array of specials at this venue
    * @return array of specials at this venue
    */
-  public CompleteSpecial[] getSpecials() {
+  public SpecialGroup getSpecials() {
     return specials;
   }
 
@@ -137,7 +137,7 @@ public class CompactVenue implements FoursquareEntity {
   private Contact contact;
   private Location location;
   private Category[] categories;
-  private CompleteSpecial[] specials;
+  private SpecialGroup specials;
   private HereNow hereNow;
   private Stats stats;
   private String url;
