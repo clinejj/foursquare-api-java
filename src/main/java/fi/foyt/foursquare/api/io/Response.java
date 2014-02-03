@@ -31,6 +31,23 @@ public class Response {
     this.responseContent = responseContent;
     this.message = message;
   }
+  
+  /**
+   * Constructor.
+   *
+   * @param responseContent response content
+   * @param responseCode response code
+   * @param message response message
+   * @param responseHeaderRateLimit response header X-RateLimit-Limit
+   * @param responseHeaderRateLimitRemaining response header X-RateLimit-Remaining
+   */
+  public Response(String responseContent, int responseCode, String message, String responseHeaderRateLimit, String responseHeaderRateLimitRemaining) {
+    this.responseCode = responseCode;
+    this.responseContent = responseContent;
+    this.message = message;
+    this.responseHeaderRateLimit = responseHeaderRateLimit;
+    this.responseHeaderRateLimitRemaining = responseHeaderRateLimitRemaining;
+  }
 
   /**
    * Returns message
@@ -58,8 +75,29 @@ public class Response {
   public String getResponseContent() {
     return responseContent;
   }
+  
+  /**
+   * Returns content
+   *
+   * @return response header rate limit
+   */
+  public String getResponseHeaderRateLimit() {
+      return responseHeaderRateLimit;
+  }
+  
+  /**
+   * Returns content
+   *
+   * @return response header rate limit remaining
+   */
+  public String getResponseHeaderRateLimitRemaining() {
+      return responseHeaderRateLimitRemaining;
+  }
 
   private String responseContent;
   private String message;
   private int responseCode;
+  private String responseHeaderRateLimit;
+  private String responseHeaderRateLimitRemaining;
+  
 }

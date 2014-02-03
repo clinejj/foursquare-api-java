@@ -1722,8 +1722,8 @@ public class FoursquareApi {
     } else {
       errorDetail = response.getMessage();
     }
-
-    return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", errorDetail), responseJson, notificationsJson);
+    
+    return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", errorDetail, response.getResponseHeaderRateLimit(), response.getResponseHeaderRateLimitRemaining()), responseJson, notificationsJson);
   }
 
   /**
@@ -1748,9 +1748,9 @@ public class FoursquareApi {
       JSONObject responseJson = responseObject.getJSONObject("response");
       JSONArray notificationsJson = responseObject.optJSONArray("notifications");
 
-      return new ApiRequestResponse(new ResultMeta(code, errorType, errorDetail), responseJson, notificationsJson);
+      return new ApiRequestResponse(new ResultMeta(code, errorType, errorDetail, response.getResponseHeaderRateLimit(), response.getResponseHeaderRateLimitRemaining()), responseJson, notificationsJson);
     } else {
-      return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", response.getMessage()), null, null);
+      return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", response.getMessage(), response.getResponseHeaderRateLimit(), response.getResponseHeaderRateLimitRemaining()), null, null);
     }
   }
 

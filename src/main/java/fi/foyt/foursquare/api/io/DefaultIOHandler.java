@@ -19,6 +19,8 @@ import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Default implementation of the IOHandler
@@ -42,13 +44,16 @@ public class DefaultIOHandler extends IOHandler {
         }
         connection.setRequestMethod(method.name());
         connection.connect();
+        
+        String xRateLimit = connection.getHeaderField("X-RateLimit-Limit");
+        String xRateLimitRemaining = connection.getHeaderField("X-RateLimit-Remaining");
 
         code = connection.getResponseCode();
         if (code == 200) {
           InputStream inputStream = connection.getInputStream();
-          return new Response(readStream(inputStream), code, connection.getResponseMessage());
+          return new Response(readStream(inputStream), code, connection.getResponseMessage(), xRateLimit, xRateLimitRemaining);
         } else {
-          return new Response("", code, getMessageByCode(code));
+          return new Response("", code, getMessageByCode(code), xRateLimit, xRateLimitRemaining);
         }
 
       } finally {
@@ -73,6 +78,7 @@ public class DefaultIOHandler extends IOHandler {
         connection.setDoOutput(true);
         connection.setRequestMethod("POST");
         connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
+        connection.setRequestProperty("Accept-Encoding", "gzip, deflate");
         connection.connect();
 
         OutputStream outputStream = connection.getOutputStream();
