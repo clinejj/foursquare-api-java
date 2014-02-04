@@ -14,7 +14,7 @@ package fi.foyt.foursquare.api.entities.venue;
 import fi.foyt.foursquare.api.FoursquareEntity;
 
 /**
- * Class representing Photo entity
+ * Class representing Hours entity
  * 
  * @see <a href="https://developer.foursquare.com/docs/responses/hoursformatted.html" target="_blank">https://developer.foursquare.com/docs/responses/hoursformatted.html</a>
  * 

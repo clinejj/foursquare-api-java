@@ -14,9 +14,9 @@ package fi.foyt.foursquare.api.entities.venue;
 import fi.foyt.foursquare.api.FoursquareEntity;
 
 /**
- * Class representing Photo entity
+ * Class representing Menu entity
  * 
- * @see <a href="https://developer.foursquare.com/docs/venues/menu.html" target="_blank">https://developer.foursquare.com/docs/venues/menu.html</a>
+ * @see <a href="https://developer.foursquare.com/docs/responses/venue.html" target="_blank">https://developer.foursquare.com/docs/responses/venue.html</a>
  * 
  * @author Blake Dy
  */

@@ -125,6 +125,24 @@ public class CompactVenue implements FoursquareEntity {
   public Menu getMenu() {
     return menu;
   }
+  
+  /**
+   * Returns an object containing the price tier from 1 (least pricey) - 4 (most pricey) and a message describing the price tier.
+   * 
+   * @return an object containing the price tier from 1 (least pricey) - 4 (most pricey) and a message describing the price tier.
+   */
+  public Price getPrice() {
+    return price;
+  }
+  
+  /**
+   * Returns a numerical rating of the venue (0 through 10).
+   * 
+   * @return a numerical rating of the venue (0 through 10).
+   */
+  public Integer getRating() {
+    return rating;
+  }
 
   /**
    * Returns array of specials at this venue
@@ -172,6 +190,8 @@ public class CompactVenue implements FoursquareEntity {
   private Hours hours;
   private Hours popular;
   private Menu menu;
+  private Price price;
+  private Integer rating;
   
   private SpecialGroup specials;
   private HereNow hereNow;
