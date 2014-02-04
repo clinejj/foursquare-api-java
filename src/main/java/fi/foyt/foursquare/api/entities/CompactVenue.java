@@ -2,6 +2,8 @@
  * FoursquareAPI - Foursquare API for Java
  * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
  * http://www.foyt.fi
+ * Copyright (C) 2014 - Blake Dy / Wallaby
+ * http://walla.by
  * 
  * License: 
  * 
@@ -18,7 +20,7 @@ import fi.foyt.foursquare.api.FoursquareEntity;
  * 
  * @see <a href="https://developer.foursquare.com/docs/responses/venue.html" target="_blank">https://developer.foursquare.com/docs/responses/venue.html</a>
  * 
- * @author Antti Leppä
+ * @author Antti Leppä / Blake Dy
  */
 public class CompactVenue implements FoursquareEntity {
   
@@ -59,16 +61,7 @@ public class CompactVenue implements FoursquareEntity {
   public Location getLocation() {
     return location;
   }
-
-  /**
-   * Returns true if this venue has been verified
-   * 
-   * @return true if this venue has been verified
-   */
-  public Boolean getVerified() {
-    return verified;
-  }
-
+  
   /**
    * Returns array of venue's categories
    *  
@@ -79,20 +72,12 @@ public class CompactVenue implements FoursquareEntity {
   }
 
   /**
-   * Returns array of specials at this venue
-   * @return array of specials at this venue
-   */
-  public SpecialGroup getSpecials() {
-    return specials;
-  }
-
-  /**
-   * Returns information about who is here now
+   * Returns true if this venue has been verified
    * 
-   * @return information about who is here now
+   * @return true if this venue has been verified
    */
-  public HereNow getHereNow() {
-    return hereNow;
+  public Boolean getVerified() {
+    return verified;
   }
   
   /**
@@ -111,6 +96,41 @@ public class CompactVenue implements FoursquareEntity {
    */
   public String getUrl() {
     return url;
+  }
+  
+  /**
+   * Returns the hours during the week that the venue is open along with any named hours segments in a human-readable format.
+   * 
+   * @return the hours during the week that the venue is open along with any named hours segments in a human-readable format.
+   */
+  public Hours getHours() {
+    return hours;
+  }
+  
+  /**
+   * Returns the hours during the week when people usually go to the venue.
+   * 
+   * @return the hours during the week when people usually go to the venue.
+   */
+  public Hours getPopular() {
+    return popular;
+  }
+
+  /**
+   * Returns array of specials at this venue
+   * @return array of specials at this venue
+   */
+  public SpecialGroup getSpecials() {
+    return specials;
+  }
+
+  /**
+   * Returns information about who is here now
+   * 
+   * @return information about who is here now
+   */
+  public HereNow getHereNow() {
+    return hereNow;
   }
 
   /**
@@ -137,11 +157,13 @@ public class CompactVenue implements FoursquareEntity {
   private Location location;
   private Category[] categories;
   private Boolean verified;
-  private SpecialGroup specials;
-  private HereNow hereNow;
   private Stats stats;
   private String url;
+  private Hours hours;
+  private Hours popular;
+  
+  private SpecialGroup specials;
+  private HereNow hereNow;
   private Tips tips;
   private TodoGroup todos;
-  // page
 }
