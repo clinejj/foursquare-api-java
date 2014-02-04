@@ -192,9 +192,12 @@ public class CompactVenue implements FoursquareEntity {
   private Menu menu;
   private Price price;
   private Integer rating;
-  
   private SpecialGroup specials;
   private HereNow hereNow;
+  
+  // deprecated from compact, now only in complete venue
   private Tips tips;
+  
+  // deprecated and moved to listed in complete venue
   private TodoGroup todos;
 }
