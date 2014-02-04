@@ -9,14 +9,14 @@
  * http://www.gnu.org/licenses/lgpl.html
  */
 
-package fi.foyt.foursquare.api.entities;
+package fi.foyt.foursquare.api.entities.venue;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
 /**
  * Class representing Photo entity
  * 
- * @see <a href="https://developer.foursquare.com/docs/responses/venue.html" target="_blank">https://developer.foursquare.com/docs/responses/venue.html</a>
+ * @see <a href="https://developer.foursquare.com/docs/responses/hoursformatted.html" target="_blank">https://developer.foursquare.com/docs/responses/hoursformatted.html</a>
  * 
  * @author Blake Dy
  */

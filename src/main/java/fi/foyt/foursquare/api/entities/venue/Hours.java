@@ -9,7 +9,7 @@
  * http://www.gnu.org/licenses/lgpl.html
  */
 
-package fi.foyt.foursquare.api.entities;
+package fi.foyt.foursquare.api.entities.venue;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 

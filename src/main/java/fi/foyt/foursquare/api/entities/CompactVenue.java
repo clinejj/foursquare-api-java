@@ -14,6 +14,7 @@
 package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
+import fi.foyt.foursquare.api.entities.venue.*;
 
 /**
  * Class representing CompactVenue entity
@@ -115,6 +116,15 @@ public class CompactVenue implements FoursquareEntity {
   public Hours getPopular() {
     return popular;
   }
+  
+  /**
+   * Returns an object containing url and mobileUrl that display the menu information for this venue.
+   * 
+   * @return an object containing url and mobileUrl that display the menu information for this venue.
+   */
+  public Menu getMenu() {
+    return menu;
+  }
 
   /**
    * Returns array of specials at this venue
@@ -161,6 +171,7 @@ public class CompactVenue implements FoursquareEntity {
   private String url;
   private Hours hours;
   private Hours popular;
+  private Menu menu;
   
   private SpecialGroup specials;
   private HereNow hereNow;
