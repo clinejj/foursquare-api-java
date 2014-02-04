@@ -41,16 +41,7 @@ public class CompactVenue implements FoursquareEntity {
   public String getName() {
     return name;
   }
-
-  /**
-   * Returns true if this venue has been verified
-   * 
-   * @return true if this venue has been verified
-   */
-  public Boolean getVerified() {
-    return verified;
-  }
-
+  
   /**
    * Returns contact information for the venue
    * 
@@ -59,7 +50,7 @@ public class CompactVenue implements FoursquareEntity {
   public Contact getContact() {
     return contact;
   }
-
+  
   /**
    * Returns venue's contact information
    *  
@@ -67,6 +58,15 @@ public class CompactVenue implements FoursquareEntity {
    */
   public Location getLocation() {
     return location;
+  }
+
+  /**
+   * Returns true if this venue has been verified
+   * 
+   * @return true if this venue has been verified
+   */
+  public Boolean getVerified() {
+    return verified;
   }
 
   /**
@@ -82,7 +82,7 @@ public class CompactVenue implements FoursquareEntity {
    * Returns array of specials at this venue
    * @return array of specials at this venue
    */
-  public CompleteSpecial[] getSpecials() {
+  public SpecialGroup getSpecials() {
     return specials;
   }
 
@@ -133,14 +133,15 @@ public class CompactVenue implements FoursquareEntity {
 
   private String id;
   private String name;
-  private Boolean verified;
   private Contact contact;
   private Location location;
   private Category[] categories;
-  private CompleteSpecial[] specials;
+  private Boolean verified;
+  private SpecialGroup specials;
   private HereNow hereNow;
   private Stats stats;
   private String url;
   private Tips tips;
   private TodoGroup todos;
+  // page
 }

@@ -72,7 +72,7 @@ public class CompleteVenue extends CompactVenue {
    * 
    * @return an array of specials near this venue.
    */
-  public CompleteSpecial[] getSpecialsNearby() {
+  public SpecialGroup getSpecialsNearby() {
     return specialsNearby;
   }
   
@@ -99,7 +99,7 @@ public class CompleteVenue extends CompactVenue {
   private String[] tags;
   private Count beenHere;
   private String shortUrl;
-  private CompleteSpecial[] specialsNearby;
+  private SpecialGroup specialsNearby;
   private Photos photos;
   private String timeZone;
 }
