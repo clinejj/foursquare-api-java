@@ -19,8 +19,9 @@ import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.List;
-import java.util.Map;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.Inflater;
+import java.util.zip.InflaterInputStream;
 
 /**
  * Default implementation of the IOHandler
@@ -107,14 +108,28 @@ public class DefaultIOHandler extends IOHandler {
           .append(BOUNDARY)
           .append("--\r\n");
         outputStream.write(endBoundaryBuilder.toString().getBytes());
-
+        
         outputStream.flush();
         outputStream.close();
-
+        
         code = connection.getResponseCode();
         if (code == 200) {
-          InputStream inputStream = connection.getInputStream();
-          return new Response(readStream(inputStream), code, connection.getResponseMessage());
+          //obtain the encoding returned by the server
+          String encoding = connection.getContentEncoding();
+          
+          //create the appropriate stream wrapper based on the encoding type
+          InputStream resultingInputStream = null;
+          if (encoding != null && encoding.equalsIgnoreCase("gzip")) {
+            resultingInputStream = new GZIPInputStream(connection.getInputStream());
+          }
+          else if (encoding != null && encoding.equalsIgnoreCase("deflate")) {
+            resultingInputStream = new InflaterInputStream(connection.getInputStream(), new Inflater(true));
+          }
+          else {
+            resultingInputStream = connection.getInputStream();
+          }
+          
+          return new Response(readStream(resultingInputStream), code, connection.getResponseMessage());
         } else {
           return new Response("", code, getMessageByCode(code));
         }
