@@ -38,7 +38,7 @@ public class Timeframe implements FoursquareEntity {
    * 
    * @return an array of times the venue is open on days within the timeframe.
    */
-  public Object[] getOpen() {
+  public String[] getOpen() {
     return open;
   }
   
@@ -56,12 +56,13 @@ public class Timeframe implements FoursquareEntity {
    * 
    * @return an array of describing the named segments of the days in this timeframe in which the venue is open.
    */
-  public Object[] getSegments() {
+  public String[] getSegments() {
     return segments;
   }
   
   private String days;
-  private Object[] open;
   private Boolean includesToday;
-  private Object[] segments;
+  // TODO
+  private String[] open;
+  private String[] segments;
 }

@@ -2,6 +2,8 @@
  * FoursquareAPI - Foursquare API for Java
  * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
  * http://www.foyt.fi
+ * Copyright (C) 2014 - Blake Dy / Wallaby
+ * http://walla.by
  * 
  * License: 
  * 
@@ -14,7 +16,7 @@ package fi.foyt.foursquare.api.entities;
 /**
  * Class representing HereNow entity
  * 
- * @author Antti Leppä
+ * @author Antti Leppä / Blake Dy
  */
 public class HereNow extends Count {
   
@@ -30,4 +32,7 @@ public class HereNow extends Count {
   }
   
   private CheckinGroup[] groups;
+  
+  // TODO
+  private String summary;
 }

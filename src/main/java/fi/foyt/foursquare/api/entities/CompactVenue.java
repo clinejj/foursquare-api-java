@@ -161,24 +161,6 @@ public class CompactVenue implements FoursquareEntity {
     return hereNow;
   }
 
-  /**
-   * Returns tips for the venue
-   * 
-   * @return tips for the venue
-   */
-  public Tips getTips() {
-    return tips;
-  }
-
-  /**
-   * Returns todos for the venue
-   * 
-   * @return todos for the venue
-   */
-  public TodoGroup getTodos() {
-    return todos;
-  }
-
   private String id;
   private String name;
   private Contact contact;
@@ -195,9 +177,6 @@ public class CompactVenue implements FoursquareEntity {
   private SpecialGroup specials;
   private HereNow hereNow;
   
-  // deprecated from compact, now only in complete venue
-  private Tips tips;
-  
-  // deprecated and moved to listed in complete venue
-  private TodoGroup todos;
+  // TODO
+  private String page;
 }
