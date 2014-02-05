@@ -44,6 +44,6 @@ public class List implements FoursquareEntity {
   private String createdAt;
   private String updatedAt;
   private String entities;
-  private Boolean isPublic;
-  public void setPublic(Boolean isPublic) { this.isPublic = isPublic; }
+  private Boolean isPublic; public void setPublic(Boolean isPublic) { this.isPublic = isPublic; }
+  private Boolean logView;
 }

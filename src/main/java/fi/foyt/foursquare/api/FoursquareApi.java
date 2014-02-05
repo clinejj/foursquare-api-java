@@ -2,6 +2,8 @@
  * FoursquareAPI - Foursquare API for Java
  * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
  * http://www.foyt.fi
+ * Copyright (C) 2014 - Blake Dy / Wallaby
+ * http://walla.by
  *
  * License:
  *
@@ -590,7 +592,7 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + venueId, isAuthenticated());
       CompleteVenue result = null;
-
+      
       if (response.getMeta().getCode() == 200) {
         result = (CompleteVenue) JSONFieldParser.parseEntity(CompleteVenue.class, response.getResponse().getJSONObject("venue"), this.skipNonExistingFields);
       }
@@ -1767,7 +1769,7 @@ public class FoursquareApi {
   /**
    * Class that holds API request response
    * 
-   * @author Antti Leppä
+   * @author Antti Leppä / Blake Dy
    */
   private class ApiRequestResponse {
 
