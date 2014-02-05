@@ -3,7 +3,7 @@ package fi.foyt.foursquare.api.entities.notifications;
 /**
  * Enumeration representing notification types
  * 
- * @author Antti Leppä
+ * @author Antti Leppä / Blake Dy
  */
 public enum NotificationType {
 
@@ -13,7 +13,9 @@ public enum NotificationType {
   Leaderboard ("leaderboard"),
   Mayorship ("mayorship"),
   Message ("message"),
-  Score ("score");
+  Score ("score"),
+  Insights ("insights"),
+  NotificationTray ("notificationTray");
   
   /**
    * Private constructor

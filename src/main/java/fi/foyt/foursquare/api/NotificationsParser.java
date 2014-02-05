@@ -20,7 +20,7 @@ import fi.foyt.foursquare.api.entities.notifications.TipNotification;
 /**
  * Class responsible of parsing notifications
  * 
- * @author Antti Leppä
+ * @author Antti Leppä / Blake Dy
  */
 public class NotificationsParser {
   
@@ -80,6 +80,12 @@ public class NotificationsParser {
             case Score:
               ScoreNotification scoresNotification = (ScoreNotification) JSONFieldParser.parseEntity(ScoreNotification.class, item, skipNonExistingFields);
               result.add(new Notification<ScoreNotification>(notificationType, scoresNotification));
+            break;
+            case NotificationTray:
+              // TODO
+            break;
+            case Insights:
+              // TODO
             break;
             default:
               throw new FoursquareApiException("Unknown notification type: " + type);

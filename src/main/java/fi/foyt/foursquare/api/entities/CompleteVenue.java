@@ -184,4 +184,5 @@ public class CompleteVenue extends CompactVenue {
   private String phrases;
   private String attributes;
   private String storeId;
+  private String venuePage; // verify
 }

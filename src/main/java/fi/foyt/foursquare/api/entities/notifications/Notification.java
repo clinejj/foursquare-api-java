@@ -2,6 +2,8 @@
  * FoursquareAPI - Foursquare API for Java
  * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
  * http://www.foyt.fi
+ * Copyright (C) 2014 - Blake Dy / Wallaby
+ * http://walla.by
  * 
  * License: 
  * 
@@ -14,7 +16,7 @@ package fi.foyt.foursquare.api.entities.notifications;
 /**
  * Class that represents single notification
  * 
- * @author Antti Leppä
+ * @author Antti Leppä / Blake Dy
  *
  * @param <T> type of notification entity
  */
@@ -51,4 +53,7 @@ public class Notification<T> {
   
   private NotificationType type;
   private T item;
+  
+  // TODO
+  private Boolean alert;
 }
