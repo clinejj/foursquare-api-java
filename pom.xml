@@ -132,7 +132,7 @@
                 <artifactId>site-maven-plugin</artifactId>
                 <version>0.10</version>
                 <configuration>
-                    <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
+                    <message>Maven artifacts for ${project.version} [ci skip]</message>  <!-- git commit message -->
                     <userName>${user}</userName>
                     <oauth2Token>${gittoken}</oauth2Token>
                     <!-- <host>https://${user}:${gittoken}github.com/lucianobustos/foursquare-api-java.git</host> -->
