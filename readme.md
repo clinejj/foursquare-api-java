@@ -1,6 +1,8 @@
 foursquare-api-java
 =========
 
+![travis status](https://travis-ci.org/lucianobustos/foursquare-api-java.svg)
+
 This is an updated version of the Google code project of the same name, available at [https://code.google.com/p/foursquare-api-java/](https://code.google.com/p/foursquare-api-java/)
 
 There's currently a couple issues with deserialization using the latest foursquare API which are being worked on in the [clinejj-fixes](https://github.com/clinejj/foursquare-api-java/tree/clinejj-fixes) branch.
