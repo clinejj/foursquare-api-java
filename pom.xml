@@ -3,7 +3,7 @@
 	<groupId>fi.foyt</groupId>
 	<artifactId>foursquare-api</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.3-SNAPSHOT</version>
+	<version>1.0.4-SNAPSHOT</version>
 	<name>Foursquare API</name>
 	<licenses>
 		<license>
@@ -165,17 +165,19 @@
 	</reporting>
 
 	<issueManagement>
-		<url>https://code.google.com/p/foursquare-api-java/issues/</url>
-		<system>Google Code</system>
+		<url>https://github.com/lucianobustos/foursquare-api-java/issues</url>
 	</issueManagement>
 	<scm>
-		<url>http://foursquare-api-java.googlecode.com/svn/</url>
-		<developerConnection>scm:svn:https://foursquare-api-java.googlecode.com/svn/trunk</developerConnection>
+		<url>https://github.com/lucianobustos/foursquare-api-java</url>
 	</scm>
 	<organization>
-		<name>Foyt</name>
-		<url>http://www.foyt.fi</url>
+		<name>Luciano Bustos</name>
+		<url>https://github.com/lucianobustos/foursquare-api-java</url>
 	</organization>
-	<url>http://foursquare-api-java.googlecode.com/</url>
-	<description>Foursquare V2 API for Java</description>
+	<url>https://github.com/lucianobustos/foursquare-api-java/wiki</url>
+	<description>Foursquare V2.1 API for Java</description>
+	<ciManagement>
+		<system>travis</system>
+		<url>https://travis-ci.org/lucianobustos/foursquare-api-java</url>
+	</ciManagement>
 </project>

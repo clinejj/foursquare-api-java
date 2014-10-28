@@ -1,2 +1,3 @@
 language: java
-mvn package
+before_install: mvn install -DskipTests=true
+install: mvn package
