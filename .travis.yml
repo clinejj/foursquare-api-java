@@ -1,6 +1,2 @@
 language: java
-# whitelist
-branches:
-  only:
-    - master
 install: mvn deploy
