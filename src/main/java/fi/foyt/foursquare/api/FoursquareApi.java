@@ -10,57 +10,19 @@
  */
 package fi.foyt.foursquare.api;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import fi.foyt.foursquare.api.entities.*;
+import fi.foyt.foursquare.api.entities.notifications.Notification;
+import fi.foyt.foursquare.api.io.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import fi.foyt.foursquare.api.entities.Badge;
-import fi.foyt.foursquare.api.entities.BadgeSets;
-import fi.foyt.foursquare.api.entities.Badges;
-import fi.foyt.foursquare.api.entities.Category;
-import fi.foyt.foursquare.api.entities.Checkin;
-import fi.foyt.foursquare.api.entities.CheckinGroup;
-import fi.foyt.foursquare.api.entities.Comment;
-import fi.foyt.foursquare.api.entities.CompactUser;
-import fi.foyt.foursquare.api.entities.CompactVenue;
-import fi.foyt.foursquare.api.entities.CompleteSpecial;
-import fi.foyt.foursquare.api.entities.CompleteTip;
-import fi.foyt.foursquare.api.entities.CompleteUser;
-import fi.foyt.foursquare.api.entities.CompleteVenue;
-import fi.foyt.foursquare.api.entities.GeoCode;
-import fi.foyt.foursquare.api.entities.KeywordGroup;
-import fi.foyt.foursquare.api.entities.LeaderboardItemGroup;
-import fi.foyt.foursquare.api.entities.LinkGroup;
-import fi.foyt.foursquare.api.entities.MiniVenue;
-import fi.foyt.foursquare.api.entities.Photo;
-import fi.foyt.foursquare.api.entities.PhotoGroup;
-import fi.foyt.foursquare.api.entities.RecommendationGroup;
-import fi.foyt.foursquare.api.entities.Recommended;
-import fi.foyt.foursquare.api.entities.Setting;
-import fi.foyt.foursquare.api.entities.SpecialGroup;
-import fi.foyt.foursquare.api.entities.TipGroup;
-import fi.foyt.foursquare.api.entities.Todo;
-import fi.foyt.foursquare.api.entities.TodoGroup;
-import fi.foyt.foursquare.api.entities.UserGroup;
-import fi.foyt.foursquare.api.entities.VenueGroup;
-import fi.foyt.foursquare.api.entities.VenueHistoryGroup;
-import fi.foyt.foursquare.api.entities.VenuesAutocompleteResult;
-import fi.foyt.foursquare.api.entities.VenuesSearchResult;
-import fi.foyt.foursquare.api.entities.Warning;
-import fi.foyt.foursquare.api.entities.notifications.Notification;
-import fi.foyt.foursquare.api.io.DefaultIOHandler;
-import fi.foyt.foursquare.api.io.IOHandler;
-import fi.foyt.foursquare.api.io.Method;
-import fi.foyt.foursquare.api.io.MultipartParameter;
-import fi.foyt.foursquare.api.io.Response;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Entry point for FoursquareAPI.
@@ -69,7 +31,7 @@ import fi.foyt.foursquare.api.io.Response;
  */
 public class FoursquareApi {
 
-  private static final String DEFAULT_VERSION = "20110615";
+  private static final String DEFAULT_VERSION = "20140806";
 
   /**
    * Constructor.
