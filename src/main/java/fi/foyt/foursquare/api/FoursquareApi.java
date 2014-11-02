@@ -33,7 +33,7 @@ import java.util.Map;
  */
 public class FoursquareApi {
 
-  private static final String DEFAULT_VERSION = "20140806";
+  private static final String DEFAULT_VERSION = "20141031";
 
   /**
    * Constructor.
