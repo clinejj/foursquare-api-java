@@ -2,6 +2,8 @@
  * FoursquareAPI - Foursquare API for Java
  * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
  * http://www.foyt.fi
+ * Copyright (C) 2014 - Blake Dy / Wallaby
+ * http://walla.by
  *
  * License:
  *
@@ -69,7 +71,7 @@ import fi.foyt.foursquare.api.io.Response;
  */
 public class FoursquareApi {
 
-  private static final String DEFAULT_VERSION = "20110615";
+  private static final String DEFAULT_VERSION = "20140131";
 
   /**
    * Constructor.
@@ -590,7 +592,7 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + venueId, isAuthenticated());
       CompleteVenue result = null;
-
+      
       if (response.getMeta().getCode() == 200) {
         result = (CompleteVenue) JSONFieldParser.parseEntity(CompleteVenue.class, response.getResponse().getJSONObject("venue"), this.skipNonExistingFields);
       }
@@ -1722,8 +1724,8 @@ public class FoursquareApi {
     } else {
       errorDetail = response.getMessage();
     }
-
-    return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", errorDetail), responseJson, notificationsJson);
+    
+    return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", errorDetail, response.getResponseHeaderRateLimit(), response.getResponseHeaderRateLimitRemaining()), responseJson, notificationsJson);
   }
 
   /**
@@ -1748,9 +1750,9 @@ public class FoursquareApi {
       JSONObject responseJson = responseObject.getJSONObject("response");
       JSONArray notificationsJson = responseObject.optJSONArray("notifications");
 
-      return new ApiRequestResponse(new ResultMeta(code, errorType, errorDetail), responseJson, notificationsJson);
+      return new ApiRequestResponse(new ResultMeta(code, errorType, errorDetail, response.getResponseHeaderRateLimit(), response.getResponseHeaderRateLimitRemaining()), responseJson, notificationsJson);
     } else {
-      return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", response.getMessage()), null, null);
+      return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", response.getMessage(), response.getResponseHeaderRateLimit(), response.getResponseHeaderRateLimitRemaining()), null, null);
     }
   }
 
@@ -1767,7 +1769,7 @@ public class FoursquareApi {
   /**
    * Class that holds API request response
    * 
-   * @author Antti Leppä
+   * @author Antti Leppä / Blake Dy
    */
   private class ApiRequestResponse {
 

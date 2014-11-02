@@ -19,6 +19,9 @@ import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.Inflater;
+import java.util.zip.InflaterInputStream;
 
 /**
  * Default implementation of the IOHandler
@@ -42,13 +45,16 @@ public class DefaultIOHandler extends IOHandler {
         }
         connection.setRequestMethod(method.name());
         connection.connect();
+        
+        String xRateLimit = connection.getHeaderField("X-RateLimit-Limit");
+        String xRateLimitRemaining = connection.getHeaderField("X-RateLimit-Remaining");
 
         code = connection.getResponseCode();
         if (code == 200) {
           InputStream inputStream = connection.getInputStream();
-          return new Response(readStream(inputStream), code, connection.getResponseMessage());
+          return new Response(readStream(inputStream), code, connection.getResponseMessage(), xRateLimit, xRateLimitRemaining);
         } else {
-          return new Response("", code, getMessageByCode(code));
+          return new Response("", code, getMessageByCode(code), xRateLimit, xRateLimitRemaining);
         }
 
       } finally {
@@ -73,6 +79,7 @@ public class DefaultIOHandler extends IOHandler {
         connection.setDoOutput(true);
         connection.setRequestMethod("POST");
         connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
+        connection.setRequestProperty("Accept-Encoding", "gzip, deflate");
         connection.connect();
 
         OutputStream outputStream = connection.getOutputStream();
@@ -101,14 +108,28 @@ public class DefaultIOHandler extends IOHandler {
           .append(BOUNDARY)
           .append("--\r\n");
         outputStream.write(endBoundaryBuilder.toString().getBytes());
-
+        
         outputStream.flush();
         outputStream.close();
-
+        
         code = connection.getResponseCode();
         if (code == 200) {
-          InputStream inputStream = connection.getInputStream();
-          return new Response(readStream(inputStream), code, connection.getResponseMessage());
+          //obtain the encoding returned by the server
+          String encoding = connection.getContentEncoding();
+          
+          //create the appropriate stream wrapper based on the encoding type
+          InputStream resultingInputStream = null;
+          if (encoding != null && encoding.equalsIgnoreCase("gzip")) {
+            resultingInputStream = new GZIPInputStream(connection.getInputStream());
+          }
+          else if (encoding != null && encoding.equalsIgnoreCase("deflate")) {
+            resultingInputStream = new InflaterInputStream(connection.getInputStream(), new Inflater(true));
+          }
+          else {
+            resultingInputStream = connection.getInputStream();
+          }
+          
+          return new Response(readStream(resultingInputStream), code, connection.getResponseMessage());
         } else {
           return new Response("", code, getMessageByCode(code));
         }

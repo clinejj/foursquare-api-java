@@ -146,6 +146,7 @@ public class TestIO extends IOHandler {
     setResponse("https://api.foursquare.com/v2/users/10078668/setpings?value=true", "users/setpings_1.json");
     setResponse("https://api.foursquare.com/v2/venues/5104", "venues/id_1.json");
     setResponse("https://api.foursquare.com/v2/venues/4cb38bf20cdc721ea943234f", "venues/id_2.json");
+    setResponse("https://api.foursquare.com/v2/venues/4eb0479b93ad8dcab730a3c3", "venues/id_3.json");
     setResponse("https://api.foursquare.com/v2/venues/categories", "venues/categories_1.json");
     setResponse("https://api.foursquare.com/v2/venues/search?ll=40.7%2C-74", "venues/search_1.json");
     setResponse("https://api.foursquare.com/v2/venues/search?ll=40.7%2C-74.0", "venues/search_2.json");

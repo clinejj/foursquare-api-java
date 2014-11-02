@@ -2,6 +2,8 @@
  * FoursquareAPI - Foursquare API for Java
  * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
  * http://www.foyt.fi
+ * Copyright (C) 2014 - Blake Dy / Wallaby
+ * http://walla.by
  * 
  * License: 
  * 
@@ -16,7 +18,7 @@ import fi.foyt.foursquare.api.FoursquareEntity;
 /**
  * Class representing Contact entity
  * 
- * @author Antti Leppä
+ * @author Antti Leppä / Blake Dy
  */
 public class Contact implements FoursquareEntity {
   
@@ -58,8 +60,18 @@ public class Contact implements FoursquareEntity {
     return facebook;
   }
   
+  /**
+   * Returns formatted phone
+   * 
+   * @return formatted phone
+   */
+  public String getFormattedPhone() {
+    return formattedPhone;
+  }
+  
   private String email;
   private String facebook;
   private String twitter;
   private String phone;
+  private String formattedPhone;
 }

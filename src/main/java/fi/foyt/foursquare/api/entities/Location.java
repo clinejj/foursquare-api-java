@@ -2,6 +2,8 @@
  * FoursquareAPI - Foursquare API for Java
  * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
  * http://www.foyt.fi
+ * Copyright (C) 2014 - Blake Dy / Wallaby
+ * http://walla.by
  * 
  * License: 
  * 
@@ -16,7 +18,7 @@ import fi.foyt.foursquare.api.FoursquareEntity;
 /**
  * Class representing Location entity
  * 
- * @author Antti Leppä
+ * @author Antti Leppä / Blake Dy
  */
 public class Location implements FoursquareEntity {
   
@@ -84,6 +86,15 @@ public class Location implements FoursquareEntity {
   public String getName() {
     return name;
   }
+  
+  /**
+   * Returns cc
+   * 
+   * @return cc
+   */
+  public String getCc() {
+    return cc;
+  }
 
   /**
    * Returns latitude
@@ -119,6 +130,7 @@ public class Location implements FoursquareEntity {
   private String postalCode;
   private String country;
   private String name;
+  private String cc;
   private Double lat;
   private Double lng;
   private Double distance;
