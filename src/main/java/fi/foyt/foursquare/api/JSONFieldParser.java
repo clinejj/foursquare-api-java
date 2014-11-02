@@ -159,7 +159,20 @@ public class JSONFieldParser {
    */
   private static Object parseValue(Class<?> clazz, JSONObject jsonObject, String objectFieldName, boolean skipNonExistingFields) throws JSONException, FoursquareApiException {
     if (clazz.isArray()) {
-      JSONArray jsonArray = jsonObject.getJSONArray(objectFieldName);
+	  Object value = jsonObject.get(objectFieldName);
+	  
+	  JSONArray jsonArray;
+	  if(value instanceof JSONArray) {
+        jsonArray = (JSONArray)value;
+	  } else {
+	    if((value instanceof JSONObject) && (((JSONObject)value).has("items"))) {
+	      jsonArray = ((JSONObject)value).getJSONArray("items");
+	    }
+	    else {
+	      throw new FoursquareApiException("JSONObject[\"" + objectFieldName + "\"] is neither a JSONArray nor a {count, items} object.");
+	    }
+	  }
+
       Class<?> arrayClass = clazz.getComponentType();
       Object[] arrayValue = (Object[]) Array.newInstance(arrayClass, jsonArray.length());
       
