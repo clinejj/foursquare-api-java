@@ -1,1 +1,50 @@
-{"meta":{"code":200},"response":{"settings":{"receivePings":false,"receiveCommentPings":true,"sendToTwitter":false,"sendMayorshipsToTwitter":false,"sendBadgesToTwitter":false,"sendToFacebook":true,"sendMayorshipsToFacebook":true,"sendBadgesToFacebook":true,"foreignConsent":"undetermined"}}}
+{
+    "meta": {
+        "code": 200
+    },
+    "notifications": [
+        {
+            "type": "notificationTray",
+            "item": {
+                "unreadCount": 0
+            }
+        }
+    ],
+    "response": {
+        "settings": {
+            "receivePings": false,
+            "twitter": "clinejj",
+            "twitterLinked": true,
+            "sendToTwitter": false,
+            "sendTipsToTwitter": false,
+            "facebook": 32400092,
+            "facebookPermissions": [
+                "basic_info",
+                "user_photos",
+                "user_status",
+                "user_location",
+                "email",
+                "user_birthday",
+                "friends_status",
+                "friends_photos"
+            ],
+            "facebookLinked": true,
+            "facebookFrictionless": false,
+            "facebookTimeline": false,
+            "passwordSet": true,
+            "sendToFacebook": false,
+            "sendTipsToFacebook": false,
+            "foreignConsent": "undetermined",
+            "pageUpdates": true,
+            "canBeCheckedInByFriends": true,
+            "mapKey": "dnv9my2eseobd",
+            "locationSettings": {
+                "showPriceFilter": true
+            },
+            "eligibleForRadarSplash": false,
+            "alreadySeenRadarSplash": true,
+            "measurementSystem": "imperial",
+            "allowSharesFromFollowers": true
+        }
+    }
+}

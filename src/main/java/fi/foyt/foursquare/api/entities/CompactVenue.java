@@ -14,9 +14,11 @@
 package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
+import fi.foyt.foursquare.api.entities.venue.Delivery;
 import fi.foyt.foursquare.api.entities.venue.Hours;
 import fi.foyt.foursquare.api.entities.venue.Menu;
 import fi.foyt.foursquare.api.entities.venue.Price;
+import fi.foyt.foursquare.api.entities.venue.Reservations;
 
 /**
  * Class representing CompactVenue entity
@@ -158,7 +160,7 @@ public class CompactVenue implements FoursquareEntity {
      *
      * @return array of specials at this venue
      */
-    public CompleteSpecial[] getSpecials() {
+    public SpecialGroup getSpecials() {
         return specials;
     }
 
@@ -180,6 +182,35 @@ public class CompactVenue implements FoursquareEntity {
         return todos;
     }
 
+    /**
+     * Returns the venue page associated with this venue
+     *
+     * @return
+     */
+    public CompleteUser getVenuePage() {
+        return venuePage;
+    }
+
+    public Boolean getLocked() {
+        return locked;
+    }
+
+    public String getStoreId() {
+        return storeId;
+    }
+
+    public Boolean getHasMenu() {
+        return hasMenu;
+    }
+
+    public Reservations getReservations() {
+        return reservations;
+    }
+
+    public Delivery getDelivery() {
+        return delivery;
+    }
+
     private String id;
     private String name;
     private Contact contact;
@@ -193,10 +224,13 @@ public class CompactVenue implements FoursquareEntity {
     private Menu menu;
     private Price price;
     private Integer rating;
-    private CompleteSpecial[] specials;
+    private SpecialGroup specials;
     private HereNow hereNow;
     private TodoGroup todos;
-
-    // TODO
-    private String page;
+    private Boolean hasMenu;
+    private CompleteUser venuePage;
+    private Boolean locked;
+    private String storeId;
+    private Reservations reservations;
+    private Delivery delivery;
 }

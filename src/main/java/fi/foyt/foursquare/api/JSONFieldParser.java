@@ -2,9 +2,9 @@
  * FoursquareAPI - Foursquare API for Java
  * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
  * http://www.foyt.fi
- * 
- * License: 
- * 
+ *
+ * License:
+ *
  * Licensed under GNU Lesser General Public License Version 3 or later (the "LGPL")
  * http://www.gnu.org/licenses/lgpl.html
  */
@@ -26,7 +26,7 @@ import org.json.JSONObject;
 
 /**
  * Class responsible of parsing API responses
- * 
+ *
  * @author Antti Leppä
  */
 public class JSONFieldParser {
@@ -35,12 +35,12 @@ public class JSONFieldParser {
    * Utility class so no constructor needed.
    */
   private JSONFieldParser() {
-    
+
   }
-  
+
   /**
    * Static method that parses JSON array into array of FoursquareEntities
-   * 
+   *
    * @param clazz entity class
    * @param jsonArray JSON Array
    * @param skipNonExistingFields whether parser should ignore non-existing fields
@@ -49,7 +49,7 @@ public class JSONFieldParser {
    */
   public static FoursquareEntity[] parseEntities(Class<?> clazz, JSONArray jsonArray, boolean skipNonExistingFields) throws FoursquareApiException {
     FoursquareEntity[] result = (FoursquareEntity[]) Array.newInstance(clazz, jsonArray.length());
-    
+
     for (int i = 0, l = jsonArray.length(); i < l; i++) {
       JSONObject jsonObject;
       try {
@@ -59,13 +59,13 @@ public class JSONFieldParser {
         throw new FoursquareApiException(e);
       }
     }
-    
+
     return result;
   }
-  
+
   /**
    * Static method that parses JSON "named array" into array of FoursquareEntities
-   * 
+   *
    * @param clazz entity class
    * @param jsonHashList JSON "named array"
    * @param skipNonExistingFields whether parser should ignore non-existing fields
@@ -74,7 +74,7 @@ public class JSONFieldParser {
    */
   public static FoursquareEntity[] parseEntitiesHash(Class<?> clazz, JSONObject jsonHashList, boolean skipNonExistingFields) throws FoursquareApiException {
     String[] keys = getFieldNames(jsonHashList);
-    
+
     FoursquareEntity[] result = (FoursquareEntity[]) Array.newInstance(clazz, keys.length);
     int i = 0;
     for (String key : keys) {
@@ -86,13 +86,13 @@ public class JSONFieldParser {
         throw new FoursquareApiException(e);
       }
     }
-    
+
     return result;
   }
-  
+
   /**
    * Static method that parses single JSON Object into FoursquareEntity
-   * 
+   *
    * @param clazz entity class
    * @param jsonObject JSON Object
    * @param skipNonExistingFields whether parser should ignore non-existing fields
@@ -101,7 +101,7 @@ public class JSONFieldParser {
    */
   public static FoursquareEntity parseEntity(Class<?> clazz, JSONObject jsonObject, boolean skipNonExistingFields) throws FoursquareApiException {
     FoursquareEntity entity = createNewEntity(clazz);
-    
+
     String[] objectFieldNames = getFieldNames(jsonObject);
     if (objectFieldNames != null) {
       for (String objectFieldName : objectFieldNames) {
@@ -116,7 +116,7 @@ public class JSONFieldParser {
             Class<?>[] parameters = setterMethod.getParameterTypes();
             if (parameters.length == 1) {
               fieldClass = parameters[0];
-              
+
               try {
                 setterMethod.setAccessible(true);
                 setterMethod.invoke(entity, parseValue(fieldClass, jsonObject, objectFieldName, skipNonExistingFields));
@@ -142,13 +142,13 @@ public class JSONFieldParser {
         }
       }
     }
-    
+
     return entity;
   }
-  
+
   /**
    * Parses single JSON object field into a value. Value might be of type String, Integer, Long, Double, Boolean or FoursquareEntity depending classes field type
-   * 
+   *
    * @param clazz class
    * @param jsonObject JSON Object
    * @param objectFieldName field to be parsed
@@ -160,7 +160,7 @@ public class JSONFieldParser {
   private static Object parseValue(Class<?> clazz, JSONObject jsonObject, String objectFieldName, boolean skipNonExistingFields) throws JSONException, FoursquareApiException {
     if (clazz.isArray()) {
 	  Object value = jsonObject.get(objectFieldName);
-	  
+
 	  JSONArray jsonArray;
 	  if(value instanceof JSONArray) {
         jsonArray = (JSONArray)value;
@@ -175,25 +175,25 @@ public class JSONFieldParser {
 
       Class<?> arrayClass = clazz.getComponentType();
       Object[] arrayValue = (Object[]) Array.newInstance(arrayClass, jsonArray.length());
-      
+
       for (int i = 0, l = jsonArray.length(); i < l; i++) {
         if (arrayClass.equals(String.class)) {
           arrayValue[i] = jsonArray.getString(i);
         } else if (arrayClass.equals(Integer.class)) {
-          arrayValue[i] = jsonArray.getInt(i);  
+          arrayValue[i] = jsonArray.getInt(i);
         } else if (arrayClass.equals(Long.class)) {
-          arrayValue[i] = jsonArray.getLong(i);  
+          arrayValue[i] = jsonArray.getLong(i);
         } else if (arrayClass.equals(Double.class)) {
-          arrayValue[i] = jsonArray.getDouble(i);  
+          arrayValue[i] = jsonArray.getDouble(i);
         } else if (arrayClass.equals(Boolean.class)) {
-          arrayValue[i] = jsonArray.getBoolean(i);  
+          arrayValue[i] = jsonArray.getBoolean(i);
         } else if (isFoursquareEntity(arrayClass)) {
           arrayValue[i] = parseEntity(arrayClass, jsonArray.getJSONObject(i), skipNonExistingFields);
         } else {
           throw new FoursquareApiException("Unknown array type: " + arrayClass);
         }
       }
-      
+
       return arrayValue;
     } else if (clazz.equals(String.class)) {
       return jsonObject.getString(objectFieldName);
@@ -206,15 +206,15 @@ public class JSONFieldParser {
     } else if (clazz.equals(Boolean.class)) {
       return jsonObject.getBoolean(objectFieldName);
     } else if (isFoursquareEntity(clazz)) {
-      return parseEntity(clazz, jsonObject.getJSONObject(objectFieldName), skipNonExistingFields); 
+      return parseEntity(clazz, jsonObject.getJSONObject(objectFieldName), skipNonExistingFields);
     } else {
       throw new FoursquareApiException("Unknown type: " + clazz);
     }
   }
-  
+
   /**
    * Returns whether class is derived from FoursquareEntity interface
-   * 
+   *
    * @param clazz class
    * @return whether class is derived from FoursquareEntity interface
    */
@@ -224,18 +224,18 @@ public class JSONFieldParser {
         return true;
       }
     }
-    
+
     Class<?> superClass = clazz.getSuperclass();
     if (!superClass.equals(Object.class)) {
       return isFoursquareEntity(superClass);
     }
-    
+
     return false;
   }
-  
+
   /**
    * Returns field of class
-   * 
+   *
    * @param entityClass class
    * @param fieldName field
    * @return Field
@@ -255,11 +255,11 @@ public class JSONFieldParser {
         return getField(superClass, fieldName);
       }
     }
-  } 
-  
+  }
+
   /**
    * Returns list of all methods in a class
-   * 
+   *
    * @param entityClass class
    * @return list of all methods in a class
    */
@@ -267,14 +267,14 @@ public class JSONFieldParser {
     List<Method> result = new ArrayList<Method>(Arrays.asList(entityClass.getDeclaredMethods()));
     if (!entityClass.getSuperclass().equals(Object.class)) {
       result.addAll(getMethods(entityClass.getSuperclass()));
-    }    
-    
+    }
+
     return result;
   }
-  
+
   /**
    * Returns setter method for a field
-   * 
+   *
    * @param entityClass class
    * @param fieldName field
    * @return setter method for a field
@@ -284,22 +284,22 @@ public class JSONFieldParser {
     methodNameBuilder.append("set");
     methodNameBuilder.append(Character.toUpperCase(fieldName.charAt(0)));
     methodNameBuilder.append(fieldName.substring(1));
-    
+
     String methodName = methodNameBuilder.toString();
-    
+
     List<Method> methods = getMethods(entityClass);
     for (Method method : methods) {
       if (method.getName().equals(methodName)) {
         return method;
       }
     }
-    
+
     return null;
   }
-  
+
   /**
    * Returns class for class's field
-   * 
+   *
    * @param entityClass class
    * @param fieldName field
    * @return class's field's class
@@ -307,11 +307,11 @@ public class JSONFieldParser {
   private static Class<?> getFieldClass(Class<?> entityClass, String fieldName) {
     Field field = getField(entityClass, fieldName);
     return field != null ? field.getType() : null;
-  } 
-  
+  }
+
   /**
    * Sets entity's field's value
-   * 
+   *
    * @param entity entity
    * @param fieldName field
    * @param value value
@@ -327,10 +327,10 @@ public class JSONFieldParser {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   /**
    * Initializes new entity instance
-   * 
+   *
    * @param clazz class
    * @return new entity instance
    */
@@ -343,13 +343,13 @@ public class JSONFieldParser {
       return null;
     }
   }
-  
+
   /**
-   * Returns JSONObject's field names. 
-   * 
-   * This method is used instead of JSONObject.getNames -method because 
+   * Returns JSONObject's field names.
+   *
+   * This method is used instead of JSONObject.getNames -method because
    * Android's org.json implementation does not contain that method.
-   * 
+   *
    * @param jsonObject JSONObject
    * @return JSONObject's field names
    */
@@ -358,7 +358,7 @@ public class JSONFieldParser {
     if (length == 0) {
       return null;
     }
-    
+
     Iterator<?> iterator = jsonObject.keys();
     String[] names = new String[length];
     int i = 0;
@@ -367,7 +367,7 @@ public class JSONFieldParser {
       names[i] = (String) iterator.next();
       i += 1;
     }
-    
+
     return names;
   }
 }

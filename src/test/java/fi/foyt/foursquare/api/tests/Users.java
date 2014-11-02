@@ -1,6 +1,7 @@
 package fi.foyt.foursquare.api.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -56,7 +57,7 @@ public class Users {
     assertEquals(new Long(2), friendsGroup.getCount());
     assertEquals("others", friendsGroup.getType());
     assertEquals("other friends", friendsGroup.getName());
-    
+
     user = foursquareApi.user(null).getResult();
     assertEquals("7613255", user.getId());
   }
@@ -108,16 +109,16 @@ public class Users {
     assertEquals("4de3212d2271bfb844acdf5d", checkin.getId());
     assertEquals(new Long(1306730797), checkin.getCreatedAt());
     assertEquals(true, checkin.isPrivate());
-    assertEquals("Europe/Helsinki", checkin.getTimeZone());
+    assertEquals("Europe/Helsinki", checkin.getTimeZoneOffset());
     assertEquals("4c6bbfafa48420a1b09a0a0b", checkin.getVenue().getId());
-    
+
     checkins = foursquareApi.usersCheckins(null, null, null, null, null).getResult();
     assertEquals(new Long(6), checkins.getCount());
     checkin = checkins.getItems()[0];
     assertEquals("4de3212d2271bfb844acdf5d", checkin.getId());
     assertEquals(new Long(1306730797), checkin.getCreatedAt());
     assertEquals(true, checkin.isPrivate());
-    assertEquals("Europe/Helsinki", checkin.getTimeZone());
+    assertEquals("Europe/Helsinki", checkin.getTimeZoneOffset());
     assertEquals("4c6bbfafa48420a1b09a0a0b", checkin.getVenue().getId());
   }
 
@@ -156,7 +157,7 @@ public class Users {
     assertEquals("none", user2.getGender());
     assertEquals("New York City, NY", user2.getHomeCity());
     assertEquals("followingThem", user2.getRelationship());
-    
+
     users = foursquareApi.usersFriends(null).getResult();
     assertEquals(new Long(2), users.getCount());
     user1 = users.getItems()[0];
@@ -206,21 +207,21 @@ public class Users {
     CompleteUser user = foursquareApi.usersUnfriend("7613255").getResult();
     assertEquals("7613255", user.getId());
   }
-  
+
   @Test
   public final void testUsersRequests() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Result<CompactUser[]> result = foursquareApi.usersRequests();
-    
+
     assertEquals("7613255", result.getResult()[0].getId());
     assertEquals("Foyt", result.getResult()[0].getFirstName());
     assertEquals("Development", result.getResult()[0].getLastName());
     assertEquals("https://foursquare.com/img/blank_boy.png", result.getResult()[0].getPhoto());
     assertEquals("none", result.getResult()[0].getGender());
     assertEquals("Mikkeli, Suomi", result.getResult()[0].getHomeCity());
-    assertEquals("pendingMe", result.getResult()[0].getRelationship());   
+    assertEquals("pendingMe", result.getResult()[0].getRelationship());
   }
-  
+
   @Test
   public final void testUsersLeaderboard() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
@@ -234,12 +235,12 @@ public class Users {
     assertEquals(new Long(0), result.getResult().getItems()[0].getScores().getCheckinsCount());
     assertEquals(new Integer(1), result.getResult().getItems()[0].getRank());
   }
-  
+
   @Test
   public final void testUsersBadges() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Result<Badges> result = foursquareApi.usersBadges("self");
-    
+
     assertEquals(new Integer(200), result.getMeta().getCode());
     assertEquals("all", result.getResult().getSets().getGroups()[0].getType());
     assertEquals("all badges", result.getResult().getSets().getGroups()[0].getName());
@@ -251,23 +252,23 @@ public class Users {
     assertEquals("4c4f08667a0803bbde202ab7", result.getResult().getBadges()[0].getId());
     assertEquals("4c4f08667a0803bbde202ab7", result.getResult().getBadges()[0].getBadgeId());
     assertEquals("Jobs", result.getResult().getBadges()[0].getName());
-    assertEquals("Here's the silver lining to breaking your iPhone 3 times. ", result.getResult().getBadges()[0].getHint()); 
+    assertEquals("Here's the silver lining to breaking your iPhone 3 times. ", result.getResult().getBadges()[0].getHint());
     assertEquals("https://playfoursquare.s3.amazonaws.com/badge/", result.getResult().getBadges()[0].getImage().getPrefix());
     assertArrayEquals(new Integer[] {57, 114, 200, 300, 400}, result.getResult().getBadges()[0].getImage().getSizes());
     assertEquals("/default_off.png", result.getResult().getBadges()[0].getImage().getName());
     assertEquals(0, result.getResult().getBadges()[0].getUnlocks().length);
     assertEquals("4sq", result.getResult().getDefaultSetType());
-    
+
     assertEquals("4de4762d52b1d38d299e6000", result.getResult().getBadges()[26].getUnlocks()[0].getCheckins()[0].getId());
     Result<Badges> result2 = foursquareApi.usersBadges(null);
     assertEquals(result.getResult().getBadges()[0].getId(), result2.getResult().getBadges()[0].getId());
   }
-  
+
   @Test
   public final void testUsersTips() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Result<TipGroup> result = foursquareApi.usersTips(null, "recent", null, null, null);
-    
+
     assertEquals(new Integer(200), result.getMeta().getCode());
     assertEquals("4df1ec5045dd4e269339e96f", result.getResult().getItems()[0].getId());
     assertEquals(new Long(1307700304), result.getResult().getItems()[0].getCreatedAt());
@@ -278,36 +279,36 @@ public class Users {
     assertEquals(new Long(1), result.getResult().getItems()[0].getDone().getCount());
     assertEquals("4bb73a402ea19521b1a6ac2f", result.getResult().getItems()[0].getVenue().getId());
   }
-  
+
   @Test
   public final void testUsersTodos() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Result<TodoGroup> result = foursquareApi.usersTodos(null, "recent", null);
-    
+
     assertEquals(new Integer(200), result.getMeta().getCode());
     assertEquals("4df203b045dd4e26933a50ed", result.getResult().getItems()[0].getId());
     assertEquals(new Long(1307706288), result.getResult().getItems()[0].getCreatedAt());
     assertEquals("4bb8f41970c603bb64bf96b4", result.getResult().getItems()[0].getTip().getId());
   }
-  
+
   @Test
   public final void testUsersVenueHistory() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Result<VenueHistoryGroup> result = foursquareApi.usersVenueHistory(null, null, null);
-    
+
     assertEquals(new Integer(200), result.getMeta().getCode());
     assertEquals("4c6bbfafa48420a1b09a0a0b", result.getResult().getItems()[0].getVenue().getId());
     assertEquals(new Integer(1), result.getResult().getItems()[0].getBeenHere());
   }
-  
+
   @Test
   public final void testUsersSetPings() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Result<CompleteUser> result = foursquareApi.usersSetPings("10078668", "true");
-    
+
     assertEquals(new Integer(200), result.getMeta().getCode());
     assertEquals("10078668", result.getResult().getId());
   }
-  
-  
+
+
 }

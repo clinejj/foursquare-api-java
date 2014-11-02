@@ -1,1 +1,151 @@
-{"meta":{"code":200},"response":{"checkin":{"id":"4d7b44d7f260a0932e5024ba","createdAt":1299924183,"type":"checkin","timeZone":"Europe/Helsinki","user":{"id":"7613255","firstName":"Foyt","lastName":"Development","photo":"https://foursquare.com/img/blank_boy.png","gender":"none","homeCity":"Mikkeli, Suomi","relationship":"self"},"venue":{"id":"4c6bbfafa48420a1b09a0a0b","name":"Mikkelin tori","contact":{},"location":{"lat":61.68777583849969,"lng":27.273173332214355},"categories":[{"id":"4bf58dd8d48988d164941735","name":"Plaza","pluralName":"Plazas","icon":"https://foursquare.com/img/categories/parks_outdoors/default.png","parents":["Great Outdoors"],"primary":true}],"verified":false,"stats":{"checkinsCount":27,"usersCount":22},"todos":{"count":0}},"source":{"name":"Foursquare API documentation","url":"https://developer.foursquare.com"},"photos":{"count":0,"items":[]},"comments":{"count":1,"items":[{"id":"4d7b457a8f89224b8ab38d26","createdAt":1299924346,"user":{"id":"7613255","firstName":"Foyt","lastName":"Development","photo":"https://foursquare.com/img/blank_boy.png","gender":"none","homeCity":"Mikkeli, Suomi","relationship":"self"},"text":"Test"}]}}}}
+{
+    "meta": {
+        "code": 200
+    },
+    "notifications": [
+        {
+            "type": "notificationTray",
+            "item": {
+                "unreadCount": 0
+            }
+        }
+    ],
+    "response": {
+        "checkin": {
+            "id": "54569de7498e05001bdc5594",
+            "createdAt": 1414962663,
+            "type": "checkin",
+            "timeZoneOffset": -300,
+            "user": {
+                "id": "1526407",
+                "firstName": "John",
+                "lastName": "Cline",
+                "gender": "male",
+                "relationship": "self",
+                "photo": {
+                    "prefix": "https://irs1.4sqi.net/img/user/",
+                    "suffix": "/1526407-DOXH2K42MA3IKAR0.jpg"
+                }
+            },
+            "venue": {
+                "id": "4b666793f964a52074202be3",
+                "name": "East Village",
+                "contact": {},
+                "location": {
+                    "lat": 40.728596,
+                    "lng": -73.98936,
+                    "postalCode": "10009",
+                    "cc": "US",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "New York, NY 10009"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4f2a25ac4b909258e854f55f",
+                        "name": "Neighborhood",
+                        "pluralName": "Neighborhoods",
+                        "shortName": "Neighborhood",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/neighborhood_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "stats": {
+                    "checkinsCount": 29737,
+                    "usersCount": 7500,
+                    "tipCount": 37
+                },
+                "specials": {
+                    "count": 0
+                },
+                "reasons": {
+                    "count": 1,
+                    "items": [
+                        {
+                            "summary": "You're here! +3 points",
+                            "type": "general",
+                            "reasonName": "hereNowReason",
+                            "target": {
+                                "type": "navigation",
+                                "object": {
+                                    "id": "54569f1e498e7a6cb876d8cb",
+                                    "type": "checkinDetail",
+                                    "target": {
+                                        "type": "path",
+                                        "url": "/checkins/54569de7498e05001bdc5594"
+                                    },
+                                    "ignorable": false
+                                }
+                            }
+                        }
+                    ]
+                },
+                "locked": true
+            },
+            "source": {
+                "name": "Swarm for Android",
+                "url": "https://www.swarmapp.com"
+            },
+            "photos": {
+                "count": 0,
+                "items": []
+            },
+            "posts": {
+                "count": 0,
+                "textCount": 0
+            },
+            "likes": {
+                "count": 0,
+                "groups": []
+            },
+            "like": false,
+            "comments": {
+                "count": 1,
+                "items": [
+                    {
+                        "id": "54569e58498ec560913f79dc",
+                        "createdAt": 1414962776,
+                        "user": {
+                            "id": "1526407",
+                            "firstName": "John",
+                            "lastName": "Cline",
+                            "gender": "male",
+                            "relationship": "self",
+                            "photo": {
+                                "prefix": "https://irs1.4sqi.net/img/user/",
+                                "suffix": "/1526407-DOXH2K42MA3IKAR0.jpg"
+                            }
+                        },
+                        "text": "hanging out"
+                    }
+                ]
+            },
+            "score": {
+                "total": 3,
+                "scores": [
+                    {
+                        "icon": "https://ss1.4sqi.net/img/points/swarm-mayor.png",
+                        "message": "Still leading! 60 check-ins at Parks and other outdoor spots in the past 2 months.",
+                        "target": {
+                            "type": "path",
+                            "object": {
+                                "url": "/stickers/53f4b1c04b906a01e1abffee/leaderboard"
+                            }
+                        },
+                        "points": 3
+                    }
+                ]
+            },
+            "objectLeaderboards": [
+                "53f4b1c04b906a01e1abffee"
+            ]
+        }
+    }
+}

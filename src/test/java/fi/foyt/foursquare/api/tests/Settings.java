@@ -1,6 +1,6 @@
 package fi.foyt.foursquare.api.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -13,17 +13,12 @@ public class Settings {
   @Test
   public final void testSettingSet() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
-    
+
     Setting setting = foursquareApi.settingSet("receivePings", false).getResult();
-    
+
     assertEquals(false, setting.getReceivePings());
-    assertEquals(true, setting.getReceiveCommentPings());
     assertEquals(false, setting.getSendToTwitter());
-    assertEquals(false, setting.getSendMayorshipsToTwitter());
-    assertEquals(false, setting.getSendBadgesToTwitter());
-    assertEquals(true, setting.getSendToFacebook());
-    assertEquals(true, setting.getSendMayorshipsToFacebook());
-    assertEquals(true, setting.getSendBadgesToFacebook());
+    assertEquals(false, setting.getSendToFacebook());
     assertEquals("undetermined", setting.getForeignConsent());
   }
 
@@ -31,15 +26,10 @@ public class Settings {
   public final void testSettingsAll() throws FoursquareApiException {
     FoursquareApi foursquareApi = TestUtils.getAuthenticatedFoursquareApi();
     Setting setting = foursquareApi.settingsAll().getResult();
-    
-    assertEquals(true, setting.getReceivePings());
-    assertEquals(true, setting.getReceiveCommentPings());
+
+    assertEquals(false, setting.getReceivePings());
     assertEquals(false, setting.getSendToTwitter());
-    assertEquals(false, setting.getSendMayorshipsToTwitter());
-    assertEquals(false, setting.getSendBadgesToTwitter());
-    assertEquals(true, setting.getSendToFacebook());
-    assertEquals(true, setting.getSendMayorshipsToFacebook());
-    assertEquals(true, setting.getSendBadgesToFacebook());
+    assertEquals(false, setting.getSendToFacebook());
     assertEquals("undetermined", setting.getForeignConsent());
   }
 

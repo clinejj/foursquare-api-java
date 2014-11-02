@@ -1,1 +1,35 @@
-{"meta":{"code":200},"response":{"special":{"id":"4da37ddb15ad530c110a9d52","type":"count","message":"Want 20% off? Check in at RadioShack for the first time & get 20% off your qualifying purchase. Ends 6/30/11. Exclusions apply. Ask associate for details.","description":"on your 1st check-in","unlocked":false,"icon":"newbie","title":"Newbie Special","state":"locked","provider":"foursquare","redemption":"standard"}}}
+{
+    "meta": {
+        "code": 200
+    },
+    "notifications": [
+        {
+            "type": "notificationTray",
+            "item": {
+                "unreadCount": 0
+            }
+        }
+    ],
+    "response": {
+        "special": {
+            "id": "4da37ddb15ad530c110a9d52",
+            "type": "frequency",
+            "message": "Want 20% off? Check in at RadioShack for the first time & get 20% off your qualifying purchase. Ends 6/30/11. Exclusions apply. Ask associate for details.",
+            "description": "",
+            "unlocked": true,
+            "icon": "default",
+            "title": "Special",
+            "state": "unlocked",
+            "provider": "foursquare",
+            "redemption": "webview",
+            "interaction": {
+                "entryUrl": "https://foursquare.com/device/specials/4da37ddb15ad530c110a9d52?venueId=4cb38bf20cdc721ea943234f"
+            },
+            "likes": {
+                "count": 0,
+                "groups": []
+            },
+            "like": false
+        }
+    }
+}

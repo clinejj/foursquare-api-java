@@ -1,1 +1,182 @@
-{"meta":{"code":200},"response":{"checkin":{"id":"4de4762d52b1d38d299e6000","createdAt":1306818093,"type":"checkin","timeZone":"America/New_York","user":{"id":"10078668","firstName":"FnI","lastName":"Test","photo":"https://foursquare.com/img/blank_girl.png","gender":"female","homeCity":"New York, NY","relationship":"self"},"venue":{"id":"408c5100f964a520c6f21ee3","name":"Tompkins Square Park","contact":{},"location":{"address":"btwn E 7th & 10th St","crossStreet":"btwn Ave A & B","city":"New York","state":"NY","postalCode":"10009","lat":40.72651075083395,"lng":-73.98189067840576},"categories":[{"id":"4bf58dd8d48988d163941735","name":"Park","pluralName":"Parks","icon":"https://foursquare.com/img/categories/parks_outdoors/default.png","parents":["Great Outdoors"],"primary":true},{"id":"4bf58dd8d48988d162941735","name":"Other Great Outdoors","pluralName":"Other Great Outdoors","icon":"https://foursquare.com/img/categories/parks_outdoors/default.png","parents":["Great Outdoors"]}],"verified":false,"stats":{"checkinsCount":11454,"usersCount":3449},"todos":{"count":0}},"source":{"name":"Test Bench","url":"http://localhost"},"photos":{"count":0,"items":[]},"comments":{"count":0,"items":[]},"overlaps":{"count":1,"items":[{"id":"4de476257d8b2547eb33ea23","createdAt":1306818085,"type":"checkin","timeZone":"America/New_York","user":{"id":"7613255","firstName":"Foyt","lastName":"Development","photo":"https://foursquare.com/img/blank_boy.png","gender":"none","homeCity":"Mikkeli, Suomi","relationship":"friend"}}]}}}}
+{
+    "meta": {
+        "code": 200
+    },
+    "notifications": [
+        {
+            "type": "notificationTray",
+            "item": {
+                "unreadCount": 0
+            }
+        }
+    ],
+    "response": {
+        "checkin": {
+            "id": "544a600a498e90ae3a50d939",
+            "createdAt": 1414160394,
+            "type": "checkin",
+            "timeZoneOffset": -240,
+            "user": {
+                "id": "1526407",
+                "firstName": "John",
+                "lastName": "Cline",
+                "gender": "male",
+                "relationship": "self",
+                "photo": {
+                    "prefix": "https://irs1.4sqi.net/img/user/",
+                    "suffix": "/1526407-DOXH2K42MA3IKAR0.jpg"
+                }
+            },
+            "venue": {
+                "id": "4b4ba915f964a52027a326e3",
+                "name": "Cracker Barrel Old Country Store",
+                "contact": {
+                    "phone": "8458964194",
+                    "formattedPhone": "(845) 896-4194",
+                    "twitter": "crackerbarrel"
+                },
+                "location": {
+                    "address": "4 Merritt Blvd.",
+                    "lat": 41.5295864811695,
+                    "lng": -73.89232324029742,
+                    "postalCode": "12524",
+                    "cc": "US",
+                    "city": "Fishkill",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "4 Merritt Blvd.",
+                        "Fishkill, NY 12524"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d14e941735",
+                        "name": "American Restaurant",
+                        "pluralName": "American Restaurants",
+                        "shortName": "American",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": true,
+                "stats": {
+                    "checkinsCount": 5106,
+                    "usersCount": 2838,
+                    "tipCount": 46
+                },
+                "url": "http://www.crackerbarrel.com",
+                "hasMenu": true,
+                "menu": {
+                    "type": "Menu",
+                    "label": "Menu",
+                    "anchor": "View Menu",
+                    "url": "https://foursquare.com/v/cracker-barrel-old-country-store/4b4ba915f964a52027a326e3/menu",
+                    "mobileUrl": "https://foursquare.com/v/4b4ba915f964a52027a326e3/device_menu"
+                },
+                "specials": {
+                    "count": 0
+                },
+                "reasons": {
+                    "count": 1,
+                    "items": [
+                        {
+                            "summary": "You're here! +10 points",
+                            "type": "general",
+                            "reasonName": "hereNowReason",
+                            "target": {
+                                "type": "navigation",
+                                "object": {
+                                    "id": "5456a05f498ec5b0dc1b79dc",
+                                    "type": "checkinDetail",
+                                    "target": {
+                                        "type": "path",
+                                        "url": "/checkins/544a600a498e90ae3a50d939"
+                                    },
+                                    "ignorable": false
+                                }
+                            }
+                        }
+                    ]
+                },
+                "storeId": "350"
+            },
+            "source": {
+                "name": "Swarm for Android",
+                "url": "https://www.swarmapp.com"
+            },
+            "photos": {
+                "count": 0,
+                "items": []
+            },
+            "overlaps": {
+                "count": 1,
+                "summary": "With 1 of your friends",
+                "items": [
+                    {
+                        "id": "544a647b498e622fc6b63e42",
+                        "createdAt": 1414161531,
+                        "type": "checkin",
+                        "timeZoneOffset": -240,
+                        "user": {
+                            "id": "91339",
+                            "firstName": "Georges",
+                            "lastName": "Duverger",
+                            "gender": "male",
+                            "relationship": "friend",
+                            "photo": {
+                                "prefix": "https://irs0.4sqi.net/img/user/",
+                                "suffix": "/VVFWYY304MZMPPXS.jpg"
+                            }
+                        }
+                    }
+                ]
+            },
+            "posts": {
+                "count": 0,
+                "textCount": 0
+            },
+            "likes": {
+                "count": 0,
+                "groups": []
+            },
+            "like": false,
+            "comments": {
+                "count": 0,
+                "items": []
+            },
+            "score": {
+                "total": 10,
+                "scores": [
+                    {
+                        "icon": "https://ss1.4sqi.net/img/points/swarm-discoveryvenue.png",
+                        "message": "Your first check-in at Cracker Barrel Old Country Store!",
+                        "points": 5
+                    },
+                    {
+                        "icon": "https://ss1.4sqi.net/img/points/swarm-discoveryvenue.png",
+                        "message": "First of your friends to check in here.",
+                        "points": 2
+                    },
+                    {
+                        "icon": "https://ss1.4sqi.net/img/points/swarm-mayor.png",
+                        "message": "68 check-ins at Restaurants in the past 2 months.",
+                        "target": {
+                            "type": "path",
+                            "object": {
+                                "url": "/stickers/53f4b16f4b906a01e1abffe5/leaderboard"
+                            }
+                        },
+                        "points": 3
+                    }
+                ]
+            },
+            "objectLeaderboards": [
+                "53f4b16f4b906a01e1abffe5"
+            ]
+        }
+    }
+}

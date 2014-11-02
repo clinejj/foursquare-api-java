@@ -191,6 +191,7 @@ public class CompleteVenue extends CompactVenue {
     private String timeZone;
     private TodoGroup todos;
 
+
     // TODO
     private String reasons;
     private String flags;
@@ -199,5 +200,4 @@ public class CompleteVenue extends CompactVenue {
     private String pageUpdates;
     private String phrases;
     private String attributes;
-    private String storeId;
 }

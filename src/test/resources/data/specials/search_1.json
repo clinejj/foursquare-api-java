@@ -1,1 +1,671 @@
-{"meta":{"code":200},"response":{"specials":{"count":28,"items":[{"id":"4da37ddb15ad530c110a9d52","type":"count","message":"Want 20% off? Check in at RadioShack for the first time & get 20% off your qualifying purchase. Ends 6/30/11. Exclusions apply. Ask associate for details.","icon":"newbie","title":"Newbie Special","provider":"foursquare","redemption":"standard","venue":{"id":"4cb38bf20cdc721ea943234f","name":"RadioShack","contact":{},"location":{"address":"57-36 Myrtle Ave","city":"Glendale","state":"NY","postalCode":"11385","lat":40.700397,"lng":-73.9023299,"distance":201},"categories":[{"id":"4bf58dd8d48988d122951735","name":"High Tech Outlet","pluralName":"High Tech Outlets","icon":"https://foursquare.com/img/categories/shops/technology.png","parents":["Shops"],"primary":true}],"verified":true,"stats":{"checkinsCount":20,"usersCount":15}}},{"id":"4da37c7915ad530c97039d52","type":"frequency","message":"Check in at RadioShack for 10% off qualifying purchases. Check in enough times to earn a spot as Mayor of this store and get 20% off! Ends 6/30/11. Some exclusions apply. Ask associate for details.","icon":"check-in","title":"Check-in Special","provider":"foursquare","redemption":"standard","venue":{"id":"4cb38bf20cdc721ea943234f","name":"RadioShack","contact":{},"location":{"address":"57-36 Myrtle Ave","city":"Glendale","state":"NY","postalCode":"11385","lat":40.700397,"lng":-73.9023299,"distance":201},"categories":[{"id":"4bf58dd8d48988d122951735","name":"High Tech Outlet","pluralName":"High Tech Outlets","icon":"https://foursquare.com/img/categories/shops/technology.png","parents":["Shops"],"primary":true}],"verified":true,"stats":{"checkinsCount":20,"usersCount":15}}},{"id":"4dda58d63151cc0a7d4407bb","type":"frequency","message":"Get $2 off Brad Paisley's new album, 'This Is Country Music,' when you show us you've checked in! Valid 5/23 through 5/30. Employees: Use code BRAD.","icon":"check-in","title":"Check-in Special","provider":"foursquare","redemption":"standard","venue":{"id":"4c0808ee98039521b0fac196","name":"FYE","contact":{"phone":"7183660204","twitter":"fyeguy"},"location":{"address":"5717 Myrtle Avenue","city":"Ridgewood","state":"New York","postalCode":"11385","country":"USA","lat":40.7004918,"lng":-73.9029919,"distance":258},"categories":[{"id":"4bf58dd8d48988d10d951735","name":"Record Shop","pluralName":"Record Shops","icon":"https://foursquare.com/img/categories/shops/record_shop.png","parents":["Shops"],"primary":true}],"verified":true,"stats":{"checkinsCount":108,"usersCount":47}}},{"id":"4dd68cb381dcd5bca599827b","type":"frequency","message":"Get 30% off any used CD or DVD when you check-in! Offer valid thru 7/31/11. Cannot be combined with other offers. Limit 1 transaction per customer per visit. Employees: Use code FSUS.","icon":"check-in","title":"Check-in Special","provider":"foursquare","redemption":"standard","venue":{"id":"4c0808ee98039521b0fac196","name":"FYE","contact":{"phone":"7183660204","twitter":"fyeguy"},"location":{"address":"5717 Myrtle Avenue","city":"Ridgewood","state":"New York","postalCode":"11385","country":"USA","lat":40.7004918,"lng":-73.9029919,"distance":258},"categories":[{"id":"4bf58dd8d48988d10d951735","name":"Record Shop","pluralName":"Record Shops","icon":"https://foursquare.com/img/categories/shops/record_shop.png","parents":["Shops"],"primary":true}],"verified":true,"stats":{"checkinsCount":108,"usersCount":47}}},{"id":"4dd12b41814d79ce11cb16e3","type":"frequency","message":"Welcome to Payless! Thanks for checking in with us today! Just for Payless Insiders: Take $5 off of any $25 purchase now with coupon code 38257!","finePrint":"Offer valid thru 6/8/2011. One coupon per purchase. Not valid on prior purchases. Offer excludes Shopko locations. Offer valid in-store or online at Payless.com","icon":"check-in","title":"Check-in Special","provider":"foursquare","redemption":"standard","venue":{"id":"4c704403fa49a1cdff9aa5e3","name":"Payless ShoeSource","contact":{"twitter":"PaylessInsider"},"location":{"address":"57-07 Myrtle Avenue","crossStreet":"Seneca Avenue","city":"Ridgewood","state":"NY","postalCode":"11385","lat":40.7004638,"lng":-73.9033625,"distance":288},"categories":[{"id":"4bf58dd8d48988d107951735","name":"Shoe Store","pluralName":"Shoe Stores","icon":"https://foursquare.com/img/categories/shops/apparel_shoestore.png","parents":["Shops","Clothing Stores"],"primary":true}],"verified":true,"stats":{"checkinsCount":6,"usersCount":5},"url":"http://www.payless.com"}},{"id":"4d37394f5f8fa09020eae68b","type":"count","message":"Check in here and get $25 off of your tax preparation!\r\n\r\n(Show this to your tax preparer before you begin your return and they will use coupon code JNFEK)","icon":"newbie","title":"Newbie Special","provider":"foursquare","redemption":"standard","venue":{"id":"4cdd59a2901e9eb0a4f5c0ef","name":"Jackson Hewitt Tax Service","contact":{"phone":"8775801040","twitter":"jacksonhewitt"},"location":{"address":"54-56 Myrtle Avenue","city":"Ridgewood","state":"NY","postalCode":"11385","country":"USA","lat":40.7001028,"lng":-73.9056922,"distance":480},"categories":[],"verified":true,"stats":{"checkinsCount":0,"usersCount":0}}},{"id":"4dd12b41814d79ce11cb16e3","type":"frequency","message":"Welcome to Payless! Thanks for checking in with us today! Just for Payless Insiders: Take $5 off of any $25 purchase now with coupon code 38257!","finePrint":"Offer valid thru 6/8/2011. One coupon per purchase. Not valid on prior purchases. Offer excludes Shopko locations. Offer valid in-store or online at Payless.com","icon":"check-in","title":"Check-in Special","provider":"foursquare","redemption":"standard","venue":{"id":"4bb4e10586a8d13a4a08df7f","name":"Payless ShoeSource","contact":{"phone":"7183867752","twitter":"PaylessInsider"},"location":{"address":"6679 Fresh Pond Rd","city":"Flushing","state":"NY","postalCode":"11385","country":"USA","lat":40.7063244,"lng":-73.8968281,"distance":753},"categories":[{"id":"4bf58dd8d48988d107951735","name":"Shoe Store","pluralName":"Shoe Stores","icon":"https://foursquare.com/img/categories/shops/apparel_shoestore.png","parents":["Shops","Clothing Stores"],"primary":true}],"verified":false,"stats":{"checkinsCount":11,"usersCount":9},"url":"http://www.payless.com"}},{"id":"4dd6a5f9814d85e931fe4aba","type":"count","message":"Non-members of Lucille Roberts gyms get a FREE 1-week membership when you check in. No purchase necessary, no credit card required. Show up, check in, and work out for free for a week!","finePrint":"Photo ID required. Newbies have full gym access, including unlimited classes, like Zumba, yoga, Total Body, pilates, and much, much more! For class schedules: www.lucilleroberts.com","icon":"newbie","title":"Newbie Special","provider":"foursquare","redemption":"standard","venue":{"id":"4bad22c2f964a52057313be3","name":"Lucille Roberts - Myrtle Ave.","contact":{},"location":{"address":"5432 Myrtle Ave.","city":"Ridgewood","state":"NY","postalCode":"11385","lat":40.6996939,"lng":-73.9092461,"distance":781},"categories":[{"id":"4bf58dd8d48988d176941735","name":"Gym","pluralName":"Gyms","icon":"https://foursquare.com/img/categories/building/gym.png","parents":["Homes, Work, Others","Gyms or Fitness Centers"],"primary":true}],"verified":true,"stats":{"checkinsCount":66,"usersCount":23},"url":"http://www.lucilleroberts.com/womens-gym-Myrtle-Avenue"}},{"id":"4ceffec0708060fc04ccf368","type":"regular","message":"Special is unlocked... when you check in to our office and are receiving a regular check up. You will receive a FREE GOODIE BAG!!! Bag includes a complimentary CREST toothbrush and tooth paste!","icon":"frequency","title":"Loyalty Special","provider":"foursquare","redemption":"standard","venue":{"id":"4c5cc21ebfa59521387f78ff","name":"Babak Behmanesh DDS PC","contact":{"phone":"7184185555"},"location":{"address":"63-54 Fresh Pond Rd","crossStreet":"GROVE ST","city":"Ridgewood","state":"NY","postalCode":"11385","lat":40.71005225842896,"lng":-73.89975070953369,"distance":1119},"categories":[],"verified":true,"stats":{"checkinsCount":13,"usersCount":7}}},{"id":"4d94bf950f604eb960975839","type":"frequency","message":"Check in to receive 10% off your entire purchase!*","finePrint":"*Cannot be combined with any other offer. Excludes advertised sale items, gift cards, prior purchases, special orders and Tempur-Pedic® products. Extended financing is not available with this offer.","icon":"check-in","title":"Check-in Special","provider":"foursquare","redemption":"standard","venue":{"id":"4cc48ee842d1b60c77691e13","name":"Raymour & Flanigan Furniture | Metropolitan Avenue","contact":{"phone":"7189074687","twitter":"raymourflanigan"},"location":{"address":"66-26 Metropolitan Ave #730","city":"Middle Village","state":"New York","postalCode":"11379","lat":40.710036,"lng":-73.8916612,"distance":1320},"categories":[{"id":"4bf58dd8d48988d1f8941735","name":"Furniture or Home Store","pluralName":"Furniture or Home Stores","icon":"https://foursquare.com/img/categories/shops/furniture.png","parents":["Shops"],"primary":true}],"verified":true,"stats":{"checkinsCount":10,"usersCount":8},"url":"http://www.raymourflanigan.com"}},{"id":"4dda6b051850807ea46507fd","type":"frequency","message":"Save $100 on NEW! Banzai Falls Water Park* (575327)","finePrint":"Sale $299.99. No coupon needed. Features climbing wall, slide, water cannon, basketball and hoop, spraying arches and blower. Inflates in 2 minutes. *Quantities limited; no rain checks.","icon":"check-in","title":"Check-in Special","provider":"foursquare","redemption":"standard","venue":{"id":"4bcca99a68f976b0bf086383","name":"Toys\"Я\"Us","contact":{"phone":"7183262038","twitter":"ToysRUs"},"location":{"address":"66-26 Metropolitan Ave.","city":"Queens","state":"NY","postalCode":"11379","country":"USA","lat":40.71125014,"lng":-73.89326512813568,"distance":1375},"categories":[{"id":"4bf58dd8d48988d1f3941735","name":"Toy or Game Store","pluralName":"Toy or Game Stores","icon":"https://foursquare.com/img/categories/shops/toys.png","parents":["Shops"],"primary":true}],"verified":true,"stats":{"checkinsCount":344,"usersCount":210}}},{"id":"4d37394f5f8fa09020eae68b","type":"count","message":"Check in here and get $25 off of your tax preparation!\r\n\r\n(Show this to your tax preparer before you begin your return and they will use coupon code JNFEK)","icon":"newbie","title":"Newbie Special","provider":"foursquare","redemption":"standard","venue":{"id":"4cdd5b3a901e9eb06311c1ef","name":"Jackson Hewitt Tax Service","contact":{"phone":"8775801040","twitter":"jacksonhewitt"},"location":{"address":"439 Knickerbocker Ave","city":"Brooklyn","state":"NY","postalCode":"11237","country":"USA","lat":40.699367,"lng":-73.918856,"distance":1592},"categories":[],"verified":true,"stats":{"checkinsCount":0,"usersCount":0}}},{"id":"4dd12b41814d79ce11cb16e3","type":"frequency","message":"Welcome to Payless! Thanks for checking in with us today! Just for Payless Insiders: Take $5 off of any $25 purchase now with coupon code 38257!","finePrint":"Offer valid thru 6/8/2011. One coupon per purchase. Not valid on prior purchases. Offer excludes Shopko locations. Offer valid in-store or online at Payless.com","icon":"check-in","title":"Check-in Special","provider":"foursquare","redemption":"standard","venue":{"id":"4c7e76300b2a9eb03574651f","name":"Payless ShoeSource","contact":{"phone":"7189192034","twitter":"PaylessInsider"},"location":{"address":"379 Knickerbocker Ave","city":"Brooklyn","state":"NY","postalCode":"11237-3701","lat":40.700256,"lng":-73.920763,"distance":1752},"categories":[{"id":"4bf58dd8d48988d107951735","name":"Shoe Store","pluralName":"Shoe Stores","icon":"https://foursquare.com/img/categories/shops/apparel_shoestore.png","parents":["Shops","Clothing Stores"],"primary":true}],"verified":true,"stats":{"checkinsCount":6,"usersCount":6},"url":"http://www.payless.com"}},{"id":"4da37ddb15ad530c110a9d52","type":"count","message":"Want 20% off? Check in at RadioShack for the first time & get 20% off your qualifying purchase. Ends 6/30/11. Exclusions apply. Ask associate for details.","icon":"newbie","title":"Newbie Special","provider":"foursquare","redemption":"standard","venue":{"id":"4c6045e6c6a103bbd2ff675b","name":"RadioShack","contact":{},"location":{"address":"366 KNICKERBOCKER AVE","city":"BROOKLYN","state":"NY","postalCode":"11237","lat":40.700452,"lng":-73.921492,"distance":1814},"categories":[{"id":"4bf58dd8d48988d122951735","name":"High Tech Outlet","pluralName":"High Tech Outlets","icon":"https://foursquare.com/img/categories/shops/technology.png","parents":["Shops"],"primary":true}],"verified":true,"stats":{"checkinsCount":10,"usersCount":8}}},{"id":"4da37c7915ad530c97039d52","type":"frequency","message":"Check in at RadioShack for 10% off qualifying purchases. Check in enough times to earn a spot as Mayor of this store and get 20% off! Ends 6/30/11. Some exclusions apply. Ask associate for details.","icon":"check-in","title":"Check-in Special","provider":"foursquare","redemption":"standard","venue":{"id":"4c6045e6c6a103bbd2ff675b","name":"RadioShack","contact":{},"location":{"address":"366 KNICKERBOCKER AVE","city":"BROOKLYN","state":"NY","postalCode":"11237","lat":40.700452,"lng":-73.921492,"distance":1814},"categories":[{"id":"4bf58dd8d48988d122951735","name":"High Tech Outlet","pluralName":"High Tech Outlets","icon":"https://foursquare.com/img/categories/shops/technology.png","parents":["Shops"],"primary":true}],"verified":true,"stats":{"checkinsCount":10,"usersCount":8}}},{"id":"4da37ddb15ad530c110a9d52","type":"count","message":"Want 20% off? Check in at RadioShack for the first time & get 20% off your qualifying purchase. Ends 6/30/11. Exclusions apply. Ask associate for details.","icon":"newbie","title":"Newbie Special","provider":"foursquare","redemption":"standard","venue":{"id":"4bfeec1de584c92862726d25","name":"RadioShack","contact":{"phone":"7183263927"},"location":{"address":"6918 Metropolitan Ave","crossStreet":"at Metropolitan Ave Shopping Center","city":"Middle Village","state":"NY","postalCode":"11379","lat":40.71214945,"lng":-73.885554,"distance":1820},"categories":[{"id":"4bf58dd8d48988d122951735","name":"High Tech Outlet","pluralName":"High Tech Outlets","icon":"https://foursquare.com/img/categories/shops/technology.png","parents":["Shops"],"primary":true}],"verified":true,"stats":{"checkinsCount":33,"usersCount":26}}},{"id":"4da37c7915ad530c97039d52","type":"frequency","message":"Check in at RadioShack for 10% off qualifying purchases. Check in enough times to earn a spot as Mayor of this store and get 20% off! Ends 6/30/11. Some exclusions apply. Ask associate for details.","icon":"check-in","title":"Check-in Special","provider":"foursquare","redemption":"standard","venue":{"id":"4bfeec1de584c92862726d25","name":"RadioShack","contact":{"phone":"7183263927"},"location":{"address":"6918 Metropolitan Ave","crossStreet":"at Metropolitan Ave Shopping Center","city":"Middle Village","state":"NY","postalCode":"11379","lat":40.71214945,"lng":-73.885554,"distance":1820},"categories":[{"id":"4bf58dd8d48988d122951735","name":"High Tech Outlet","pluralName":"High Tech Outlets","icon":"https://foursquare.com/img/categories/shops/technology.png","parents":["Shops"],"primary":true}],"verified":true,"stats":{"checkinsCount":33,"usersCount":26}}},{"id":"4d933372f7e8dcb36bb0cb12","type":"frequency","message":"Free small Classic Milkshake for every 3rd check-in. As always, free small Classic Milkshake for Mayors too.","finePrint":"Not available on Premium Milkshakes. Limit one per customer per visit.","icon":"frequency","title":"Loyalty Special","provider":"foursquare","redemption":"standard","venue":{"id":"4b3fa4b9f964a52018ab25e3","name":"Checkers","contact":{"phone":"7184436160"},"location":{"address":"1611 Broadway","crossStreet":"at Eldert St","city":"Brooklyn","state":"NY","postalCode":"11207","country":"USA","lat":40.685437,"lng":-73.914509,"distance":2031},"categories":[{"id":"4bf58dd8d48988d16c941735","name":"Burger Joint","pluralName":"Burger Joints","icon":"https://foursquare.com/img/categories/food/burger.png","parents":["Food"],"primary":true},{"id":"4bf58dd8d48988d16e941735","name":"Fast Food Restaurant","pluralName":"Fast Food Restaurants","icon":"https://foursquare.com/img/categories/food/fastfood.png","parents":["Food"]}],"verified":true,"stats":{"checkinsCount":208,"usersCount":92}}},{"id":"4d37394f5f8fa09020eae68b","type":"count","message":"Check in here and get $25 off of your tax preparation!\r\n\r\n(Show this to your tax preparer before you begin your return and they will use coupon code JNFEK)","icon":"newbie","title":"Newbie Special","provider":"foursquare","redemption":"standard","venue":{"id":"4cdd662b901e9eb072d0c1ef","name":"Jackson Hewitt Tax Service","contact":{"phone":"7189190510","twitter":"jacksonhewitt"},"location":{"address":"1362 Broadway Avenue","city":"Brooklyn","state":"NY","postalCode":"11221","country":"USA","lat":40.689638,"lng":-73.922294,"distance":2207},"categories":[],"verified":true,"stats":{"checkinsCount":0,"usersCount":0}}},{"id":"4dd12b41814d79ce11cb16e3","type":"frequency","message":"Welcome to Payless! Thanks for checking in with us today! Just for Payless Insiders: Take $5 off of any $25 purchase now with coupon code 38257!","finePrint":"Offer valid thru 6/8/2011. One coupon per purchase. Not valid on prior purchases. Offer excludes Shopko locations. Offer valid in-store or online at Payless.com","icon":"check-in","title":"Check-in Special","provider":"foursquare","redemption":"standard","venue":{"id":"4c7e762a0b2a9eb02a74651f","name":"Payless ShoeSource","contact":{"phone":"7185742796","twitter":"PaylessInsider"},"location":{"address":"1285-A Broadway","city":"Brooklyn","state":"NY","postalCode":"11221-2908","lat":40.69102,"lng":-73.92446,"distance":2293},"categories":[{"id":"4bf58dd8d48988d107951735","name":"Shoe Store","pluralName":"Shoe Stores","icon":"https://foursquare.com/img/categories/shops/apparel_shoestore.png","parents":["Shops","Clothing Stores"],"primary":true}],"verified":true,"stats":{"checkinsCount":1,"usersCount":1},"url":"http://www.payless.com"}},{"id":"4bfc88df86ba62b5dacf88b3","type":"mayor","message":"FOR THE MAYOR: A free coffee between 9am-5pm or a free amber beer between 5-8pm!","icon":"mayor","title":"Mayor Special","provider":"foursquare","redemption":"standard","venue":{"id":"4aea19bff964a52052b921e3","name":"Brooklyn Fire Proof East","contact":{},"location":{"address":"119 Ingraham St","crossStreet":"Porter Av","city":"Brooklyn","state":"NY","postalCode":"11237","lat":40.707866,"lng":-73.92923,"distance":2617},"categories":[{"id":"4bf58dd8d48988d1e9931735","name":"Rock Club","pluralName":"Rock Clubs","icon":"https://foursquare.com/img/categories/arts_entertainment/musicvenue_rockclub.png","parents":["Arts & Entertainment","Music Venues"],"primary":true},{"id":"4bf58dd8d48988d16d941735","name":"Café","pluralName":"Cafés","icon":"https://foursquare.com/img/categories/food/cafe.png","parents":["Food"]},{"id":"4bf58dd8d48988d1e0931735","name":"Coffee Shop","pluralName":"Coffee Shops","icon":"https://foursquare.com/img/categories/food/coffeeshop.png","parents":["Food"]},{"id":"4bf58dd8d48988d1c5941735","name":"Sandwich Place","pluralName":"Sandwich Places","icon":"https://foursquare.com/img/categories/food/sandwiches.png","parents":["Food"]},{"id":"4bf58dd8d48988d11b941735","name":"Pub","pluralName":"Pubs","icon":"https://foursquare.com/img/categories/nightlife/default.png","parents":["Nightlife Spots"]},{"id":"4bf58dd8d48988d116941735","name":"Bar","pluralName":"Bars","icon":"https://foursquare.com/img/categories/nightlife/default.png","parents":["Nightlife Spots"]}],"verified":true,"stats":{"checkinsCount":1221,"usersCount":670}}},{"id":"4d37394f5f8fa09020eae68b","type":"count","message":"Check in here and get $25 off of your tax preparation!\r\n\r\n(Show this to your tax preparer before you begin your return and they will use coupon code JNFEK)","icon":"newbie","title":"Newbie Special","provider":"foursquare","redemption":"standard","venue":{"id":"4cdd63d9901e9eb055a7c1ef","name":"Jackson Hewitt Tax Service","contact":{"phone":"7184844129","twitter":"jacksonhewitt"},"location":{"address":"2693 Atlantic Ave.","city":"Brooklyn","state":"NY","postalCode":"11207","country":"USA","lat":40.67597,"lng":-73.894929,"distance":2709},"categories":[],"verified":true,"stats":{"checkinsCount":1,"usersCount":1}}},{"id":"4d37394f5f8fa09020eae68b","type":"count","message":"Check in here and get $25 off of your tax preparation!\r\n\r\n(Show this to your tax preparer before you begin your return and they will use coupon code JNFEK)","icon":"newbie","title":"Newbie Special","provider":"foursquare","redemption":"standard","venue":{"id":"4cdd6495901e9eb041b4c1ef","name":"Jackson Hewitt Tax Service","contact":{"phone":"7183351267","twitter":"jacksonhewitt"},"location":{"address":"6647 Grand Ave","city":"Maspeth","state":"NY","postalCode":"11378","country":"USA","lat":40.724704,"lng":-73.89762,"distance":2757},"categories":[],"verified":true,"stats":{"checkinsCount":1,"usersCount":1}}},{"id":"4d37394f5f8fa09020eae68b","type":"count","message":"Check in here and get $25 off of your tax preparation!\r\n\r\n(Show this to your tax preparer before you begin your return and they will use coupon code JNFEK)","icon":"newbie","title":"Newbie Special","provider":"foursquare","redemption":"standard","venue":{"id":"4cdd61df901e9eb0ff85c1ef","name":"Jackson Hewitt Tax Service","contact":{"phone":"7183451773","twitter":"jacksonhewitt"},"location":{"address":"287 Saratoga Ave","city":"Brooklyn","state":"NY","postalCode":"11233","country":"USA","lat":40.675842,"lng":-73.916544,"distance":3030},"categories":[],"verified":true,"stats":{"checkinsCount":0,"usersCount":0}}},{"id":"4dd07d3f3151a1df1e5bfb91","type":"flash","message":"Free Champagne with a Half Hour In Champagne Room","finePrint":"Simple - Buy a half hour in Champange Room and Get FREE Champagne","icon":"flash","title":"Flash Special","provider":"foursquare","redemption":"standard","venue":{"id":"4bd798340b779c74dd9f05a0","name":"Rouge Adult Gentlemen's Strip Club","contact":{"phone":"7183668900","twitter":"rougeny"},"location":{"address":"55-61 58th Street","city":"Maspeth","state":"NY","postalCode":"11378","lat":40.725714,"lng":-73.9118359,"distance":3031},"categories":[{"id":"4bf58dd8d48988d183941735","name":"Strip Club","pluralName":"Strip Clubs","icon":"https://foursquare.com/img/categories/arts_entertainment/stripclub.png","parents":["Arts & Entertainment"],"primary":true},{"id":"4bf58dd8d48988d116941735","name":"Bar","pluralName":"Bars","icon":"https://foursquare.com/img/categories/nightlife/default.png","parents":["Nightlife Spots"]},{"id":"4bf58dd8d48988d11f941735","name":"Nightclub","pluralName":"Nightclubs","icon":"https://foursquare.com/img/categories/nightlife/danceparty.png","parents":["Nightlife Spots"]}],"verified":true,"stats":{"checkinsCount":484,"usersCount":95},"url":"http://clubrougeny.com"}},{"id":"4dd07a2b3151a1df1e5beddc","type":"frequency","message":"$50 Off Bottle Service - Web Special - Just show to manager and mention \"Web $50 Off Bottle\" Special","icon":"check-in","title":"Check-in Special","provider":"foursquare","redemption":"standard","venue":{"id":"4bd798340b779c74dd9f05a0","name":"Rouge Adult Gentlemen's Strip Club","contact":{"phone":"7183668900","twitter":"rougeny"},"location":{"address":"55-61 58th Street","city":"Maspeth","state":"NY","postalCode":"11378","lat":40.725714,"lng":-73.9118359,"distance":3031},"categories":[{"id":"4bf58dd8d48988d183941735","name":"Strip Club","pluralName":"Strip Clubs","icon":"https://foursquare.com/img/categories/arts_entertainment/stripclub.png","parents":["Arts & Entertainment"],"primary":true},{"id":"4bf58dd8d48988d116941735","name":"Bar","pluralName":"Bars","icon":"https://foursquare.com/img/categories/nightlife/default.png","parents":["Nightlife Spots"]},{"id":"4bf58dd8d48988d11f941735","name":"Nightclub","pluralName":"Nightclubs","icon":"https://foursquare.com/img/categories/nightlife/danceparty.png","parents":["Nightlife Spots"]}],"verified":true,"stats":{"checkinsCount":484,"usersCount":95},"url":"http://clubrougeny.com"}},{"id":"4da37ddb15ad530c110a9d52","type":"count","message":"Want 20% off? Check in at RadioShack for the first time & get 20% off your qualifying purchase. Ends 6/30/11. Exclusions apply. Ask associate for details.","icon":"newbie","title":"Newbie Special","provider":"foursquare","redemption":"standard","venue":{"id":"4c6045b8c6a103bb82ff675b","name":"RadioShack","contact":{},"location":{"address":"7001 GRAND AVE","city":"MASPETH","state":"NY","postalCode":"11378","lat":40.72799,"lng":-73.89174,"distance":3192},"categories":[{"id":"4bf58dd8d48988d122951735","name":"High Tech Outlet","pluralName":"High Tech Outlets","icon":"https://foursquare.com/img/categories/shops/technology.png","parents":["Shops"],"primary":true}],"verified":true,"stats":{"checkinsCount":24,"usersCount":15}}},{"id":"4da37c7915ad530c97039d52","type":"frequency","message":"Check in at RadioShack for 10% off qualifying purchases. Check in enough times to earn a spot as Mayor of this store and get 20% off! Ends 6/30/11. Some exclusions apply. Ask associate for details.","icon":"check-in","title":"Check-in Special","provider":"foursquare","redemption":"standard","venue":{"id":"4c6045b8c6a103bb82ff675b","name":"RadioShack","contact":{},"location":{"address":"7001 GRAND AVE","city":"MASPETH","state":"NY","postalCode":"11378","lat":40.72799,"lng":-73.89174,"distance":3192},"categories":[{"id":"4bf58dd8d48988d122951735","name":"High Tech Outlet","pluralName":"High Tech Outlets","icon":"https://foursquare.com/img/categories/shops/technology.png","parents":["Shops"],"primary":true}],"verified":true,"stats":{"checkinsCount":24,"usersCount":15}}}]}}}
+{
+    "meta": {
+        "code": 200
+    },
+    "notifications": [
+        {
+            "type": "notificationTray",
+            "item": {
+                "unreadCount": 0
+            }
+        }
+    ],
+    "response": {
+        "specials": {
+            "count": 8,
+            "items": [
+                {
+                    "id": "4e7c83e16365116cef70bfe1",
+                    "type": "frequency",
+                    "message": "Foursquare members 18 and over who check-in to the B&H Superstore during business hours will receive a B&H Signature Backpack or Tote bag with the purchase of $50 or more. One item per person and employees not eligible.",
+                    "description": "",
+                    "finePrint": "Just show your phone and receipt at the tourism counter when exiting the store to receive your free gift.",
+                    "unlocked": true,
+                    "icon": "default",
+                    "title": "Special",
+                    "state": "unlocked",
+                    "provider": "foursquare",
+                    "redemption": "webview",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/4e7c83e16365116cef70bfe1?venueId=4adb6119f964a520a72621e3"
+                    },
+                    "venue": {
+                        "id": "4adb6119f964a520a72621e3",
+                        "name": "B&H Photo Video",
+                        "contact": {
+                            "phone": "2124446615",
+                            "formattedPhone": "(212) 444-6615",
+                            "twitter": "bhphotovideo"
+                        },
+                        "location": {
+                            "address": "420 9th Ave",
+                            "crossStreet": "at W 34th St",
+                            "lat": 40.75299106095666,
+                            "lng": -73.99622260200258,
+                            "distance": 10034,
+                            "postalCode": "10001",
+                            "cc": "US",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "United States",
+                            "formattedAddress": [
+                                "420 9th Ave (at W 34th St)",
+                                "New York, NY 10001"
+                            ]
+                        },
+                        "categories": [
+                            {
+                                "id": "4eb1bdf03b7b55596b4a7491",
+                                "name": "Camera Store",
+                                "pluralName": "Camera Stores",
+                                "shortName": "Camera Store",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/camerastore_",
+                                    "suffix": ".png"
+                                },
+                                "primary": true
+                            }
+                        ],
+                        "verified": true,
+                        "stats": {
+                            "checkinsCount": 40595,
+                            "usersCount": 24978,
+                            "tipCount": 297
+                        },
+                        "url": "http://www.bandh.com",
+                        "venuePage": {
+                            "id": "33882813"
+                        },
+                        "storeId": "",
+                        "locked": true
+                    }
+                },
+                {
+                    "id": "534c6e14498e44dce0c73f27",
+                    "type": "frequency",
+                    "message": "Try our Tribeca Film Festival cocktail special - the \"Burnham's Folly,\" feat. Bombay Sapphire with Grey Goose Pear, cucumber, jalapeno, lemon & orange.",
+                    "photo": {
+                        "id": "534c6e1411d28b1125e0f038",
+                        "createdAt": 1397517844,
+                        "prefix": "https://irs1.4sqi.net/img/general/",
+                        "suffix": "/69375036_2dhGMsIQ8nXlL_Ps4-QaZAkB73SvOTXsH_68UETQSog.jpg",
+                        "width": 640,
+                        "height": 640
+                    },
+                    "description": "",
+                    "unlocked": true,
+                    "icon": "default",
+                    "title": "Special",
+                    "state": "unlocked",
+                    "provider": "foursquare",
+                    "redemption": "webview",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/534c6e14498e44dce0c73f27?venueId=51d7433c498edc487dbd6801"
+                    },
+                    "page": {
+                        "id": "69375036",
+                        "firstName": "Flatiron Hall",
+                        "gender": "none",
+                        "photo": {
+                            "prefix": "https://irs2.4sqi.net/img/user/",
+                            "suffix": "/69375036-VQE5R2XVHUXUWP2E.png"
+                        },
+                        "type": "venuePage",
+                        "venue": {
+                            "id": "51d7433c498edc487dbd6801"
+                        },
+                        "tips": {
+                            "count": 7
+                        },
+                        "homeCity": "New York, NY",
+                        "bio": "",
+                        "contact": {}
+                    },
+                    "venue": {
+                        "id": "51d7433c498edc487dbd6801",
+                        "name": "Flatiron Hall",
+                        "contact": {
+                            "phone": "6467903200",
+                            "formattedPhone": "(646) 790-3200",
+                            "twitter": "flatironhallnyc",
+                            "facebook": "461325797296999",
+                            "facebookUsername": "FlatironHall",
+                            "facebookName": "Flatiron Hall"
+                        },
+                        "location": {
+                            "address": "38 W 26th St",
+                            "crossStreet": "btwn Broadway & 6th Ave",
+                            "lat": 40.744531140199726,
+                            "lng": -73.990638716365,
+                            "distance": 9113,
+                            "postalCode": "10010",
+                            "cc": "US",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "United States",
+                            "formattedAddress": [
+                                "38 W 26th St (btwn Broadway & 6th Ave)",
+                                "New York, NY 10010"
+                            ]
+                        },
+                        "categories": [
+                            {
+                                "id": "4bf58dd8d48988d155941735",
+                                "name": "Gastropub",
+                                "pluralName": "Gastropubs",
+                                "shortName": "Gastropub",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/food/gastropub_",
+                                    "suffix": ".png"
+                                },
+                                "primary": true
+                            }
+                        ],
+                        "verified": true,
+                        "stats": {
+                            "checkinsCount": 9037,
+                            "usersCount": 6427,
+                            "tipCount": 59
+                        },
+                        "url": "http://flatironhall.com",
+                        "hasMenu": true,
+                        "reservations": {
+                            "url": "http://www.opentable.com/single.aspx?rid=149302&ref=9601"
+                        },
+                        "menu": {
+                            "type": "Menu",
+                            "label": "Menu",
+                            "anchor": "View Menu",
+                            "url": "https://foursquare.com/v/flatiron-hall/51d7433c498edc487dbd6801/menu",
+                            "mobileUrl": "https://foursquare.com/v/51d7433c498edc487dbd6801/device_menu",
+                            "externalUrl": "http://www.menupages.com/restaurants/flatiron-hall/"
+                        },
+                        "venuePage": {
+                            "id": "69375036"
+                        }
+                    }
+                },
+                {
+                    "id": "52cc218411d2d9f58079cb08",
+                    "type": "frequency",
+                    "message": "Check in for a FREE 2014 Coupon Book!.",
+                    "photo": {
+                        "id": "52cc218411d2604d86ae1772",
+                        "createdAt": 1389109636,
+                        "prefix": "https://irs2.4sqi.net/img/general/",
+                        "suffix": "/33359830_Ap240YQPWEuy9AdslBmpuq_bMgsZH55zzR6suvi9UOE.jpg",
+                        "width": 803,
+                        "height": 957
+                    },
+                    "description": "",
+                    "finePrint": "One book per check-in, per person. Thank you!",
+                    "unlocked": true,
+                    "icon": "default",
+                    "title": "Special",
+                    "state": "unlocked",
+                    "provider": "foursquare",
+                    "redemption": "webview",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/52cc218411d2d9f58079cb08?venueId=4ba82484f964a52051ce39e3"
+                    },
+                    "page": {
+                        "id": "33359830",
+                        "firstName": "The Outlet Collection | Jersey Gardens",
+                        "gender": "none",
+                        "photo": {
+                            "prefix": "https://irs3.4sqi.net/img/user/",
+                            "suffix": "/CWWB2XOP5RGTSPTU.jpg"
+                        },
+                        "type": "venuePage",
+                        "venue": {
+                            "id": "4ba82484f964a52051ce39e3"
+                        },
+                        "tips": {
+                            "count": 30
+                        },
+                        "homeCity": "Elizabeth, NJ",
+                        "bio": "",
+                        "contact": {}
+                    },
+                    "venue": {
+                        "id": "4ba82484f964a52051ce39e3",
+                        "name": "The Outlet Collection | Jersey Gardens",
+                        "contact": {
+                            "phone": "9083545900",
+                            "formattedPhone": "(908) 354-5900",
+                            "twitter": "ocjersey",
+                            "facebook": "128703364971",
+                            "facebookUsername": "JerseyGardens",
+                            "facebookName": "The Outlet Collection - Jersey Gardens"
+                        },
+                        "location": {
+                            "address": "651 Kapkowski Rd",
+                            "crossStreet": "at Jersey Gardens Blvd",
+                            "lat": 40.66055534391215,
+                            "lng": -74.17179296177271,
+                            "distance": 23361,
+                            "postalCode": "07201",
+                            "cc": "US",
+                            "city": "Elizabeth",
+                            "state": "NJ",
+                            "country": "United States",
+                            "formattedAddress": [
+                                "651 Kapkowski Rd (at Jersey Gardens Blvd)",
+                                "Elizabeth, NJ 07201"
+                            ]
+                        },
+                        "categories": [
+                            {
+                                "id": "4bf58dd8d48988d1fd941735",
+                                "name": "Mall",
+                                "pluralName": "Malls",
+                                "shortName": "Mall",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/mall_",
+                                    "suffix": ".png"
+                                },
+                                "primary": true
+                            }
+                        ],
+                        "verified": true,
+                        "stats": {
+                            "checkinsCount": 45880,
+                            "usersCount": 24002,
+                            "tipCount": 172
+                        },
+                        "url": "http://www.jerseygardens.com",
+                        "venuePage": {
+                            "id": "33359830"
+                        },
+                        "storeId": "",
+                        "locked": true
+                    }
+                },
+                {
+                    "id": "51252ba345b026783718b7d2",
+                    "type": "frequency",
+                    "message": "Get 25 cents off any coffee / espresso drink and 10% off all 12 oz coffee tins!",
+                    "description": "",
+                    "unlocked": true,
+                    "icon": "default",
+                    "title": "Special",
+                    "state": "unlocked",
+                    "provider": "foursquare",
+                    "redemption": "webview",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/51252ba345b026783718b7d2?venueId=4dcc5861887714552bd47b34"
+                    },
+                    "page": {
+                        "id": "48722666",
+                        "firstName": "Brooklyn Roasting Company",
+                        "gender": "none",
+                        "photo": {
+                            "prefix": "https://irs1.4sqi.net/img/user/",
+                            "suffix": "/HZWKPAUV0BSKPHWY.jpg"
+                        },
+                        "type": "venuePage",
+                        "venue": {
+                            "id": "4dcc5861887714552bd47b34"
+                        },
+                        "tips": {
+                            "count": 28
+                        },
+                        "homeCity": "Brooklyn, NY",
+                        "bio": "",
+                        "contact": {
+                            "twitter": "bklynroasting"
+                        }
+                    },
+                    "venue": {
+                        "id": "4dcc5861887714552bd47b34",
+                        "name": "Brooklyn Roasting Company",
+                        "contact": {
+                            "phone": "7185222664",
+                            "formattedPhone": "(718) 522-2664",
+                            "twitter": "bklynroasting"
+                        },
+                        "location": {
+                            "address": "25 Jay St",
+                            "crossStreet": "btwn Plymouth & John St",
+                            "lat": 40.70411988449319,
+                            "lng": -73.98666160518577,
+                            "distance": 7327,
+                            "postalCode": "11201",
+                            "cc": "US",
+                            "city": "Brooklyn",
+                            "state": "NY",
+                            "country": "United States",
+                            "formattedAddress": [
+                                "25 Jay St (btwn Plymouth & John St)",
+                                "Brooklyn, NY 11201"
+                            ]
+                        },
+                        "categories": [
+                            {
+                                "id": "4bf58dd8d48988d1e0931735",
+                                "name": "Coffee Shop",
+                                "pluralName": "Coffee Shops",
+                                "shortName": "Coffee Shop",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+                                    "suffix": ".png"
+                                },
+                                "primary": true
+                            }
+                        ],
+                        "verified": true,
+                        "stats": {
+                            "checkinsCount": 18371,
+                            "usersCount": 4632,
+                            "tipCount": 154
+                        },
+                        "url": "http://www.brooklynroasting.com",
+                        "hasMenu": true,
+                        "menu": {
+                            "type": "Menu",
+                            "label": "Menu",
+                            "anchor": "View Menu",
+                            "url": "https://foursquare.com/v/brooklyn-roasting-company-brooklyn-ny/4dcc5861887714552bd47b34/menu",
+                            "mobileUrl": "https://foursquare.com/v/4dcc5861887714552bd47b34/device_menu"
+                        },
+                        "venuePage": {
+                            "id": "48722666"
+                        },
+                        "storeId": ""
+                    }
+                },
+                {
+                    "id": "506b2f92f31cd15cd741ed76",
+                    "type": "frequency",
+                    "message": "Save 10% on any purchases at The New York Public Library Shop. Happy shopping!",
+                    "description": "",
+                    "unlocked": true,
+                    "icon": "default",
+                    "title": "Special",
+                    "state": "unlocked",
+                    "provider": "foursquare",
+                    "redemption": "webview",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/506b2f92f31cd15cd741ed76?venueId=452d6886f964a5204a3b1fe3"
+                    },
+                    "page": {
+                        "id": "5255525",
+                        "firstName": "New York Public Library",
+                        "gender": "none",
+                        "photo": {
+                            "prefix": "https://irs0.4sqi.net/img/user/",
+                            "suffix": "/OZ1NQB3IDLZNF0WW.jpg"
+                        },
+                        "type": "chain",
+                        "followers": {
+                            "count": 85920,
+                            "groups": []
+                        },
+                        "tips": {
+                            "count": 193
+                        },
+                        "homeCity": "New York, NY",
+                        "bio": "",
+                        "contact": {
+                            "twitter": "nypl"
+                        }
+                    },
+                    "venue": {
+                        "id": "452d6886f964a5204a3b1fe3",
+                        "name": "New York Public Library",
+                        "contact": {
+                            "phone": "2129300800",
+                            "formattedPhone": "(212) 930-0800",
+                            "twitter": "nypl",
+                            "facebook": "21557622350",
+                            "facebookUsername": "nypl",
+                            "facebookName": "NYPL The New York Public Library"
+                        },
+                        "location": {
+                            "address": "476 5th Ave",
+                            "crossStreet": "Stephen A. Schwarzman Building",
+                            "lat": 40.753271503883234,
+                            "lng": -73.9822769165039,
+                            "distance": 9129,
+                            "postalCode": "10018",
+                            "cc": "US",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "United States",
+                            "formattedAddress": [
+                                "476 5th Ave (Stephen A. Schwarzman Building)",
+                                "New York, NY 10018"
+                            ]
+                        },
+                        "categories": [
+                            {
+                                "id": "4bf58dd8d48988d12f941735",
+                                "name": "Library",
+                                "pluralName": "Libraries",
+                                "shortName": "Library",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/building/library_",
+                                    "suffix": ".png"
+                                },
+                                "primary": true
+                            }
+                        ],
+                        "verified": true,
+                        "stats": {
+                            "checkinsCount": 65689,
+                            "usersCount": 43509,
+                            "tipCount": 364
+                        },
+                        "url": "https://www.facebook.com/nypl",
+                        "storeId": "SASB"
+                    }
+                },
+                {
+                    "id": "5432afb6498e4b1b482122c3",
+                    "type": "frequency",
+                    "message": "Stop by Guest Services with every check in and receive a special discount from Cups Frozen Yogurt.",
+                    "photo": {
+                        "id": "510ef3dde4b0ae0255f5b708",
+                        "createdAt": 1359934429,
+                        "prefix": "https://irs3.4sqi.net/img/general/",
+                        "suffix": "/44042172_sLGnBzFnRBRn1mzCd9g6cjtXctCnAmv474d06Idafcw.jpg",
+                        "width": 720,
+                        "height": 960
+                    },
+                    "description": "",
+                    "unlocked": true,
+                    "icon": "default",
+                    "title": "Special",
+                    "state": "unlocked",
+                    "provider": "foursquare",
+                    "redemption": "webview",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/5432afb6498e4b1b482122c3?venueId=4a63525af964a520bdc41fe3"
+                    },
+                    "venue": {
+                        "id": "4a63525af964a520bdc41fe3",
+                        "name": "Menlo Park Mall",
+                        "contact": {
+                            "phone": "7325491900",
+                            "formattedPhone": "(732) 549-1900",
+                            "twitter": "simonmalls",
+                            "facebook": "131525243536711",
+                            "facebookUsername": "FashionValleyMall",
+                            "facebookName": "Fashion Valley Mall"
+                        },
+                        "location": {
+                            "address": "55 Parsonage Rd",
+                            "lat": 40.54764047,
+                            "lng": -74.33568478,
+                            "distance": 40530,
+                            "postalCode": "08837",
+                            "cc": "US",
+                            "city": "Edison",
+                            "state": "NJ",
+                            "country": "United States",
+                            "formattedAddress": [
+                                "55 Parsonage Rd",
+                                "Edison, NJ 08837"
+                            ]
+                        },
+                        "categories": [
+                            {
+                                "id": "4bf58dd8d48988d1fd941735",
+                                "name": "Mall",
+                                "pluralName": "Malls",
+                                "shortName": "Mall",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/mall_",
+                                    "suffix": ".png"
+                                },
+                                "primary": true
+                            }
+                        ],
+                        "verified": true,
+                        "stats": {
+                            "checkinsCount": 66553,
+                            "usersCount": 17291,
+                            "tipCount": 62
+                        },
+                        "url": "https://www.facebook.com/simonmalls",
+                        "storeId": ""
+                    }
+                },
+                {
+                    "id": "544feae0498eddcc0f41f32c",
+                    "type": "frequency",
+                    "message": "Great Deals on Wine!",
+                    "description": "",
+                    "unlocked": true,
+                    "icon": "default",
+                    "title": "Special",
+                    "state": "unlocked",
+                    "provider": "foursquare",
+                    "redemption": "webview",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/544feae0498eddcc0f41f32c?venueId=441a8599f964a52036311fe3"
+                    },
+                    "venue": {
+                        "id": "441a8599f964a52036311fe3",
+                        "name": "Trader Joe's",
+                        "contact": {
+                            "phone": "2125294612",
+                            "formattedPhone": "(212) 529-4612"
+                        },
+                        "location": {
+                            "address": "142 East 14th St",
+                            "crossStreet": "btwn Irving Pl & 3rd Ave",
+                            "lat": 40.733758,
+                            "lng": -73.988277,
+                            "distance": 8342,
+                            "postalCode": "10003",
+                            "cc": "US",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "United States",
+                            "formattedAddress": [
+                                "142 East 14th St (btwn Irving Pl & 3rd Ave)",
+                                "New York, NY 10003"
+                            ]
+                        },
+                        "categories": [
+                            {
+                                "id": "4bf58dd8d48988d118951735",
+                                "name": "Grocery Store",
+                                "pluralName": "Grocery Stores",
+                                "shortName": "Grocery Store",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/food_grocery_",
+                                    "suffix": ".png"
+                                },
+                                "primary": true
+                            }
+                        ],
+                        "verified": true,
+                        "stats": {
+                            "checkinsCount": 57259,
+                            "usersCount": 17479,
+                            "tipCount": 249
+                        },
+                        "url": "http://www.traderjoes.com",
+                        "storeId": "540"
+                    }
+                },
+                {
+                    "id": "4d648e0f1d6b2d431baf4c17",
+                    "type": "frequency",
+                    "message": "Enjoy a free glass of Prosecco on check in when ordering lunch at Manzo.",
+                    "description": "",
+                    "unlocked": true,
+                    "icon": "default",
+                    "title": "Special",
+                    "state": "unlocked",
+                    "provider": "foursquare",
+                    "redemption": "webview",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/4d648e0f1d6b2d431baf4c17?venueId=4c5ef77bfff99c74eda954d3"
+                    },
+                    "venue": {
+                        "id": "4c5ef77bfff99c74eda954d3",
+                        "name": "Eataly NYC",
+                        "contact": {
+                            "phone": "2122292560",
+                            "formattedPhone": "(212) 229-2560"
+                        },
+                        "location": {
+                            "address": "200 5th Ave",
+                            "crossStreet": "at W 23rd St",
+                            "lat": 40.74186151409088,
+                            "lng": -73.98943362953369,
+                            "distance": 8868,
+                            "postalCode": "10010",
+                            "cc": "US",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "United States",
+                            "formattedAddress": [
+                                "200 5th Ave (at W 23rd St)",
+                                "New York, NY 10010"
+                            ]
+                        },
+                        "categories": [
+                            {
+                                "id": "4bf58dd8d48988d1f5941735",
+                                "name": "Gourmet Shop",
+                                "pluralName": "Gourmet Shops",
+                                "shortName": "Gourmet",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/food_gourmet_",
+                                    "suffix": ".png"
+                                },
+                                "primary": true
+                            }
+                        ],
+                        "verified": true,
+                        "stats": {
+                            "checkinsCount": 121556,
+                            "usersCount": 67248,
+                            "tipCount": 886
+                        },
+                        "url": "http://www.eataly.com/nyc/",
+                        "hasMenu": true,
+                        "delivery": {
+                            "url": "http://www.seamless.com/food-delivery/restaurant.6499.r?a=1026&utm_source=Foursquare&utm_medium=affiliate&utm_campaign=SeamlessOrderDeliveryLink",
+                            "provider": {
+                                "name": "seamless"
+                            }
+                        },
+                        "menu": {
+                            "type": "Services",
+                            "label": "Services",
+                            "anchor": "View Services",
+                            "url": "https://foursquare.com/v/eataly-nyc/4c5ef77bfff99c74eda954d3/menu",
+                            "mobileUrl": "https://foursquare.com/v/4c5ef77bfff99c74eda954d3/device_menu"
+                        },
+                        "storeId": ""
+                    }
+                }
+            ]
+        }
+    }
+}

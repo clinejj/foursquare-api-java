@@ -29,7 +29,7 @@ public class CompactUser implements FoursquareEntity {
 
     /**
      * Returns user's id
-     * 
+     *
      * @return user's id
      */
     public String getId() {
@@ -38,7 +38,7 @@ public class CompactUser implements FoursquareEntity {
 
     /**
      * Returns user's first name
-     * 
+     *
      * @return user's first name
      */
     public String getFirstName() {
@@ -47,7 +47,7 @@ public class CompactUser implements FoursquareEntity {
 
     /**
      * Returns user's last name
-     * 
+     *
      * @return user's last name
      */
     public String getLastName() {
@@ -56,7 +56,7 @@ public class CompactUser implements FoursquareEntity {
 
     /**
      * Returns user's home city
-     * 
+     *
      * @return user's home city
      */
     public String getHomeCity() {
@@ -65,16 +65,16 @@ public class CompactUser implements FoursquareEntity {
 
     /**
      * Returns URL of a profile picture for this user.
-     * 
+     *
      * @return URL of a profile picture for this user.
      */
-    public String getPhoto() {
+    public Photo getPhoto() {
         return photo;
     }
 
     /**
      * Returns male or female
-     * 
+     *
      * @return male or female
      */
     public String getGender() {
@@ -84,7 +84,7 @@ public class CompactUser implements FoursquareEntity {
     /**
      * The relationship of the acting user to this user. One of self, friend, pendingMe, pendingThem
      * or followingThem
-     * 
+     *
      * @return relationship of the acting user to this user
      */
     public String getRelationship() {
@@ -95,10 +95,8 @@ public class CompactUser implements FoursquareEntity {
     private String firstName;
     private String lastName;
     private String homeCity;
-    private String photo;
+    private Photo photo;
     private String gender;
     private String relationship;
-
-    // TODO
     private String type;
 }

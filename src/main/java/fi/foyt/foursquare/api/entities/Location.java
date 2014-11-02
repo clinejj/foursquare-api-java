@@ -4,9 +4,9 @@
  * http://www.foyt.fi
  * Copyright (C) 2014 - Blake Dy / Wallaby
  * http://walla.by
- * 
- * License: 
- * 
+ *
+ * License:
+ *
  * Licensed under GNU Lesser General Public License Version 3 or later (the "LGPL")
  * http://www.gnu.org/licenses/lgpl.html
  */
@@ -17,16 +17,16 @@ import fi.foyt.foursquare.api.FoursquareEntity;
 
 /**
  * Class representing Location entity
- * 
+ *
  * @author Antti Leppä / Blake Dy
  */
 public class Location implements FoursquareEntity {
-  
+
   private static final long serialVersionUID = -76729758415926344L;
-  
+
   /**
    * Returns address
-   * 
+   *
    * @return address
    */
   public String getAddress() {
@@ -35,7 +35,7 @@ public class Location implements FoursquareEntity {
 
   /**
    * Returns cross street
-   * 
+   *
    * @return cross street
    */
   public String getCrossStreet() {
@@ -44,7 +44,7 @@ public class Location implements FoursquareEntity {
 
   /**
    * Returns city
-   * 
+   *
    * @return city
    */
   public String getCity() {
@@ -53,7 +53,7 @@ public class Location implements FoursquareEntity {
 
   /**
    * Returns state
-   *  
+   *
    * @return state
    */
   public String getState() {
@@ -62,7 +62,7 @@ public class Location implements FoursquareEntity {
 
   /**
    * Returns postal Code
-   * 
+   *
    * @return postal Code
    */
   public String getPostalCode() {
@@ -71,25 +71,25 @@ public class Location implements FoursquareEntity {
 
   /**
    * Returns country
-   * 
+   *
    * @return country
    */
   public String getCountry() {
     return country;
   }
-  
+
   /**
    * Returns name
-   * 
+   *
    * @return name
    */
   public String getName() {
     return name;
   }
-  
+
   /**
    * Returns cc
-   * 
+   *
    * @return cc
    */
   public String getCc() {
@@ -98,7 +98,7 @@ public class Location implements FoursquareEntity {
 
   /**
    * Returns latitude
-   * 
+   *
    * @return latitude
    */
   public Double getLat() {
@@ -107,7 +107,7 @@ public class Location implements FoursquareEntity {
 
   /**
    * Returns longitude
-   * 
+   *
    * @return longitude
    */
   public Double getLng() {
@@ -116,11 +116,21 @@ public class Location implements FoursquareEntity {
 
   /**
    * Returns distance
-   * 
+   *
    * @return distance
    */
   public Double getDistance() {
     return distance;
+  }
+
+  /**
+   * Returns the well-formatted address for this checkin. Each
+   * element is a new line in the address
+   *
+   * @return
+   */
+  public String[] getFormattedAddress() {
+      return formattedAddress;
   }
 
   private String address;
@@ -134,4 +144,5 @@ public class Location implements FoursquareEntity {
   private Double lat;
   private Double lng;
   private Double distance;
+  private String[] formattedAddress;
 }
