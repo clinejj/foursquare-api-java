@@ -15,6 +15,8 @@ local.properties
 .classpath
 .settings/
 .loadpath
+.idea
+*.iml
 
 # External tool builders
 .externalToolBuilders/
