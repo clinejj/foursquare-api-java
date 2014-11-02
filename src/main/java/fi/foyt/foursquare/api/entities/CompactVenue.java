@@ -32,7 +32,7 @@ public class CompactVenue implements FoursquareEntity {
 
     /**
      * Returns id of the venue
-     * 
+     *
      * @return id of the venue
      */
     public String getId() {
@@ -41,7 +41,7 @@ public class CompactVenue implements FoursquareEntity {
 
     /**
      * Returns name of the venue
-     * 
+     *
      * @return name of the venue
      */
     public String getName() {
@@ -50,7 +50,7 @@ public class CompactVenue implements FoursquareEntity {
 
     /**
      * Returns contact information for the venue
-     * 
+     *
      * @return contact information for the venue
      */
     public Contact getContact() {
@@ -59,7 +59,7 @@ public class CompactVenue implements FoursquareEntity {
 
     /**
      * Returns venue's contact information
-     * 
+     *
      * @return venue's contact information
      */
     public Location getLocation() {
@@ -68,7 +68,7 @@ public class CompactVenue implements FoursquareEntity {
 
     /**
      * Returns array of venue's categories
-     * 
+     *
      * @return array of venue's categories
      */
     public Category[] getCategories() {
@@ -77,7 +77,7 @@ public class CompactVenue implements FoursquareEntity {
 
     /**
      * Returns true if this venue has been verified
-     * 
+     *
      * @return true if this venue has been verified
      */
     public Boolean getVerified() {
@@ -86,7 +86,7 @@ public class CompactVenue implements FoursquareEntity {
 
     /**
      * Returns statistical information about this venue
-     * 
+     *
      * @return statistical information about this venue
      */
     public Stats getStats() {
@@ -95,7 +95,7 @@ public class CompactVenue implements FoursquareEntity {
 
     /**
      * Returns url for this venue
-     * 
+     *
      * @return url for this venue
      */
     public String getUrl() {
@@ -105,7 +105,7 @@ public class CompactVenue implements FoursquareEntity {
     /**
      * Returns the hours during the week that the venue is open along with any named hours segments
      * in a human-readable format.
-     * 
+     *
      * @return the hours during the week that the venue is open along with any named hours segments
      *         in a human-readable format.
      */
@@ -115,7 +115,7 @@ public class CompactVenue implements FoursquareEntity {
 
     /**
      * Returns the hours during the week when people usually go to the venue.
-     * 
+     *
      * @return the hours during the week when people usually go to the venue.
      */
     public Hours getPopular() {
@@ -125,7 +125,7 @@ public class CompactVenue implements FoursquareEntity {
     /**
      * Returns an object containing url and mobileUrl that display the menu information for this
      * venue.
-     * 
+     *
      * @return an object containing url and mobileUrl that display the menu information for this
      *         venue.
      */
@@ -136,7 +136,7 @@ public class CompactVenue implements FoursquareEntity {
     /**
      * Returns an object containing the price tier from 1 (least pricey) - 4 (most pricey) and a
      * message describing the price tier.
-     * 
+     *
      * @return an object containing the price tier from 1 (least pricey) - 4 (most pricey) and a
      *         message describing the price tier.
      */
@@ -146,7 +146,7 @@ public class CompactVenue implements FoursquareEntity {
 
     /**
      * Returns a numerical rating of the venue (0 through 10).
-     * 
+     *
      * @return a numerical rating of the venue (0 through 10).
      */
     public Integer getRating() {
@@ -155,16 +155,16 @@ public class CompactVenue implements FoursquareEntity {
 
     /**
      * Returns array of specials at this venue
-     * 
+     *
      * @return array of specials at this venue
      */
-    public SpecialGroup getSpecials() {
+    public CompleteSpecial[] getSpecials() {
         return specials;
     }
 
     /**
      * Returns information about who is here now
-     * 
+     *
      * @return information about who is here now
      */
     public HereNow getHereNow() {
@@ -193,7 +193,7 @@ public class CompactVenue implements FoursquareEntity {
     private Menu menu;
     private Price price;
     private Integer rating;
-    private SpecialGroup specials;
+    private CompleteSpecial[] specials;
     private HereNow hereNow;
     private TodoGroup todos;
 

@@ -113,7 +113,7 @@ public class CompleteVenue extends CompactVenue {
      *
      * @return an array of specials near this venue.
      */
-    public SpecialGroup getSpecialsNearby() {
+    public CompleteSpecial[] getSpecialsNearby() {
         return specialsNearby;
     }
 
@@ -169,6 +169,7 @@ public class CompleteVenue extends CompactVenue {
      *
      * @return todo group
      */
+    @Override
     public TodoGroup getTodos() {
         return todos;
     }
@@ -182,7 +183,7 @@ public class CompleteVenue extends CompactVenue {
     private Count beenHere;
     private String shortUrl;
     private String canonicalUrl;
-    private SpecialGroup specialsNearby;
+    private CompleteSpecial[] specialsNearby;
     private Photos photos;
     private UserGroups likes;
     private Boolean like;

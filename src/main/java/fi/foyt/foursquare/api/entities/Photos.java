@@ -22,7 +22,7 @@ public class Photos extends Count {
 
     /**
      * Returns array of PhotoGroups
-     * 
+     *
      * @return array of PhotoGroups
      */
     public PhotoGroup[] getGroups() {
@@ -30,5 +30,4 @@ public class Photos extends Count {
     }
 
     private PhotoGroup[] groups;
-    private int count;
 }
