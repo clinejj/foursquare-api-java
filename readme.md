@@ -19,4 +19,3 @@ Status
 =======
 ![travis status](https://travis-ci.org/lucianobustos/foursquare-api-java.svg)
 [See all builds at travis-ci] (https://travis-ci.org/lucianobustos/foursquare-api-java) for build status 
-Thanks to @lucianobustos for setting up the CI.
