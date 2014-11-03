@@ -1,0 +1,16 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "errorType": "other",
+        "code": 400,
+        "errorDetail": "Missing file upload"
+    },
+    "response": {}
+}

@@ -1,0 +1,120 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "code": 200
+    },
+    "response": {
+        "checkin": {
+            "likes": {
+                "count": 0,
+                "groups": []
+            },
+            "like": false,
+            "photos": {
+                "count": 1,
+                "items": [
+                    {
+                        "suffix": "/UBTEFRRMLYOHHX4RWHFTGQKSDMY14A1JLHURUTG5VUJ02KQ0.jpg",
+                        "visibility": "friends",
+                        "height": 540,
+                        "width": 720,
+                        "prefix": "https://irs3.4sqi.net/img/general/",
+                        "user": {
+                            "gender": "male",
+                            "id": "32",
+                            "firstName": "Dens",
+                            "photo": {
+                                "prefix": "https://irs0.4sqi.net/img/user/",
+                                "suffix": "/32_1239135232.jpg"
+                            }
+                        },
+                        "id": "4d627f80d47328fd96bf3448",
+                        "createdAt": 1298300800
+                    }
+                ]
+            },
+            "reasonCannotAddComments": "notfriends",
+            "venue": {
+                "verified": true,
+                "name": "Tompkins Square Park",
+                "url": "http://www.nycgovparks.org/parks/tompkinssquarepark",
+                "specials": {
+                    "count": 0
+                },
+                "contact": {
+                    "phone": "+12123877685",
+                    "twitter": "nycparks",
+                    "formattedPhone": "+1 212-387-7685"
+                },
+                "location": {
+                    "city": "New York",
+                    "cc": "US",
+                    "country": "United States",
+                    "postalCode": "10009",
+                    "state": "NY",
+                    "formattedAddress": [
+                        "E 7th St. to E 10th St. (btwn Ave. A & B)",
+                        "New York, NY 10009",
+                        "United States"
+                    ],
+                    "crossStreet": "btwn Ave. A & B",
+                    "address": "E 7th St. to E 10th St.",
+                    "lat": 40.72651075083395,
+                    "lng": -73.98171901702881
+                },
+                "stats": {
+                    "tipCount": 113,
+                    "checkinsCount": 36811,
+                    "usersCount": 13221
+                },
+                "id": "408c5100f964a520c6f21ee3",
+                "categories": [
+                    {
+                        "pluralName": "Parks",
+                        "primary": true,
+                        "name": "Park",
+                        "shortName": "Park",
+                        "id": "4bf58dd8d48988d163941735",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                            "suffix": ".png"
+                        }
+                    }
+                ]
+            },
+            "source": {
+                "url": "https://foursquare.com/download/#/iphone",
+                "name": "foursquare for iPhone"
+            },
+            "shout": "Another one of these days. #snow",
+            "score": {
+                "total": 0,
+                "scores": []
+            },
+            "objectLeaderboards": [
+                "53f4b1c04b906a01e1abffee"
+            ],
+            "createdAt": 1298300776,
+            "reasonCannotSeeComments": "notfriends",
+            "type": "checkin",
+            "id": "4d627f6814963704dc28ff94",
+            "timeZoneOffset": -300,
+            "user": {
+                "gender": "male",
+                "id": "32",
+                "firstName": "Dens",
+                "photo": {
+                    "prefix": "https://irs0.4sqi.net/img/user/",
+                    "suffix": "/32_1239135232.jpg"
+                }
+            }
+        }
+    }
+}

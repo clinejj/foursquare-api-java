@@ -1,0 +1,179 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "code": 200
+    },
+    "response": {
+        "notifications": [
+            {
+                "item": {
+                    "entities": [
+                        {
+                            "indices": [
+                                17,
+                                18
+                            ],
+                            "type": "count",
+                            "value": 2
+                        }
+                    ],
+                    "message": "You've been here 2 times! Sorry, no points or badges for this one - your device thinks you're too far away."
+                },
+                "type": "message",
+                "alert": false
+            },
+            {
+                "item": {
+                    "insights": {
+                        "count": 1,
+                        "items": [
+                            {
+                                "shareable": false,
+                                "image": "https://ss1.4sqi.net/img/points/swarm-travel_144.png",
+                                "points": {
+                                    "image": {
+                                        "prefix": "https://ss1.4sqi.net/img/points/swarm-travel_",
+                                        "name": ".png",
+                                        "sizes": [
+                                            44,
+                                            60,
+                                            120
+                                        ]
+                                    },
+                                    "points": 6,
+                                    "message": "You've traveled 5494 miles since your last check-in!"
+                                },
+                                "type": "pointsReward",
+                                "title": "You've traveled 5494 miles since your last check-in!"
+                            }
+                        ]
+                    }
+                },
+                "type": "insights",
+                "alert": true
+            }
+        ],
+        "checkin": {
+            "distance": 0,
+            "likes": {
+                "count": 0,
+                "groups": []
+            },
+            "like": false,
+            "photos": {
+                "count": 0,
+                "items": []
+            },
+            "posts": {
+                "count": 0,
+                "textCount": 0
+            },
+            "venue": {
+                "verified": false,
+                "name": "T\u00fcrkiye",
+                "reasons": {
+                    "count": 1,
+                    "items": [
+                        {
+                            "reasonName": "hereNowReason",
+                            "type": "general",
+                            "target": {
+                                "object": {
+                                    "ignorable": false,
+                                    "type": "checkinDetail",
+                                    "id": "5456f9dc498edb7364253c1a",
+                                    "target": {
+                                        "url": "/checkins/5456f9dc498edb7364253c19",
+                                        "type": "path"
+                                    }
+                                },
+                                "type": "navigation"
+                            },
+                            "summary": "You're here! +6 points"
+                        }
+                    ]
+                },
+                "specials": {
+                    "count": 0
+                },
+                "contact": {},
+                "location": {
+                    "distance": 443604,
+                    "cc": "TR",
+                    "country": "T\u00fcrkiye",
+                    "formattedAddress": [
+                        "T\u00fcrkiye"
+                    ],
+                    "lat": 39.0,
+                    "lng": 35.0
+                },
+                "stats": {
+                    "tipCount": 53,
+                    "checkinsCount": 3806,
+                    "usersCount": 2812
+                },
+                "id": "5117907ae4b0d42471c50b73",
+                "categories": [
+                    {
+                        "pluralName": "Countries",
+                        "primary": true,
+                        "name": "Country",
+                        "shortName": "Country",
+                        "id": "530e33ccbcbc57f1066bbff7",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/neighborhood_",
+                            "suffix": ".png"
+                        }
+                    }
+                ]
+            },
+            "comments": {
+                "count": 0,
+                "items": []
+            },
+            "source": {
+                "url": "https://developer.foursquare.com",
+                "name": "Foursquare API documentation"
+            },
+            "score": {
+                "total": 6,
+                "scores": [
+                    {
+                        "message": "You've traveled 5494 miles since your last check-in!",
+                        "points": 6,
+                        "icon": "https://ss1.4sqi.net/img/points/swarm-travel.png"
+                    }
+                ]
+            },
+            "createdAt": 1414986204,
+            "objectLeaderboards": [],
+            "type": "checkin",
+            "id": "5456f9dc498edb7364253c19",
+            "timeZoneOffset": 120,
+            "user": {
+                "gender": "male",
+                "firstName": "FS",
+                "relationship": "self",
+                "photo": {
+                    "prefix": "https://irs2.4sqi.net/img/user/",
+                    "suffix": "/99225688-FW2ZJ3JSH3U4STLY.jpg"
+                },
+                "lastName": "Java",
+                "id": "99225688"
+            }
+        },
+        "notificationsOrder": [
+            "special",
+            "score",
+            "leaderboard",
+            "replies"
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "errorType": "not_authorized",
+        "code": 403,
+        "errorDetail": "Cannot comment on this checkin (must be friends with this user)."
+    },
+    "response": {}
+}

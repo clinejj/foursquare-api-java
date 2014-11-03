@@ -1,0 +1,16 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "errorType": "not_authorized",
+        "code": 403,
+        "errorDetail": "User not authorized to edit venue"
+    },
+    "response": {}
+}
