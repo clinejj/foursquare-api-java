@@ -2,6 +2,8 @@
  * FoursquareAPI - Foursquare API for Java
  * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
  * http://www.foyt.fi
+ * Copyright (C) 2014 - Blake Dy / Wallaby
+ * http://walla.by
  * 
  * License: 
  * 
@@ -16,7 +18,7 @@ package fi.foyt.foursquare.api.entities;
  * 
  * @see <a href="https://developer.foursquare.com/docs/responses/tip.html" target="_blank">https://developer.foursquare.com/docs/responses/tip.html</a>
  * 
- * @author Antti Leppä
+ * @author Antti Leppä / Blake Dy
  */
 public class CompleteTip extends CompactTip {
   
@@ -42,4 +44,10 @@ public class CompleteTip extends CompactTip {
   
   private UserGroups todo;
   private UserGroups done;
+  
+  // TODO
+  private String canonicalUrl;
+  private String likes;
+  private Boolean like;
+  private Boolean logView;
 }

@@ -1,0 +1,39 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "code": 200
+    },
+    "response": {
+        "settings": {
+            "facebookFrictionless": false,
+            "allowSharesFromFollowers": true,
+            "sendTipsToTwitter": false,
+            "sendTipsToFacebook": false,
+            "facebookLinked": false,
+            "twitter": "fs_java",
+            "facebookTimeline": false,
+            "receivePings": false,
+            "pageUpdates": true,
+            "twitterLinked": true,
+            "passwordSet": true,
+            "sendToTwitter": false,
+            "foreignConsent": "undetermined",
+            "mapKey": "dnv9my2eseobd",
+            "measurementSystem": "imperial",
+            "sendToFacebook": false,
+            "alreadySeenRadarSplash": true,
+            "canBeCheckedInByFriends": false,
+            "locationSettings": {
+                "showPriceFilter": false
+            },
+            "eligibleForRadarSplash": false
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "code": 200
+    },
+    "response": {
+        "todos": {
+            "count": 0
+        }
+    }
+}

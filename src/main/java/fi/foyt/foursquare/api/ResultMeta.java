@@ -19,6 +19,23 @@ public class ResultMeta {
     this.errorType = errorType;
     this.errorDetail = errorDetail;
   }
+  
+  /**
+   * Constructor 
+   * 
+   * @param code code
+   * @param errorType errorType
+   * @param errorDetail error details
+   * @param rateLimit rate limit
+   * @param rateLimitRemaining rate limit remaining
+   */
+  public ResultMeta(Integer code, String errorType, String errorDetail, String rateLimit, String rateLimitRemaining) {
+    this.code = code;
+    this.errorType = errorType;
+    this.errorDetail = errorDetail;
+    this.rateLimit = rateLimit;
+    this.rateLimitRemaining = rateLimitRemaining;
+  }
 
   /**
    * Returns code
@@ -50,8 +67,28 @@ public class ResultMeta {
   public String getErrorDetail() {
     return errorDetail;
   }
+  
+  /**
+   * Returns rate limit
+   * 
+   * @return rate limit
+   */
+  public String getRateLimit() {
+    return rateLimit;
+  }
+  
+  /**
+   * Returns rate limit remaining
+   * 
+   * @return rate limit remaining
+   */
+  public String getRateLimitRemaining() {
+    return rateLimitRemaining;
+  }
 
   private Integer code;
   private String errorType;
   private String errorDetail;
+  private String rateLimit;
+  private String rateLimitRemaining;
 }

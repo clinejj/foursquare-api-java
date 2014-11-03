@@ -59,7 +59,7 @@ public class FoursquareApi {
   @Test
   public final void testSetVersion() throws FoursquareApiException {
     fi.foyt.foursquare.api.FoursquareApi foursquareApi = TestUtils.getAnonymousFoursquareApi();
-    foursquareApi.setVersion("20110101");
+    foursquareApi.setVersion("20140131");
   }
   
   @Test

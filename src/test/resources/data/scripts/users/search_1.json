@@ -1,0 +1,48 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "code": 200
+    },
+    "response": {
+        "results": [
+            {
+                "bio": "co-founder, foursquare.",
+                "firstName": "naveen",
+                "superuser": 3,
+                "gender": "male",
+                "lists": {
+                    "groups": [
+                        {
+                            "count": 83,
+                            "items": [],
+                            "type": "created"
+                        }
+                    ]
+                },
+                "homeCity": "New York, NY",
+                "contact": {
+                    "twitter": "naveen",
+                    "facebook": "29103995"
+                },
+                "photo": {
+                    "prefix": "https://irs0.4sqi.net/img/user/",
+                    "suffix": "/IHBVKYMA1PTMSFYR.png"
+                },
+                "tips": {
+                    "count": 521
+                },
+                "id": "33"
+            }
+        ],
+        "unmatched": {
+            "twitter": []
+        }
+    }
+}

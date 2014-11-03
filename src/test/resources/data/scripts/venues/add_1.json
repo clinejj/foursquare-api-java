@@ -1,0 +1,64 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "errorMessage": "Possible duplicates found.",
+        "errorType": "other",
+        "code": 409,
+        "errorDetail": "Found duplicates"
+    },
+    "response": {
+        "candidateDuplicateVenues": [
+            {
+                "verified": false,
+                "name": "Apuv\u00c3\u00a4lineyksikk\u00c3\u00b6 / Moision toimipiste",
+                "contact": {
+                    "phone": "+358443516511",
+                    "formattedPhone": "+358 44 3516511"
+                },
+                "location": {
+                    "distance": 0,
+                    "city": "Mikkeli",
+                    "cc": "FI",
+                    "country": "Suomi",
+                    "postalCode": "50520",
+                    "state": "Etel\u00c3\u00a4-Savo",
+                    "formattedAddress": [
+                        "Moisiontie 11 b",
+                        "50520 Mikkeli",
+                        "Suomi"
+                    ],
+                    "address": "Moisiontie 11 b",
+                    "lat": 61.677701,
+                    "lng": 27.272585
+                },
+                "stats": {
+                    "tipCount": 0,
+                    "checkinsCount": 0,
+                    "usersCount": 0
+                },
+                "id": "4e575eb662e12dc097f58264",
+                "categories": [
+                    {
+                        "pluralName": "Medical Centers",
+                        "primary": true,
+                        "name": "Medical Center",
+                        "shortName": "Medical",
+                        "id": "4bf58dd8d48988d104941735",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/building/medical_",
+                            "suffix": ".png"
+                        }
+                    }
+                ]
+            }
+        ],
+        "ignoreDuplicatesKey": "badc9016ba02148668e06a3930fe89a3"
+    }
+}

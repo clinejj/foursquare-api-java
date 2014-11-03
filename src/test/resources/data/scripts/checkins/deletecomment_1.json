@@ -1,0 +1,16 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "errorType": "param_error",
+        "code": 400,
+        "errorDetail": "No such comment found"
+    },
+    "response": {}
+}

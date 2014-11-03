@@ -40,6 +40,16 @@ public class Stats implements FoursquareEntity {
     return usersCount;
   }
   
+  /**
+   * Returns tip count
+   * 
+   * @return tip count
+   */
+  public Integer getTipCount() {
+    return tipCount;
+  }
+  
   private Integer checkinsCount;
   private Integer usersCount;
+  private Integer tipCount;
 }

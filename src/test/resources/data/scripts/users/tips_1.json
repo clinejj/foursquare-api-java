@@ -1,0 +1,102 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "code": 200
+    },
+    "response": {
+        "tips": {
+            "count": 1,
+            "items": [
+                {
+                    "viewCount": 0,
+                    "todo": {
+                        "count": 0
+                    },
+                    "canonicalUrl": "https://foursquare.com/item/5456f8a1498e51a8bae5eb0d",
+                    "url": "http://www.beautifuldays.org",
+                    "text": "Wonderful festival called Beautiful Days here at 19, 20 & 21 of August 2011",
+                    "venue": {
+                        "verified": false,
+                        "name": "Escot",
+                        "photos": {
+                            "count": 0,
+                            "groups": [
+                                {
+                                    "count": 0,
+                                    "items": [
+                                        {
+                                            "suffix": "/10065846_Om7sJVgvwnZKx5ZbApLdjaQKp9OXnDr0sV2-9Gtarm4.jpg",
+                                            "visibility": "public",
+                                            "height": 720,
+                                            "width": 960,
+                                            "prefix": "https://irs2.4sqi.net/img/general/",
+                                            "user": {
+                                                "lastName": "Selley",
+                                                "photo": {
+                                                    "prefix": "https://irs1.4sqi.net/img/user/",
+                                                    "suffix": "/10065846-PD5WP5UPWDRTUIXF.jpg"
+                                                },
+                                                "id": "10065846",
+                                                "firstName": "Adam",
+                                                "gender": "male"
+                                            },
+                                            "id": "51a0d008498e624ecfd54ec3",
+                                            "createdAt": 1369493512
+                                        }
+                                    ],
+                                    "type": "venue",
+                                    "name": "Venue photos"
+                                }
+                            ]
+                        },
+                        "contact": {},
+                        "location": {
+                            "lat": 50.774260044524226,
+                            "cc": "GB",
+                            "lng": -3.3049108096486752,
+                            "formattedAddress": [
+                                "United Kingdom"
+                            ],
+                            "country": "United Kingdom"
+                        },
+                        "stats": {
+                            "tipCount": 5,
+                            "checkinsCount": 147,
+                            "usersCount": 88
+                        },
+                        "id": "4bb73a402ea19521b1a6ac2f",
+                        "categories": [
+                            {
+                                "pluralName": "Parks",
+                                "primary": true,
+                                "name": "Park",
+                                "shortName": "Park",
+                                "id": "4bf58dd8d48988d163941735",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                                    "suffix": ".png"
+                                }
+                            }
+                        ],
+                        "like": false
+                    },
+                    "likes": {
+                        "count": 0,
+                        "groups": []
+                    },
+                    "type": "user",
+                    "id": "5456f8a1498e51a8bae5eb0d",
+                    "createdAt": 1414985889,
+                    "like": false
+                }
+            ]
+        }
+    }
+}

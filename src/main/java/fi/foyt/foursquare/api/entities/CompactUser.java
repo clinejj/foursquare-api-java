@@ -2,6 +2,8 @@
  * FoursquareAPI - Foursquare API for Java
  * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
  * http://www.foyt.fi
+ * Copyright (C) 2014 - Blake Dy / Wallaby
+ * http://walla.by
  * 
  * License: 
  * 
@@ -18,7 +20,7 @@ import fi.foyt.foursquare.api.FoursquareEntity;
  * 
  * @see <a href="https://developer.foursquare.com/docs/responses/user.html" target="_blank">https://developer.foursquare.com/docs/responses/user.html</a>
  * 
- * @author Antti Leppä
+ * @author Antti Leppä / Blake Dy
  */
 public class CompactUser implements FoursquareEntity {
 
@@ -94,4 +96,7 @@ public class CompactUser implements FoursquareEntity {
   private String photo;
   private String gender;
   private String relationship;
+  
+  // TODO
+  private String type;
 }
