@@ -3,7 +3,7 @@
 	<groupId>fi.foyt</groupId>
 	<artifactId>foursquare-api</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.3-SNAPSHOT</version>
+	<version>1.0.4-SNAPSHOT</version>
 	<name>Foursquare API</name>
 	<licenses>
 		<license>
@@ -47,8 +47,8 @@
 
 	<distributionManagement>
 		<repository>
-			<id>foursquareapijava</id>
-			<url>svn:https://foursquare-api-java.googlecode.com/svn/repository</url>
+			<id>foursquare-api-java</id>
+			<url>git:https://github.com/clinejj/foursquare-api-java</url>
 		</repository>
 	</distributionManagement>
 
@@ -165,17 +165,17 @@
 	</reporting>
 
 	<issueManagement>
-		<url>https://code.google.com/p/foursquare-api-java/issues/</url>
-		<system>Google Code</system>
+		<url>https://github.com/clinejj/foursquare-api-java/issues</url>
+		<system>GitHub</system>
 	</issueManagement>
 	<scm>
-		<url>http://foursquare-api-java.googlecode.com/svn/</url>
-		<developerConnection>scm:svn:https://foursquare-api-java.googlecode.com/svn/trunk</developerConnection>
+		<url>https://github.com/clinejj/foursquare-api-java</url>
+		<developerConnection>git:https://github.com/clinejj/foursquare-api-java.git</developerConnection>
 	</scm>
 	<organization>
-		<name>Foyt</name>
-		<url>http://www.foyt.fi</url>
+		<name>John Cline</name>
+		<url>https://github.com/clinejj</url>
 	</organization>
-	<url>http://foursquare-api-java.googlecode.com/</url>
+	<url>https://github.com/clinejj/foursquare-api-java</url>
 	<description>Foursquare V2 API for Java</description>
 </project>
