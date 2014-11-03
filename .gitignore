@@ -30,3 +30,5 @@ local.properties
 
 /target/*
 /target/
+
+src/test/resources/data/scripts/*/*.json
