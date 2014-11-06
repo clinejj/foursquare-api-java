@@ -1,0 +1,263 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "code": 200
+    },
+    "response": {
+        "venues": [
+            {
+                "verified": true,
+                "name": "Mission Escape Games",
+                "url": "http://www.missionescapegames.com",
+                "storeId": "",
+                "hereNow": {
+                    "count": 5,
+                    "groups": [
+                        {
+                            "count": 5,
+                            "items": [],
+                            "type": "others",
+                            "name": "Other people here"
+                        }
+                    ],
+                    "summary": "5 people are checked in here"
+                },
+                "contact": {
+                    "facebookName": "Mission Escape Games",
+                    "twitter": "mescapegames",
+                    "phone": "+13479038860",
+                    "facebook": "268934419953206",
+                    "formattedPhone": "+1 347-903-8860",
+                    "facebookUsername": "missionescapegames"
+                },
+                "location": {
+                    "distance": 1889,
+                    "city": "New York",
+                    "cc": "US",
+                    "country": "United States",
+                    "postalCode": "10002",
+                    "state": "NY",
+                    "formattedAddress": [
+                        "55 Chrystie St RM210",
+                        "New York, NY 10002",
+                        "United States"
+                    ],
+                    "address": "55 Chrystie St RM210",
+                    "lat": 40.7164832781577,
+                    "lng": -73.99464443909345
+                },
+                "venuePage": {
+                    "id": "86349052"
+                },
+                "stats": {
+                    "tipCount": 2,
+                    "checkinsCount": 247,
+                    "usersCount": 247
+                },
+                "id": "537ae03e498eddb91b359eb8",
+                "categories": [
+                    {
+                        "pluralName": "Theme Parks",
+                        "primary": true,
+                        "name": "Theme Park",
+                        "shortName": "Theme Park",
+                        "id": "4bf58dd8d48988d182941735",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/themepark_",
+                            "suffix": ".png"
+                        }
+                    }
+                ]
+            },
+            {
+                "verified": true,
+                "name": "UA Court Street Stadium 12",
+                "storeId": "Brooklyn",
+                "hereNow": {
+                    "count": 5,
+                    "groups": [
+                        {
+                            "count": 5,
+                            "items": [],
+                            "type": "others",
+                            "name": "Other people here"
+                        }
+                    ],
+                    "summary": "5 people are checked in here"
+                },
+                "events": {
+                    "count": 15,
+                    "summary": "15 movies"
+                },
+                "contact": {
+                    "phone": "+18444627342",
+                    "twitter": "regalmovies",
+                    "formattedPhone": "+1 844-462-7342"
+                },
+                "location": {
+                    "distance": 1249,
+                    "city": "Brooklyn",
+                    "cc": "US",
+                    "country": "United States",
+                    "postalCode": "11201",
+                    "state": "NY",
+                    "formattedAddress": [
+                        "106 Court St",
+                        "Brooklyn, NY 11201",
+                        "United States"
+                    ],
+                    "address": "106 Court St",
+                    "lat": 40.69054802,
+                    "lng": -73.99200457
+                },
+                "stats": {
+                    "tipCount": 122,
+                    "checkinsCount": 25515,
+                    "usersCount": 11351
+                },
+                "id": "4ada0b96f964a520b61d21e3",
+                "categories": [
+                    {
+                        "pluralName": "Movie Theaters",
+                        "primary": true,
+                        "name": "Movie Theater",
+                        "shortName": "Movie Theater",
+                        "id": "4bf58dd8d48988d17f941735",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/movietheater_",
+                            "suffix": ".png"
+                        }
+                    }
+                ]
+            },
+            {
+                "verified": true,
+                "name": "Manhattan Bridge",
+                "url": "http://www.nyc.gov/dot",
+                "storeId": "",
+                "hereNow": {
+                    "count": 5,
+                    "groups": [
+                        {
+                            "count": 5,
+                            "items": [],
+                            "type": "others",
+                            "name": "Other people here"
+                        }
+                    ],
+                    "summary": "5 people are checked in here"
+                },
+                "contact": {
+                    "facebookUsername": "NYCDOT",
+                    "twitter": "nyc_dot",
+                    "facebook": "166279802886",
+                    "facebookName": "NYC DOT"
+                },
+                "location": {
+                    "distance": 1068,
+                    "city": "New York",
+                    "cc": "US",
+                    "country": "United States",
+                    "postalCode": "10002",
+                    "state": "NY",
+                    "formattedAddress": [
+                        "Manhattan Bridge",
+                        "New York, NY 10002",
+                        "United States"
+                    ],
+                    "address": "Manhattan Bridge",
+                    "lat": 40.705888200473375,
+                    "lng": -73.9900016784668
+                },
+                "stats": {
+                    "tipCount": 150,
+                    "checkinsCount": 104601,
+                    "usersCount": 21220
+                },
+                "id": "4a32c3f9f964a5208c9a1fe3",
+                "categories": [
+                    {
+                        "pluralName": "Bridges",
+                        "primary": true,
+                        "name": "Bridge",
+                        "shortName": "Bridge",
+                        "id": "4bf58dd8d48988d1df941735",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/bridge_",
+                            "suffix": ".png"
+                        }
+                    }
+                ]
+            },
+            {
+                "verified": false,
+                "name": "Forgetmenot",
+                "url": "http://www.forgtmenotnyc.com",
+                "hereNow": {
+                    "count": 5,
+                    "groups": [
+                        {
+                            "count": 5,
+                            "items": [],
+                            "type": "others",
+                            "name": "Other people here"
+                        }
+                    ],
+                    "summary": "5 people are checked in here"
+                },
+                "delivery": {
+                    "url": "http://www.seamless.com/food-delivery/restaurant.23245.r?a=1026&utm_source=Foursquare&utm_medium=affiliate&utm_campaign=SeamlessOrderDeliveryLink",
+                    "provider": {
+                        "name": "seamless"
+                    }
+                },
+                "contact": {
+                    "phone": "+16467073195",
+                    "formattedPhone": "+1 646-707-3195"
+                },
+                "location": {
+                    "distance": 1762,
+                    "city": "New York",
+                    "cc": "US",
+                    "country": "United States",
+                    "postalCode": "10002",
+                    "state": "NY",
+                    "formattedAddress": [
+                        "138 Division St",
+                        "New York, NY 10002",
+                        "United States"
+                    ],
+                    "address": "138 Division St",
+                    "lat": 40.714455884622296,
+                    "lng": -73.99147659651986
+                },
+                "stats": {
+                    "tipCount": 42,
+                    "checkinsCount": 3571,
+                    "usersCount": 1615
+                },
+                "id": "4fd38a04e4b065401a9aaf88",
+                "categories": [
+                    {
+                        "pluralName": "New American Restaurants",
+                        "primary": true,
+                        "name": "New American Restaurant",
+                        "shortName": "New American",
+                        "id": "4bf58dd8d48988d157941735",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/newamerican_",
+                            "suffix": ".png"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

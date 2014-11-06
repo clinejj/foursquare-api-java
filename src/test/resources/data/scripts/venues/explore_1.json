@@ -1,0 +1,461 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "code": 200
+    },
+    "response": {
+        "headerFullLocation": "Current map view",
+        "totalResults": 5,
+        "suggestedRadius": 30000,
+        "groups": [
+            {
+                "items": [
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 0
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/5351cbe111d2a8d00efc3af1",
+                                "text": "Hermoso lugar, es mejor llamar antes para conocer los horarios y no perder el viaje.",
+                                "logView": true,
+                                "user": {
+                                    "lastName": "Cardozo",
+                                    "photo": {
+                                        "prefix": "https://irs3.4sqi.net/img/user/",
+                                        "suffix": "/57835254-BFJAX4CIGHO5XAI2.jpg"
+                                    },
+                                    "id": "57835254",
+                                    "firstName": "Fabi\u00e1n",
+                                    "gender": "none"
+                                },
+                                "type": "user",
+                                "id": "5351cbe111d2a8d00efc3af1",
+                                "createdAt": 1397869537
+                            }
+                        ],
+                        "venue": {
+                            "rating": 7.3,
+                            "verified": false,
+                            "name": "Casa Museo Gabriel Garc\u00eda M\u00e1rquez",
+                            "ratingColor": "C5DE35",
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "photos": {
+                                "count": 17,
+                                "groups": []
+                            },
+                            "contact": {},
+                            "location": {
+                                "distance": 24242,
+                                "cc": "CO",
+                                "country": "Colombia",
+                                "formattedAddress": [
+                                    "Colombia"
+                                ],
+                                "lat": 10.592478100827776,
+                                "lng": -74.19269579615094
+                            },
+                            "ratingSignals": 10,
+                            "stats": {
+                                "tipCount": 1,
+                                "checkinsCount": 53,
+                                "usersCount": 51
+                            },
+                            "id": "5154818fe4b012dfea3abcef",
+                            "categories": [
+                                {
+                                    "pluralName": "History Museums",
+                                    "primary": true,
+                                    "name": "History Museum",
+                                    "shortName": "History Museum",
+                                    "id": "4bf58dd8d48988d190941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/museum_history_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-5154818fe4b012dfea3abcef-0"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "venue": {
+                            "verified": false,
+                            "name": "Rio frio",
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "photos": {
+                                "count": 9,
+                                "groups": []
+                            },
+                            "contact": {},
+                            "location": {
+                                "distance": 27953,
+                                "cc": "CO",
+                                "country": "Colombia",
+                                "state": "Magdalena Dept",
+                                "formattedAddress": [
+                                    "Magdalena Dept",
+                                    "Colombia"
+                                ],
+                                "lat": 10.900603843974586,
+                                "lng": -74.15377771395066
+                            },
+                            "stats": {
+                                "tipCount": 0,
+                                "checkinsCount": 220,
+                                "usersCount": 165
+                            },
+                            "id": "4e24c9217d8bfa896b05552f",
+                            "categories": [
+                                {
+                                    "pluralName": "Cities",
+                                    "primary": true,
+                                    "name": "City",
+                                    "shortName": "City",
+                                    "id": "50aa9e094b90af0d42d5de0d",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/neighborhood_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4e24c9217d8bfa896b05552f-1"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 0
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/507caff8e4b0f570f9e007fb",
+                                "text": "visiten la hojarasca, muy buen sitio para disfrutar de deliciosos pasabocas",
+                                "logView": true,
+                                "likes": {
+                                    "count": 5,
+                                    "groups": [],
+                                    "summary": "5 likes"
+                                },
+                                "type": "user",
+                                "id": "507caff8e4b0f570f9e007fb",
+                                "createdAt": 1350348792,
+                                "user": {
+                                    "lastName": "Carrillo",
+                                    "photo": {
+                                        "prefix": "https://irs2.4sqi.net/img/user/",
+                                        "suffix": "/ZU50EBUEOP4UV1GV.jpg"
+                                    },
+                                    "id": "39392796",
+                                    "firstName": "Carlos",
+                                    "gender": "male"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "verified": false,
+                            "name": "Aracataca",
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "photos": {
+                                "count": 25,
+                                "groups": []
+                            },
+                            "contact": {},
+                            "location": {
+                                "distance": 22168,
+                                "cc": "CO",
+                                "country": "Colombia",
+                                "state": "Magdalena Dept",
+                                "formattedAddress": [
+                                    "Magdalena Dept",
+                                    "Colombia"
+                                ],
+                                "lat": 10.591455883230942,
+                                "lng": -74.16988372640364
+                            },
+                            "stats": {
+                                "tipCount": 3,
+                                "checkinsCount": 418,
+                                "usersCount": 274
+                            },
+                            "id": "4e42a6a71495179c0150fd2b",
+                            "categories": [
+                                {
+                                    "pluralName": "Cities",
+                                    "primary": true,
+                                    "name": "City",
+                                    "shortName": "City",
+                                    "id": "50aa9e094b90af0d42d5de0d",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/neighborhood_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4e42a6a71495179c0150fd2b-2"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 0
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/5394698b498e099c9f9d4e85",
+                                "text": "D\u00edganme,  Fundaci\u00f3n es territorio cafetero? Saludos",
+                                "logView": true,
+                                "user": {
+                                    "lastName": "Naranjales",
+                                    "photo": {
+                                        "prefix": "https://irs2.4sqi.net/img/user/",
+                                        "suffix": "/84710379-XHBQY1J54OX5RXCD.jpg"
+                                    },
+                                    "id": "84710379",
+                                    "firstName": "Carlos A",
+                                    "gender": "male"
+                                },
+                                "type": "user",
+                                "id": "5394698b498e099c9f9d4e85",
+                                "createdAt": 1402235275
+                            }
+                        ],
+                        "venue": {
+                            "verified": false,
+                            "name": "Fundaci\u00f3n",
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "photos": {
+                                "count": 26,
+                                "groups": []
+                            },
+                            "contact": {},
+                            "location": {
+                                "distance": 28673,
+                                "cc": "CO",
+                                "country": "Colombia",
+                                "state": "Magdalena",
+                                "formattedAddress": [
+                                    "Magdalena",
+                                    "Colombia"
+                                ],
+                                "lat": 10.517053980476966,
+                                "lng": -74.18447256088257
+                            },
+                            "stats": {
+                                "tipCount": 1,
+                                "checkinsCount": 417,
+                                "usersCount": 237
+                            },
+                            "id": "4e87b609d22d1eb40afd1a17",
+                            "categories": [
+                                {
+                                    "pluralName": "Cities",
+                                    "primary": true,
+                                    "name": "City",
+                                    "shortName": "City",
+                                    "id": "50aa9e094b90af0d42d5de0d",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/neighborhood_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4e87b609d22d1eb40afd1a17-3"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 0
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/52f3ce7a498eccc88b1fae1b",
+                                "text": "HOY EN LA ESQUINA DEL PROGRESO, FUNDACION MAGDALENA.. ..... CALOR AL PISO",
+                                "logView": true,
+                                "user": {
+                                    "lastName": "daza",
+                                    "photo": {
+                                        "prefix": "https://irs0.4sqi.net/img/user/",
+                                        "suffix": "/74333256-C2ZA3FLCYZDMNWJH.jpg"
+                                    },
+                                    "id": "74333256",
+                                    "firstName": "carlos",
+                                    "gender": "male"
+                                },
+                                "type": "user",
+                                "id": "52f3ce7a498eccc88b1fae1b",
+                                "createdAt": 1391709818
+                            }
+                        ],
+                        "venue": {
+                            "verified": true,
+                            "name": "Ol\u00edmpica Fundaci\u00f3n",
+                            "url": "http://www.olimpica.com.co",
+                            "storeId": "207",
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "photos": {
+                                "count": 8,
+                                "groups": []
+                            },
+                            "contact": {
+                                "facebookUsername": "SupertiendaOlimpica",
+                                "twitter": "olimpicasa",
+                                "facebook": "151665108209889",
+                                "facebookName": "Sitio Oficial Olimpica S.A."
+                            },
+                            "location": {
+                                "distance": 28446,
+                                "city": "Fundaci\u00f3n",
+                                "cc": "CO",
+                                "country": "Colombia",
+                                "state": "Magdalena",
+                                "formattedAddress": [
+                                    "Cl 6A # 8A - 16",
+                                    "Fundaci\u00f3n, Magdalena",
+                                    "Colombia"
+                                ],
+                                "address": "Cl 6A # 8A - 16",
+                                "lat": 10.521885283905691,
+                                "lng": -74.18642404697681
+                            },
+                            "stats": {
+                                "tipCount": 2,
+                                "checkinsCount": 48,
+                                "usersCount": 27
+                            },
+                            "id": "4f2eb8b6e4b0118a8716f47c",
+                            "categories": [
+                                {
+                                    "pluralName": "Department Stores",
+                                    "primary": true,
+                                    "name": "Department Store",
+                                    "shortName": "Department Store",
+                                    "id": "4bf58dd8d48988d1f6941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/departmentstore_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4f2eb8b6e4b0118a8716f47c-4"
+                    }
+                ],
+                "type": "Recommended Places",
+                "name": "recommended"
+            }
+        ],
+        "headerLocationGranularity": "unknown",
+        "headerLocation": "Current map view",
+        "suggestedBounds": {
+            "sw": {
+                "lat": 10.497876487302085,
+                "lng": -74.19464170026095
+            },
+            "ne": {
+                "lat": 10.919781337149468,
+                "lng": -74.15183180984064
+            }
+        }
+    }
+}

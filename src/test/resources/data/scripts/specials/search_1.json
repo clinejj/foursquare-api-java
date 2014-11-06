@@ -1,0 +1,677 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "code": 200
+    },
+    "response": {
+        "specials": {
+            "count": 8,
+            "items": [
+                {
+                    "redemption": "webview",
+                    "description": "",
+                    "unlocked": true,
+                    "venue": {
+                        "verified": true,
+                        "name": "B&H Photo Video",
+                        "url": "http://www.bandh.com",
+                        "storeId": "",
+                        "contact": {
+                            "phone": "+12124446615",
+                            "twitter": "bhphotovideo",
+                            "formattedPhone": "+1 212-444-6615"
+                        },
+                        "location": {
+                            "distance": 10034,
+                            "city": "New York",
+                            "cc": "US",
+                            "country": "United States",
+                            "postalCode": "10001",
+                            "state": "NY",
+                            "formattedAddress": [
+                                "420 9th Ave (at W 34th St)",
+                                "New York, NY 10001",
+                                "United States"
+                            ],
+                            "crossStreet": "at W 34th St",
+                            "address": "420 9th Ave",
+                            "lat": 40.75299106095666,
+                            "lng": -73.99622260200258
+                        },
+                        "venuePage": {
+                            "id": "33882813"
+                        },
+                        "stats": {
+                            "tipCount": 297,
+                            "checkinsCount": 40600,
+                            "usersCount": 24981
+                        },
+                        "id": "4adb6119f964a520a72621e3",
+                        "categories": [
+                            {
+                                "pluralName": "Camera Stores",
+                                "primary": true,
+                                "name": "Camera Store",
+                                "shortName": "Camera Store",
+                                "id": "4eb1bdf03b7b55596b4a7491",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/camerastore_",
+                                    "suffix": ".png"
+                                }
+                            }
+                        ]
+                    },
+                    "title": "Special",
+                    "finePrint": "Just show your phone and receipt at the tourism counter when exiting the store to receive your free gift.",
+                    "state": "unlocked",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/4e7c83e16365116cef70bfe1?venueId=4adb6119f964a520a72621e3"
+                    },
+                    "provider": "foursquare",
+                    "message": "Foursquare members 18 and over who check-in to the B&H Superstore during business hours will receive a B&H Signature Backpack or Tote bag with the purchase of $50 or more. One item per person and employees not eligible.",
+                    "type": "frequency",
+                    "id": "4e7c83e16365116cef70bfe1",
+                    "icon": "default"
+                },
+                {
+                    "redemption": "webview",
+                    "description": "",
+                    "unlocked": true,
+                    "photo": {
+                        "suffix": "/69375036_2dhGMsIQ8nXlL_Ps4-QaZAkB73SvOTXsH_68UETQSog.jpg",
+                        "height": 640,
+                        "width": 640,
+                        "prefix": "https://irs1.4sqi.net/img/general/",
+                        "id": "534c6e1411d28b1125e0f038",
+                        "createdAt": 1397517844
+                    },
+                    "title": "Special",
+                    "venue": {
+                        "hasMenu": true,
+                        "verified": true,
+                        "name": "Flatiron Hall",
+                        "url": "http://flatironhall.com",
+                        "reservations": {
+                            "url": "http://www.opentable.com/single.aspx?rid=149302&ref=9601"
+                        },
+                        "venuePage": {
+                            "id": "69375036"
+                        },
+                        "contact": {
+                            "facebookName": "Flatiron Hall",
+                            "twitter": "flatironhallnyc",
+                            "phone": "+16467903200",
+                            "facebook": "461325797296999",
+                            "formattedPhone": "+1 646-790-3200",
+                            "facebookUsername": "FlatironHall"
+                        },
+                        "location": {
+                            "distance": 9113,
+                            "city": "New York",
+                            "cc": "US",
+                            "country": "United States",
+                            "postalCode": "10010",
+                            "state": "NY",
+                            "formattedAddress": [
+                                "38 W 26th St (btwn Broadway & 6th Ave)",
+                                "New York, NY 10010",
+                                "United States"
+                            ],
+                            "crossStreet": "btwn Broadway & 6th Ave",
+                            "address": "38 W 26th St",
+                            "lat": 40.744531140199726,
+                            "lng": -73.990638716365
+                        },
+                        "menu": {
+                            "url": "https://foursquare.com/v/flatiron-hall/51d7433c498edc487dbd6801/menu",
+                            "label": "Menu",
+                            "mobileUrl": "https://foursquare.com/v/51d7433c498edc487dbd6801/device_menu",
+                            "externalUrl": "http://www.menupages.com/restaurants/flatiron-hall/",
+                            "type": "Menu",
+                            "anchor": "View Menu"
+                        },
+                        "stats": {
+                            "tipCount": 59,
+                            "checkinsCount": 9040,
+                            "usersCount": 6428
+                        },
+                        "id": "51d7433c498edc487dbd6801",
+                        "categories": [
+                            {
+                                "pluralName": "Gastropubs",
+                                "primary": true,
+                                "name": "Gastropub",
+                                "shortName": "Gastropub",
+                                "id": "4bf58dd8d48988d155941735",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/food/gastropub_",
+                                    "suffix": ".png"
+                                }
+                            }
+                        ]
+                    },
+                    "page": {
+                        "bio": "",
+                        "firstName": "Flatiron Hall",
+                        "gender": "none",
+                        "venue": {
+                            "id": "51d7433c498edc487dbd6801"
+                        },
+                        "homeCity": "New York, NY",
+                        "contact": {},
+                        "photo": {
+                            "prefix": "https://irs2.4sqi.net/img/user/",
+                            "suffix": "/69375036-VQE5R2XVHUXUWP2E.png"
+                        },
+                        "tips": {
+                            "count": 7
+                        },
+                        "type": "venuePage",
+                        "id": "69375036"
+                    },
+                    "state": "unlocked",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/534c6e14498e44dce0c73f27?venueId=51d7433c498edc487dbd6801"
+                    },
+                    "provider": "foursquare",
+                    "message": "Try our Tribeca Film Festival cocktail special - the \"Burnham's Folly,\" feat. Bombay Sapphire with Grey Goose Pear, cucumber, jalapeno, lemon & orange.",
+                    "type": "frequency",
+                    "id": "534c6e14498e44dce0c73f27",
+                    "icon": "default"
+                },
+                {
+                    "redemption": "webview",
+                    "description": "",
+                    "unlocked": true,
+                    "photo": {
+                        "suffix": "/33359830_Ap240YQPWEuy9AdslBmpuq_bMgsZH55zzR6suvi9UOE.jpg",
+                        "height": 957,
+                        "width": 803,
+                        "prefix": "https://irs2.4sqi.net/img/general/",
+                        "id": "52cc218411d2604d86ae1772",
+                        "createdAt": 1389109636
+                    },
+                    "title": "Special",
+                    "finePrint": "One book per check-in, per person. Thank you!",
+                    "page": {
+                        "bio": "",
+                        "firstName": "The Outlet Collection | Jersey Gardens",
+                        "gender": "none",
+                        "venue": {
+                            "id": "4ba82484f964a52051ce39e3"
+                        },
+                        "homeCity": "Elizabeth, NJ",
+                        "contact": {},
+                        "photo": {
+                            "prefix": "https://irs3.4sqi.net/img/user/",
+                            "suffix": "/CWWB2XOP5RGTSPTU.jpg"
+                        },
+                        "tips": {
+                            "count": 30
+                        },
+                        "type": "venuePage",
+                        "id": "33359830"
+                    },
+                    "venue": {
+                        "verified": true,
+                        "name": "The Outlet Collection | Jersey Gardens",
+                        "url": "http://www.jerseygardens.com",
+                        "storeId": "",
+                        "contact": {
+                            "facebookName": "The Outlet Collection - Jersey Gardens",
+                            "twitter": "ocjersey",
+                            "phone": "+19083545900",
+                            "facebook": "128703364971",
+                            "formattedPhone": "+1 908-354-5900",
+                            "facebookUsername": "JerseyGardens"
+                        },
+                        "location": {
+                            "distance": 23361,
+                            "city": "Elizabeth",
+                            "cc": "US",
+                            "country": "United States",
+                            "postalCode": "07201",
+                            "state": "NJ",
+                            "formattedAddress": [
+                                "651 Kapkowski Rd (at Jersey Gardens Blvd)",
+                                "Elizabeth, NJ 07201",
+                                "United States"
+                            ],
+                            "crossStreet": "at Jersey Gardens Blvd",
+                            "address": "651 Kapkowski Rd",
+                            "lat": 40.66055534391215,
+                            "lng": -74.17179296177271
+                        },
+                        "venuePage": {
+                            "id": "33359830"
+                        },
+                        "stats": {
+                            "tipCount": 172,
+                            "checkinsCount": 45886,
+                            "usersCount": 24006
+                        },
+                        "id": "4ba82484f964a52051ce39e3",
+                        "categories": [
+                            {
+                                "pluralName": "Malls",
+                                "primary": true,
+                                "name": "Mall",
+                                "shortName": "Mall",
+                                "id": "4bf58dd8d48988d1fd941735",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/mall_",
+                                    "suffix": ".png"
+                                }
+                            }
+                        ]
+                    },
+                    "state": "unlocked",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/52cc218411d2d9f58079cb08?venueId=4ba82484f964a52051ce39e3"
+                    },
+                    "provider": "foursquare",
+                    "message": "Check in for a FREE 2014 Coupon Book!.",
+                    "type": "frequency",
+                    "id": "52cc218411d2d9f58079cb08",
+                    "icon": "default"
+                },
+                {
+                    "redemption": "webview",
+                    "description": "",
+                    "unlocked": true,
+                    "title": "Special",
+                    "venue": {
+                        "hasMenu": true,
+                        "verified": true,
+                        "name": "Brooklyn Roasting Company",
+                        "url": "http://www.brooklynroasting.com",
+                        "menu": {
+                            "url": "https://foursquare.com/v/brooklyn-roasting-company-brooklyn-ny/4dcc5861887714552bd47b34/menu",
+                            "mobileUrl": "https://foursquare.com/v/4dcc5861887714552bd47b34/device_menu",
+                            "type": "Menu",
+                            "anchor": "View Menu",
+                            "label": "Menu"
+                        },
+                        "storeId": "",
+                        "contact": {
+                            "phone": "+17185222664",
+                            "twitter": "bklynroasting",
+                            "formattedPhone": "+1 718-522-2664"
+                        },
+                        "location": {
+                            "distance": 7327,
+                            "city": "Brooklyn",
+                            "cc": "US",
+                            "country": "United States",
+                            "postalCode": "11201",
+                            "state": "NY",
+                            "formattedAddress": [
+                                "25 Jay St (btwn Plymouth & John St)",
+                                "Brooklyn, NY 11201",
+                                "United States"
+                            ],
+                            "crossStreet": "btwn Plymouth & John St",
+                            "address": "25 Jay St",
+                            "lat": 40.70411988449319,
+                            "lng": -73.98666160518577
+                        },
+                        "venuePage": {
+                            "id": "48722666"
+                        },
+                        "stats": {
+                            "tipCount": 154,
+                            "checkinsCount": 18375,
+                            "usersCount": 4635
+                        },
+                        "id": "4dcc5861887714552bd47b34",
+                        "categories": [
+                            {
+                                "pluralName": "Coffee Shops",
+                                "primary": true,
+                                "name": "Coffee Shop",
+                                "shortName": "Coffee Shop",
+                                "id": "4bf58dd8d48988d1e0931735",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+                                    "suffix": ".png"
+                                }
+                            }
+                        ]
+                    },
+                    "page": {
+                        "bio": "",
+                        "firstName": "Brooklyn Roasting Company",
+                        "gender": "none",
+                        "venue": {
+                            "id": "4dcc5861887714552bd47b34"
+                        },
+                        "homeCity": "Brooklyn, NY",
+                        "contact": {
+                            "twitter": "bklynroasting"
+                        },
+                        "photo": {
+                            "prefix": "https://irs1.4sqi.net/img/user/",
+                            "suffix": "/HZWKPAUV0BSKPHWY.jpg"
+                        },
+                        "tips": {
+                            "count": 28
+                        },
+                        "type": "venuePage",
+                        "id": "48722666"
+                    },
+                    "state": "unlocked",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/51252ba345b026783718b7d2?venueId=4dcc5861887714552bd47b34"
+                    },
+                    "provider": "foursquare",
+                    "message": "Get 25 cents off any coffee / espresso drink and 10% off all 12 oz coffee tins!",
+                    "type": "frequency",
+                    "id": "51252ba345b026783718b7d2",
+                    "icon": "default"
+                },
+                {
+                    "redemption": "webview",
+                    "description": "",
+                    "unlocked": true,
+                    "title": "Special",
+                    "venue": {
+                        "verified": true,
+                        "name": "New York Public Library",
+                        "url": "https://www.facebook.com/nypl",
+                        "storeId": "SASB",
+                        "contact": {
+                            "facebookName": "NYPL The New York Public Library",
+                            "twitter": "nypl",
+                            "phone": "+12129300800",
+                            "facebook": "21557622350",
+                            "formattedPhone": "+1 212-930-0800",
+                            "facebookUsername": "nypl"
+                        },
+                        "location": {
+                            "distance": 9129,
+                            "city": "New York",
+                            "cc": "US",
+                            "country": "United States",
+                            "postalCode": "10018",
+                            "state": "NY",
+                            "formattedAddress": [
+                                "476 5th Ave (Stephen A. Schwarzman Building)",
+                                "New York, NY 10018",
+                                "United States"
+                            ],
+                            "crossStreet": "Stephen A. Schwarzman Building",
+                            "address": "476 5th Ave",
+                            "lat": 40.753271503883234,
+                            "lng": -73.9822769165039
+                        },
+                        "stats": {
+                            "tipCount": 365,
+                            "checkinsCount": 65692,
+                            "usersCount": 43510
+                        },
+                        "id": "452d6886f964a5204a3b1fe3",
+                        "categories": [
+                            {
+                                "pluralName": "Libraries",
+                                "primary": true,
+                                "name": "Library",
+                                "shortName": "Library",
+                                "id": "4bf58dd8d48988d12f941735",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/building/library_",
+                                    "suffix": ".png"
+                                }
+                            }
+                        ]
+                    },
+                    "page": {
+                        "bio": "",
+                        "firstName": "New York Public Library",
+                        "gender": "none",
+                        "homeCity": "New York, NY",
+                        "contact": {
+                            "twitter": "nypl"
+                        },
+                        "followers": {
+                            "count": 85924,
+                            "groups": []
+                        },
+                        "photo": {
+                            "prefix": "https://irs0.4sqi.net/img/user/",
+                            "suffix": "/OZ1NQB3IDLZNF0WW.jpg"
+                        },
+                        "tips": {
+                            "count": 193
+                        },
+                        "type": "chain",
+                        "id": "5255525"
+                    },
+                    "state": "unlocked",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/506b2f92f31cd15cd741ed76?venueId=452d6886f964a5204a3b1fe3"
+                    },
+                    "provider": "foursquare",
+                    "message": "Save 10% on any purchases at The New York Public Library Shop. Happy shopping!",
+                    "type": "frequency",
+                    "id": "506b2f92f31cd15cd741ed76",
+                    "icon": "default"
+                },
+                {
+                    "redemption": "webview",
+                    "description": "",
+                    "unlocked": true,
+                    "photo": {
+                        "suffix": "/44042172_sLGnBzFnRBRn1mzCd9g6cjtXctCnAmv474d06Idafcw.jpg",
+                        "height": 960,
+                        "width": 720,
+                        "prefix": "https://irs3.4sqi.net/img/general/",
+                        "id": "510ef3dde4b0ae0255f5b708",
+                        "createdAt": 1359934429
+                    },
+                    "title": "Special",
+                    "venue": {
+                        "verified": true,
+                        "name": "Menlo Park Mall",
+                        "url": "https://www.facebook.com/simonmalls",
+                        "storeId": "",
+                        "contact": {
+                            "facebookName": "Fashion Valley Mall",
+                            "twitter": "simonmalls",
+                            "phone": "+17325491900",
+                            "facebook": "131525243536711",
+                            "formattedPhone": "+1 732-549-1900",
+                            "facebookUsername": "FashionValleyMall"
+                        },
+                        "location": {
+                            "distance": 40530,
+                            "city": "Edison",
+                            "cc": "US",
+                            "country": "United States",
+                            "postalCode": "08837",
+                            "state": "NJ",
+                            "formattedAddress": [
+                                "55 Parsonage Rd",
+                                "Edison, NJ 08837",
+                                "United States"
+                            ],
+                            "address": "55 Parsonage Rd",
+                            "lat": 40.54764047,
+                            "lng": -74.33568478
+                        },
+                        "stats": {
+                            "tipCount": 62,
+                            "checkinsCount": 66555,
+                            "usersCount": 17291
+                        },
+                        "id": "4a63525af964a520bdc41fe3",
+                        "categories": [
+                            {
+                                "pluralName": "Malls",
+                                "primary": true,
+                                "name": "Mall",
+                                "shortName": "Mall",
+                                "id": "4bf58dd8d48988d1fd941735",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/mall_",
+                                    "suffix": ".png"
+                                }
+                            }
+                        ]
+                    },
+                    "state": "unlocked",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/5432afb6498e4b1b482122c3?venueId=4a63525af964a520bdc41fe3"
+                    },
+                    "provider": "foursquare",
+                    "message": "Stop by Guest Services with every check in and receive a special discount from Cups Frozen Yogurt.",
+                    "type": "frequency",
+                    "id": "5432afb6498e4b1b482122c3",
+                    "icon": "default"
+                },
+                {
+                    "redemption": "webview",
+                    "description": "",
+                    "unlocked": true,
+                    "title": "Special",
+                    "venue": {
+                        "verified": true,
+                        "name": "Trader Joe's",
+                        "url": "http://www.traderjoes.com",
+                        "storeId": "540",
+                        "contact": {
+                            "phone": "+12125294612",
+                            "formattedPhone": "+1 212-529-4612"
+                        },
+                        "location": {
+                            "distance": 8342,
+                            "city": "New York",
+                            "cc": "US",
+                            "country": "United States",
+                            "postalCode": "10003",
+                            "state": "NY",
+                            "formattedAddress": [
+                                "142 East 14th St (btwn Irving Pl & 3rd Ave)",
+                                "New York, NY 10003",
+                                "United States"
+                            ],
+                            "crossStreet": "btwn Irving Pl & 3rd Ave",
+                            "address": "142 East 14th St",
+                            "lat": 40.733758,
+                            "lng": -73.988277
+                        },
+                        "stats": {
+                            "tipCount": 249,
+                            "checkinsCount": 57268,
+                            "usersCount": 17480
+                        },
+                        "id": "441a8599f964a52036311fe3",
+                        "categories": [
+                            {
+                                "pluralName": "Grocery Stores",
+                                "primary": true,
+                                "name": "Grocery Store",
+                                "shortName": "Grocery Store",
+                                "id": "4bf58dd8d48988d118951735",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/food_grocery_",
+                                    "suffix": ".png"
+                                }
+                            }
+                        ]
+                    },
+                    "state": "unlocked",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/544feae0498eddcc0f41f32c?venueId=441a8599f964a52036311fe3"
+                    },
+                    "provider": "foursquare",
+                    "message": "Great Deals on Wine!",
+                    "type": "frequency",
+                    "id": "544feae0498eddcc0f41f32c",
+                    "icon": "default"
+                },
+                {
+                    "redemption": "webview",
+                    "description": "",
+                    "unlocked": true,
+                    "title": "Special",
+                    "venue": {
+                        "hasMenu": true,
+                        "verified": true,
+                        "name": "Eataly NYC",
+                        "url": "http://www.eataly.com/nyc/",
+                        "menu": {
+                            "url": "https://foursquare.com/v/eataly-nyc/4c5ef77bfff99c74eda954d3/menu",
+                            "mobileUrl": "https://foursquare.com/v/4c5ef77bfff99c74eda954d3/device_menu",
+                            "type": "Services",
+                            "anchor": "View Services",
+                            "label": "Services"
+                        },
+                        "storeId": "",
+                        "delivery": {
+                            "url": "http://www.seamless.com/food-delivery/restaurant.6499.r?a=1026&utm_source=Foursquare&utm_medium=affiliate&utm_campaign=SeamlessOrderDeliveryLink",
+                            "provider": {
+                                "name": "seamless"
+                            }
+                        },
+                        "contact": {
+                            "phone": "+12122292560",
+                            "formattedPhone": "+1 212-229-2560"
+                        },
+                        "location": {
+                            "distance": 8868,
+                            "city": "New York",
+                            "cc": "US",
+                            "country": "United States",
+                            "postalCode": "10010",
+                            "state": "NY",
+                            "formattedAddress": [
+                                "200 5th Ave (at W 23rd St)",
+                                "New York, NY 10010",
+                                "United States"
+                            ],
+                            "crossStreet": "at W 23rd St",
+                            "address": "200 5th Ave",
+                            "lat": 40.74186151409088,
+                            "lng": -73.98943362953369
+                        },
+                        "stats": {
+                            "tipCount": 886,
+                            "checkinsCount": 121584,
+                            "usersCount": 67266
+                        },
+                        "id": "4c5ef77bfff99c74eda954d3",
+                        "categories": [
+                            {
+                                "pluralName": "Gourmet Shops",
+                                "primary": true,
+                                "name": "Gourmet Shop",
+                                "shortName": "Gourmet",
+                                "id": "4bf58dd8d48988d1f5941735",
+                                "icon": {
+                                    "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/food_gourmet_",
+                                    "suffix": ".png"
+                                }
+                            }
+                        ]
+                    },
+                    "state": "unlocked",
+                    "interaction": {
+                        "entryUrl": "https://foursquare.com/device/specials/4d648e0f1d6b2d431baf4c17?venueId=4c5ef77bfff99c74eda954d3"
+                    },
+                    "provider": "foursquare",
+                    "message": "Enjoy a free glass of Prosecco on check in when ordering lunch at Manzo.",
+                    "type": "frequency",
+                    "id": "4d648e0f1d6b2d431baf4c17",
+                    "icon": "default"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,3689 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "code": 200
+    },
+    "response": {
+        "headerFullLocation": "Manhattan",
+        "groups": [
+            {
+                "items": [
+                    {
+                        "reasons": {
+                            "count": 1,
+                            "items": [
+                                {
+                                    "count": 1,
+                                    "message": "Harold C. liked this place",
+                                    "reasonName": "facebookLikeReason",
+                                    "type": "social",
+                                    "summary": "Harold C. (FB friend) liked this place"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 1
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4cf75c4ad3a8a1cd387bd643",
+                                "text": "steak sandwich, and the chicken hero are great. Also come for the smoothies and an apple muffin.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 7,
+                                    "groups": [],
+                                    "summary": "7 likes"
+                                },
+                                "type": "user",
+                                "id": "4cf75c4ad3a8a1cd387bd643",
+                                "createdAt": 1291279434,
+                                "user": {
+                                    "lastName": "Morello",
+                                    "photo": {
+                                        "prefix": "https://irs2.4sqi.net/img/user/",
+                                        "suffix": "/O1RZHED4XQJJLLKB.jpg"
+                                    },
+                                    "id": "4984387",
+                                    "firstName": "Jonathan",
+                                    "gender": "male"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 8.8,
+                            "hasMenu": true,
+                            "verified": false,
+                            "name": "Siggy's Good Food",
+                            "ratingColor": "73CF42",
+                            "url": "http://www.siggysgoodfood.com",
+                            "menu": {
+                                "url": "https://foursquare.com/v/siggys-good-food/43655e80f964a52061291fe3/menu",
+                                "mobileUrl": "https://foursquare.com/v/43655e80f964a52061291fe3/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "price": {
+                                "tier": 2,
+                                "currency": "$",
+                                "message": "Moderate"
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "status": "Closed until 11:00am Tuesday",
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 123,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17182373199",
+                                "formattedPhone": "+1 718-237-3199"
+                            },
+                            "location": {
+                                "distance": 669,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "76 Henry St. (btwn Orange & Pineapple St.)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "btwn Orange & Pineapple St.",
+                                "address": "76 Henry St.",
+                                "lat": 40.69846023249809,
+                                "lng": -73.99233742848385
+                            },
+                            "ratingSignals": 173,
+                            "stats": {
+                                "tipCount": 85,
+                                "checkinsCount": 4764,
+                                "usersCount": 2675
+                            },
+                            "id": "43655e80f964a52061291fe3",
+                            "categories": [
+                                {
+                                    "pluralName": "American Restaurants",
+                                    "primary": true,
+                                    "name": "American Restaurant",
+                                    "shortName": "American",
+                                    "id": "4bf58dd8d48988d14e941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-43655e80f964a52061291fe3-0"
+                    },
+                    {
+                        "reasons": {
+                            "count": 1,
+                            "items": [
+                                {
+                                    "count": 1,
+                                    "message": "Sean T. liked this place",
+                                    "reasonName": "facebookLikeReason",
+                                    "type": "social",
+                                    "summary": "Sean T. (FB friend) liked this place"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 0
+                                },
+                                "startAt": 1302645106,
+                                "canonicalUrl": "https://foursquare.com/item/4da4c972e4b00de6844f6149",
+                                "text": "Get FREE All New Track from PRODIGY of Mobb Deep w/ purchase of his new book MY INFAMOUS LIFE. Show check-in at register to redeem on April 20 @ 7:30pm during his book signing event. Limited quantity.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 14,
+                                    "groups": [],
+                                    "summary": "14 likes"
+                                },
+                                "type": "merchant_special",
+                                "id": "4da4c972e4b00de6844f6149",
+                                "createdAt": 1302645106,
+                                "user": {
+                                    "firstName": "Powerhouse Arena",
+                                    "gender": "none",
+                                    "venue": {
+                                        "id": "45c5a7c9f964a52050421fe3"
+                                    },
+                                    "photo": {
+                                        "prefix": "https://irs2.4sqi.net/img/user/",
+                                        "suffix": "/90488686-3L4DRETU0JEYHIFK.png"
+                                    },
+                                    "type": "venuePage",
+                                    "id": "90488686"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.2,
+                            "verified": true,
+                            "name": "Powerhouse Arena",
+                            "ratingColor": "00B551",
+                            "url": "http://www.powerhousearena.com",
+                            "specials": {
+                                "count": 1,
+                                "items": [
+                                    {
+                                        "redemption": "webview",
+                                        "description": "",
+                                        "unlocked": true,
+                                        "title": "Special",
+                                        "page": {
+                                            "bio": "",
+                                            "firstName": "Simon & Schuster",
+                                            "gender": "none",
+                                            "homeCity": "USA",
+                                            "contact": {
+                                                "twitter": "simonschuster"
+                                            },
+                                            "followers": {
+                                                "count": 18619,
+                                                "groups": []
+                                            },
+                                            "photo": {
+                                                "prefix": "https://irs1.4sqi.net/img/user/",
+                                                "suffix": "/3AJ0FPYNJS4N2CIH.jpg"
+                                            },
+                                            "tips": {
+                                                "count": 79
+                                            },
+                                            "type": "page",
+                                            "id": "1653151"
+                                        },
+                                        "state": "unlocked",
+                                        "interaction": {
+                                            "entryUrl": "https://foursquare.com/device/specials/4da4c962bfa5dcb3e9921d44?venueId=45c5a7c9f964a52050421fe3"
+                                        },
+                                        "provider": "foursquare",
+                                        "message": "Get FREE All New Track from PRODIGY of Mobb Deep w/ purchase of his new book MY INFAMOUS LIFE. Show check-in at register to redeem on April 20 @ 7:30pm during his book signing event. Limited quantity.",
+                                        "type": "frequency",
+                                        "id": "4da4c962bfa5dcb3e9921d44",
+                                        "icon": "default"
+                                    }
+                                ]
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 326,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17186663049",
+                                "twitter": "powerhousearena",
+                                "formattedPhone": "+1 718-666-3049"
+                            },
+                            "location": {
+                                "distance": 865,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "37 Main St (at Water St.)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Water St.",
+                                "address": "37 Main St",
+                                "lat": 40.70319052503848,
+                                "lng": -73.99065019420007
+                            },
+                            "ratingSignals": 204,
+                            "stats": {
+                                "tipCount": 56,
+                                "checkinsCount": 6105,
+                                "usersCount": 4297
+                            },
+                            "venuePage": {
+                                "id": "90488686"
+                            },
+                            "id": "45c5a7c9f964a52050421fe3",
+                            "categories": [
+                                {
+                                    "pluralName": "Bookstores",
+                                    "primary": true,
+                                    "name": "Bookstore",
+                                    "shortName": "Bookstore",
+                                    "id": "4bf58dd8d48988d114951735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/bookstore_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-45c5a7c9f964a52050421fe3-1"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 16
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/49bd0c7470c603bb74118eb4",
+                                "text": "Walking along the Brooklyn Heights Promenade at sunset on a warm day.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 67,
+                                    "groups": [],
+                                    "summary": "67 likes"
+                                },
+                                "type": "user",
+                                "id": "49bd0c7470c603bb74118eb4",
+                                "createdAt": 1237126260,
+                                "user": {
+                                    "lastName": "Kachmar",
+                                    "photo": {
+                                        "prefix": "https://irs1.4sqi.net/img/user/",
+                                        "suffix": "/40_1236625293.jpg"
+                                    },
+                                    "id": "40",
+                                    "firstName": "Alicia",
+                                    "gender": "female"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.7,
+                            "verified": false,
+                            "name": "Brooklyn Heights Promenade",
+                            "ratingColor": "00B551",
+                            "url": "http://nyharborparks.org/visit/brhe.html",
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "hereNow": {
+                                "count": 1,
+                                "groups": [
+                                    {
+                                        "count": 1,
+                                        "items": [],
+                                        "type": "others",
+                                        "name": "Other people here"
+                                    }
+                                ],
+                                "summary": "One person is checked in here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 2015,
+                                "groups": []
+                            },
+                            "contact": {},
+                            "location": {
+                                "distance": 342,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "Columbia Heights (btwn Remsen & Orange)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "btwn Remsen & Orange",
+                                "address": "Columbia Heights",
+                                "lat": 40.69829137715981,
+                                "lng": -73.99663209915161
+                            },
+                            "ratingSignals": 264,
+                            "stats": {
+                                "tipCount": 127,
+                                "checkinsCount": 18200,
+                                "usersCount": 8781
+                            },
+                            "id": "42377700f964a52024201fe3",
+                            "categories": [
+                                {
+                                    "pluralName": "Parks",
+                                    "primary": true,
+                                    "name": "Park",
+                                    "shortName": "Park",
+                                    "id": "4bf58dd8d48988d163941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-42377700f964a52024201fe3-2"
+                    },
+                    {
+                        "reasons": {
+                            "count": 1,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 122
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4eaf024f9a521bacdb216401",
+                                "photourl": "https://irs2.4sqi.net/img/general/original/FVQLIPZXSEVCSCT3YU0SNMGDCADXBHRZYFSJUAGP5SXPCXPF.jpg",
+                                "url": "http://newyork.timeout.com/things-to-do/2157709/the-best-of-nyc?page=0,4?cmpid=4sq",
+                                "text": "The best waterfront in NYC offers a unique view of the lower Manhattan skyline, aquatic features, such as a salt marsh filled with native cordgrass, and Jane\u2019s Carousel, a restored ride from 1922.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 615,
+                                    "groups": [],
+                                    "summary": "615 likes"
+                                },
+                                "photo": {
+                                    "suffix": "/FVQLIPZXSEVCSCT3YU0SNMGDCADXBHRZYFSJUAGP5SXPCXPF.jpg",
+                                    "width": 492,
+                                    "height": 330,
+                                    "source": {
+                                        "url": "https://foursquare.com",
+                                        "name": "foursquare Web"
+                                    },
+                                    "prefix": "https://irs2.4sqi.net/img/general/",
+                                    "id": "4eb07b21754a93b634da178b",
+                                    "createdAt": 1320188705
+                                },
+                                "type": "user",
+                                "id": "4eaf024f9a521bacdb216401",
+                                "createdAt": 1320092239,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "742542",
+                                    "firstName": "Time Out New York",
+                                    "photo": {
+                                        "prefix": "https://irs1.4sqi.net/img/user/",
+                                        "suffix": "/XXHKCBSQHBORZNSR.jpg"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.7,
+                            "verified": true,
+                            "name": "Brooklyn Bridge Park",
+                            "ratingColor": "00B551",
+                            "url": "http://nyc.gov/parks",
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 3716,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+12128033822",
+                                "twitter": "nycparks",
+                                "formattedPhone": "+1 212-803-3822"
+                            },
+                            "location": {
+                                "distance": 387,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "Main St. (Plymouth St.)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "Plymouth St.",
+                                "address": "Main St.",
+                                "lat": 40.701593743002,
+                                "lng": -73.99592399597168
+                            },
+                            "ratingSignals": 484,
+                            "stats": {
+                                "tipCount": 170,
+                                "checkinsCount": 28126,
+                                "usersCount": 17551
+                            },
+                            "id": "430d0a00f964a5203e271fe3",
+                            "categories": [
+                                {
+                                    "pluralName": "Parks",
+                                    "primary": true,
+                                    "name": "Park",
+                                    "shortName": "Park",
+                                    "id": "4bf58dd8d48988d163941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-430d0a00f964a5203e271fe3-3"
+                    },
+                    {
+                        "reasons": {
+                            "count": 1,
+                            "items": [
+                                {
+                                    "message": "People who go to Prospect Park tend to go here.",
+                                    "reasonName": "relatedPlacesReason",
+                                    "type": "general",
+                                    "summary": "Similar to Prospect Park"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 17
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/5162c51ee4b0946e1c63f2b5",
+                                "photourl": "https://irs0.4sqi.net/img/general/original/13764780__bnl3AdEOgNoLoIM5xGj95juKyPkO4huoIkI9IuzqqU.jpg",
+                                "photo": {
+                                    "suffix": "/13764780__bnl3AdEOgNoLoIM5xGj95juKyPkO4huoIkI9IuzqqU.jpg",
+                                    "width": 800,
+                                    "height": 521,
+                                    "source": {
+                                        "url": "https://foursquare.com",
+                                        "name": "foursquare Web"
+                                    },
+                                    "prefix": "https://irs0.4sqi.net/img/general/",
+                                    "id": "5162c51f7ab49c026b2b15bc",
+                                    "createdAt": 1365427487
+                                },
+                                "logView": true,
+                                "likes": {
+                                    "count": 117,
+                                    "groups": [],
+                                    "summary": "117 likes"
+                                },
+                                "text": "Many types of birds and crustaceans have made themselves at home in the salt marsh at Pier 1.  We can't blame them- the view is spectacular!",
+                                "type": "user",
+                                "id": "5162c51ee4b0946e1c63f2b5",
+                                "createdAt": 1365427486,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "13764780",
+                                    "firstName": "City of New York",
+                                    "photo": {
+                                        "prefix": "https://irs1.4sqi.net/img/user/",
+                                        "suffix": "/2X1FKJPUY3DGRRK3.png"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.6,
+                            "verified": true,
+                            "name": "Brooklyn Bridge Park - Pier 1",
+                            "ratingColor": "00B551",
+                            "url": "http://www.brooklynbridgepark.org",
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 1397,
+                                "groups": []
+                            },
+                            "contact": {
+                                "twitter": "bklynbrdgpark"
+                            },
+                            "location": {
+                                "distance": 439,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "334 Furman St (Cranberry)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "Cranberry",
+                                "address": "334 Furman St",
+                                "lat": 40.702634,
+                                "lng": -73.996119
+                            },
+                            "ratingSignals": 168,
+                            "stats": {
+                                "tipCount": 62,
+                                "checkinsCount": 14784,
+                                "usersCount": 9642
+                            },
+                            "id": "4b81ea40f964a520e0c330e3",
+                            "categories": [
+                                {
+                                    "pluralName": "Parks",
+                                    "primary": true,
+                                    "name": "Park",
+                                    "shortName": "Park",
+                                    "id": "4bf58dd8d48988d163941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4b81ea40f964a520e0c330e3-4"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 0
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4db493c093a017099ddbe33f",
+                                "text": "Ahhh, BQE fumes...stop at Brooklyn Ice Cream Factory on your way home!",
+                                "logView": true,
+                                "likes": {
+                                    "count": 5,
+                                    "groups": [],
+                                    "summary": "5 likes"
+                                },
+                                "type": "user",
+                                "id": "4db493c093a017099ddbe33f",
+                                "createdAt": 1303679936,
+                                "user": {
+                                    "lastName": "Dedrick",
+                                    "photo": {
+                                        "prefix": "https://irs1.4sqi.net/img/user/",
+                                        "suffix": "/OCCQNGNO53SWKBTO.jpg"
+                                    },
+                                    "id": "2174831",
+                                    "firstName": "Alexandra",
+                                    "gender": "female"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.3,
+                            "verified": false,
+                            "name": "Hillside Dog Park",
+                            "ratingColor": "00B551",
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 139,
+                                "groups": []
+                            },
+                            "contact": {},
+                            "location": {
+                                "distance": 508,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "Columbia Heights (at Vine Street)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Vine Street",
+                                "address": "Columbia Heights",
+                                "lat": 40.70147196396388,
+                                "lng": -73.99429396859578
+                            },
+                            "ratingSignals": 45,
+                            "stats": {
+                                "tipCount": 22,
+                                "checkinsCount": 4020,
+                                "usersCount": 1348
+                            },
+                            "id": "4a6c8f18f964a520d0d01fe3",
+                            "categories": [
+                                {
+                                    "pluralName": "Dog Runs",
+                                    "primary": true,
+                                    "name": "Dog Run",
+                                    "shortName": "Dog Run",
+                                    "id": "4bf58dd8d48988d1e5941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/dogrun_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4a6c8f18f964a520d0d01fe3-5"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 3
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4d751af4c54e8eec17115735",
+                                "url": "http://nydn.us/ePXFGq",
+                                "text": "PHOTO: Did you know the house from \"Moonstruck\" is right down the block at 19 Cranberry?  Here's Cher and Nicholas Cage on the set in 1987, at the link!",
+                                "logView": true,
+                                "likes": {
+                                    "count": 25,
+                                    "groups": [],
+                                    "summary": "25 likes"
+                                },
+                                "type": "user",
+                                "id": "4d751af4c54e8eec17115735",
+                                "createdAt": 1299520244,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "1241858",
+                                    "firstName": "The New York Daily News",
+                                    "photo": {
+                                        "prefix": "https://irs0.4sqi.net/img/user/",
+                                        "suffix": "/3EV01452MGIUWBAQ.jpg"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 9.0,
+                            "hasMenu": true,
+                            "verified": true,
+                            "name": "Jack the Horse Tavern",
+                            "ratingColor": "00B551",
+                            "url": "http://www.jackthehorse.com",
+                            "menu": {
+                                "url": "https://foursquare.com/v/jack-the-horse-tavern/4471bf9af964a5209c331fe3/menu",
+                                "mobileUrl": "https://foursquare.com/v/4471bf9af964a5209c331fe3/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "price": {
+                                "tier": 3,
+                                "currency": "$",
+                                "message": "Expensive"
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "status": "Closed until 5:30pm tomorrow",
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 92,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17188525084",
+                                "twitter": "jthtavern",
+                                "formattedPhone": "+1 718-852-5084"
+                            },
+                            "location": {
+                                "distance": 531,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "66 Hicks St (at Cranberry)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Cranberry",
+                                "address": "66 Hicks St",
+                                "lat": 40.69993286239937,
+                                "lng": -73.9936975351119
+                            },
+                            "ratingSignals": 134,
+                            "stats": {
+                                "tipCount": 70,
+                                "checkinsCount": 4000,
+                                "usersCount": 2075
+                            },
+                            "venuePage": {
+                                "id": "94497137"
+                            },
+                            "id": "4471bf9af964a5209c331fe3",
+                            "categories": [
+                                {
+                                    "pluralName": "American Restaurants",
+                                    "primary": true,
+                                    "name": "American Restaurant",
+                                    "shortName": "American",
+                                    "id": "4bf58dd8d48988d14e941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4471bf9af964a5209c331fe3-6"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 0
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/517401b6e4b0bbda2b49914d",
+                                "photourl": "https://irs2.4sqi.net/img/general/original/131217_9lEahGdbOn70IGXnyG63C1u2LerYcMpM50KjJFilVAE",
+                                "photo": {
+                                    "suffix": "/131217_9lEahGdbOn70IGXnyG63C1u2LerYcMpM50KjJFilVAE",
+                                    "width": 720,
+                                    "height": 540,
+                                    "source": {
+                                        "url": "http://www.4thandmayor.com/",
+                                        "name": "4th & Mayor"
+                                    },
+                                    "prefix": "https://irs2.4sqi.net/img/general/",
+                                    "id": "517401b7e4b076a9c182e7c9",
+                                    "createdAt": 1366557111
+                                },
+                                "logView": true,
+                                "likes": {
+                                    "count": 4,
+                                    "groups": [],
+                                    "summary": "4 likes"
+                                },
+                                "text": "Great areas of shade in picnic peninsula thanks to some sail/tarps.",
+                                "type": "user",
+                                "id": "517401b6e4b0bbda2b49914d",
+                                "createdAt": 1366557110,
+                                "user": {
+                                    "lastName": "Rallo",
+                                    "photo": {
+                                        "prefix": "https://irs3.4sqi.net/img/user/",
+                                        "suffix": "/0P0RUHT5XBXAHHUT.jpg"
+                                    },
+                                    "id": "131217",
+                                    "firstName": "Anthony",
+                                    "gender": "male"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.3,
+                            "verified": true,
+                            "name": "Brooklyn Bridge Park - Pier 5",
+                            "ratingColor": "00B551",
+                            "url": "http://nyc.gov/parks",
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 964,
+                                "groups": []
+                            },
+                            "contact": {
+                                "twitter": "nycparks"
+                            },
+                            "location": {
+                                "distance": 588,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "Joralemon St.",
+                                    "Brooklyn, NY",
+                                    "United States"
+                                ],
+                                "address": "Joralemon St.",
+                                "lat": 40.69471202445086,
+                                "lng": -74.00022246941484
+                            },
+                            "ratingSignals": 59,
+                            "stats": {
+                                "tipCount": 11,
+                                "checkinsCount": 5556,
+                                "usersCount": 3783
+                            },
+                            "id": "4e2b293ee4cd3bc166926781",
+                            "categories": [
+                                {
+                                    "pluralName": "Parks",
+                                    "primary": true,
+                                    "name": "Park",
+                                    "shortName": "Park",
+                                    "id": "4bf58dd8d48988d163941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4e2b293ee4cd3bc166926781-7"
+                    },
+                    {
+                        "reasons": {
+                            "count": 1,
+                            "items": [
+                                {
+                                    "message": "People who go to Union Square Park tend to go here.",
+                                    "reasonName": "relatedPlacesReason",
+                                    "type": "general",
+                                    "summary": "People who like Union Square Park go here"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 511
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4be227e670c603bb64649ab4",
+                                "url": "http://www.gossipgirl.net/blog/",
+                                "text": "Catch N before he sails into the sunset on his boat, The Charlotte. Or go with him\u2014he\u2019s been known to take impromptu trips (and even more impromptu guests) around the island.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 1680,
+                                    "groups": [],
+                                    "summary": "1680 likes"
+                                },
+                                "type": "user",
+                                "id": "4be227e670c603bb64649ab4",
+                                "createdAt": 1273112550,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "749968",
+                                    "firstName": "Gossip Girl",
+                                    "photo": {
+                                        "prefix": "https://irs2.4sqi.net/img/user/",
+                                        "suffix": "/TBW52TWGW0QQSHSB.jpg"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.6,
+                            "verified": true,
+                            "name": "South Street Seaport",
+                            "ratingColor": "00B551",
+                            "url": "http://www.southstreetseaport.com",
+                            "storeId": "",
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "photos": {
+                                "count": 2433,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+12127327678",
+                                "twitter": "theseaport",
+                                "formattedPhone": "+1 212-732-7678"
+                            },
+                            "location": {
+                                "distance": 675,
+                                "city": "New York",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "10038",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "South St. (Pier 17)",
+                                    "New York, NY 10038",
+                                    "United States"
+                                ],
+                                "crossStreet": "Pier 17",
+                                "address": "South St.",
+                                "lat": 40.70566047104496,
+                                "lng": -74.00287628173828
+                            },
+                            "ratingSignals": 365,
+                            "stats": {
+                                "tipCount": 177,
+                                "checkinsCount": 45897,
+                                "usersCount": 29804
+                            },
+                            "venuePage": {
+                                "id": "59071427"
+                            },
+                            "id": "3fd66200f964a520daf11ee3",
+                            "categories": [
+                                {
+                                    "pluralName": "Harbors / Marinas",
+                                    "primary": true,
+                                    "name": "Harbor / Marina",
+                                    "shortName": "Harbor / Marina",
+                                    "id": "4bf58dd8d48988d1e0941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/harbor_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-3fd66200f964a520daf11ee3-8"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 24
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4e3c1096091a0fc67ea2e08a",
+                                "url": "http://www.foodnetwork.com/local/index.html",
+                                "text": "Michael Psilakis cools off at the Brooklyn Ice Cream Factory in where they serve up a scoop of Butter Pecan Ice Cream on Food Network's The Best Thing I Ever Ate. Find more tips at FN Local.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 113,
+                                    "groups": [],
+                                    "summary": "113 likes"
+                                },
+                                "type": "user",
+                                "id": "4e3c1096091a0fc67ea2e08a",
+                                "createdAt": 1312559254,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "4362480",
+                                    "firstName": "Food Network",
+                                    "photo": {
+                                        "prefix": "https://irs1.4sqi.net/img/user/",
+                                        "suffix": "/CWXVNR3ZCNNEZ45T.jpg"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 8.9,
+                            "hasMenu": true,
+                            "verified": true,
+                            "name": "Brooklyn Ice Cream Factory",
+                            "ratingColor": "73CF42",
+                            "url": "http://www.brooklynicecreamfactory.com",
+                            "menu": {
+                                "url": "https://foursquare.com/v/brooklyn-ice-cream-factory/4abd01bbf964a5200a8820e3/menu",
+                                "mobileUrl": "https://foursquare.com/v/4abd01bbf964a5200a8820e3/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "price": {
+                                "tier": 1,
+                                "currency": "$",
+                                "message": "Cheap"
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "status": "Closed until Noon tomorrow",
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 763,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17182463963",
+                                "formattedPhone": "+1 718-246-3963"
+                            },
+                            "location": {
+                                "distance": 570,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "1 Water St (at Old Fulton St)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Old Fulton St",
+                                "address": "1 Water St",
+                                "lat": 40.70318386323018,
+                                "lng": -73.99470627307892
+                            },
+                            "ratingSignals": 477,
+                            "stats": {
+                                "tipCount": 107,
+                                "checkinsCount": 11134,
+                                "usersCount": 9389
+                            },
+                            "venuePage": {
+                                "id": "56784839"
+                            },
+                            "id": "4abd01bbf964a5200a8820e3",
+                            "categories": [
+                                {
+                                    "pluralName": "Ice Cream Shops",
+                                    "primary": true,
+                                    "name": "Ice Cream Shop",
+                                    "shortName": "Ice Cream",
+                                    "id": "4bf58dd8d48988d1c9941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/icecream_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4abd01bbf964a5200a8820e3-9"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 106
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4c77dd6aa3a29c74ddba5ecd",
+                                "text": "One of the city\u2019s best views, and excellent food still, after all these years. A sunset reservation\u2019s best, with rabbit and dumplings.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 137,
+                                    "groups": [],
+                                    "summary": "137 likes"
+                                },
+                                "type": "user",
+                                "id": "4c77dd6aa3a29c74ddba5ecd",
+                                "createdAt": 1282923882,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "360215",
+                                    "firstName": "The New York Times",
+                                    "photo": {
+                                        "prefix": "https://irs1.4sqi.net/img/user/",
+                                        "suffix": "/PYLLJKRD2U343VPG.png"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.2,
+                            "reservations": {
+                                "url": "http://www.opentable.com/single.aspx?rid=820&ref=9601"
+                            },
+                            "id": "3fd66200f964a520efe81ee3",
+                            "hasMenu": true,
+                            "verified": true,
+                            "menu": {
+                                "url": "https://foursquare.com/v/the-river-caf%C3%A9/3fd66200f964a520efe81ee3/menu",
+                                "mobileUrl": "https://foursquare.com/v/3fd66200f964a520efe81ee3/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "hereNow": {
+                                "count": 1,
+                                "groups": [
+                                    {
+                                        "count": 1,
+                                        "items": [],
+                                        "type": "others",
+                                        "name": "Other people here"
+                                    }
+                                ],
+                                "summary": "One person is checked in here"
+                            },
+                            "contact": {
+                                "phone": "+17185225200",
+                                "twitter": "therivercafe",
+                                "formattedPhone": "+1 718-522-5200"
+                            },
+                            "location": {
+                                "distance": 606,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "1 Water St (at Brooklyn Bridge)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Brooklyn Bridge",
+                                "address": "1 Water St",
+                                "lat": 40.7037369396286,
+                                "lng": -73.9947760105133
+                            },
+                            "venuePage": {
+                                "id": "35406086"
+                            },
+                            "price": {
+                                "tier": 4,
+                                "currency": "$",
+                                "message": "Very Expensive"
+                            },
+                            "storeId": "",
+                            "hours": {
+                                "status": "Open until 11:00pm",
+                                "isOpen": true
+                            },
+                            "photos": {
+                                "count": 400,
+                                "groups": []
+                            },
+                            "stats": {
+                                "tipCount": 81,
+                                "checkinsCount": 3589,
+                                "usersCount": 3059
+                            },
+                            "categories": [
+                                {
+                                    "pluralName": "American Restaurants",
+                                    "primary": true,
+                                    "name": "American Restaurant",
+                                    "shortName": "American",
+                                    "id": "4bf58dd8d48988d14e941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false,
+                            "name": "The River Caf\u00e9",
+                            "url": "http://www.rivercafe.com",
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "ratingColor": "00B551",
+                            "ratingSignals": 158
+                        },
+                        "referralId": "e-0-3fd66200f964a520efe81ee3-10"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 0
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/5115df2be4b059beb0b42125",
+                                "text": "Outstanding. And the smalls are hardly small: 16 inches. (A large is 18\")",
+                                "logView": true,
+                                "likes": {
+                                    "count": 6,
+                                    "groups": [],
+                                    "summary": "6 likes"
+                                },
+                                "type": "user",
+                                "id": "5115df2be4b059beb0b42125",
+                                "createdAt": 1360387883,
+                                "user": {
+                                    "lastName": "Snyder",
+                                    "photo": {
+                                        "prefix": "https://irs3.4sqi.net/img/user/",
+                                        "suffix": "/WFEA5M2SH5VSEOGA.jpg"
+                                    },
+                                    "id": "47819",
+                                    "firstName": "Whitney",
+                                    "gender": "male"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.2,
+                            "verified": false,
+                            "name": "Juliana's Pizza",
+                            "ratingColor": "00B551",
+                            "url": "http://julianaspizza.com",
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "price": {
+                                "tier": 2,
+                                "currency": "$",
+                                "message": "Moderate"
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "status": "Closed until 11:30am tomorrow",
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 339,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17185966700",
+                                "formattedPhone": "+1 718-596-6700"
+                            },
+                            "location": {
+                                "distance": 613,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "19 Old Fulton St",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "address": "19 Old Fulton St",
+                                "lat": 40.70263748367539,
+                                "lng": -73.99361145269988
+                            },
+                            "ratingSignals": 312,
+                            "stats": {
+                                "tipCount": 113,
+                                "checkinsCount": 4910,
+                                "usersCount": 3801
+                            },
+                            "id": "50ca6337e4b04e1f3135689c",
+                            "categories": [
+                                {
+                                    "pluralName": "Pizza Places",
+                                    "primary": true,
+                                    "name": "Pizza Place",
+                                    "shortName": "Pizza",
+                                    "id": "4bf58dd8d48988d1ca941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-50ca6337e4b04e1f3135689c-11"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 1
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4d59f3a956f2b60ca1da7e2f",
+                                "text": "\u266b\"You better be careful when you cross that bridge.\"\u2669-'Lil KIM",
+                                "logView": true,
+                                "likes": {
+                                    "count": 11,
+                                    "groups": [],
+                                    "summary": "11 likes"
+                                },
+                                "type": "user",
+                                "id": "4d59f3a956f2b60ca1da7e2f",
+                                "createdAt": 1297740713,
+                                "user": {
+                                    "lastName": "Anderson",
+                                    "photo": {
+                                        "prefix": "https://irs3.4sqi.net/img/user/",
+                                        "suffix": "/6776590-WV0YHZGFI4R2RNMB.jpg"
+                                    },
+                                    "id": "6776590",
+                                    "firstName": "Jeree",
+                                    "gender": "female"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.3,
+                            "verified": true,
+                            "name": "Under The Brooklyn Bridge",
+                            "ratingColor": "00B551",
+                            "url": "http://www.nyc.gov/dot",
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 821,
+                                "groups": []
+                            },
+                            "contact": {
+                                "facebookUsername": "NYCDOT",
+                                "twitter": "nyc_dot",
+                                "facebook": "166279802886",
+                                "facebookName": "NYC DOT"
+                            },
+                            "location": {
+                                "distance": 633,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "Brooklyn Bridge (FDR Dr)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "FDR Dr",
+                                "address": "Brooklyn Bridge",
+                                "lat": 40.703475724581324,
+                                "lng": -73.99405334200495
+                            },
+                            "ratingSignals": 72,
+                            "stats": {
+                                "tipCount": 28,
+                                "checkinsCount": 7277,
+                                "usersCount": 5720
+                            },
+                            "id": "4c34a57da0ced13a9379186e",
+                            "categories": [
+                                {
+                                    "pluralName": "Scenic Lookouts",
+                                    "primary": true,
+                                    "name": "Scenic Lookout",
+                                    "shortName": "Scenic Lookout",
+                                    "id": "4bf58dd8d48988d165941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/sceniclookout_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4c34a57da0ced13a9379186e-12"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 0
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/5022a28ae4b007e779b1ba24",
+                                "text": "Favorite freelancer spot. Great coffee, good tunes, strong wifi, lovely staff. Stay all day! They serve beer & wine, too.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 11,
+                                    "groups": [],
+                                    "summary": "11 likes"
+                                },
+                                "type": "user",
+                                "id": "5022a28ae4b007e779b1ba24",
+                                "createdAt": 1344447114,
+                                "user": {
+                                    "lastName": "Farmer",
+                                    "photo": {
+                                        "prefix": "https://irs0.4sqi.net/img/user/",
+                                        "suffix": "/T5BLBJDTXAFWLAZI.jpg"
+                                    },
+                                    "id": "1991265",
+                                    "firstName": "Lauren",
+                                    "gender": "female"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 9.2,
+                            "hasMenu": true,
+                            "verified": true,
+                            "name": "Vineapple Cafe",
+                            "ratingColor": "00B551",
+                            "url": "http://vineapple.com",
+                            "menu": {
+                                "url": "https://foursquare.com/v/vineapple-cafe-brooklyn-ny/4de26e06814df7ebdc14af8b/menu",
+                                "mobileUrl": "https://foursquare.com/v/4de26e06814df7ebdc14af8b/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "price": {
+                                "tier": 2,
+                                "currency": "$",
+                                "message": "Moderate"
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "status": "Closed until 7:00am tomorrow",
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 146,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+13477991701",
+                                "twitter": "vineapplecafe",
+                                "formattedPhone": "+1 347-799-1701"
+                            },
+                            "location": {
+                                "distance": 627,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "71 Pineapple St (btwn Henry & Hicks)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "btwn Henry & Hicks",
+                                "address": "71 Pineapple St",
+                                "lat": 40.69834998317835,
+                                "lng": -73.99289409776352
+                            },
+                            "ratingSignals": 232,
+                            "stats": {
+                                "tipCount": 82,
+                                "checkinsCount": 4912,
+                                "usersCount": 1602
+                            },
+                            "venuePage": {
+                                "id": "94802691"
+                            },
+                            "id": "4de26e06814df7ebdc14af8b",
+                            "categories": [
+                                {
+                                    "pluralName": "Caf\u00e9s",
+                                    "primary": true,
+                                    "name": "Caf\u00e9",
+                                    "shortName": "Caf\u00e9",
+                                    "id": "4bf58dd8d48988d16d941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/cafe_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4de26e06814df7ebdc14af8b-13"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 19
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/5166a91be4b02bbf842f423d",
+                                "photourl": "https://irs1.4sqi.net/img/general/original/742542_WjEIxwgt1bz7mxuFJaBdXMn1sZdMP7EoS7rUlAj5eQU.jpg",
+                                "url": "http://www.timeout.com/newyork/food-drink/best-new-mexican-eats-gran-electrica",
+                                "text": "This lively eatery pulls in Brooklynites looking for both homey abuela standbys (rich, cilantro-nipped guac; fragrant pozole verde) and palate-expanding fare (tongue tacos, duck-leg tamales).",
+                                "logView": true,
+                                "likes": {
+                                    "count": 17,
+                                    "groups": [],
+                                    "summary": "17 likes"
+                                },
+                                "photo": {
+                                    "suffix": "/742542_WjEIxwgt1bz7mxuFJaBdXMn1sZdMP7EoS7rUlAj5eQU.jpg",
+                                    "width": 555,
+                                    "height": 370,
+                                    "source": {
+                                        "url": "https://foursquare.com",
+                                        "name": "foursquare Web"
+                                    },
+                                    "prefix": "https://irs1.4sqi.net/img/general/",
+                                    "id": "5166a6a68055ee64acc73f06",
+                                    "createdAt": 1365681830
+                                },
+                                "type": "user",
+                                "id": "5166a91be4b02bbf842f423d",
+                                "createdAt": 1365682459,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "742542",
+                                    "firstName": "Time Out New York",
+                                    "photo": {
+                                        "prefix": "https://irs1.4sqi.net/img/user/",
+                                        "suffix": "/XXHKCBSQHBORZNSR.jpg"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 9.2,
+                            "hasMenu": true,
+                            "verified": true,
+                            "name": "Gran El\u00e9ctrica",
+                            "ratingColor": "00B551",
+                            "url": "http://www.granelectrica.com",
+                            "menu": {
+                                "url": "https://foursquare.com/v/gran-el%C3%A9ctrica/4f69f2b76d86f87117bb13ab/menu",
+                                "mobileUrl": "https://foursquare.com/v/4f69f2b76d86f87117bb13ab/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "price": {
+                                "tier": 3,
+                                "currency": "$",
+                                "message": "Expensive"
+                            },
+                            "storeId": "",
+                            "hereNow": {
+                                "count": 1,
+                                "groups": [
+                                    {
+                                        "count": 1,
+                                        "items": [],
+                                        "type": "others",
+                                        "name": "Other people here"
+                                    }
+                                ],
+                                "summary": "One person is checked in here"
+                            },
+                            "hours": {
+                                "status": "Closed until 5:30pm tomorrow",
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 405,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17188522700",
+                                "twitter": "granelectrica",
+                                "formattedPhone": "+1 718-852-2700"
+                            },
+                            "location": {
+                                "distance": 659,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "5 Front St (at Old Fulton St)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Old Fulton St",
+                                "address": "5 Front St",
+                                "lat": 40.702634849027795,
+                                "lng": -73.99300575256348
+                            },
+                            "ratingSignals": 267,
+                            "stats": {
+                                "tipCount": 111,
+                                "checkinsCount": 6475,
+                                "usersCount": 4117
+                            },
+                            "venuePage": {
+                                "id": "83879813"
+                            },
+                            "id": "4f69f2b76d86f87117bb13ab",
+                            "categories": [
+                                {
+                                    "pluralName": "Mexican Restaurants",
+                                    "primary": true,
+                                    "name": "Mexican Restaurant",
+                                    "shortName": "Mexican",
+                                    "id": "4bf58dd8d48988d1c1941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/mexican_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4f69f2b76d86f87117bb13ab-14"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 17
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4f80ac9be4b0a458ba40c366",
+                                "text": "Have Mom take pictures of you in the bike lane while pissing off everyone around you.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 35,
+                                    "groups": [],
+                                    "summary": "35 likes"
+                                },
+                                "type": "user",
+                                "id": "4f80ac9be4b0a458ba40c366",
+                                "createdAt": 1333832859,
+                                "user": {
+                                    "lastName": "Ng",
+                                    "photo": {
+                                        "prefix": "https://irs0.4sqi.net/img/user/",
+                                        "suffix": "/1911255-TZV5PHH5KVTDMGLO.jpg"
+                                    },
+                                    "id": "1911255",
+                                    "firstName": "Henry W.",
+                                    "gender": "male"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.5,
+                            "verified": true,
+                            "name": "Brooklyn Bridge Promenade",
+                            "ratingColor": "00B551",
+                            "url": "http://www.nyc.gov/dot",
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "storeId": "",
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 1425,
+                                "groups": []
+                            },
+                            "contact": {
+                                "facebookUsername": "NYCDOT",
+                                "twitter": "nyc_dot",
+                                "facebook": "166279802886",
+                                "facebookName": "NYC DOT"
+                            },
+                            "location": {
+                                "distance": 741,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "Brooklyn Bridge",
+                                    "Brooklyn, NY",
+                                    "United States"
+                                ],
+                                "address": "Brooklyn Bridge",
+                                "lat": 40.70629485823015,
+                                "lng": -73.99711489677429
+                            },
+                            "ratingSignals": 110,
+                            "stats": {
+                                "tipCount": 34,
+                                "checkinsCount": 9191,
+                                "usersCount": 7703
+                            },
+                            "id": "4e713390fa766da6339dc53f",
+                            "categories": [
+                                {
+                                    "pluralName": "Trails",
+                                    "primary": true,
+                                    "name": "Trail",
+                                    "shortName": "Trail",
+                                    "id": "4bf58dd8d48988d159941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/hikingtrail_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4e713390fa766da6339dc53f-15"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 4
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/50db6739e4b047bb21fe17d8",
+                                "text": "The first phase of improving the East River Waterfront Esplanade was a 2-mile-long, City-owned public open space extending from the Battery Maritime Building to Montgomery Street.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 23,
+                                    "groups": [],
+                                    "summary": "23 likes"
+                                },
+                                "type": "user",
+                                "id": "50db6739e4b047bb21fe17d8",
+                                "createdAt": 1356556089,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "13764780",
+                                    "firstName": "City of New York",
+                                    "photo": {
+                                        "prefix": "https://irs1.4sqi.net/img/user/",
+                                        "suffix": "/2X1FKJPUY3DGRRK3.png"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.2,
+                            "verified": true,
+                            "name": "East River Esplanade",
+                            "ratingColor": "00B551",
+                            "url": "http://www.nyharborparks.org/visit/eari.html",
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "photos": {
+                                "count": 304,
+                                "groups": []
+                            },
+                            "contact": {
+                                "twitter": "nycparks"
+                            },
+                            "location": {
+                                "distance": 664,
+                                "city": "New York",
+                                "cc": "US",
+                                "country": "United States",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "South St (From Pier 11 to Pier 17)",
+                                    "New York, NY",
+                                    "United States"
+                                ],
+                                "crossStreet": "From Pier 11 to Pier 17",
+                                "address": "South St",
+                                "lat": 40.70484714530104,
+                                "lng": -74.00459289550781
+                            },
+                            "ratingSignals": 36,
+                            "stats": {
+                                "tipCount": 9,
+                                "checkinsCount": 3708,
+                                "usersCount": 1494
+                            },
+                            "id": "4e1bc07fa809bd1305bff584",
+                            "categories": [
+                                {
+                                    "pluralName": "Plazas",
+                                    "primary": true,
+                                    "name": "Plaza",
+                                    "shortName": "Plaza",
+                                    "id": "4bf58dd8d48988d164941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/plaza_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4e1bc07fa809bd1305bff584-16"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 1
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4e2d9cbd18a80bb0587069c1",
+                                "url": "http://www.goscoville.com",
+                                "text": "The best Italian in Brooklyn Heights",
+                                "logView": true,
+                                "likes": {
+                                    "count": 5,
+                                    "groups": [],
+                                    "summary": "5 likes"
+                                },
+                                "type": "user",
+                                "id": "4e2d9cbd18a80bb0587069c1",
+                                "createdAt": 1311612093,
+                                "user": {
+                                    "lastName": "Resnik",
+                                    "photo": {
+                                        "prefix": "https://irs3.4sqi.net/img/user/",
+                                        "suffix": "/KGVEOEEGENXY1IJC.jpg"
+                                    },
+                                    "id": "1158548",
+                                    "firstName": "Jon",
+                                    "gender": "male"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 9.3,
+                            "hasMenu": true,
+                            "verified": false,
+                            "name": "River Deli",
+                            "ratingColor": "00B551",
+                            "menu": {
+                                "url": "https://foursquare.com/v/river-deli/4be30f9dd27a20a1cd1f915b/menu",
+                                "mobileUrl": "https://foursquare.com/v/4be30f9dd27a20a1cd1f915b/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "price": {
+                                "tier": 2,
+                                "currency": "$",
+                                "message": "Moderate"
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 87,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17182549200",
+                                "formattedPhone": "+1 718-254-9200"
+                            },
+                            "location": {
+                                "distance": 713,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "32 Joralemon St (Columbia Pl)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "Columbia Pl",
+                                "address": "32 Joralemon St",
+                                "lat": 40.69371202316731,
+                                "lng": -73.99835166664431
+                            },
+                            "ratingSignals": 100,
+                            "stats": {
+                                "tipCount": 53,
+                                "checkinsCount": 2286,
+                                "usersCount": 1255
+                            },
+                            "id": "4be30f9dd27a20a1cd1f915b",
+                            "categories": [
+                                {
+                                    "pluralName": "Italian Restaurants",
+                                    "primary": true,
+                                    "name": "Italian Restaurant",
+                                    "shortName": "Italian",
+                                    "id": "4bf58dd8d48988d110941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/italian_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4be30f9dd27a20a1cd1f915b-17"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 127
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4c62b64eedb29c74df3a2ca7",
+                                "url": "http://online.wsj.com/article/SB10001424052748703435104575421652613394906.html?mod=4sq",
+                                "text": "This famous Brooklyn eatery, a perennial atop the city's best pizza joints, has received eviction papers after falling behind on rent and city taxes.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 416,
+                                    "groups": [],
+                                    "summary": "416 likes"
+                                },
+                                "type": "user",
+                                "id": "4c62b64eedb29c74df3a2ca7",
+                                "createdAt": 1281537614,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "989827",
+                                    "firstName": "The Wall Street Journal",
+                                    "photo": {
+                                        "prefix": "https://irs2.4sqi.net/img/user/",
+                                        "suffix": "/5EIJ4PDK4IY5KRFE.jpg"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 8.6,
+                            "hasMenu": true,
+                            "verified": false,
+                            "name": "Grimaldi's Pizzeria",
+                            "ratingColor": "73CF42",
+                            "url": "http://www.grimaldis.com",
+                            "menu": {
+                                "url": "https://foursquare.com/v/grimaldis-pizzeria/3fd66200f964a520e9e81ee3/menu",
+                                "mobileUrl": "https://foursquare.com/v/3fd66200f964a520e9e81ee3/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "price": {
+                                "tier": 1,
+                                "currency": "$",
+                                "message": "Cheap"
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "status": "Open until 10:45pm",
+                                "isOpen": true
+                            },
+                            "photos": {
+                                "count": 1472,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17188584300",
+                                "twitter": "grimaldisnyc",
+                                "formattedPhone": "+1 718-858-4300"
+                            },
+                            "location": {
+                                "distance": 627,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "1 Front St (at Cadman Plaza W)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Cadman Plaza W",
+                                "address": "1 Front St",
+                                "lat": 40.70250515261926,
+                                "lng": -73.9933359887217
+                            },
+                            "ratingSignals": 806,
+                            "stats": {
+                                "tipCount": 425,
+                                "checkinsCount": 22054,
+                                "usersCount": 18454
+                            },
+                            "id": "3fd66200f964a520e9e81ee3",
+                            "categories": [
+                                {
+                                    "pluralName": "Pizza Places",
+                                    "primary": true,
+                                    "name": "Pizza Place",
+                                    "shortName": "Pizza",
+                                    "id": "4bf58dd8d48988d1ca941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-3fd66200f964a520e9e81ee3-18"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 66
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4eaefb0cbe7b409f8bac9761",
+                                "photourl": "https://irs2.4sqi.net/img/general/original/AZ4ONIXNMQ04Z152KTD5SA0AXXSANSCXOYTG0LBEEAIL0XRL.jpg",
+                                "url": "http://newyork.timeout.com/things-to-do/2157709/the-best-of-nyc?page=0,3?cmpid=4sq",
+                                "text": "The best place to remember why you love Brooklyn examines the borough\u2019s historical, cultural and gastronomic legacies through its permanent collection, rotating exhibitions and events.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 96,
+                                    "groups": [],
+                                    "summary": "96 likes"
+                                },
+                                "photo": {
+                                    "suffix": "/AZ4ONIXNMQ04Z152KTD5SA0AXXSANSCXOYTG0LBEEAIL0XRL.jpg",
+                                    "width": 492,
+                                    "height": 330,
+                                    "source": {
+                                        "url": "https://foursquare.com",
+                                        "name": "foursquare Web"
+                                    },
+                                    "prefix": "https://irs2.4sqi.net/img/general/",
+                                    "id": "4eb075a30cd6283498ec70da",
+                                    "createdAt": 1320187299
+                                },
+                                "type": "user",
+                                "id": "4eaefb0cbe7b409f8bac9761",
+                                "createdAt": 1320090380,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "742542",
+                                    "firstName": "Time Out New York",
+                                    "photo": {
+                                        "prefix": "https://irs1.4sqi.net/img/user/",
+                                        "suffix": "/XXHKCBSQHBORZNSR.jpg"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.1,
+                            "verified": true,
+                            "name": "Brooklyn Historical Society",
+                            "ratingColor": "00B551",
+                            "url": "http://brooklynhistory.org",
+                            "specials": {
+                                "count": 1,
+                                "items": [
+                                    {
+                                        "redemption": "webview",
+                                        "description": "",
+                                        "unlocked": true,
+                                        "title": "Special",
+                                        "state": "unlocked",
+                                        "interaction": {
+                                            "entryUrl": "https://foursquare.com/device/specials/4f4e77e00cd61513d36c4dcf?venueId=4a919ad7f964a520e81a20e3"
+                                        },
+                                        "provider": "foursquare",
+                                        "message": "Check-in during your visit and get the BHS Members discount off all merchandise at the BHS gift shop!",
+                                        "type": "frequency",
+                                        "id": "4f4e77e00cd61513d36c4dcf",
+                                        "icon": "default"
+                                    }
+                                ]
+                            },
+                            "storeId": "",
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 111,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17182224111",
+                                "twitter": "brooklynhistory",
+                                "formattedPhone": "+1 718-222-4111"
+                            },
+                            "location": {
+                                "distance": 870,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "128 Pierrepont St (at Clinton St.)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Clinton St.",
+                                "address": "128 Pierrepont St",
+                                "lat": 40.69482570753088,
+                                "lng": -73.99226856206892
+                            },
+                            "ratingSignals": 68,
+                            "stats": {
+                                "tipCount": 18,
+                                "checkinsCount": 1514,
+                                "usersCount": 1143
+                            },
+                            "venuePage": {
+                                "id": "40969965"
+                            },
+                            "id": "4a919ad7f964a520e81a20e3",
+                            "categories": [
+                                {
+                                    "pluralName": "History Museums",
+                                    "primary": true,
+                                    "name": "History Museum",
+                                    "shortName": "History Museum",
+                                    "id": "4bf58dd8d48988d190941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/museum_history_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4a919ad7f964a520e81a20e3-19"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 0
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4d84be555e70224b06cb1209",
+                                "photourl": "https://irs2.4sqi.net/img/general/original/LB1VJSJT5BZKHVERBIVZ3GOK1S4A5UHGJZXMRRKD213YFKDK.jpg",
+                                "photo": {
+                                    "suffix": "/LB1VJSJT5BZKHVERBIVZ3GOK1S4A5UHGJZXMRRKD213YFKDK.jpg",
+                                    "width": 540,
+                                    "height": 540,
+                                    "source": {
+                                        "url": "https://foursquare.com/download/#/iphone",
+                                        "name": "foursquare for iPhone"
+                                    },
+                                    "prefix": "https://irs2.4sqi.net/img/general/",
+                                    "id": "4d84be592ec32da125dbc873",
+                                    "createdAt": 1300545113
+                                },
+                                "logView": true,
+                                "likes": {
+                                    "count": 10,
+                                    "groups": [],
+                                    "summary": "10 likes"
+                                },
+                                "text": "Try the Avocado Toast!",
+                                "type": "user",
+                                "id": "4d84be555e70224b06cb1209",
+                                "createdAt": 1300545109,
+                                "user": {
+                                    "lastName": "Di Giulio",
+                                    "photo": {
+                                        "prefix": "https://irs0.4sqi.net/img/user/",
+                                        "suffix": "/4809_1237257648.jpg"
+                                    },
+                                    "id": "4809",
+                                    "firstName": "Phil Thomas",
+                                    "gender": "male"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 9.3,
+                            "hasMenu": true,
+                            "verified": true,
+                            "name": "Iris Cafe",
+                            "ratingColor": "00B551",
+                            "url": "http://iriscafenyc.com",
+                            "reservations": {
+                                "url": "http://www.opentable.com/single.aspx?rid=139141&ref=9601"
+                            },
+                            "price": {
+                                "tier": 2,
+                                "currency": "$",
+                                "message": "Moderate"
+                            },
+                            "menu": {
+                                "url": "https://foursquare.com/v/iris-cafe/4b085df4f964a520300a23e3/menu",
+                                "mobileUrl": "https://foursquare.com/v/4b085df4f964a520300a23e3/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "status": "Closed until 8:00am tomorrow",
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 115,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17187227395",
+                                "twitter": "iriscafenyc",
+                                "formattedPhone": "+1 718-722-7395"
+                            },
+                            "location": {
+                                "distance": 773,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201-4564",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "20 Columbia Pl. (at Joralemon St.)",
+                                    "Brooklyn, NY 11201-4564",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Joralemon St.",
+                                "address": "20 Columbia Pl.",
+                                "lat": 40.693131214483635,
+                                "lng": -73.99863860077083
+                            },
+                            "ratingSignals": 172,
+                            "stats": {
+                                "tipCount": 93,
+                                "checkinsCount": 5428,
+                                "usersCount": 2136
+                            },
+                            "venuePage": {
+                                "id": "75892448"
+                            },
+                            "id": "4b085df4f964a520300a23e3",
+                            "categories": [
+                                {
+                                    "pluralName": "Caf\u00e9s",
+                                    "primary": true,
+                                    "name": "Caf\u00e9",
+                                    "shortName": "Caf\u00e9",
+                                    "id": "4bf58dd8d48988d16d941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/cafe_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4b085df4f964a520300a23e3-20"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 34
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4f29c2d1e4b0f07a9683b563",
+                                "photourl": "https://irs3.4sqi.net/img/general/original/FzHxvG_GxnLgH3WecBK70STZmloD0eurCcHUYkYm4Ck.jpg",
+                                "url": "http://newyork.timeout.com/sex-dating/2557295/best-date-spots-dumbo-brooklyn?package=1452199",
+                                "text": "This charming French patisserie serves eye-catching treats. Seating is limited to five tables and a breakfast bar, so arrive early\u2014you may be able to score an almond croissant before they run out.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 38,
+                                    "groups": [],
+                                    "summary": "38 likes"
+                                },
+                                "photo": {
+                                    "suffix": "/FzHxvG_GxnLgH3WecBK70STZmloD0eurCcHUYkYm4Ck.jpg",
+                                    "width": 2048,
+                                    "height": 1365,
+                                    "source": {
+                                        "url": "https://foursquare.com",
+                                        "name": "foursquare Web"
+                                    },
+                                    "prefix": "https://irs3.4sqi.net/img/general/",
+                                    "id": "4f3020336b740061f441fb7a",
+                                    "createdAt": 1328554035
+                                },
+                                "type": "user",
+                                "id": "4f29c2d1e4b0f07a9683b563",
+                                "createdAt": 1328136913,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "742542",
+                                    "firstName": "Time Out New York",
+                                    "photo": {
+                                        "prefix": "https://irs1.4sqi.net/img/user/",
+                                        "suffix": "/XXHKCBSQHBORZNSR.jpg"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 9.2,
+                            "hasMenu": true,
+                            "verified": false,
+                            "name": "Almondine Bakery",
+                            "ratingColor": "00B551",
+                            "url": "http://www.almondinebakery.com",
+                            "menu": {
+                                "url": "https://foursquare.com/v/almondine-bakery/43504680f964a520b0281fe3/menu",
+                                "mobileUrl": "https://foursquare.com/v/43504680f964a520b0281fe3/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "price": {
+                                "tier": 1,
+                                "currency": "$",
+                                "message": "Cheap"
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "status": "Closed until 7:00am tomorrow",
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 104,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17187975026",
+                                "twitter": "almondinenyc",
+                                "formattedPhone": "+1 718-797-5026"
+                            },
+                            "location": {
+                                "distance": 839,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "85 Water St. (btwn Dock & Main St.)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "btwn Dock & Main St.",
+                                "address": "85 Water St.",
+                                "lat": 40.70327370425004,
+                                "lng": -73.99104044018358
+                            },
+                            "ratingSignals": 150,
+                            "stats": {
+                                "tipCount": 96,
+                                "checkinsCount": 4847,
+                                "usersCount": 2006
+                            },
+                            "id": "43504680f964a520b0281fe3",
+                            "categories": [
+                                {
+                                    "pluralName": "Bakeries",
+                                    "primary": true,
+                                    "name": "Bakery",
+                                    "shortName": "Bakery",
+                                    "id": "4bf58dd8d48988d16a941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/bakery_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-43504680f964a520b0281fe3-21"
+                    },
+                    {
+                        "reasons": {
+                            "count": 1,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 157
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4c2b60b1197e952129ba628d",
+                                "url": "http://online.wsj.com/article/SB10001424052748703964104575335451941623716.html?mod=4sq",
+                                "text": "Old-time residents still call it South Brooklyn, near Carroll Gardens and Red Hook, but Columbia Street Waterfront District is starting to take on an identity of its own.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 364,
+                                    "groups": [],
+                                    "summary": "364 likes"
+                                },
+                                "type": "user",
+                                "id": "4c2b60b1197e952129ba628d",
+                                "createdAt": 1277911217,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "989827",
+                                    "firstName": "The Wall Street Journal",
+                                    "photo": {
+                                        "prefix": "https://irs2.4sqi.net/img/user/",
+                                        "suffix": "/5EIJ4PDK4IY5KRFE.jpg"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.3,
+                            "verified": true,
+                            "name": "Brooklyn Bridge Park - Pier 6",
+                            "ratingColor": "00B551",
+                            "url": "http://nyc.gov/parks",
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 741,
+                                "groups": []
+                            },
+                            "contact": {
+                                "twitter": "nycparks"
+                            },
+                            "location": {
+                                "distance": 837,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "Pier 6 (at Atlantic & Furman)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Atlantic & Furman",
+                                "address": "Pier 6",
+                                "lat": 40.692518,
+                                "lng": -74.001012
+                            },
+                            "ratingSignals": 85,
+                            "stats": {
+                                "tipCount": 37,
+                                "checkinsCount": 10759,
+                                "usersCount": 6514
+                            },
+                            "id": "4b81eb25f964a52000c430e3",
+                            "categories": [
+                                {
+                                    "pluralName": "Parks",
+                                    "primary": true,
+                                    "name": "Park",
+                                    "shortName": "Park",
+                                    "id": "4bf58dd8d48988d163941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4b81eb25f964a52000c430e3-22"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 14
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4d07776779fd6a31e43e8183",
+                                "text": "While shopping for chocolate gifts, get a to-go cup of the thick Wicked Hot Cocoa.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 54,
+                                    "groups": [],
+                                    "summary": "54 likes"
+                                },
+                                "type": "user",
+                                "id": "4d07776779fd6a31e43e8183",
+                                "createdAt": 1292334951,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "95423",
+                                    "firstName": "The Corcoran Group",
+                                    "photo": {
+                                        "prefix": "https://irs2.4sqi.net/img/user/",
+                                        "suffix": "/95423-FGRZ1IMU5FZQMCZB.jpg"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 9.0,
+                            "hasMenu": true,
+                            "verified": true,
+                            "name": "Jacques Torres Chocolate",
+                            "ratingColor": "00B551",
+                            "menu": {
+                                "url": "https://foursquare.com/v/jacques-torres-chocolate/43504680f964a520b2281fe3/menu",
+                                "mobileUrl": "https://foursquare.com/v/43504680f964a520b2281fe3/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "status": "Closed until 9:00am tomorrow",
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 247,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17188751269",
+                                "formattedPhone": "+1 718-875-1269"
+                            },
+                            "location": {
+                                "distance": 808,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "66 Water St (btw Dock St & Main St)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "btw Dock St & Main St",
+                                "address": "66 Water St",
+                                "lat": 40.703360325520805,
+                                "lng": -73.9915052909809
+                            },
+                            "ratingSignals": 187,
+                            "stats": {
+                                "tipCount": 77,
+                                "checkinsCount": 5142,
+                                "usersCount": 3828
+                            },
+                            "id": "43504680f964a520b2281fe3",
+                            "categories": [
+                                {
+                                    "pluralName": "Candy Stores",
+                                    "primary": true,
+                                    "name": "Candy Store",
+                                    "shortName": "Candy Store",
+                                    "id": "4bf58dd8d48988d117951735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/candystore_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-43504680f964a520b2281fe3-23"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 1
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4aa707f170c603bb4c6e8eb4",
+                                "text": "The greatness is marred slightly by the cash only policy, which wouldn't matter if there was an ATM nearby...",
+                                "logView": true,
+                                "likes": {
+                                    "count": 9,
+                                    "groups": [],
+                                    "summary": "9 likes"
+                                },
+                                "type": "user",
+                                "id": "4aa707f170c603bb4c6e8eb4",
+                                "createdAt": 1252460529,
+                                "user": {
+                                    "lastName": "Reimer",
+                                    "photo": {
+                                        "prefix": "https://irs2.4sqi.net/img/user/",
+                                        "suffix": "/8607_1241371639.jpg"
+                                    },
+                                    "id": "8607",
+                                    "firstName": "Courtney",
+                                    "gender": "female"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 8.7,
+                            "hasMenu": true,
+                            "verified": true,
+                            "name": "Noodle Pudding",
+                            "ratingColor": "73CF42",
+                            "menu": {
+                                "url": "https://foursquare.com/v/noodle-pudding/3fd66200f964a520ece81ee3/menu",
+                                "mobileUrl": "https://foursquare.com/v/3fd66200f964a520ece81ee3/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "price": {
+                                "tier": 2,
+                                "currency": "$",
+                                "message": "Moderate"
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 79,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17186253737",
+                                "formattedPhone": "+1 718-625-3737"
+                            },
+                            "location": {
+                                "distance": 680,
+                                "city": "New York",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "38 Henry St (btw Cranberry & Middagh Sts)",
+                                    "New York, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "btw Cranberry & Middagh Sts",
+                                "address": "38 Henry St",
+                                "lat": 40.69976182327317,
+                                "lng": -73.99194144626024
+                            },
+                            "ratingSignals": 100,
+                            "stats": {
+                                "tipCount": 55,
+                                "checkinsCount": 2700,
+                                "usersCount": 1777
+                            },
+                            "venuePage": {
+                                "id": "66593925"
+                            },
+                            "id": "3fd66200f964a520ece81ee3",
+                            "categories": [
+                                {
+                                    "pluralName": "Italian Restaurants",
+                                    "primary": true,
+                                    "name": "Italian Restaurant",
+                                    "shortName": "Italian",
+                                    "id": "4bf58dd8d48988d110941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/italian_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-3fd66200f964a520ece81ee3-24"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 0
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4e590b5b1fc7864a2369797f",
+                                "text": "Excellent selection of vegetable options with large windows in a laid back and fun atmosphere.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 43,
+                                    "groups": [],
+                                    "summary": "43 likes"
+                                },
+                                "type": "user",
+                                "id": "4e590b5b1fc7864a2369797f",
+                                "createdAt": 1314458459,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "12164134",
+                                    "firstName": "FreezeCrowd",
+                                    "photo": {
+                                        "prefix": "https://irs3.4sqi.net/img/user/",
+                                        "suffix": "/ACTN0ZFD2SCP32AH.png"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 9.0,
+                            "hasMenu": true,
+                            "verified": true,
+                            "name": "Dig Inn Seasonal Market",
+                            "ratingColor": "00B551",
+                            "url": "http://diginn.com",
+                            "menu": {
+                                "url": "https://foursquare.com/v/dig-inn-seasonal-market/4a7ef289f964a52058f21fe3/menu",
+                                "mobileUrl": "https://foursquare.com/v/4a7ef289f964a52058f21fe3/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "price": {
+                                "tier": 2,
+                                "currency": "$",
+                                "message": "Moderate"
+                            },
+                            "storeId": "",
+                            "hours": {
+                                "status": "Closed until 11:00am tomorrow",
+                                "isOpen": false
+                            },
+                            "hereNow": {
+                                "count": 1,
+                                "groups": [
+                                    {
+                                        "count": 1,
+                                        "items": [],
+                                        "type": "others",
+                                        "name": "Other people here"
+                                    }
+                                ],
+                                "summary": "One person is checked in here"
+                            },
+                            "delivery": {
+                                "url": "http://www.seamless.com/food-delivery/restaurant.5698.r?a=1026&utm_source=Foursquare&utm_medium=affiliate&utm_campaign=SeamlessOrderDeliveryLink",
+                                "provider": {
+                                    "name": "seamless"
+                                }
+                            },
+                            "photos": {
+                                "count": 76,
+                                "groups": []
+                            },
+                            "contact": {
+                                "facebookName": "Dig Inn Seasonal Market",
+                                "twitter": "diginn",
+                                "phone": "+12127851110",
+                                "facebook": "158613407523269",
+                                "formattedPhone": "+1 212-785-1110",
+                                "facebookUsername": "diginnmarket"
+                            },
+                            "location": {
+                                "distance": 920,
+                                "city": "New York",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "10005",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "80 Pine St (at Pearl St)",
+                                    "New York, NY 10005",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Pearl St",
+                                "address": "80 Pine St",
+                                "lat": 40.70610935056218,
+                                "lng": -74.00734971616252
+                            },
+                            "ratingSignals": 177,
+                            "stats": {
+                                "tipCount": 51,
+                                "checkinsCount": 6857,
+                                "usersCount": 2209
+                            },
+                            "id": "4a7ef289f964a52058f21fe3",
+                            "categories": [
+                                {
+                                    "pluralName": "American Restaurants",
+                                    "primary": true,
+                                    "name": "American Restaurant",
+                                    "shortName": "American",
+                                    "id": "4bf58dd8d48988d14e941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4a7ef289f964a52058f21fe3-25"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 1
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4f0761ece4b0aa2dc540ff67",
+                                "text": "A well-loved and beautifully landscaped park.  One end is connected to the Brooklyn Bridge and the other is home to an awesome track!  Dogs can be off leash before 9am and after 9pm.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 13,
+                                    "groups": [],
+                                    "summary": "13 likes"
+                                },
+                                "type": "user",
+                                "id": "4f0761ece4b0aa2dc540ff67",
+                                "createdAt": 1325883884,
+                                "user": {
+                                    "gender": "none",
+                                    "type": "page",
+                                    "id": "95423",
+                                    "firstName": "The Corcoran Group",
+                                    "photo": {
+                                        "prefix": "https://irs2.4sqi.net/img/user/",
+                                        "suffix": "/95423-FGRZ1IMU5FZQMCZB.jpg"
+                                    }
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 8.7,
+                            "verified": true,
+                            "name": "Cadman Plaza Park",
+                            "ratingColor": "73CF42",
+                            "url": "http://nyc.gov/parks",
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 303,
+                                "groups": []
+                            },
+                            "contact": {
+                                "twitter": "nycparks"
+                            },
+                            "location": {
+                                "distance": 826,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "1 Cadman Plaza East (at Red Cross Pl)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Red Cross Pl",
+                                "address": "1 Cadman Plaza East",
+                                "lat": 40.6976894504753,
+                                "lng": -73.99068832397461
+                            },
+                            "ratingSignals": 21,
+                            "stats": {
+                                "tipCount": 15,
+                                "checkinsCount": 7416,
+                                "usersCount": 3016
+                            },
+                            "id": "4a46ca54f964a5207ca91fe3",
+                            "categories": [
+                                {
+                                    "pluralName": "Parks",
+                                    "primary": true,
+                                    "name": "Park",
+                                    "shortName": "Park",
+                                    "id": "4bf58dd8d48988d163941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4a46ca54f964a5207ca91fe3-26"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 0
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/52224d3311d2d7f6baf623cd",
+                                "photourl": "https://irs1.4sqi.net/img/general/original/18091_-0pH9VHsH8_Jm0Shsl4pWeodn5c57y-RMpP37ni2Gzo.jpg",
+                                "photo": {
+                                    "suffix": "/18091_-0pH9VHsH8_Jm0Shsl4pWeodn5c57y-RMpP37ni2Gzo.jpg",
+                                    "width": 720,
+                                    "height": 960,
+                                    "source": {
+                                        "url": "https://foursquare.com/download/#/iphone",
+                                        "name": "foursquare for iPhone"
+                                    },
+                                    "prefix": "https://irs1.4sqi.net/img/general/",
+                                    "id": "52224d4511d277a650bfb953",
+                                    "createdAt": 1377979717
+                                },
+                                "logView": true,
+                                "likes": {
+                                    "count": 8,
+                                    "groups": [],
+                                    "summary": "8 likes"
+                                },
+                                "text": "Try the FUNGHI MISTI if you like mushroom & truffle!",
+                                "type": "user",
+                                "id": "52224d3311d2d7f6baf623cd",
+                                "createdAt": 1377979699,
+                                "user": {
+                                    "lastName": "Petescia",
+                                    "photo": {
+                                        "prefix": "https://irs3.4sqi.net/img/user/",
+                                        "suffix": "/4a5cb88f037ed.jpg"
+                                    },
+                                    "id": "18091",
+                                    "firstName": "Chris",
+                                    "gender": "male"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 8.8,
+                            "verified": true,
+                            "name": "Fornino",
+                            "ratingColor": "73CF42",
+                            "url": "http://fornino.com",
+                            "menu": {
+                                "url": "http://fornino.com/menu.html",
+                                "label": "Menu",
+                                "mobileUrl": "http://fornino.com/menu.html",
+                                "externalUrl": "http://fornino.com/menu.html",
+                                "type": "Menu",
+                                "anchor": "View Menu"
+                            },
+                            "price": {
+                                "tier": 2,
+                                "currency": "$",
+                                "message": "Moderate"
+                            },
+                            "storeId": "",
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "status": "Open until 11:00pm",
+                                "isOpen": true
+                            },
+                            "photos": {
+                                "count": 193,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17184221107",
+                                "facebookUsername": "ForninoBK",
+                                "facebook": "215054715212404",
+                                "formattedPhone": "+1 718-422-1107",
+                                "facebookName": "Fornino Pizza"
+                            },
+                            "location": {
+                                "distance": 726,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "Pier 6",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "address": "Pier 6",
+                                "lat": 40.69347581139949,
+                                "lng": -74.00027990341187
+                            },
+                            "ratingSignals": 111,
+                            "stats": {
+                                "tipCount": 29,
+                                "checkinsCount": 1948,
+                                "usersCount": 1379
+                            },
+                            "id": "51fa84d22fc60e9c2e6f875b",
+                            "categories": [
+                                {
+                                    "pluralName": "Pizza Places",
+                                    "primary": true,
+                                    "name": "Pizza Place",
+                                    "shortName": "Pizza",
+                                    "id": "4bf58dd8d48988d1ca941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-51fa84d22fc60e9c2e6f875b-27"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 1
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/5026bc9de4b031f7a20f9914",
+                                "text": "The outer ring of horses do NOT move up and down! #horrors",
+                                "logView": true,
+                                "likes": {
+                                    "count": 8,
+                                    "groups": [],
+                                    "summary": "8 likes"
+                                },
+                                "type": "user",
+                                "id": "5026bc9de4b031f7a20f9914",
+                                "createdAt": 1344715933,
+                                "user": {
+                                    "lastName": "Malice",
+                                    "photo": {
+                                        "prefix": "https://irs1.4sqi.net/img/user/",
+                                        "suffix": "/Z0PCQITY0ZHR2T3S.jpg"
+                                    },
+                                    "id": "25639276",
+                                    "firstName": "Michael",
+                                    "gender": "male"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "rating": 9.3,
+                            "verified": false,
+                            "name": "Jane's Carousel",
+                            "ratingColor": "00B551",
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 1227,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+17182222502",
+                                "formattedPhone": "+1 718-222-2502"
+                            },
+                            "location": {
+                                "distance": 801,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "45 Main St (at Old Dock St)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Old Dock St",
+                                "address": "45 Main St",
+                                "lat": 40.70431022042966,
+                                "lng": -73.99239481714409
+                            },
+                            "ratingSignals": 192,
+                            "stats": {
+                                "tipCount": 46,
+                                "checkinsCount": 7164,
+                                "usersCount": 5284
+                            },
+                            "id": "4a622b7cf964a52045c31fe3",
+                            "categories": [
+                                {
+                                    "pluralName": "Theme Park Rides/Attractions",
+                                    "primary": true,
+                                    "name": "Theme Park Ride / Attraction",
+                                    "shortName": "Theme Park",
+                                    "id": "5109983191d435c0d71c2bb1",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/themepark_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4a622b7cf964a52045c31fe3-28"
+                    },
+                    {
+                        "reasons": {
+                            "count": 0,
+                            "items": [
+                                {
+                                    "reasonName": "globalInteractionReason",
+                                    "type": "general",
+                                    "summary": "This spot is popular"
+                                }
+                            ]
+                        },
+                        "tips": [
+                            {
+                                "todo": {
+                                    "count": 0
+                                },
+                                "canonicalUrl": "https://foursquare.com/item/4f5fb18ee4b07df96aca6a0d",
+                                "text": "Get the pumpkin whoopie pie. Cream cheese frosting- yum.",
+                                "logView": true,
+                                "likes": {
+                                    "count": 10,
+                                    "groups": [],
+                                    "summary": "10 likes"
+                                },
+                                "type": "user",
+                                "id": "4f5fb18ee4b07df96aca6a0d",
+                                "createdAt": 1331671438,
+                                "user": {
+                                    "lastName": "Chin",
+                                    "photo": {
+                                        "prefix": "https://irs1.4sqi.net/img/user/",
+                                        "suffix": "/B1D2IRTC1PPM5YWT.jpg"
+                                    },
+                                    "id": "1529407",
+                                    "firstName": "Laura",
+                                    "gender": "female"
+                                }
+                            }
+                        ],
+                        "venue": {
+                            "specials": {
+                                "count": 0,
+                                "items": []
+                            },
+                            "rating": 8.6,
+                            "hasMenu": true,
+                            "verified": false,
+                            "name": "One Girl Cookies",
+                            "ratingColor": "73CF42",
+                            "url": "http://onegirlcookies.com",
+                            "menu": {
+                                "url": "https://foursquare.com/v/one-girl-cookies/4f21bb85e5e872143c0ca04b/menu",
+                                "mobileUrl": "https://foursquare.com/v/4f21bb85e5e872143c0ca04b/device_menu",
+                                "type": "Menu",
+                                "anchor": "View Menu",
+                                "label": "Menu"
+                            },
+                            "price": {
+                                "tier": 1,
+                                "currency": "$",
+                                "message": "Cheap"
+                            },
+                            "hereNow": {
+                                "count": 0,
+                                "groups": [],
+                                "summary": "Nobody here"
+                            },
+                            "hours": {
+                                "status": "Closed until 8:00am tomorrow",
+                                "isOpen": false
+                            },
+                            "photos": {
+                                "count": 465,
+                                "groups": []
+                            },
+                            "contact": {
+                                "phone": "+13473381268",
+                                "twitter": "onegirlcookies",
+                                "formattedPhone": "+1 347-338-1268"
+                            },
+                            "location": {
+                                "distance": 881,
+                                "city": "Brooklyn",
+                                "cc": "US",
+                                "country": "United States",
+                                "postalCode": "11201",
+                                "state": "NY",
+                                "formattedAddress": [
+                                    "33 Main St (at Water St.)",
+                                    "Brooklyn, NY 11201",
+                                    "United States"
+                                ],
+                                "crossStreet": "at Water St.",
+                                "address": "33 Main St",
+                                "lat": 40.703344906438495,
+                                "lng": -73.99053812026978
+                            },
+                            "ratingSignals": 284,
+                            "stats": {
+                                "tipCount": 93,
+                                "checkinsCount": 7462,
+                                "usersCount": 3964
+                            },
+                            "id": "4f21bb85e5e872143c0ca04b",
+                            "categories": [
+                                {
+                                    "pluralName": "Bakeries",
+                                    "primary": true,
+                                    "name": "Bakery",
+                                    "shortName": "Bakery",
+                                    "id": "4bf58dd8d48988d16a941735",
+                                    "icon": {
+                                        "prefix": "https://ss3.4sqi.net/img/categories_v2/food/bakery_",
+                                        "suffix": ".png"
+                                    }
+                                }
+                            ],
+                            "like": false
+                        },
+                        "referralId": "e-0-4f21bb85e5e872143c0ca04b-29"
+                    }
+                ],
+                "type": "Recommended Places",
+                "name": "recommended"
+            }
+        ],
+        "totalResults": 244,
+        "suggestedRadius": 922,
+        "suggestedFilters": {
+            "header": "Tap to show:",
+            "filters": [
+                {
+                    "name": "$-$$$$",
+                    "key": "price"
+                },
+                {
+                    "name": "Places friends go",
+                    "key": "friendVisits"
+                }
+            ]
+        },
+        "headerLocationGranularity": "city",
+        "headerLocation": "Manhattan",
+        "suggestedBounds": {
+            "sw": {
+                "lat": 40.69182915708849,
+                "lng": -74.00819029595716
+            },
+            "ne": {
+                "lat": 40.70698370114165,
+                "lng": -73.98969754047515
+            }
+        }
+    }
+}

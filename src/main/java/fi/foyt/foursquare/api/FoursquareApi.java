@@ -4,6 +4,8 @@
  * http://www.foyt.fi
  * Copyright (C) 2014 - Blake Dy / Wallaby
  * http://walla.by
+ * Copyright (C) 2014 - John Cline
+ * https://github.com/clinejj
  *
  * License:
  *
@@ -16,7 +18,6 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -66,7 +67,7 @@ import fi.foyt.foursquare.api.io.Response;
 
 /**
  * Entry point for FoursquareAPI.
- * 
+ *
  * @see <a href="https://developer.foursquare.com/docs/index_docs.html" target="_blank">https://developer.foursquare.com/docs/index_docs.html</a>
  */
 public class FoursquareApi {
@@ -86,7 +87,7 @@ public class FoursquareApi {
 
   /**
    * Constructor.
-   * 
+   *
    * @param clientId Foursquare Client id
    * @param clientSecret Foursquare Client secret
    * @param redirectUrl Foursquare Redirect URL
@@ -200,9 +201,9 @@ public class FoursquareApi {
 
   /**
    * Returns the user's leaderboard.
-   * 
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/leaderboard.html" target="_blank">https://developer.foursquare.com/docs/users/leaderboard.html</a>
-   * 
+   *
    * @param neighbors number of friends' scores to return that are adjacent to user's score
    * @return LeaderboardItemGroup entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
@@ -224,9 +225,9 @@ public class FoursquareApi {
 
   /**
    * Returns badges for a given user.
-   * 
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/badges.html" target="_blank">https://developer.foursquare.com/docs/users/badges.html</a>
-   * 
+   *
    * @param userId User id (can be 'self' in case of the current user, assumed 'self' if null)
    * @return Badges entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
@@ -236,7 +237,7 @@ public class FoursquareApi {
       if (userId == null) {
         userId = "self";
       }
-      
+
       ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/badges", true);
       Badges result = null;
 
@@ -244,7 +245,7 @@ public class FoursquareApi {
         BadgeSets sets = (BadgeSets) JSONFieldParser.parseEntity(BadgeSets.class, response.getResponse().getJSONObject("sets"), this.skipNonExistingFields);
         Badge[] badges = (Badge[]) JSONFieldParser.parseEntitiesHash(Badge.class, response.getResponse().getJSONObject("badges"), this.skipNonExistingFields);
         String defaultSetType = response.getResponse().getString("defaultSetType");
-        
+
         result = new Badges(sets, badges, defaultSetType);
       }
 
@@ -253,18 +254,18 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   /**
-   * Returns a history of checkins for the authenticated user. 
-   * 
+   * Returns a history of checkins for the authenticated user.
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/checkins.html" target="_blank">https://developer.foursquare.com/docs/users/checkins.html</a>
-   * 
+   *
    * @param userId User id (For now, only 'self' is supported, 'self' assumed if null)
    * @param limit number of results to return
-   * @param offset used to page through results. 
+   * @param offset used to page through results.
    * @param afterTimestamp retrieve the first results to follow these seconds since epoch.
    * @param beforeTimestamp retrieve the first results prior to these seconds since epoch.
-   * @return CheckinGroup entity wrapped in Result object 
+   * @return CheckinGroup entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CheckinGroup> usersCheckins(String userId, Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws FoursquareApiException {
@@ -287,16 +288,16 @@ public class FoursquareApi {
   }
 
   /**
-   * Returns tips from a user. 
-   * 
+   * Returns tips from a user.
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/tips.html" target="_blank">https://developer.foursquare.com/docs/users/tips.html</a>
-   * 
+   *
    * @param userId User id (can be 'self' in case of the current user, assumed 'self' if null)
    * @param sort one of recent, nearby, or popular. Nearby requires ll to be provided.
    * @param ll latitude and longitude of the user's location.
    * @param limit number of results to return, up to 500.
    * @param offset used to page through results.
-   * @return TipGroup entity wrapped in Result object 
+   * @return TipGroup entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
    */
   public Result<TipGroup> usersTips(String userId, String sort, String ll, Integer limit, Integer offset) throws FoursquareApiException {
@@ -317,16 +318,16 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   /**
-   * Returns todos from a user. 
-   * 
+   * Returns todos from a user.
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/todos.html" target="_blank">https://developer.foursquare.com/docs/users/todos.html</a>
-   * 
+   *
    * @param userId User id (can be 'self' in case of the current user, assumed 'self' if null)
    * @param sort one of recent or popular. Nearby requires ll to be provided.
    * @param ll latitude and longitude of the user's location
-   * @return TodoGroup entity wrapped in Result object 
+   * @return TodoGroup entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
    */
   public Result<TodoGroup> usersTodos(String userId, String sort, String ll) throws FoursquareApiException {
@@ -347,16 +348,16 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   /**
-   * Returns a list of all venues visited by the specified user, along with how many visits and when they were last there. 
-   * 
+   * Returns a list of all venues visited by the specified user, along with how many visits and when they were last there.
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/venuehistory.html" target="_blank">https://developer.foursquare.com/docs/users/venuehistory.html</a>
-   *   
+   *
    * @param userId User id (For now, only 'self' is supported, 'self' assumed if null)
    * @param beforeTimestamp seconds since epoch.
    * @param afterTimestamp seconds after epoch.
-   * @return VenueHistoryGroup entity wrapped in Result object 
+   * @return VenueHistoryGroup entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
    */
   public Result<VenueHistoryGroup> usersVenueHistory(String userId, Long beforeTimestamp, Long afterTimestamp) throws FoursquareApiException {
@@ -379,12 +380,12 @@ public class FoursquareApi {
   }
 
   /**
-   * Sends a friend request to another user. 
-   * 
+   * Sends a friend request to another user.
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/request.html" target="_blank">https://developer.foursquare.com/docs/users/request.html</a>
-   * 
+   *
    * @param id user id to which a request will be sent.
-   * @return CompleteUser entity wrapped in Result object 
+   * @return CompleteUser entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteUser> usersRequest(String id) throws FoursquareApiException {
@@ -403,12 +404,12 @@ public class FoursquareApi {
   }
 
   /**
-   * Cancels any relationship between the acting user and the specified user. 
-   * 
+   * Cancels any relationship between the acting user and the specified user.
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/unfriend.html" target="_blank">https://developer.foursquare.com/docs/users/unfriend.html</a>
-   * 
+   *
    * @param userId user id of the user to be unfriended.
-   * @return CompleteUser entity wrapped in Result object 
+   * @return CompleteUser entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteUser> usersUnfriend(String userId) throws FoursquareApiException {
@@ -427,12 +428,12 @@ public class FoursquareApi {
   }
 
   /**
-   * Approves a pending friend request from another user. 
-   * 
+   * Approves a pending friend request from another user.
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/approve.html" target="_blank">https://developer.foursquare.com/docs/users/approve.html</a>
-   * 
+   *
    * @param userId the user id of a pending friend.
-   * @return CompleteUser entity wrapped in Result object 
+   * @return CompleteUser entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
    */
   public Result<CompleteUser> usersApprove(String userId) throws FoursquareApiException {
@@ -451,10 +452,10 @@ public class FoursquareApi {
   }
 
   /**
-   * Denies a pending friend request 
-   * 
+   * Denies a pending friend request
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/deny.html" target="_blank">https://developer.foursquare.com/docs/users/deny.html</a>
-   * 
+   *
    * @param userId the user id of a pending friend.
    * @return CompleteUser entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
@@ -473,12 +474,12 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   /**
    * Changes whether the acting user will receive pings (phone notifications) when the specified user checks in.
-   * 
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/setpings.html" target="_blank">https://developer.foursquare.com/docs/users/setpings.html</a>
-   * 
+   *
    * @param userId the user id of a friend.
    * @param value true or false.
    * @return CompleteUser entity wrapped in Result object
@@ -501,10 +502,10 @@ public class FoursquareApi {
 
   /**
    * Find users
-   *  
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/search.html" target="_blank">https://developer.foursquare.com/docs/users/search.html</a>
-   * 
-   * @param phone a comma-delimited list of phone numbers to look for. 
+   *
+   * @param phone a comma-delimited list of phone numbers to look for.
    * @param email a comma-delimited list of email addresses to look for.
    * @param twitter a comma-delimited list of Twitter handles to look for.
    * @param twitterSource a single Twitter handle. Results will be friends of this user who use Foursquare.
@@ -530,9 +531,9 @@ public class FoursquareApi {
 
   /**
    * Returns a list of users with whom they have a pending friend requests.
-   * 
+   *
    * @see <a href="https://developer.foursquare.com/docs/users/requests.html" target="_blank">https://developer.foursquare.com/docs/users/requests.html</a>
-   * 
+   *
    * @return array of CompactUser entities wrapped in a Result object
    * @throws FoursquareApiException when something unexpected happens
    */
@@ -552,13 +553,13 @@ public class FoursquareApi {
   }
 
   /**
-   * Returns user's friends. 
+   * Returns user's friends.
    *
    * @see <a href="https://developer.foursquare.com/docs/users/friends.html" target="_blank">https://developer.foursquare.com/docs/users/friends.html</a>
-   * 
+   *
    * @param userId User id (can be 'self' in case of the current user, assumed 'self' if null)
    * @return UserGroup entity wrapped in Result object
-   * @throws FoursquareApiException when something unexpected happens 
+   * @throws FoursquareApiException when something unexpected happens
    */
   public Result<UserGroup> usersFriends(String userId) throws FoursquareApiException {
     try {
@@ -580,10 +581,10 @@ public class FoursquareApi {
   }
 
   /**
-   * Gives details about a venue, including location, mayorship, tags, tips, specials, and category. 
-   * 
+   * Gives details about a venue, including location, mayorship, tags, tips, specials, and category.
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/venues.html" target="_blank">https://developer.foursquare.com/docs/venues/venues.html</a>
-   * 
+   *
    * @param venueId id of venue to retrieve
    * @return CompleteVenue entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
@@ -592,7 +593,7 @@ public class FoursquareApi {
     try {
       ApiRequestResponse response = doApiRequest(Method.GET, "venues/" + venueId, isAuthenticated());
       CompleteVenue result = null;
-      
+
       if (response.getMeta().getCode() == 200) {
         result = (CompleteVenue) JSONFieldParser.parseEntity(CompleteVenue.class, response.getResponse().getJSONObject("venue"), this.skipNonExistingFields);
       }
@@ -602,14 +603,14 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   /**
-   * Returns a list of recommended venues near the specified location. 
-   * 
+   * Returns a list of recommended venues near the specified location.
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/explore.html" target="_blank">https://developer.foursquare.com/docs/venues/explore.html</a>
-   * 
+   *
    * @param ll latitude and longitude of the location in question, so response can include distance.
-   * @param llAcc accuracy of latitude and longitude, in meters. 
+   * @param llAcc accuracy of latitude and longitude, in meters.
    * @param alt altitude of the user's location, in meters.
    * @param altAcc accuracy of the user's altitude, in meters.
    * @param radius radius to search within, in meters.
@@ -637,15 +638,15 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   /**
-   * Provides a count of how many people are at a given venue. If the request is user authenticated, also returns a list of the users there, friends-first. 
-   * 
+   * Provides a count of how many people are at a given venue. If the request is user authenticated, also returns a list of the users there, friends-first.
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/herenow.html" target="_blank">https://developer.foursquare.com/docs/venues/herenow.html</a>
-   * 
+   *
    * @param venueId id of venue to retrieve
    * @param limit number of results to return, up to 500.
-   * @param offset used to page through results. 
+   * @param offset used to page through results.
    * @param afterTimestamp retrieve the first results to follow these seconds since epoch
    * @return CheckinGroup entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
@@ -664,13 +665,13 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   /**
-   * Returns tips for a venue. 
-   * 
+   * Returns tips for a venue.
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/tips.html" target="_blank">https://developer.foursquare.com/docs/venues/tips.html</a>
-   * 
-   * @param venueId id of venue 
+   *
+   * @param venueId id of venue
    * @param sort one of recent or popular
    * @param limit number of results to return, up to 500.
    * @param offset used to page through results.
@@ -690,13 +691,13 @@ public class FoursquareApi {
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
-  } 
+  }
 
   /**
-   * Returns photos for a venue. 
-   *    
+   * Returns photos for a venue.
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/photos.html" target="_blank">https://developer.foursquare.com/docs/venues/photos.html</a>
-   * 
+   *
    * @param venueId the venue you want photos for.
    * @param group pass checkin for photos added by friends on their recent checkins. Pass venue for public photos added to the venue by anyone. Use multi to fetch both.
    * @param limit number of results to return, up to 500.
@@ -717,13 +718,13 @@ public class FoursquareApi {
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
-  } 
-  
+  }
+
   /**
    * Returns URLs or identifiers from third parties that have been applied to this venue
-   *    
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/links.html" target="_blank">https://developer.foursquare.com/docs/venues/links.html</a>
-   * 
+   *
    * @param id id of the venue
    * @return LinkGroup entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
@@ -745,9 +746,9 @@ public class FoursquareApi {
 
   /**
    * Allows you to mark a venue to-do, with optional text.
-   *    
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/marktodo.html" target="_blank">https://developer.foursquare.com/docs/venues/marktodo.html</a>
-   * 
+   *
    * @param venuesId the venue id
    * @param text The text of the tip.
    * @return Todo entity wrapped in Result object
@@ -766,13 +767,13 @@ public class FoursquareApi {
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
-  }  
-  
+  }
+
   /**
-   * Allows users to indicate a venue is incorrect in some way. 
-   *    
+   * Allows users to indicate a venue is incorrect in some way.
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/flag.html" target="_blank">https://developer.foursquare.com/docs/venues/flag.html</a>
-   * 
+   *
    * @param id the venue id for which an edit is being proposed.
    * @param problem one of mislocated, closed, duplicate.
    * @param venueId of a duplicate, only valid for problem = duplicate
@@ -789,15 +790,15 @@ public class FoursquareApi {
   }
 
   /**
-   * Allows user to propose a change to a venue. 
-   *    
+   * Allows user to propose a change to a venue.
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/proposeedit.html" target="_blank">https://developer.foursquare.com/docs/venues/proposeedit.html</a>
-   * 
+   *
    * @param id the venue id for which an edit is being proposed.
    * @param name the name of the venue.
    * @param address the address of the venue.
    * @param crossStreet the nearest intersecting street or streets.
-   * @param city the city name where this venue is. 
+   * @param city the city name where this venue is.
    * @param state the nearest state or province to the venue.
    * @param zip the nearest state or province to the venue.
    * @param phone the phone number of the venue.
@@ -814,17 +815,17 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   /**
-   * Allows you to make changes to a venue (acting user must be a superuser or venue manager). Any blank parameter deletes an old value, any unspecified parameter does nothing. 
-   *    
+   * Allows you to make changes to a venue (acting user must be a superuser or venue manager). Any blank parameter deletes an old value, any unspecified parameter does nothing.
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/edit.html" target="_blank">https://developer.foursquare.com/docs/venues/edit.html</a>
-   * 
+   *
    * @param id the venue id for which an edit is being proposed.
    * @param name the name of the venue.
    * @param address the address of the venue.
    * @param crossStreet the nearest intersecting street or streets.
-   * @param city the city name where this venue is. 
+   * @param city the city name where this venue is.
    * @param state the nearest state or province to the venue.
    * @param zip the nearest state or province to the venue.
    * @param phone the phone number of the venue.
@@ -846,10 +847,10 @@ public class FoursquareApi {
   }
 
   /**
-   * Allows user to add a new venue. 
-   *    
+   * Allows user to add a new venue.
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/add.html" target="_blank">https://developer.foursquare.com/docs/venues/add.html</a>
-   * 
+   *
    * @param name the name of the venue
    * @param address the address of the venue.
    * @param crossStreet the nearest intersecting street or streets.
@@ -879,9 +880,9 @@ public class FoursquareApi {
 
   /**
    * Returns a hierarchical list of categories applied to venues.
-   *    
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/categories.html" target="_blank">https://developer.foursquare.com/docs/venues/categories.html</a>
-   * 
+   *
    * @return Array of Category entities wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
    */
@@ -901,10 +902,10 @@ public class FoursquareApi {
   }
 
   /**
-   * Returns a list of venues near the current location, optionally matching the search term. 
-   *    
+   * Returns a list of venues near the current location, optionally matching the search term.
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/search.html" target="_blank">https://developer.foursquare.com/docs/venues/search.html</a>
-   * 
+   *
    * @param ll latitude and longitude of the user's location. (Required for query searches)
    * @param llAcc accuracy of latitude and longitude, in meters. (Does not currently affect search results.)
    * @param alt altitude of the user's location, in meters. (Does not currently affect search results.)
@@ -929,15 +930,15 @@ public class FoursquareApi {
       if (response.getMeta().getCode() == 200) {
         CompactVenue[] venues = null;
         VenueGroup[] groups = null;
-        
+
         if (response.getResponse().has("groups")) {
           groups = (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getResponse().getJSONArray("groups"), this.skipNonExistingFields);
-        } 
-        
+        }
+
         if (response.getResponse().has("venues")) {
           venues = (CompactVenue[]) JSONFieldParser.parseEntities(CompactVenue.class, response.getResponse().getJSONArray("venues"), this.skipNonExistingFields);
-        }  
-        
+        }
+
         result = new VenuesSearchResult(venues, groups);
       }
 
@@ -946,8 +947,8 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
-  
+
+
   /**
    * handle parsing a venue search result and parsing the data
    * @param response
@@ -955,19 +956,19 @@ public class FoursquareApi {
    */
   private Result<VenuesSearchResult> handleVenueSearchResult(ApiRequestResponse response) throws FoursquareApiException, JSONException {
 	  VenuesSearchResult result = null;
-	     
+
       if (response.getMeta().getCode() == 200) {
         CompactVenue[] venues = null;
         VenueGroup[] groups = null;
         GeoCode geocode = null;
         if (response.getResponse().has("groups")) {
           groups = (VenueGroup[]) JSONFieldParser.parseEntities(VenueGroup.class, response.getResponse().getJSONArray("groups"), this.skipNonExistingFields);
-        } 
-        
+        }
+
         if (response.getResponse().has("venues")) {
           venues = (CompactVenue[]) JSONFieldParser.parseEntities(CompactVenue.class, response.getResponse().getJSONArray("venues"), this.skipNonExistingFields);
-        }  
-        
+        }
+
         if(response.getResponse().has("geocode")) {
         	geocode = (GeoCode) JSONFieldParser.parseEntity(GeoCode.class, response.getResponse().getJSONObject("geocode"), this.skipNonExistingFields);
         }
@@ -976,14 +977,14 @@ public class FoursquareApi {
 
       return new Result<VenuesSearchResult>(response.getMeta(), result);
   }
-  
+
   /**
    * Generic search which takes a map of parameters
-   * The map is converted into parameters for the search API call with key/value pairs matching 
+   * The map is converted into parameters for the search API call with key/value pairs matching
    * https://developer.foursquare.com/docs/venues/search
-   * 
+   *
    * For example:
-   * 
+   *
    * public Response foursquareSearchNamed(@QueryParam("place") String place, @QueryParam("term") String searchTerm) {
    *		Map<String,String> searchParams = new HashMap<String,String>();
    *		FoursquareApi foursquareApi = new FoursquareApi(<your client_id>, <your client_secret>, <your redirecturl>);
@@ -1001,7 +1002,7 @@ public class FoursquareApi {
 	*		}
 	*		return Response.noContent().build();
 	*	}
-   * 
+   *
    */
   public Result<VenuesSearchResult> venuesSearch(Map<String,String> params) throws FoursquareApiException {
 	  List<String> argsList = new ArrayList<String>();
@@ -1009,7 +1010,7 @@ public class FoursquareApi {
 		  argsList.add(s);
 		  argsList.add(params.get(s));
 	  }
-	  
+
 	  Object[] args = argsList.toArray();
 	  try {
 	      ApiRequestResponse response = doApiRequest(Method.GET, "venues/search", isAuthenticated(), args);
@@ -1018,12 +1019,12 @@ public class FoursquareApi {
 	      throw new FoursquareApiException(e);
 	    }
   }
-  
+
   /**
-   * Returns a list of venues near the current location identified by place (i.e. Chicago, IL, optionally matching the search term. 
-   *    
+   * Returns a list of venues near the current location identified by place (i.e. Chicago, IL, optionally matching the search term.
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/search.html" target="_blank">https://developer.foursquare.com/docs/venues/search.html</a>
-   * 
+   *
    * @param near the name of a city or town which can be geocoded by foursquare
    * @param query a search term to be applied against titles.
    * @param limit number of results to return, up to 50.
@@ -1044,7 +1045,7 @@ public class FoursquareApi {
     }
   }
 
- 
+
   /**
    * Venues Autocomplete
    * https://developer.foursquare.com/docs/venues/suggestcompletion
@@ -1055,7 +1056,7 @@ public class FoursquareApi {
    * @param query
    * @param limit
    * @return Result<VenuesAutocompleteResult>  -- this is only minivenues as per the API!
-   * 
+   *
    */
   public Result<VenuesAutocompleteResult> venuesSuggestCompletion(String ll, Double llAcc, Double alt, Double altAcc, String query, int limit) throws FoursquareApiException {
 	  try {
@@ -1064,11 +1065,11 @@ public class FoursquareApi {
 
 	      if (response.getMeta().getCode() == 200) {
 	        MiniVenue[] venues = null;
-	        
+
 	        if (response.getResponse().has("minivenues")) {
 	          venues = (MiniVenue[]) JSONFieldParser.parseEntities(MiniVenue.class, response.getResponse().getJSONArray("minivenues"), this.skipNonExistingFields);
-	        }  
-	        
+	        }
+
 	        result = new VenuesAutocompleteResult(venues);
 	      }
 
@@ -1077,12 +1078,12 @@ public class FoursquareApi {
 	      throw new FoursquareApiException(e);
 	    }
   }
-  
+
   /**
-   * Returns a list of venues near the current location with the most people currently checked in. 
-   *    
+   * Returns a list of venues near the current location with the most people currently checked in.
+   *
    * @see <a href="https://developer.foursquare.com/docs/venues/trending.html" target="_blank">https://developer.foursquare.com/docs/venues/trending.html</a>
-   * 
+   *
    * @param ll latitude and longitude of the user's location.
    * @param limit number of results to return, up to 50.
    * @param radius radius in meters, up to approximately 2000 meters.
@@ -1105,12 +1106,12 @@ public class FoursquareApi {
   }
 
   /**
-   * Get details of a checkin. 
-   *    
+   * Get details of a checkin.
+   *
    * @see <a href="https://developer.foursquare.com/docs/checkins/checkins.html" target="_blank">https://developer.foursquare.com/docs/checkins/checkins.html</a>
-   * 
+   *
    * @param checkinId the ID of the checkin to retrieve additional information for.
-   * @param signature when checkins are sent to public feeds such as Twitter, Foursquare appends a signature (s=XXXXXX) allowing users to bypass the friends-only access check on checkins. The same value can be used here for programmatic access to otherwise inaccessible checkins. 
+   * @param signature when checkins are sent to public feeds such as Twitter, Foursquare appends a signature (s=XXXXXX) allowing users to bypass the friends-only access check on checkins. The same value can be used here for programmatic access to otherwise inaccessible checkins.
    * @return Checkin entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
    */
@@ -1130,10 +1131,10 @@ public class FoursquareApi {
   }
 
   /**
-   * Allows you to check in to a place. 
-   *    
+   * Allows you to check in to a place.
+   *
    * @see <a href="https://developer.foursquare.com/docs/checkins/add.html" target="_blank">https://developer.foursquare.com/docs/checkins/add.html</a>
-   * 
+   *
    * @param venueId the venue where the user is checking in. No venueid is needed if shouting or just providing a venue name. Find venue IDs by searching or from historical APIs.
    * @param venue if are not shouting, but you don't have a venue ID or would rather prefer a 'venueless' checkin, pass the venue name as a string using this parameter
    * @param shout a message about your check-in. The maximum length of this field is 140 characters.
@@ -1168,10 +1169,10 @@ public class FoursquareApi {
   }
 
   /**
-   * Returns a list of recent checkins from friends. 
-   *    
+   * Returns a list of recent checkins from friends.
+   *
    * @see <a href="https://developer.foursquare.com/docs/checkins/recent.html" target="_blank">https://developer.foursquare.com/docs/checkins/recent.html</a>
-   * 
+   *
    * @param ll latitude and longitude of the user's location, so response can include distance.
    * @param limit number of results to return, up to 100.
    * @param afterTimestamp seconds after which to look for checkins
@@ -1194,10 +1195,10 @@ public class FoursquareApi {
   }
 
   /**
-   * Comment on a checkin-in 
-   *    
+   * Comment on a checkin-in
+   *
    * @see <a href="https://developer.foursquare.com/docs/checkins/addcomment.html" target="_blank">https://developer.foursquare.com/docs/checkins/addcomment.html</a>
-   * 
+   *
    * @param checkinId the ID of the checkin to add a comment to
    * @param text the text of the comment, up to 200 characters.
    * @return Comment entity wrapped in Result object
@@ -1219,10 +1220,10 @@ public class FoursquareApi {
   }
 
   /**
-   * Remove a comment from a checkin, if the acting user is the author or the owner of the checkin. 
-   *    
+   * Remove a comment from a checkin, if the acting user is the author or the owner of the checkin.
+   *
    * @see <a href="https://developer.foursquare.com/docs/checkins/deletecomment.html" target="_blank">https://developer.foursquare.com/docs/checkins/deletecomment.html</a>
-   * 
+   *
    * @param checkinId the ID of the checkin to remove a comment from.
    * @param commentId the id of the comment to remove.
    * @return Checkin entity wrapped in Result object
@@ -1245,9 +1246,9 @@ public class FoursquareApi {
 
   /**
    * Gives details about a tip, including which users (especially friends) have marked the tip to-do or done.
-   *    
+   *
    * @see <a href="https://developer.foursquare.com/docs/tips/tips.html" target="_blank">https://developer.foursquare.com/docs/tips/tips.html</a>
-   * 
+   *
    * @param id id of tip to retrieve
    * @return CompleteTip entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
@@ -1268,8 +1269,8 @@ public class FoursquareApi {
   }
 
   /**
-   * Allows user to add a new tip at a venue.     
-   *        
+   * Allows user to add a new tip at a venue.
+   *
    * @see <a href="https://developer.foursquare.com/docs/tips/add.html" target="_blank">https://developer.foursquare.com/docs/tips/add.html</a>
    *
    * @param venueId the venue where you want to add this tip.
@@ -1294,14 +1295,14 @@ public class FoursquareApi {
   }
 
   /**
-   * Returns a list of tips near the area specified. 
-   *         
+   * Returns a list of tips near the area specified.
+   *
    * @see <a href="https://developer.foursquare.com/docs/tips/search.html" target="_blank">https://developer.foursquare.com/docs/tips/search.html</a>
    *
    * @param ll latitude and longitude of the user's location.
-   * @param limit number of results to return, up to 500. 
+   * @param limit number of results to return, up to 500.
    * @param offset used to page through results.
-   * @param filter if set to friends, only show nearby tips from friends. 
+   * @param filter if set to friends, only show nearby tips from friends.
    * @param query only find tips matching the given term, cannot be used in conjunction with friends filter.
    * @return Array of CompleteTip entities wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
@@ -1320,10 +1321,10 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   /**
-   * Allows you to mark a tip to-do. 
-   *         
+   * Allows you to mark a tip to-do.
+   *
    * @see <a href="https://developer.foursquare.com/docs/tips/marktodo.html" target="_blank">https://developer.foursquare.com/docs/tips/marktodo.html</a>
    *
    * @param tipId the tip you want to mark to-do.
@@ -1343,11 +1344,11 @@ public class FoursquareApi {
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
-  }  
+  }
 
   /**
-   * Allows the acting user to mark a tip done. 
-   *         
+   * Allows the acting user to mark a tip done.
+   *
    * @see <a href="https://developer.foursquare.com/docs/tips/markdone.html" target="_blank">https://developer.foursquare.com/docs/tips/markdone.html</a>
    *
    * @param tipId the tip you want to mark done
@@ -1367,13 +1368,13 @@ public class FoursquareApi {
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
-  } 
-  
+  }
+
   /**
-   * Allows user to remove a tip from your to-do list or done list. 
-   * 
+   * Allows user to remove a tip from your to-do list or done list.
+   *
    * @see <a href="https://developer.foursquare.com/docs/tips/unmark.html" target="_blank">https://developer.foursquare.com/docs/tips/unmark.html</a>
-   * 
+   *
    * @param tipId the tip you want to unmark.
    * @return CompleteTip entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
@@ -1391,13 +1392,13 @@ public class FoursquareApi {
     } catch (JSONException e) {
       throw new FoursquareApiException(e);
     }
-  } 
-  
+  }
+
   /**
-   * Get details of a photo. 
-   * 
+   * Get details of a photo.
+   *
    * @see <a href="https://developer.foursquare.com/docs/photos/photos.html" target="_blank">https://developer.foursquare.com/docs/photos/photos.html</a>
-   * 
+   *
    * @param id the id of the photo to retrieve additional information for.
    * @return Photo entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
@@ -1416,19 +1417,19 @@ public class FoursquareApi {
       throw new FoursquareApiException(e);
     }
   }
-  
+
   /**
-   * Allows user to add a new photo to a checkin, tip, or a venue in general. 
-   * 
+   * Allows user to add a new photo to a checkin, tip, or a venue in general.
+   *
    * @see <a href="https://developer.foursquare.com/docs/photos/add.html" target="_blank">https://developer.foursquare.com/docs/photos/add.html</a>
-   *  
+   *
    * @param checkinId the id of a checkin owned by the user
    * @param tipId the id of a tip owned by the user
-   * @param venueId the id of a venue, provided only when adding a public photo of the venue 
+   * @param venueId the id of a venue, provided only when adding a public photo of the venue
    * @param broadcast twitter, facebook or twitter,facebook if you want to send to both.
    * @param ll latitude and longitude of the user's location.
    * @param llAcc accuracy of the user's latitude and longitude, in meters.
-   * @param alt altitude of the user's location, in meters. 
+   * @param alt altitude of the user's location, in meters.
    * @param altAcc vertical accuracy of the user's location, in meters.
    * @param data data of the image. Image should be "image/jpeg"
    * @return Photo entity wrapped in Result object
@@ -1450,10 +1451,10 @@ public class FoursquareApi {
   }
 
   /**
-   * Change a setting for the given user. 
-   * 
+   * Change a setting for the given user.
+   *
    * @see <a href="https://developer.foursquare.com/docs/settings/set.html" target="_blank">https://developer.foursquare.com/docs/settings/set.html</a>
-   * 
+   *
    * @param settingId one of sendToTwitter, sendMayorshipsToTwitter, sendBadgesToTwitter, sendToFacebook, sendMayorshipsToFacebook, sendBadgesToFacebook, receivePings, receiveCommentPings.
    * @param value true or false
    * @return Setting entity wrapped in Result object
@@ -1475,10 +1476,10 @@ public class FoursquareApi {
   }
 
   /**
-   * Returns the settings of the acting user. 
-   * 
+   * Returns the settings of the acting user.
+   *
    * @see <a href="https://developer.foursquare.com/docs/settings/all.html" target="_blank">https://developer.foursquare.com/docs/settings/all.html</a>
-   * 
+   *
    * @return Setting entity wrapped in Result object
    * @throws FoursquareApiException when something unexpected happens
    */
@@ -1498,10 +1499,10 @@ public class FoursquareApi {
   }
 
   /**
-   * Gives details about a special, including text and whether it is unlocked for the current user. 
-   * 
+   * Gives details about a special, including text and whether it is unlocked for the current user.
+   *
    * @see <a href="https://developer.foursquare.com/docs/specials/specials.html" target="_blank">https://developer.foursquare.com/docs/specials/specials.html</a>
-   * 
+   *
    * @param id id of special to retrieve
    * @param venueId id of a venue the special is running at
    * @return CompleteSpecial entity wrapped in Result object
@@ -1523,12 +1524,12 @@ public class FoursquareApi {
   }
 
   /**
-   * Returns a list of specials near the current location. 
-   * 
+   * Returns a list of specials near the current location.
+   *
    * @see <a href="https://developer.foursquare.com/docs/specials/search.html" target="_blank">https://developer.foursquare.com/docs/specials/search.html</a>
-   * 
+   *
    * @param ll latitude and longitude to search near.
-   * @param llAcc accuracy of latitude and longitude, in meters. 
+   * @param llAcc accuracy of latitude and longitude, in meters.
    * @param alt altitude of the user's location, in meters.
    * @param altAcc accuracy of the user's altitude, in meters.
    * @param limit number of results to return, up to 50
@@ -1554,7 +1555,7 @@ public class FoursquareApi {
 
   /**
    * Returns true or false whether oAuthToken has been sat or not
-   * 
+   *
    * @return true or false whether oAuthToken has been sat or not
    */
   private boolean isAuthenticated() {
@@ -1562,9 +1563,9 @@ public class FoursquareApi {
   }
 
   /**
-   * Returns user authentication URL 
-   * 
-   * @return user authentication URL 
+   * Returns user authentication URL
+   *
+   * @return user authentication URL
    */
   public String getAuthenticationUrl() {
     return new StringBuilder("https://foursquare.com/oauth2/authenticate?client_id=").append(this.clientId).append("&response_type=code").append("&redirect_uri=").append(this.redirectUrl).toString();
@@ -1572,7 +1573,7 @@ public class FoursquareApi {
 
   /**
    * Exchanges code for oAuthToken
-   * 
+   *
    * @param code code
    * @throws FoursquareApiException when something unexpected happens
    */
@@ -1597,16 +1598,16 @@ public class FoursquareApi {
 
   /**
    * Returns current IOHandler
-   * 
+   *
    * @return current IOHandler
    */
   public IOHandler getIOHandler() {
     return ioHandler;
   }
-  
+
   /**
    * Multipart/mime API request
-   * 
+   *
    * @param path API endpoint
    * @param auth whether request should send oAuthToken or not
    * @param params request parameters. URL parameters should be added in parameter name, parameter value pairs and multipart parameters should be added as instances of MultipartParameters
@@ -1617,7 +1618,7 @@ public class FoursquareApi {
   private ApiRequestResponse doApiMultipartMimeRequest(String path, boolean auth, Object... params) throws JSONException, FoursquareApiException {
     List<Object> parameters = new ArrayList<Object>();
     List<MultipartParameter> multipartParameters = new ArrayList<MultipartParameter>();
-    
+
     for (Object param : params) {
       if (param instanceof MultipartParameter) {
         multipartParameters.add((MultipartParameter) param);
@@ -1625,7 +1626,7 @@ public class FoursquareApi {
         parameters.add(param);
       }
     }
-    
+
     String url = getApiRequestUrl(path, auth, parameters.toArray());
     Response response = ioHandler.fetchDataMultipartMime(url, multipartParameters.toArray(new MultipartParameter[0]));
 
@@ -1638,7 +1639,7 @@ public class FoursquareApi {
 
   /**
    * API Request
-   * 
+   *
    * @param method method used in request
    * @param path API endpoint
    * @param auth whether request should send oAuthToken or not
@@ -1657,10 +1658,10 @@ public class FoursquareApi {
       return handleApiResponse(response);
     }
   }
-  
+
   /**
    * Builds request URL
-   * 
+   *
    * @param path API endpoint
    * @param auth whether add oAuthToken parameter or not
    * @param params request parameters. Parameters should be added in parameter name, parameter value pairs
@@ -1706,13 +1707,13 @@ public class FoursquareApi {
     if (useCallback) {
       urlBuilder.append("&callback=c");
     }
-    
+
     return urlBuilder.toString();
   }
 
   /**
    * Handles normal API request response
-   * 
+   *
    * @param response raw response
    * @return ApiRequestResponse
    * @throws JSONException when JSON parsing error occurs
@@ -1729,13 +1730,13 @@ public class FoursquareApi {
     } else {
       errorDetail = response.getMessage();
     }
-    
+
     return new ApiRequestResponse(new ResultMeta(response.getResponseCode(), "", errorDetail, response.getResponseHeaderRateLimit(), response.getResponseHeaderRateLimitRemaining()), responseJson, notificationsJson);
   }
 
   /**
    * Handles callback API request response
-   * 
+   *
    * @param response raw response
    * @return ApiRequestResponse
    * @throws JSONException when JSON parsing error occurs
@@ -1773,14 +1774,14 @@ public class FoursquareApi {
 
   /**
    * Class that holds API request response
-   * 
+   *
    * @author Antti Leppä / Blake Dy
    */
   private class ApiRequestResponse {
 
     /**
      * Constructor
-     * 
+     *
      * @param meta status information
      * @param response response JSON Object
      * @param notifications notifications JSON Object
@@ -1794,7 +1795,7 @@ public class FoursquareApi {
 
     /**
      * Returns response JSON Object
-     * 
+     *
      * @return response JSON Object
      */
     public JSONObject getResponse() {
@@ -1803,7 +1804,7 @@ public class FoursquareApi {
 
     /**
      * Returns notifications JSON Object
-     * 
+     *
      * @return notifications JSON Object
      */
     public JSONArray getNotifications() {
@@ -1812,7 +1813,7 @@ public class FoursquareApi {
 
     /**
      * Returns status information
-     * 
+     *
      * @return status information
      */
     public ResultMeta getMeta() {

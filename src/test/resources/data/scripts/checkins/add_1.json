@@ -1,0 +1,189 @@
+{
+    "notifications": [
+        {
+            "item": {
+                "unreadCount": 3
+            },
+            "type": "notificationTray"
+        }
+    ],
+    "meta": {
+        "code": 200
+    },
+    "response": {
+        "notifications": [
+            {
+                "item": {
+                    "entities": [
+                        {
+                            "indices": [
+                                17,
+                                18
+                            ],
+                            "type": "count",
+                            "value": 2
+                        }
+                    ],
+                    "message": "You've been here 2 times (including 2 private check-ins). Whoa, how'd you get to Mikkelin tori so quickly? To keep it fair, there are no points or badges for super-human speed. Sorry!"
+                },
+                "type": "message",
+                "alert": false
+            },
+            {
+                "item": {
+                    "insights": {
+                        "count": 1,
+                        "items": [
+                            {
+                                "shareable": false,
+                                "image": "https://ss1.4sqi.net/img/points/swarm-travel_144.png",
+                                "points": {
+                                    "image": {
+                                        "prefix": "https://ss1.4sqi.net/img/points/swarm-travel_",
+                                        "name": ".png",
+                                        "sizes": [
+                                            44,
+                                            60,
+                                            120
+                                        ]
+                                    },
+                                    "points": 4,
+                                    "message": "You've traveled 1593 miles since your last check-in!"
+                                },
+                                "type": "pointsReward",
+                                "title": "You've traveled 1593 miles since your last check-in!"
+                            }
+                        ]
+                    }
+                },
+                "type": "insights",
+                "alert": true
+            }
+        ],
+        "checkin": {
+            "reasonCannotAddComments": "commentsclosed",
+            "distance": 0,
+            "likes": {
+                "count": 0,
+                "groups": []
+            },
+            "createdAt": 1414986200,
+            "like": false,
+            "photos": {
+                "count": 0,
+                "items": []
+            },
+            "posts": {
+                "count": 0,
+                "textCount": 0
+            },
+            "comments": {
+                "count": 0,
+                "items": []
+            },
+            "venue": {
+                "verified": false,
+                "name": "Mikkelin tori",
+                "reasons": {
+                    "count": 1,
+                    "items": [
+                        {
+                            "reasonName": "hereNowReason",
+                            "type": "general",
+                            "target": {
+                                "object": {
+                                    "ignorable": false,
+                                    "type": "checkinDetail",
+                                    "id": "5456f9d8498e09ec77a71f6e",
+                                    "target": {
+                                        "url": "/checkins/5456f9d8498e09ec77a71f6d",
+                                        "type": "path"
+                                    }
+                                },
+                                "type": "navigation"
+                            },
+                            "summary": "You're here! +4 points"
+                        }
+                    ]
+                },
+                "specials": {
+                    "count": 0
+                },
+                "contact": {},
+                "location": {
+                    "distance": 0,
+                    "city": "Mikkeli",
+                    "cc": "FI",
+                    "country": "Suomi",
+                    "postalCode": "50100",
+                    "state": "It\u00e4-Suomen L\u00e4\u00e4ni",
+                    "formattedAddress": [
+                        "Kauppatori (Maaherrankatu)",
+                        "50100 Mikkeli",
+                        "Suomi"
+                    ],
+                    "crossStreet": "Maaherrankatu",
+                    "address": "Kauppatori",
+                    "lat": 61.687775,
+                    "lng": 27.273173
+                },
+                "stats": {
+                    "tipCount": 8,
+                    "checkinsCount": 2729,
+                    "usersCount": 1331
+                },
+                "id": "4c6bbfafa48420a1b09a0a0b",
+                "categories": [
+                    {
+                        "pluralName": "Plazas",
+                        "primary": true,
+                        "name": "Plaza",
+                        "shortName": "Plaza",
+                        "id": "4bf58dd8d48988d164941735",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/plaza_",
+                            "suffix": ".png"
+                        }
+                    }
+                ]
+            },
+            "private": true,
+            "source": {
+                "url": "https://developer.foursquare.com",
+                "name": "Foursquare API documentation"
+            },
+            "score": {
+                "total": 4,
+                "scores": [
+                    {
+                        "message": "You've traveled 1593 miles since your last check-in!",
+                        "points": 4,
+                        "icon": "https://ss1.4sqi.net/img/points/swarm-travel.png"
+                    }
+                ]
+            },
+            "visibility": "private",
+            "objectLeaderboards": [],
+            "type": "checkin",
+            "id": "5456f9d8498e09ec77a71f6d",
+            "timeZoneOffset": 120,
+            "user": {
+                "gender": "male",
+                "firstName": "FS",
+                "relationship": "self",
+                "photo": {
+                    "prefix": "https://irs2.4sqi.net/img/user/",
+                    "suffix": "/99225688-FW2ZJ3JSH3U4STLY.jpg"
+                },
+                "lastName": "Java",
+                "id": "99225688"
+            }
+        },
+        "notificationsOrder": [
+            "special",
+            "score",
+            "leaderboard",
+            "replies"
+        ]
+    }
+}
