@@ -50,7 +50,7 @@ public class Photo implements FoursquareEntity {
    * @return the url for the original uploaded file.
    */
   public String getUrl() {
-    return url;
+    return this.getPrefix() + "original" + this.getSuffix();
   }
   
   /**
@@ -107,6 +107,36 @@ public class Photo implements FoursquareEntity {
     return checkin;
   }
   
+  /**
+   */
+  public Integer getHeight() {
+    return height;
+  }
+  
+  /**
+   */
+  public Integer getWidth() {
+    return width;
+  }
+  
+  /**
+   */
+  public String getVisibility() {
+    return visibility;
+  }
+  
+  /**
+   */
+  public String getPrefix() {
+    return prefix;
+  }
+  
+  /**
+   */
+  public String getSuffix() {
+    return suffix;
+  }
+  
   private String id;
   private Long createdAt;
   private String url;
@@ -116,11 +146,46 @@ public class Photo implements FoursquareEntity {
   private CompactVenue venue;
   private CompleteTip tip;
   private Checkin checkin;
-  
-  // TODO
   private Integer height;
   private Integer width;
   private String visibility;
   private String prefix;
   private String suffix;
+  
+  /**
+   * Returns the url for the original uploaded file forcing XXxYY scale.
+   * 
+   * @return the url for the original uploaded file forcing XXxYY scale.
+   */
+  public String getUrlXXxYY(Integer xx, Integer yy) {
+    return this.getPrefix() + xx.toString() + "x" + yy.toString() + this.getSuffix();
+  }
+  
+  /**
+   * Returns the url for the original uploaded file capping the photo with a width or height of XX (whichever is larger). Scales the other, smaller dimension proportionally.
+   * 
+   * @return the url for the original uploaded file capping the photo with a width or height of XX (whichever is larger). Scales the other, smaller dimension proportionally.
+   */
+  public String getUrlCapXX(Integer xx) {
+    return this.getPrefix() + "cap" + xx.toString() + this.getSuffix();
+  }
+  
+  /**
+   * Returns the url for the original uploaded file forcing the width to be XX and scales the height proportionally.
+   * 
+   * @return the url for the original uploaded file forcing the width to be XX and scales the height proportionally.
+   */
+  public String getUrlWidthXX(Integer xx) {
+    return this.getPrefix() + "width" + xx.toString() + this.getSuffix();
+  }
+  
+  /**
+   * Returns the url for the original uploaded file forcing the height to be YY and scales the width proportionally.
+   * 
+   * @return the url for the original uploaded file forcing the height to be YY and scales the width proportionally.
+   */
+  public String getUrlHeightYY(Integer yy) {
+    return this.getPrefix() + "height" + yy.toString() + this.getSuffix();
+  }
+  
 }
