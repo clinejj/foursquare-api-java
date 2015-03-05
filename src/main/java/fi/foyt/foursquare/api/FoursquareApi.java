@@ -78,7 +78,8 @@ public class FoursquareApi {
    * CDI eyes only
    * @deprecated CDI eyes only
    */
-  public FoursquareApi() {}
+  public FoursquareApi() {
+  }
 
   /**
    * Constructor.
