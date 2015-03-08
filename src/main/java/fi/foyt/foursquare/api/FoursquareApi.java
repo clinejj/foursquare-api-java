@@ -75,6 +75,13 @@ public class FoursquareApi {
   private static final String DEFAULT_VERSION = "20140131";
 
   /**
+   * CDI eyes only
+   * @deprecated CDI eyes only
+   */
+  public FoursquareApi() {
+  }
+
+  /**
    * Constructor.
    *
    * @param clientId Foursquare Client id
