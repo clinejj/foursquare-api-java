@@ -1154,7 +1154,12 @@ public class FoursquareApi {
 
       if (response.getMeta().getCode() == 200) {
         result = (Checkin) JSONFieldParser.parseEntity(Checkin.class, response.getResponse().getJSONObject("checkin"), this.skipNonExistingFields);
-        notifications = NotificationsParser.parseNotifications(response.getNotifications(), skipNonExistingFields);
+        
+        if (response.getResponse().has("notifications")) {
+          notifications = NotificationsParser.parseNotifications(response.getResponse().getJSONArray("notifications"), this.skipNonExistingFields);
+        } else {
+          notifications = NotificationsParser.parseNotifications(response.getNotifications(), skipNonExistingFields);
+        }
       }
 
       return new Result<Checkin>(response.getMeta(), result, notifications);

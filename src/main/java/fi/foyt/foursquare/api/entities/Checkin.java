@@ -2,6 +2,8 @@
  * FoursquareAPI - Foursquare API for Java
  * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
  * http://www.foyt.fi
+ * Copyright (C) 2014 - Blake Dy / Wallaby
+ * http://walla.by
  * 
  * License: 
  * 
@@ -18,7 +20,7 @@ import fi.foyt.foursquare.api.FoursquareEntity;
  * 
  * @see <a href="https://developer.foursquare.com/docs/responses/checkin.html" target="_blank">https://developer.foursquare.com/docs/responses/checkin.html</a>
  * 
- * @author Antti Leppä
+ * @author Antti Leppä / Blake Dy
  */
 public class Checkin implements FoursquareEntity {
 
@@ -76,6 +78,15 @@ public class Checkin implements FoursquareEntity {
    */
   public String getTimeZone() {
     return timeZone;
+  }
+  
+  /**
+   * Returns timezone offset of the checkin
+   * 
+   * @return timezone offset of the checkin
+   */
+  public Integer getTimeZoneOffset() {
+    return timeZoneOffset;
   }
   
   /**
@@ -168,6 +179,7 @@ public class Checkin implements FoursquareEntity {
   private CompactUser user;
   private Boolean isMayor;
   private String timeZone;
+  private Integer timeZoneOffset;
   private CompleteVenue venue;
   private Location location;
   private String shout;
@@ -176,4 +188,11 @@ public class Checkin implements FoursquareEntity {
   private PhotoGroup photos;
   private CommentGroup comments;
   private CheckinGroup overlaps;
+  
+  // TODO
+  private String posts;
+  private String score;
+  private String likes;
+  private String like;
+  private String replies;
 }

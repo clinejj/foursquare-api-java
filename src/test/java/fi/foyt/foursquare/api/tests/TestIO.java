@@ -124,6 +124,7 @@ public class TestIO extends IOHandler {
     setResponse("https://api.foursquare.com/v2/checkins/add?venueId=4c6bbfafa48420a1b09a0a0b&broadcast=private&ll=61.68777583849969%2C27.273173332214355", "checkins/add_1.json");
     setResponse("https://api.foursquare.com/v2/checkins/add?venue=Test&broadcast=public&ll=40%2C40", "checkins/add_2.json");
     setResponse("https://api.foursquare.com/v2/checkins/add?venueId=408c5100f964a520c6f21ee3&broadcast=public", "checkins/add_3.json");
+    setResponse("https://api.foursquare.com/v2/checkins/add?venueId=4f738dace4b06c4afe796dab&ll=34.144744767251765%2C-118.14897413481974", "checkins/add_4.json");
     setResponse("https://api.foursquare.com/v2/checkins/recent", "checkins/recent_1.json");
     setResponse("https://api.foursquare.com/v2/checkins/4de470c0ae60e7f3ac1f0fa7/addcomment?text=That%27s+very+testy%21", "checkins/addcomment_1.json");
     setResponse("https://api.foursquare.com/v2/checkins/4de470c0ae60e7f3ac1f0fa7/deletecomment?commentId=4df3393b14954f21cf2d7543", "checkins/deletecomment_1.json");

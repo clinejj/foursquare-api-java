@@ -2,6 +2,8 @@
  * FoursquareAPI - Foursquare API for Java
  * Copyright (C) 2008 - 2011 Antti Leppä / Foyt
  * http://www.foyt.fi
+ * Copyright (C) 2014 - Blake Dy / Wallaby
+ * http://walla.by
  * 
  * License: 
  * 
@@ -16,7 +18,7 @@ import fi.foyt.foursquare.api.FoursquareEntity;
 /**
  * Entity representing "Message" notification
  * 
- * @author Antti Leppä
+ * @author Antti Leppä / Blake Dy
  */
 public class MessageNotification implements FoursquareEntity {
 
@@ -32,4 +34,7 @@ public class MessageNotification implements FoursquareEntity {
   }
 
   private String message;
+  
+  // TODO
+  private String entities;
 }
