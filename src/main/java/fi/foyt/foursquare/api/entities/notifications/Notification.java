@@ -51,4 +51,12 @@ public class Notification<T> {
   
   private NotificationType type;
   private T item;
+
+  @Override
+  public String toString() {
+    return "Notification{" +
+            "type=" + type +
+            ", item=" + item +
+            '}';
+  }
 }

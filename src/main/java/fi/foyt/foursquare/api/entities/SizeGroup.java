@@ -11,6 +11,8 @@
 
 package fi.foyt.foursquare.api.entities;
 
+import java.util.Arrays;
+
 /**
  * Group of Sizes
  * 
@@ -26,4 +28,11 @@ public class SizeGroup extends Group<Size> {
   }
   
   private Size[] items;
+
+  @Override
+  public String toString() {
+    return "SizeGroup{" +
+            "items=" + Arrays.toString(items) +
+            '}';
+  }
 }

@@ -11,6 +11,8 @@
 
 package fi.foyt.foursquare.api.entities;
 
+import java.util.Arrays;
+
 /**
  * Group of List entities
  * 
@@ -26,4 +28,11 @@ public class ListGroup extends Group<List> {
   }
 
   private List[] items;
+
+  @Override
+  public String toString() {
+    return "ListGroup{" +
+            "items=" + Arrays.toString(items) +
+            '}';
+  }
 }

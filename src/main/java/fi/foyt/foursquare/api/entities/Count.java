@@ -31,5 +31,12 @@ public class Count implements FoursquareEntity {
     return count;
   }
   
-  private Long count;
+  protected Long count;
+
+  @Override
+  public String toString() {
+    return "Count{" +
+            "count=" + count +
+            '}';
+  }
 }

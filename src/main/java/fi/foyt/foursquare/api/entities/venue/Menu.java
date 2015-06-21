@@ -74,4 +74,15 @@ public class Menu implements FoursquareEntity {
   private String anchor;
   private String url;
   private String mobileUrl;
+
+  @Override
+  public String toString() {
+    return "Menu{" +
+            "type='" + type + '\'' +
+            ", label='" + label + '\'' +
+            ", anchor='" + anchor + '\'' +
+            ", url='" + url + '\'' +
+            ", mobileUrl='" + mobileUrl + '\'' +
+            '}';
+  }
 }

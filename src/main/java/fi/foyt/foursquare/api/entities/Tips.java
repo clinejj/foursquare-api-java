@@ -11,6 +11,8 @@
 
 package fi.foyt.foursquare.api.entities;
 
+import java.util.Arrays;
+
 /**
  * Group of TipGroups
  * 
@@ -30,4 +32,11 @@ public class Tips extends Count {
   }
   
   private TipGroup[] groups;
+
+  @Override
+  public String toString() {
+    return "Tips{" +
+            "groups=" + Arrays.toString(groups) +
+            '}';
+  }
 }

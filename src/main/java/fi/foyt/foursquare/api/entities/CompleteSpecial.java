@@ -142,4 +142,22 @@ public class CompleteSpecial implements FoursquareEntity {
   private String provider;
   private String redemption;
   private CompactVenue venue;
+
+  @Override
+  public String toString() {
+    return "CompleteSpecial{" +
+            "id='" + id + '\'' +
+            ", type='" + type + '\'' +
+            ", message='" + message + '\'' +
+            ", finePrint='" + finePrint + '\'' +
+            ", description='" + description + '\'' +
+            ", unlocked=" + unlocked +
+            ", icon='" + icon + '\'' +
+            ", title='" + title + '\'' +
+            ", state='" + state + '\'' +
+            ", provider='" + provider + '\'' +
+            ", redemption='" + redemption + '\'' +
+            ", venue=" + venue +
+            '}';
+  }
 }

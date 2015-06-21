@@ -123,4 +123,24 @@ public class Photo implements FoursquareEntity {
   private String visibility;
   private String prefix;
   private String suffix;
+
+  @Override
+  public String toString() {
+    return "Photo{" +
+            "id='" + id + '\'' +
+            ", createdAt=" + createdAt +
+            ", url='" + url + '\'' +
+            ", sizes=" + sizes +
+            ", source=" + source +
+            ", user=" + user +
+            ", venue=" + venue +
+            ", tip=" + tip +
+            ", checkin=" + checkin +
+            ", height=" + height +
+            ", width=" + width +
+            ", visibility='" + visibility + '\'' +
+            ", prefix='" + prefix + '\'' +
+            ", suffix='" + suffix + '\'' +
+            '}';
+  }
 }

@@ -13,6 +13,8 @@
 
 package fi.foyt.foursquare.api.entities;
 
+import java.util.Arrays;
+
 /**
  * Class representing CompleteVenue entity
  * 
@@ -184,4 +186,49 @@ public class CompleteVenue extends CompactVenue {
   private String phrases;
   private String attributes;
   private String storeId;
+
+  @Override
+  public String toString() {
+    return "CompleteVenue{" +
+            "id='" + id + '\'' +
+            ", name='" + name + '\'' +
+            ",\ncontact=" + contact +
+            ",\nlocation=" + location +
+            ",\ncategories=" + Arrays.toString(categories) +
+            ",\nverified=" + verified +
+            ", stats=" + stats +
+            ",\nurl='" + url + '\'' +
+            ", hours=" + hours +
+            ",\npopular=" + popular +
+            ", menu=" + menu +
+            ",\nprice=" + price +
+            ",\nrating=" + rating +
+            ",\nspecials=" + specials +
+            ",\nhereNow=" + hereNow +
+            ",\npage='" + page + '\'' +
+            ",\ndescription='" + description + '\'' +
+            ", createdAt=" + createdAt +
+            ", mayor=" + mayor +
+            ",\ntips=" + tips +
+            ",\nlisted=" + listed +
+            ",\ntags=" + Arrays.toString(tags) +
+            ",\nbeenHere=" + beenHere +
+            ",\nshortUrl='" + shortUrl + '\'' +
+            ", canonicalUrl='" + canonicalUrl + '\'' +
+            ", specialsNearby=" + specialsNearby +
+            ",\nphotos=" + photos +
+            ",\nlikes=" + likes +
+            ",\nlike=" + like +
+            ", dislike=" + dislike +
+            ", timeZone='" + timeZone + '\'' +
+            ", reasons='" + reasons + '\'' +
+            ", flags='" + flags + '\'' +
+            ", roles='" + roles + '\'' +
+            ", restricted='" + restricted + '\'' +
+            ", pageUpdates='" + pageUpdates + '\'' +
+            ", phrases='" + phrases + '\'' +
+            ",\nattributes='" + attributes + '\'' +
+            ",\nstoreId='" + storeId + '\'' +
+            '}';
+  }
 }

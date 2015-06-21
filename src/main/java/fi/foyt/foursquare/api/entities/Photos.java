@@ -11,6 +11,8 @@
 
 package fi.foyt.foursquare.api.entities;
 
+import java.util.Arrays;
+
 /**
  * Group of PhotoGroups
  * 
@@ -30,4 +32,11 @@ public class Photos extends Count {
   }
   
   private PhotoGroup[] groups;
+
+  @Override
+  public String toString() {
+    return "Photos{" +
+            "groups=" + Arrays.toString(groups) +
+            '}';
+  }
 }

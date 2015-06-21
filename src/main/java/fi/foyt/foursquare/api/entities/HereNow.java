@@ -13,6 +13,8 @@
 
 package fi.foyt.foursquare.api.entities;
 
+import java.util.Arrays;
+
 /**
  * Class representing HereNow entity
  * 
@@ -35,4 +37,12 @@ public class HereNow extends Count {
   
   // TODO
   private String summary;
+
+  @Override
+  public String toString() {
+    return "HereNow{" +
+            "groups=" + Arrays.toString(groups) +
+            ", summary='" + summary + '\'' +
+            '}';
+  }
 }

@@ -12,6 +12,8 @@
  */
 package fi.foyt.foursquare.api.entities;
 
+import java.util.Arrays;
+
 /**
  * Group of UserGroups
  * 
@@ -34,4 +36,12 @@ public class UserGroups extends Count {
   
   // TODO
   private String summary;
+
+  @Override
+  public String toString() {
+    return "UserGroups{" +
+            "groups=" + Arrays.toString(groups) +
+            ", summary='" + summary + '\'' +
+            '}';
+  }
 }

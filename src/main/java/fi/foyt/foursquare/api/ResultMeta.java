@@ -91,4 +91,15 @@ public class ResultMeta {
   private String errorDetail;
   private String rateLimit;
   private String rateLimitRemaining;
+
+  @Override
+  public String toString() {
+    return "ResultMeta{" +
+            "code=" + code +
+            ", errorType='" + errorType + '\'' +
+            ", errorDetail='" + errorDetail + '\'' +
+            ", rateLimit='" + rateLimit + '\'' +
+            ", rateLimitRemaining='" + rateLimitRemaining + '\'' +
+            '}';
+  }
 }

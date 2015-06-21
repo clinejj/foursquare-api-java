@@ -139,7 +139,6 @@ public class CompleteUser extends CompactUser {
     return scores;
   }
 
-  private String type;
   private Contact contact;
   private Boolean pings;
   private Count badges;
@@ -152,4 +151,30 @@ public class CompleteUser extends CompactUser {
   private Count following;
   private Count requests;
   private Scores scores;
+
+  @Override
+  public String toString() {
+    return "CompleteUser{" +
+            "id='" + id + '\'' +
+            ", firstName='" + firstName + '\'' +
+            ", lastName='" + lastName + '\'' +
+            ", homeCity='" + homeCity + '\'' +
+            ", photo='" + photo + '\'' +
+            ", gender='" + gender + '\'' +
+            ", relationship='" + relationship + '\'' +
+            ", type='" + type + '\'' +
+            ", contact=" + contact +
+            ", pings=" + pings +
+            ", badges=" + badges +
+            ", checkins=" + checkins +
+            ", mayorships=" + mayorships +
+            ", tips=" + tips +
+            ", todos=" + todos +
+            ", friends=" + friends +
+            ", followers=" + followers +
+            ", following=" + following +
+            ", requests=" + requests +
+            ", scores=" + scores +
+            '}';
+  }
 }

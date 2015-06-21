@@ -11,6 +11,8 @@
 
 package fi.foyt.foursquare.api.entities;
 
+import java.util.Arrays;
+
 /**
  * Group of Checkin entities
  * 
@@ -26,4 +28,11 @@ public class CheckinGroup extends Group<Checkin> {
   }
   
   private Checkin[] items;
+
+  @Override
+  public String toString() {
+    return "CheckinGroup{" +
+            "items=" + Arrays.toString(items) +
+            '}';
+  }
 }

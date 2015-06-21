@@ -89,14 +89,28 @@ public class CompactUser implements FoursquareEntity {
     return relationship;
   }
   
-  private String id;
-  private String firstName;
-  private String lastName;
-  private String homeCity;
-  private String photo;
-  private String gender;
-  private String relationship;
+  protected String id;
+  protected String firstName;
+  protected String lastName;
+  protected String homeCity;
+  protected String photo;
+  protected String gender;
+  protected String relationship;
   
   // TODO
-  private String type;
+  protected String type;
+
+  @Override
+  public String toString() {
+    return "CompactUser{" +
+            "id='" + id + '\'' +
+            ", firstName='" + firstName + '\'' +
+            ", lastName='" + lastName + '\'' +
+            ", homeCity='" + homeCity + '\'' +
+            ", photo='" + photo + '\'' +
+            ", gender='" + gender + '\'' +
+            ", relationship='" + relationship + '\'' +
+            ", type='" + type + '\'' +
+            '}';
+  }
 }
