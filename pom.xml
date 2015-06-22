@@ -28,13 +28,15 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.appengine</groupId>
 			<artifactId>appengine-api-1.0-sdk</artifactId>
-			<version>1.6.5</version>
+			<version>1.9.22</version>
+			<!-- not required by typical or Android usage. see https://github.com/clinejj/foursquare-api-java/issues/1 -->
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -57,7 +59,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.2</version>
+				<version>3.3</version>
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
@@ -66,7 +68,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.12</version>
+				<version>2.18.1</version>
 				<configuration>
 					<includes>
 						<include>**/*.java</include>
@@ -80,7 +82,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.6</version>
+				<version>2.8.2</version>
 				<dependencies>
 					<dependency>
 						<groupId>com.google.code.maven-svn-wagon</groupId>
@@ -92,7 +94,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>2.1.2</version>
+				<version>2.4</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -106,7 +108,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.1</version>
+				<version>2.10.3</version>
 				<configuration>
 					<failOnError>false</failOnError>
 				</configuration>
@@ -149,6 +151,25 @@
 				</plugins>
 			</build>
 		</profile>
+		<profile>
+			<!-- http://stackoverflow.com/a/22296107/122441 -->
+			<id>doclint-java8-disable</id>
+			<activation>
+				<jdk>[1.8,)</jdk>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<configuration>
+							<!-- http://blog.joda.org/2014/02/turning-off-doclint-in-jdk-8-javadoc.html -->
+							<additionalparam>-Xdoclint:none</additionalparam>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 	</profiles>
 
 	<reporting>
@@ -156,7 +177,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.1</version>
+				<version>2.10.3</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
