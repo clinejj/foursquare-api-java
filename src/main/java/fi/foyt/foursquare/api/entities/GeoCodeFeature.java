@@ -40,7 +40,7 @@ public class GeoCodeFeature implements FoursquareEntity {
 	/**
 	 * Beats the heck out of me...
 	 */
-	String woeType;
+	Integer woeType;
 	
 	/**
 	 * Attribution, seems to be a list of strings
@@ -48,7 +48,7 @@ public class GeoCodeFeature implements FoursquareEntity {
 	String[] attribution;
 
 	public GeoCodeFeature(String cc, GeoCodeGeometry geometry, String name,
-			String displayName, String woeType, String[] attribution) {
+			String displayName, Integer woeType, String[] attribution) {
 		super();
 		this.cc = cc;
 		this.geometry = geometry;
@@ -94,11 +94,11 @@ public class GeoCodeFeature implements FoursquareEntity {
 		this.displayName = displayName;
 	}
 
-	public String getWoeType() {
+	public Integer getWoeType() {
 		return woeType;
 	}
 
-	public void setWoeType(String woeType) {
+	public void setWoeType(Integer woeType) {
 		this.woeType = woeType;
 	}
 

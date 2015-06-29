@@ -56,7 +56,7 @@ public class Category implements FoursquareEntity {
    * 
    * @return icon
    */
-  public String getIcon() {
+  public Icon getIcon() {
     return icon;
   }
 
@@ -90,7 +90,7 @@ public class Category implements FoursquareEntity {
   private String id;
   private String name;
   private String pluralName;
-  private String icon;
+  private Icon icon;
   private String[] parents;
   private Boolean primary;
   private Category[] categories;
