@@ -30,4 +30,11 @@ public class Mayor extends Count {
   }
   
   private CompactUser user;
+
+  @Override
+  public String toString() {
+    return "Mayor{" +
+            "user=" + user +
+            '}';
+  }
 }

@@ -11,6 +11,8 @@
 
 package fi.foyt.foursquare.api.entities;
 
+import java.util.Arrays;
+
 /**
  * Group of Users
  * 
@@ -26,4 +28,11 @@ public class UserGroup extends Group<CompactUser> {
   }
 
   private CompactUser[] items;
+
+  @Override
+  public String toString() {
+    return "UserGroup{" +
+            "items=" + Arrays.toString(items) +
+            '}';
+  }
 }

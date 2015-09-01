@@ -44,6 +44,37 @@ public class List implements FoursquareEntity {
   private String createdAt;
   private String updatedAt;
   private String entities;
-  private Boolean isPublic; public void setPublic(Boolean isPublic) { this.isPublic = isPublic; }
+  private Boolean isPublic;
   private Boolean logView;
+
+  public void setPublic(Boolean isPublic) {
+    this.isPublic = isPublic;
+  }
+
+  @Override
+  public String toString() {
+    return "List{" +
+            "id='" + id + '\'' +
+            ", name='" + name + '\'' +
+            ", description='" + description + '\'' +
+            ", type='" + type + '\'' +
+            ", user='" + user + '\'' +
+            ", following='" + following + '\'' +
+            ", followers='" + followers + '\'' +
+            ", editable='" + editable + '\'' +
+            ", collaborative='" + collaborative + '\'' +
+            ", collaborators='" + collaborators + '\'' +
+            ", url='" + url + '\'' +
+            ", canonicalUrl='" + canonicalUrl + '\'' +
+            ", photo='" + photo + '\'' +
+            ", venueCount='" + venueCount + '\'' +
+            ", visitedCount='" + visitedCount + '\'' +
+            ", listItems='" + listItems + '\'' +
+            ", createdAt='" + createdAt + '\'' +
+            ", updatedAt='" + updatedAt + '\'' +
+            ", entities='" + entities + '\'' +
+            ", isPublic=" + isPublic +
+            ", logView=" + logView +
+            '}';
+  }
 }

@@ -74,4 +74,15 @@ public class Contact implements FoursquareEntity {
   private String twitter;
   private String phone;
   private String formattedPhone;
+
+  @Override
+  public String toString() {
+    return "Contact{" +
+            "email='" + email + '\'' +
+            ", facebook='" + facebook + '\'' +
+            ", twitter='" + twitter + '\'' +
+            ", phone='" + phone + '\'' +
+            ", formattedPhone='" + formattedPhone + '\'' +
+            '}';
+  }
 }

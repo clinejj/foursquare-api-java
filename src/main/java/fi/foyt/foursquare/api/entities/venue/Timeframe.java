@@ -13,6 +13,8 @@ package fi.foyt.foursquare.api.entities.venue;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
+import java.util.Arrays;
+
 /**
  * Class representing Timeframe entity
  * 
@@ -65,4 +67,14 @@ public class Timeframe implements FoursquareEntity {
   // TODO
   private String[] open;
   private String[] segments;
+
+  @Override
+  public String toString() {
+    return "Timeframe{" +
+            "days='" + days + '\'' +
+            ", includesToday=" + includesToday +
+            ", open=" + Arrays.toString(open) +
+            ", segments=" + Arrays.toString(segments) +
+            '}';
+  }
 }

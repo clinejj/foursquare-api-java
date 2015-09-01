@@ -66,4 +66,13 @@ public class Result<T> {
   private T result;
   private ResultMeta meta;
   private List<Notification<?>> notifications;
+
+  @Override
+  public String toString() {
+    return "Result{" +
+            "result=" + result +
+            ", meta=" + meta +
+            ", notifications=" + notifications +
+            '}';
+  }
 }

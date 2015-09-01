@@ -11,6 +11,8 @@
 
 package fi.foyt.foursquare.api.entities;
 
+import java.util.Arrays;
+
 /**
  * Group of List entities
  * 
@@ -30,4 +32,12 @@ public class ListGroups extends Count {
   }
   
   private ListGroup[] groups;
+
+  @Override
+  public String toString() {
+    return "ListGroups{" +
+            "count=" + count +
+            ", groups=" + Arrays.toString(groups) +
+            '}';
+  }
 }

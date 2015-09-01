@@ -13,6 +13,8 @@ package fi.foyt.foursquare.api.entities.venue;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
+import java.util.Arrays;
+
 /**
  * Class representing Hours entity
  * 
@@ -54,4 +56,13 @@ public class Hours implements FoursquareEntity {
   private String status;
   private Boolean isOpen;
   private Timeframe[] timeframes;
+
+  @Override
+  public String toString() {
+    return "Hours{" +
+            "status='" + status + '\'' +
+            ", isOpen=" + isOpen +
+            ", timeframes=" + Arrays.toString(timeframes) +
+            '}';
+  }
 }

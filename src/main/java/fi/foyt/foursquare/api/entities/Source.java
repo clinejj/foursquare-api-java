@@ -41,4 +41,12 @@ public class Source implements FoursquareEntity {
   
   private String name;
   private String url;
+
+  @Override
+  public String toString() {
+    return "Source{" +
+            "name='" + name + '\'' +
+            ", url='" + url + '\'' +
+            '}';
+  }
 }

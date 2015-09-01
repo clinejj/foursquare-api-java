@@ -62,4 +62,14 @@ public class Comment implements FoursquareEntity {
   private Long createdAt;
   private CompactUser user;
   private String text;
+
+  @Override
+  public String toString() {
+    return "Comment{" +
+            "id='" + id + '\'' +
+            ", createdAt=" + createdAt +
+            ", user=" + user +
+            ", text='" + text + '\'' +
+            '}';
+  }
 }

@@ -10,6 +10,8 @@
  */
 package fi.foyt.foursquare.api.entities;
 
+import java.util.Arrays;
+
 /**
  * Group of Specials
  * 
@@ -25,4 +27,11 @@ public class SpecialGroup extends Group<CompleteSpecial> {
   }
   
   private CompleteSpecial[] items;
+
+  @Override
+  public String toString() {
+    return "SpecialGroup{" +
+            "items=" + Arrays.toString(items) +
+            '}';
+  }
 }

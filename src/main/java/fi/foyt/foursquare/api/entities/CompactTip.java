@@ -105,13 +105,28 @@ public class CompactTip implements FoursquareEntity {
     return url;
   }
   
-  private String id;
-  private String text;
-  private Long createdAt;
-  private String status;
-  private Photo photo;
-  private String photourl;
-  private String url;
-  private CompactUser user;
-  private CompactVenue venue;
+  protected String id;
+  protected String text;
+  protected Long createdAt;
+  protected String status;
+  protected Photo photo;
+  protected String photourl;
+  protected String url;
+  protected CompactUser user;
+  protected CompactVenue venue;
+
+  @Override
+  public String toString() {
+    return "CompactTip{" +
+            "id='" + id + '\'' +
+            ", text='" + text + '\'' +
+            ", createdAt=" + createdAt +
+            ", status='" + status + '\'' +
+            ", photo=" + photo +
+            ", photourl='" + photourl + '\'' +
+            ", url='" + url + '\'' +
+            ", user=" + user +
+            ", venue=" + venue +
+            '}';
+  }
 }

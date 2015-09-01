@@ -176,4 +176,24 @@ public class Checkin implements FoursquareEntity {
   private PhotoGroup photos;
   private CommentGroup comments;
   private CheckinGroup overlaps;
+
+  @Override
+  public String toString() {
+    return "Checkin{" +
+            "id='" + id + '\'' +
+            ", type='" + type + '\'' +
+            ", isPrivate=" + isPrivate +
+            ", user=" + user +
+            ", isMayor=" + isMayor +
+            ", timeZone='" + timeZone + '\'' +
+            ", venue=" + venue +
+            ", location=" + location +
+            ", shout='" + shout + '\'' +
+            ", createdAt=" + createdAt +
+            ", source=" + source +
+            ", photos=" + photos +
+            ", comments=" + comments +
+            ", overlaps=" + overlaps +
+            '}';
+  }
 }

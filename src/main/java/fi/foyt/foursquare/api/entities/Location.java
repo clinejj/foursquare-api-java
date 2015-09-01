@@ -134,4 +134,22 @@ public class Location implements FoursquareEntity {
   private Double lat;
   private Double lng;
   private Double distance;
+
+
+  @Override
+  public String toString() {
+    return "Location{" +
+            "address='" + address + '\'' +
+            ", crossStreet='" + crossStreet + '\'' +
+            ", city='" + city + '\'' +
+            ", state='" + state + '\'' +
+            ", postalCode='" + postalCode + '\'' +
+            ", country='" + country + '\'' +
+            ", name='" + name + '\'' +
+            ", cc='" + cc + '\'' +
+            ", lat=" + lat +
+            ", lng=" + lng +
+            ", distance=" + distance +
+            '}';
+  }
 }

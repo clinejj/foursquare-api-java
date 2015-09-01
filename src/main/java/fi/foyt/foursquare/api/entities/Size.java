@@ -52,4 +52,13 @@ public class Size implements FoursquareEntity {
   private String url;
   private Integer width;
   private Integer height;
+
+  @Override
+  public String toString() {
+    return "Size{" +
+            "url='" + url + '\'' +
+            ", width=" + width +
+            ", height=" + height +
+            '}';
+  }
 }

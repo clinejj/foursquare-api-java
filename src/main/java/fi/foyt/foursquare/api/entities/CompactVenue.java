@@ -16,6 +16,8 @@ package fi.foyt.foursquare.api.entities;
 import fi.foyt.foursquare.api.FoursquareEntity;
 import fi.foyt.foursquare.api.entities.venue.*;
 
+import java.util.Arrays;
+
 /**
  * Class representing CompactVenue entity
  * 
@@ -161,22 +163,44 @@ public class CompactVenue implements FoursquareEntity {
     return hereNow;
   }
 
-  private String id;
-  private String name;
-  private Contact contact;
-  private Location location;
-  private Category[] categories;
-  private Boolean verified;
-  private Stats stats;
-  private String url;
-  private Hours hours;
-  private Hours popular;
-  private Menu menu;
-  private Price price;
-  private Integer rating;
-  private SpecialGroup specials;
-  private HereNow hereNow;
+  protected String id;
+  protected String name;
+  protected Contact contact;
+  protected Location location;
+  protected Category[] categories;
+  protected Boolean verified;
+  protected Stats stats;
+  protected String url;
+  protected Hours hours;
+  protected Hours popular;
+  protected Menu menu;
+  protected Price price;
+  protected Integer rating;
+  protected SpecialGroup specials;
+  protected HereNow hereNow;
   
   // TODO
-  private String page;
+  protected String page;
+
+  @Override
+  public String toString() {
+    return "CompactVenue{" +
+            "id='" + id + '\'' +
+            ", name='" + name + '\'' +
+            ",\ncontact=" + contact +
+            ",\nlocation=" + location +
+            ",\ncategories=" + Arrays.toString(categories) +
+            ",\nverified=" + verified +
+            ", stats=" + stats +
+            ",\nurl='" + url + '\'' +
+            ", hours=" + hours +
+            ",\npopular=" + popular +
+            ", menu=" + menu +
+            ",\nprice=" + price +
+            ",\nrating=" + rating +
+            ",\nspecials=" + specials +
+            ",\nhereNow=" + hereNow +
+            ",\npage='" + page + '\'' +
+            '}';
+  }
 }

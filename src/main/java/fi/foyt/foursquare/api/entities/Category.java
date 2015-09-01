@@ -15,6 +15,8 @@ package fi.foyt.foursquare.api.entities;
 
 import fi.foyt.foursquare.api.FoursquareEntity;
 
+import java.util.Arrays;
+
 /**
  * Class representing Category entity
  * 
@@ -97,4 +99,18 @@ public class Category implements FoursquareEntity {
   
   // TODO
   private String shortName;
+
+  @Override
+  public String toString() {
+    return "Category{" +
+            "id='" + id + '\'' +
+            ", name='" + name + '\'' +
+            ", pluralName='" + pluralName + '\'' +
+            ", icon='" + icon + '\'' +
+            ", parents=" + Arrays.toString(parents) +
+            ", primary=" + primary +
+            ", categories=" + Arrays.toString(categories) +
+            ", shortName='" + shortName + '\'' +
+            '}';
+  }
 }

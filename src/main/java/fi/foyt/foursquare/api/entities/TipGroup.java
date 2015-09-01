@@ -11,6 +11,8 @@
 
 package fi.foyt.foursquare.api.entities;
 
+import java.util.Arrays;
+
 /**
  * Group of CompactTips
  * 
@@ -26,4 +28,11 @@ public class TipGroup extends Group<CompactTip> {
   }
   
   private CompleteTip[] items;
+
+  @Override
+  public String toString() {
+    return "TipGroup{" +
+            "items=" + Arrays.toString(items) +
+            '}';
+  }
 }

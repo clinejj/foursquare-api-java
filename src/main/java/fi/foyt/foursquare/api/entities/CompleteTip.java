@@ -50,4 +50,25 @@ public class CompleteTip extends CompactTip {
   private String likes;
   private Boolean like;
   private Boolean logView;
+
+  @Override
+  public String toString() {
+    return "CompleteTip{" +
+            "id='" + id + '\'' +
+            ", text='" + text + '\'' +
+            ", createdAt=" + createdAt +
+            ", status='" + status + '\'' +
+            ", photo=" + photo +
+            ", photourl='" + photourl + '\'' +
+            ", url='" + url + '\'' +
+            ", user=" + user +
+            ", venue=" + venue +
+            ", todo=" + todo +
+            ", done=" + done +
+            ", canonicalUrl='" + canonicalUrl + '\'' +
+            ", likes='" + likes + '\'' +
+            ", like=" + like +
+            ", logView=" + logView +
+            '}';
+  }
 }

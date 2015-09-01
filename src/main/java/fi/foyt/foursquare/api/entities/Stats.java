@@ -52,4 +52,13 @@ public class Stats implements FoursquareEntity {
   private Integer checkinsCount;
   private Integer usersCount;
   private Integer tipCount;
+
+  @Override
+  public String toString() {
+    return "Stats{" +
+            "checkinsCount=" + checkinsCount +
+            ", usersCount=" + usersCount +
+            ", tipCount=" + tipCount +
+            '}';
+  }
 }

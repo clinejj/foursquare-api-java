@@ -11,6 +11,8 @@
 
 package fi.foyt.foursquare.api.entities;
 
+import java.util.Arrays;
+
 /**
  * Group of Comments
  * 
@@ -26,4 +28,11 @@ public class CommentGroup extends Group<Comment> {
   }
   
   private Comment[] items;
+
+  @Override
+  public String toString() {
+    return "CommentGroup{" +
+            "items=" + Arrays.toString(items) +
+            '}';
+  }
 }

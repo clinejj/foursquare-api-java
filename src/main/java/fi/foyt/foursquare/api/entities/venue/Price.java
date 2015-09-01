@@ -44,4 +44,12 @@ public class Price implements FoursquareEntity {
   
   private Integer tier;
   private String message;
+
+  @Override
+  public String toString() {
+    return "Price{" +
+            "tier=" + tier +
+            ", message='" + message + '\'' +
+            '}';
+  }
 }
